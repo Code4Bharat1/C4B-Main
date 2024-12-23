@@ -59,13 +59,17 @@ const Footer = () => {
 
         {/* Legal Section */}
         <div className="w-full md:w-[20%] lg:w-[15%] h-auto flex flex-col items-start mb-8 md:mb-0">
-          <h1 className="text-[5vw] md:text-[1vw] font-bold">Legal</h1>
+          <h1 className="text-[5vw] md:text-[1vw] font-bold">Policies</h1>
           <div className="mt-2 space-y-2">
             {[
               { name: "About C4B", path: "/policies/about" },
               { name: "Contact", path: "/policies/contact" },
               { name: "Terms & Conditions", path: "/policies/termsandcondition" },
               { name: "Privacy Policies", path: "/policies/privacy" },
+              { name: "Product Pricing", path: "/policies/product-pricing"},
+              { name: "Cancellation Policy", path: "/policies/cancellation-policy"},
+              { name: "Refund Policy", path: "/policies/refund-policy"},
+              { name: "Shipping And Delivery Policy", path: "/policies/delivery-policy"},
             ].map((item, index) => (
               <Link key={index} href={item.path}>
                 <motion.h5
