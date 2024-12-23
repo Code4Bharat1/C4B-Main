@@ -62,8 +62,10 @@ const Footer = () => {
           <h1 className="text-[5vw] md:text-[1vw] font-bold">Legal</h1>
           <div className="mt-2 space-y-2">
             {[
-              { name: "Terms & Conditions", path: "/termsandcondition" },
-              { name: "Contact", path: "/contactus" },
+              { name: "About C4B", path: "/policies/about" },
+              { name: "Contact", path: "/policies/contact" },
+              { name: "Terms & Conditions", path: "/policies/termsandcondition" },
+              { name: "Privacy Policies", path: "/policies/privacy" },
             ].map((item, index) => (
               <Link key={index} href={item.path}>
                 <motion.h5
