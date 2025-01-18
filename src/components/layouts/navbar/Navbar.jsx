@@ -69,11 +69,11 @@ const Navbar = () => {
       >
         <Link href="/" onClick={handleLinkClick}>
           <Image
-            src="/images/logo_trans.png"
+            src="/images/logo1.png"
             alt="Logo"
             width={150}
             height={150}
-            className="w-[100%] h-[55%] md:w-[100%] md:h-[100%] object-contain"
+            className="w-[100%] h-[55%] md:w-[100%] md:h-[100vh] object-contain"
           />
         </Link>
       </motion.div>

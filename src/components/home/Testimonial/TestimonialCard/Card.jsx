@@ -80,7 +80,7 @@ const TestimonialCard = ({ image, description, name, username, stars }) => {
               {name}
             </span>
             <p className="text-[3.5vw] md:text-[0.9vw] text-gray-500 hover:text-[#0288D1] transition-colors duration-300">
-              @{username}
+              {username}
             </p>
           </div>
         </div>

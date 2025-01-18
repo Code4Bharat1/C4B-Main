@@ -47,7 +47,8 @@ const TestimonialsSection = () => {
           <p className="text-[4vw] md:text-[1vw] font-medium text-black">
             At Code4Bharat, we’re proud to partner with clients across
             e-commerce, healthcare, education, and finance. Our commitment to
-            understanding their unique needs has fostered long-term relationships.
+            understanding their unique needs has fostered long-term
+            relationships.
           </p>
         </motion.div>
       </div>
@@ -57,39 +58,47 @@ const TestimonialsSection = () => {
         {/* Testimonial Cards */}
         <TestimonialCard
           image="/images/faces/sanadnaqvi.jpeg"
-          description="Code4Bharat transformed our online store! They understood our needs perfectly and delivered a scalable platform."
-          name="Sanad Naqvi"
-          username="sanadnaqvi"
+          description="Code4Bharat transformed our online operations with efficient, timely solutions and unmatched quality."
+          name="Ravi Sharma"
+          username="Education"
           stars={5}
         />
         <TestimonialCard
           image="/images/faces/junedkhan.jpg"
-          description="Fantastic support and seamless delivery! Code4Bharat’s team was attentive to our needs and continues to help us."
-          name="Juned Khan"
-          username="junedkhan"
+          description="We’re thrilled with the custom CRM Code4Bharat delivered. Their attention to detail and support have greatly improved our operations."
+          name=" Fatima Al-Nahyan"
+          username="Hospitality "
           stars={4}
         />
         <TestimonialCard
           image="/images/faces/shamsshaikh.jpg"
-          description="Great results and amazing ongoing support! Code4Bharat’s team has been fantastic every step of the way."
-          name="Shams Shaikh"
-          username="shamsshaikh"
+          description="Code4Bharat’s expertise in scalable web solutions helped us manage property listings and client interactions efficiently. A trusted partner for real estate."
+          name="Mohammed Al-Qahtani"
+          username="Real Estate"
           stars={5}
         />
         <TestimonialCard
           image="/images/faces/ayaanraje.png"
-          description="The project exceeded our expectations. Code4Bharat delivered a top-notch product and continues to provide stellar support."
-          name="Ayaan Raje"
-          username="ayaanraje"
+          description="Working with Code4Bharat was a great experience. They enhanced our e-commerce platform with advanced features, boosting our user experience. Highly recommended"
+          name="Ahmed Al-Mutairi"
+          username="Retail"
           stars={5}
         />
         <TestimonialCard
           image="/images/faces/muskanshaikh.jpg"
-          description="Their support after the project has been exceptional, always there to help with any issues."
-          name="Muskan Shaikh"
-          username="muskanshaikh"
+          description="Code4Bharat did an excellent job revamping our website and integrating a seamless booking system, delivering exceptional results."
+          name="Priya Menon"
+          username="Healthcare"
           stars={5}
         />
+        <TestimonialCard
+          image="/images/faces/muskanshaikh.jpg"
+          description="Code4Bharat’s Odoo expertise streamlined our processes, boosting efficiency and productivity with tailored solutions."
+          name="Rajesh Patil"
+          username="Manufacturing "
+          stars={5}
+        />
+        
       </div>
     </section>
   );
