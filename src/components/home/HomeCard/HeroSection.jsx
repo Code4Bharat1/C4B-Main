@@ -24,8 +24,10 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="herosection w-full h-[calc(80vh-10vh)] flex items-center justify-center relative">
-      <div className="w-[90%] h-[80%] bg-[#106EB5] rounded-3xl flex overflow-hidden text-white flex-col md:flex-row">
+    <section
+      className="herosection w-full h-[calc(80vh-10vh)] flex items-center justify-center relative mb-16" // Added 'mt-[15%]' to create gap
+    >
+      <div className="w-[90%] h-[80%] bg-[#106EB5] rounded-3xl flex overflow-hidden text-white flex-col md:flex-row mt-40">
         {/* Left Section */}
         <div className="left w-full md:w-[70%] h-[50%] md:h-full px-5 md:px-10 flex flex-col items-center justify-center gap-5">
           {/* Minimalistic H1 animation */}
