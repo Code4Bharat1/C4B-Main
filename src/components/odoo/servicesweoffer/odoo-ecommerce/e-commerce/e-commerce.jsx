@@ -18,7 +18,7 @@ const EcommerceSection = () => {
 
         {/* Text Content */}
         <div className="pb-12 sm:pb-[86px] text-center sm:text-left">
-          <h3 className="text-purple-700 uppercase text-sm font-bold">// E-Commerce</h3>
+          <h3 className="text-purple-700 uppercase text-sm font-bold">E-Commerce</h3>
           <h2 className="text-lg sm:text-xl font-[1000] text-gray-800 mt-4 sm:mt-8">
             Establish a Powerful Online Business with Odoo E-commerce
           </h2>

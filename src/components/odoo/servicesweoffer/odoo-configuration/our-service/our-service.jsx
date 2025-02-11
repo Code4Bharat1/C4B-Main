@@ -16,7 +16,7 @@ const Services = () => {
         {/* Header */}
         <div className="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-between mb-8 sm:mb-12 text-center sm:text-left">
           <div>
-            <h3 className="text-purple-600 uppercase text-sm font-bold">// Our Service</h3>
+            <h3 className="text-purple-600 uppercase text-sm font-bold"> Our Service</h3>
             <h1 className="text-xl sm:text-3xl font-[1000] text-gray-800 mt-4">
                 Best Odoo Configuration Services
             </h1>
@@ -34,7 +34,7 @@ const Services = () => {
         {/* Services Section */}
         <div className="grid grid-cols-1 gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-2 justify-center px-16">
           {/* Service 1 (Largest) */}
-          <div className="group relative bg-white rounded-lg p-4 sm:p-6 h-auto sm:h-[460px] overflow-hidden transform transition-transform duration-300 hover:-translate-y-4">
+          <div className="group relative bg-white rounded-lg p-4 sm:p-6 h-auto sm:h-[365px] overflow-hidden transform transition-transform duration-300 hover:-translate-y-4 shadow-xl">
             {/* Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#885c7c] via-[#885c7c88] to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
             <div className="relative z-10">
@@ -55,7 +55,7 @@ const Services = () => {
           </div>
 
           {/* Service 2 (Medium) */}
-          <div className="group relative bg-white rounded-lg p-4 sm:p-6 h-auto sm:h-[365px] overflow-hidden transform transition-transform duration-300 hover:-translate-y-4">
+          <div className="group relative bg-white rounded-lg p-4 sm:p-6 h-auto sm:h-[365px] overflow-hidden transform transition-transform duration-300 hover:-translate-y-4 shadow-xl">
             {/* Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#885c7c] via-[#885c7c88] to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
             <div className="relative z-10">

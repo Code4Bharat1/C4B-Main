@@ -5,9 +5,9 @@ const Hero = () => {
   return (
     <div className="relative h-[60vh]">
       {/* Background Image */}
-      <div className="absolute inset-0 w-full h-full">
+      <div className="absolute w-full h-full">
         <Image
-          src="/images/header-image-oodu-implementers.webp"
+          src="/images/bg-image/Shamsservices.jpg"
           alt="Background"
           layout="fill"
           objectFit="cover"

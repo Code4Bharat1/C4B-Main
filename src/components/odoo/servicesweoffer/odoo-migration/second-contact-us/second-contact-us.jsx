@@ -16,11 +16,11 @@ const SecondcontactSection = () => {
       <div className="relative z-10 px-4 sm:px-0">
         {/* Subheading */}
         <h3 className="text-white text-[16px] sm:text-[28px] leading-tight">
-         // Contact Us for Odoo Migration Service and Watch Your Company Grow Better
+         Contact Us for Odoo Migration Service and Watch Your Company Grow Better
         </h3>
         {/* Button */}
         <div className="mt-4 sm:mt-6">
-        <Link href="/contactus">
+        <Link href="https://wa.me/9594430295">
           <button className="bg-[#885c7c] hover:bg-purple-700 text-white font-bold py-2 px-4 sm:p-[15px] sm:px-[2.2rem] shadow-md transition">
             Contact Us
           </button>

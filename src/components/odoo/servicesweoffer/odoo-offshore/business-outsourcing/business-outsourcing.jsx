@@ -16,7 +16,7 @@ const OffshoreDevelopment = () => {
 
         {/* Right Section - Text */}
         <div className="flex flex-col justify-center">
-          <h6 className="text-purple-700 text-sm font-bold mb-2 uppercase">// BUSINESS OUTSOURCING SERVICES</h6>
+          <h6 className="text-purple-700 text-sm font-bold mb-2 uppercase">BUSINESS OUTSOURCING SERVICES</h6>
           <h2 className="text-gray-800 text-[16px] lg:text-[20px] font-extrabold mb-6 leading-snug">
             Boost up Company Growth with the Best Odoo Offshore Development Services
           </h2>

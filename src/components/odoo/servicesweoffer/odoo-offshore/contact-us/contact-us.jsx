@@ -16,7 +16,7 @@ const ContactSection = () => {
       <div className="relative z-10 px-4 sm:px-0">
         {/* Subheading */}
         <h3 className="text-white text-[18px] sm:text-[24px] leading-tight">
-        // Drop us a line! We are here to answer your questions
+         Drop us a line! We are here to answer your questions
         </h3>
         {/* Heading */}
         <h3 className="text-white font-bold text-[25px] mt-4 leading-snug">
@@ -24,7 +24,7 @@ const ContactSection = () => {
         </h3>
         {/* Button */}
         <div className="mt-6">
-        <Link href="/contactus">
+        <Link href="https://wa.me/9594430295">
           <button className="bg-[#885c7c] hover:bg-purple-700 text-white font-bold py-2 px-6 sm:p-[15px] sm:px-[2.2rem] shadow-md transition">
             Contact Us
           </button>

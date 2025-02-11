@@ -6,9 +6,9 @@ const Hero = () => {
   return (
     <div className="relative pt-[94px] h-[calc(100vh-4rem)] sm:h-[60vh]">
       {/* Background Image */}
-      <div className="absolute inset-0 w-full h-full">
+      <div className="absolute inset-0 w-full h-full bg-black">
         <Image
-          src="/images/header-image-oodu-implementers.webp"
+          src="/images/bg-image/odoo-implementation.jpg"
           alt="Background"
           layout="fill"
           objectFit="cover"

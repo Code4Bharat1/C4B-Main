@@ -13,7 +13,7 @@ const EcommerceBenefits = () => {
     >
       <div className="container mx-auto grid grid-cols-1 gap-8 sm:grid-cols-2 px-6 sm:px-12 lg:px-48">
         {/* Card 1 */}
-        <div className="group bg-white shadow-lg rounded-lg p-4 sm:p-6 h-auto sm:h-[399px] w-full sm:w-[530px] transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+        <div className="group bg-white shadow-lg rounded-lg p-4 sm:p-6 h-auto sm:h-[480px] w-full sm:w-[530px] transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
           <div className="flex items-center mb-4">
             <img
               src="https://www.odooimplementers.com/images/icon/odoo-implementers-for-odoo-customization-process.png"

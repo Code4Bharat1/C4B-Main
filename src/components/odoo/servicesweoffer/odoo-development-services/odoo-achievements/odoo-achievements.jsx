@@ -51,7 +51,7 @@ const OdooAchievements = () => {
         ))}
 
         {/* Second Row */}
-        <div className="col-span-full flex flex-col sm:flex-row justify-center gap-[2rem] pr-[0rem] pl-[0rem]">
+        <div className="col-span-full flex flex-col sm:flex-row justify-center gap-[6rem] pr-[3rem] pl-[0rem]">
           {achievements.slice(3).map((achievement, index) => (
             <div
               key={index}

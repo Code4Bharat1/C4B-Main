@@ -16,7 +16,7 @@ const OdooModuleConfiguration = () => {
         {/* Right Section - Text */}
         <div className="flex flex-col justify-center pr-0 pl-[0rem] order-1 lg:order-2 text-center lg:text-left">
           <h6 className="text-purple-700 text-sm font-bold mb-2 uppercase">
-            //ERP Module Configuration
+            ERP Module Configuration
           </h6>
           <h2 className="text-gray-800 text-[18px] sm:text-[20px] font-extrabold mb-6 leading-snug">
             Easy-to-use Odoo Module Configuration Services

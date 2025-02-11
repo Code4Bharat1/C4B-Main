@@ -1,145 +1,116 @@
 import React from "react";
-import Link from "next/link"; // Import Link from Next.js
+import Link from "next/link";
 
 const FooterLinks = () => {
   return (
     <div className="bg-white py-10">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Title */}
-        <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-6">
-          Useful Links:
+        <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-8 text-center text-black hover:text-[#885c7c]">
+          Useful Links
         </h2>
+
         {/* Links Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 text-sm">
-          {/* Company Column */}
-          <div>
-            <h3 className="text-[#885c7c] text-base sm:text-lg font-bold mb-4">
-              COMPANY
-            </h3>
-            <ul className="space-y-4">
-              <li className="hover:text-[#6E4A63] hover:scale-105 transition-transform duration-200 cursor-pointer">
-                About Us
-              </li>
-              <li className="hover:text-[#6E4A63] hover:scale-105 transition-transform duration-200 cursor-pointer">
-                Why Choose Us
-              </li>
-              <li className="hover:text-[#6E4A63] hover:scale-105 transition-transform duration-200 cursor-pointer">
-                Our Quality Process
-              </li>
-              <li className="hover:text-[#6E4A63] hover:scale-105 transition-transform duration-200 cursor-pointer">
-                Our Clients
-              </li>
-              <li className="hover:text-[#6E4A63] hover:scale-105 transition-transform duration-200 cursor-pointer">
-                Careers
-              </li>
-            </ul>
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 text-sm">
           {/* Services Column */}
           <div>
-            <h3 className="text-[#885c7c] text-base sm:text-lg font-bold mb-4">
-                SERVICES
-            </h3>
-            <ul className="space-y-4">
-            
-              <li className="hover:text-[#6E4A63] hover:scale-105 transition-transform duration-200 cursor-pointer">
-              <Link href="/servicesweoffer/odoo-consulting">
-                Consulting
-                </Link>
-              </li>
-           
-            
-              <li className="hover:text-[#6E4A63] hover:scale-105 transition-transform duration-200 cursor-pointer">
-              <Link href="/servicesweoffer/odoo-configuration">
-                Configuration
-              </Link>
-              </li>
-            
-            
-              <li className="hover:text-[#6E4A63] hover:scale-105 transition-transform duration-200 cursor-pointer">
-              <Link href="/servicesweoffer/odoo-customization">
-                Customization
-              </Link>
-              </li>
-             
-              
-              <li className="hover:text-[#6E4A63] hover:scale-105 transition-transform duration-200 cursor-pointer">
-              <Link href="/servicesweoffer/odoo-development-services">
-                Development
-              </Link>
-              </li>
-              
-              
-              <li className="hover:text-[#6E4A63] hover:scale-105 transition-transform duration-200 cursor-pointer">
-              <Link href="/servicesweoffer/odoo-implementation">
-                Implementation
-              </Link>
-              </li>
+            <h3 className="text-[#885c7c] text-lg font-bold mb-4">SERVICES</h3>
+            <ul className="space-y-3">
+              {[
+                {
+                  name: "Consulting",
+                  path: "/servicesweoffer/odoo-implementation",
+                },
+                {
+                  name: "Configuration",
+                  path: "/servicesweoffer/odoo-configuration",
+                },
+                {
+                  name: "Customization",
+                  path: "/servicesweoffer/odoo-customization",
+                },
+                {
+                  name: "Development",
+                  path: "/servicesweoffer/odoo-development-services",
+                },
+                {
+                  name: "Implementation",
+                  path: "/servicesweoffer/odoo-implementation",
+                },
+              ].map((item, index) => (
+                <li
+                  key={index}
+                  className="hover:text-[#6E4A63] hover:scale-105 transition-transform duration-200 cursor-pointer"
+                >
+                  <Link href={item.path}>{item.name}</Link>
+                </li>
+              ))}
             </ul>
           </div>
+
           {/* Apps Column */}
           <div>
-            <h3 className="text-[#885c7c] text-base sm:text-lg font-bold mb-4">
-              APPS
-            </h3>
-            <ul className="space-y-4">
-              <li className="hover:text-[#6E4A63] hover:scale-105 transition-transform duration-200 cursor-pointer">
-                CRM
-              </li>
-              <li className="hover:text-[#6E4A63] hover:scale-105 transition-transform duration-200 cursor-pointer">
-                Invoicing
-              </li>
-              <li className="hover:text-[#6E4A63] hover:scale-105 transition-transform duration-200 cursor-pointer">
-                Sales
-              </li>
-              <li className="hover:text-[#6E4A63] hover:scale-105 transition-transform duration-200 cursor-pointer">
-                E-Commerce
-              </li>
-              <li className="hover:text-[#6E4A63] hover:scale-105 transition-transform duration-200 cursor-pointer">
-                Point Of Sale
-              </li>
+            <h3 className="text-[#885c7c] text-lg font-bold mb-4">APPS</h3>
+            <ul className="space-y-3">
+              {[
+                { name: "CRM", path: "/apps/odoo-crm" },
+                { name: "Invoicing", path: "/apps/odoo-invoicing" },
+                { name: "Sales", path: "/apps/odoo-sales" },
+                { name: "E-Commerce", path: "/apps/odoo-e-commerce" },
+                { name: "Point Of Sale", path: "/apps/odoo-sales" },
+              ].map((item, index) => (
+                <li
+                  key={index}
+                  className="hover:text-[#6E4A63] hover:scale-105 transition-transform duration-200 cursor-pointer"
+                >
+                  <Link href={item.path}>{item.name}</Link>
+                </li>
+              ))}
             </ul>
           </div>
+
           {/* Industries Column */}
           <div>
-            <h3 className="text-[#885c7c] text-base sm:text-lg font-bold mb-4 whitespace-nowrap">
+            <h3 className="text-[#885c7c] text-lg font-bold mb-4">
               INDUSTRIES WE CATER
             </h3>
-            <ul className="space-y-4">
-              <li className="hover:text-[#6E4A63] hover:scale-105 transition-transform duration-200 cursor-pointer">
-                Capital Machinery
-              </li>
-              <li className="hover:text-[#6E4A63] hover:scale-105 transition-transform duration-200 cursor-pointer">
-                Component Manufacturing
-              </li>
-              <li className="hover:text-[#6E4A63] hover:scale-105 transition-transform duration-200 cursor-pointer">
-                Garment Trading
-              </li>
-              <li className="hover:text-[#6E4A63] hover:scale-105 transition-transform duration-200 cursor-pointer">
-                Service Industry
-              </li>
-              <li className="hover:text-[#6E4A63] hover:scale-105 transition-transform duration-200 cursor-pointer">
-                Electrical Component Manufacturing
-              </li>
+            <ul className="space-y-3">
+              {[
+                "Capital Machinery",
+                "Component Manufacturing",
+                "Garment Trading",
+                "Service Industry",
+                "Electrical Component Manufacturing",
+              ].map((industry, index) => (
+                <li
+                  key={index}
+                  className="hover:text-[#6E4A63] hover:scale-105 transition-transform duration-200 cursor-pointer"
+                >
+                  {industry}
+                </li>
+              ))}
             </ul>
           </div>
+
           {/* Menu Column */}
           <div>
-            <h3 className="text-[#885c7c] text-base sm:text-lg font-bold mb-4">
+            <h3 className="text-[#885c7c] text-lg font-bold mb-4 lg:pl-16">
               MENU
             </h3>
-            <ul className="space-y-4">
-              <li className="hover:text-[#6E4A63] hover:scale-105 transition-transform duration-200 cursor-pointer">
-                Blog
-              </li>
-              <li className="hover:text-[#6E4A63] hover:scale-105 transition-transform duration-200 cursor-pointer">
-                Photo Gallery
-              </li>
-              <li className="hover:text-[#6E4A63] hover:scale-105 transition-transform duration-200 cursor-pointer">
-                Video Gallery
-              </li>
-              <li className="hover:text-[#6E4A63] hover:scale-105 transition-transform duration-200 cursor-pointer">
-                Our Corporate PPT
-              </li>
+            <ul className="space-y-3 lg:pl-16">
+              {[
+                "Blog",
+                "Photo Gallery",
+                "Video Gallery",
+                "Our Corporate PPT",
+              ].map((menuItem, index) => (
+                <li
+                  key={index}
+                  className="hover:text-[#6E4A63] hover:scale-105 transition-transform duration-200 cursor-pointer"
+                >
+                  {menuItem}
+                </li>
+              ))}
             </ul>
           </div>
         </div>

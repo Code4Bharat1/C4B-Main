@@ -18,7 +18,7 @@ const EcommerceSections = () => {
 
         {/* Text Content */}
         <div className="pb-12 sm:pb-[86px] text-center sm:text-left">
-          <h3 className="text-purple-700 uppercase text-sm font-bold">//Training & Backend Support</h3>
+          <h3 className="text-purple-700 uppercase text-sm font-bold">Training & Backend Support</h3>
           <h2 className="text-lg sm:text-xl font-[1000] text-gray-800 mt-4 sm:mt-8">
              Reap Great Benefits for your Business with Odoo Support
           </h2>

@@ -43,7 +43,7 @@ const EcommerceBenefits = () => {
         </div>
 
         {/* Card 2 */}
-        <div className="group bg-white shadow-lg rounded-lg p-4 sm:p-6 h-auto sm:h-[413px] w-full sm:w-[560px] transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+        <div className="group bg-white shadow-lg rounded-lg p-4 sm:p-6 h-auto sm:h-[353px] w-full sm:w-[560px] transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
           <div className="flex items-center mb-4">
             <img
               src="https://www.odooimplementers.com/images/icon/odoo-migration-service-icon.png"

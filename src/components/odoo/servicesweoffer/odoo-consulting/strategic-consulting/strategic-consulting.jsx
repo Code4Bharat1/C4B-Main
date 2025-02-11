@@ -17,7 +17,7 @@ const Strategic = () => {
 
         {/* Right Side - Content */}
         <div className="w-full sm:w-1/2 text-center sm:text-left px-6 sm:px-0 sm:pl-[7rem] sm:pr-[13rem]">
-          <h3 className="text-purple-700 uppercase text-[14px] font-bold">// Strategic Consulting</h3>
+          <h3 className="text-purple-700 uppercase text-[14px] font-bold">Strategic Consulting</h3>
           <h1 className="text-xl sm:text-2xl font-[1000] text-gray-900 mt-4 leading-snug">
             Strategic Odoo Consulting Partners
           </h1>

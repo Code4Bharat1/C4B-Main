@@ -8,7 +8,7 @@ const Hero = () => {
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full">
         <Image
-          src="/images/header-image-oodu-implementers.webp"
+          src="/images/bg-image/odoo-consulting.jpg"
           alt="Background"
           layout="fill"
           objectFit="cover"
