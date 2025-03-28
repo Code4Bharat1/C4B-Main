@@ -6,7 +6,7 @@ const EcommerceBenefits = () => {
       className="relative bg-white py-8 sm:py-16"
       style={{
         backgroundImage:
-          "url('https://www.odooimplementers.com/images/background/bg-maps-dots.jpg')",
+          "url('/images/odoo-images/bg-maps-dots.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -16,7 +16,7 @@ const EcommerceBenefits = () => {
         <div className="group bg-white shadow-lg rounded-lg p-4 sm:p-6 h-auto sm:h-[480px] w-full sm:w-[530px] transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
           <div className="flex items-center mb-4">
             <img
-              src="https://www.odooimplementers.com/images/icon/odoo-implementers-for-odoo-customization-process.png"
+              src="/images/odoo-images/odoo-icons/odoo-implementers-for-odoo-customization-process.png"
               alt="Benefits Icon"
               className="w-[5rem] h-16 sm:w-71 sm:h-[5.25rem] mr-4 transform transition-transform duration-300 group-hover:scale-110"
             />
@@ -60,7 +60,7 @@ const EcommerceBenefits = () => {
         <div className="group bg-white shadow-lg rounded-lg p-4 sm:p-6 h-auto sm:h-[480px] w-full sm:w-[560px] transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
           <div className="flex items-center mb-4">
             <img
-              src="https://www.odooimplementers.com/images/icon/custom2.png"
+              src="/images/odoo-images/odoo-icons/custom2.png"
               alt="Store Icon"
               className="w-16 h-16 sm:w-[5rem] sm:h-[5rem] mr-4 transform transition-transform duration-300 group-hover:scale-110"
             />

@@ -6,7 +6,7 @@ import ContactSection from '@/components/odoo/apps/odoo-purchase/contact-us/cont
 import Createpersonal from '@/components/odoo/apps/odoo-purchase/create-personal-branding/create-personal-branding';
 import Hero from '@/components/odoo/apps/odoo-purchase/hero/hero';
 import Managesuppliers from '@/components/odoo/apps/odoo-purchase/manage-suppliers/manage-suppliers';
-import Whychoose from '@/components/odoo/apps/odoo-purchase/why-oodu/why-oodu';
+import Whychoose from '@/components/odoo/apps/odoo-purchase/why-choose/why-choose';
 import FooterLinks from '@/components/odoo/servicesweoffer/usefullinks/links';
 import React from 'react'
 

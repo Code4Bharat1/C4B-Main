@@ -57,44 +57,44 @@ const TestimonialsSection = () => {
       <div className="w-full px-5 md:px-24 flex flex-wrap justify-center gap-5 md:gap-10">
         {/* Testimonial Cards */}
         <TestimonialCard
-          image="/images/faces/sanadnaqvi.jpeg"
+          image="/images/faces/peoples_image1.webp"
           description="Code4Bharat transformed our online operations with efficient, timely solutions and unmatched quality."
-          name="Ravi Sharma"
+          name="Neelesh Shukla"
           username="Education"
           stars={5}
         />
         <TestimonialCard
-          image="/images/faces/junedkhan.jpg"
+          image="/images/faces/peoples_image2.webp"
           description="We’re thrilled with the custom CRM Code4Bharat delivered. Their attention to detail and support have greatly improved our operations."
-          name=" Fatima Al-Nahyan"
+          name="Utkarsh Tiwari"
           username="Hospitality "
           stars={4}
         />
         <TestimonialCard
-          image="/images/faces/shamsshaikh.jpg"
+          image="/images/faces/peoples_image3.webp"
           description="Code4Bharat’s expertise in scalable web solutions helped us manage property listings and client interactions efficiently. A trusted partner for real estate."
-          name="Mohammed Al-Qahtani"
+          name="Snehashish Datta"
           username="Real Estate"
           stars={5}
         />
         <TestimonialCard
-          image="/images/faces/ayaanraje.png"
+          image="/images/faces/peoples_image4.webp"
           description="Working with Code4Bharat was a great experience. They enhanced our e-commerce platform with advanced features, boosting our user experience. Highly recommended"
-          name="Ahmed Al-Mutairi"
+          name="Varada Jadhav"
           username="Retail"
           stars={5}
         />
         <TestimonialCard
-          image="/images/faces/muskanshaikh.jpg"
+          image="/images/faces/peoples_image5.webp"
           description="Code4Bharat did an excellent job revamping our website and integrating a seamless booking system, delivering exceptional results."
-          name="Priya Menon"
+          name="Isha Sawant"
           username="Healthcare"
           stars={5}
         />
         <TestimonialCard
-          image="/images/faces/muskanshaikh.jpg"
+          image="/images/faces/peoples_image6.webp"
           description="Code4Bharat’s Odoo expertise streamlined our processes, boosting efficiency and productivity with tailored solutions."
-          name="Rajesh Patil"
+          name="Ankit Chaurasia"
           username="Manufacturing "
           stars={5}
         />

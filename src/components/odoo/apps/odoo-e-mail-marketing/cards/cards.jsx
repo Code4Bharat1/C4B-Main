@@ -7,42 +7,42 @@ const Cards = () => {
       title: "Segregate your database",
       content:
         " You can achieve better open and click rates by segmenting your database. Send your marketing E-mails to particular groups within your database and optimize your results. Yes, this software is all designed to help you send your content only to the targeted people, so you can sort leads, customers or any other group from your contacts list by date, function, country and more.",
-      icon: "	https://www.odooimplementers.com/images/icon/odoo-email-marketing-database.webp",
+      icon: "/images/App images/App Icons/odoo-email-marketing-database.webp",
     },
     {
       id: 2,
       title: "Adapts to any screen",
       content:
         "Whether it is a smartphone, tablet, laptop or desktop pc, you can be sure your E-mail newsletter is optimally displayed on any screen. Since the content is dynamic, it will adapt to any screen used by the subscriber by adjusting spacing and optimizing images automatically, offering easy readability on any device.",
-      icon: "https://www.odooimplementers.com/images/icon/odoo-email-marketing%20-development-app-adaptability-in-all-app.png",
+      icon: "/images/App images/App Icons/odoo-email-marketing -development-app-adaptability-in-all-app.png",
     },
     {
       id: 3,
       title: "Boost your campaigns",
       content:
         "You can send better E-mails by relying on stats and data. Get precise real-time statistics on each E-mail sent out. It's very easy to monitor the number of leads generated, orders, the revenue amount gained, open rate, bounce rate, and click-through rate and optimize your overall marketing strategy. Follow each opportunity generated and forecast expected revenues.",
-      icon: "https://www.odooimplementers.com/images/icon/odoo-email-marketing-software-for-business.webp",
+      icon: "/images/App images/App Icons/odoo-email-marketing-software-for-business.webp",
     },
     {
       id: 4,
       title: "State-of-the-art features",
       content:
         " Gain complete control of every aspect of your E-mail marketing campaigns.",
-      icon: "https://www.odooimplementers.com/images/icon/email4.webp",
+      icon: "/images/App images/App Icons/email4.webp",
     },
     {
       id: 5,
       title: "Keep an eye on your links",
       content:
         " Odoo Link Tracker allows you to insert a tracking code to the links within your E-mail campaigns and thoroughly monitor the performance of every campaign on a dedicated dashboard.",
-      icon: "https://www.odooimplementers.com/images/icon/odoo-email-marketing-app-link-tracker.png",
+      icon: "/images/App images/App Icons/odoo-email-marketing-app-link-tracker.png",
     },
     {
       id: 6,
       title: "Estimate your ROI",
       content:
         "Follow up leads through Odoo CRM and analyze the conversion rate and the expected and generated revenue of your every single campaign. Utilize advanced filters to perform more in-depth analysis.",
-      icon: "https://www.odooimplementers.com/images/icon/estimate-roi-using-odoo-ecommerce.webp",
+      icon: "/images/App images/App Icons/estimate-roi-using-odoo-ecommerce.webp",
     },
   ];
 
@@ -95,7 +95,7 @@ const Cards = () => {
         className="absolute inset-0 bg-cover bg-center opacity-100"
         style={{
           backgroundImage:
-            "url(https://www.odooimplementers.com/images/background/bg-maps-dots-alt.jpg)",
+            "url(/images/odoo-images/bg-maps-dots.jpg)",
         }}
       ></div>
 

@@ -16,7 +16,7 @@ const EcommerceBenefits = () => {
         <div className="group bg-white shadow-lg rounded-lg p-4 sm:p-6 h-auto sm:h-[480px] w-full sm:w-[530px] transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
           <div className="flex items-center mb-4">
             <img
-              src="https://www.odooimplementers.com/images/icon/odoo-implementation-business-results.webp"
+              src="/images/odoo-images/odoo-icons/odoo-implementation-business-results.webp"
               alt="Benefits Icon"
               className="w-[5rem] h-16 sm:w-71 sm:h-[5.25rem] mr-4 transform transition-transform duration-300 group-hover:scale-110"
             />
@@ -52,7 +52,7 @@ const EcommerceBenefits = () => {
         <div className="group bg-white shadow-lg rounded-lg p-4 sm:p-6 h-auto sm:h-[480px] w-full sm:w-[560px] transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
           <div className="flex items-center mb-4">
             <img
-              src="https://www.odooimplementers.com/images/icon/odoo-implementation-company-business-goals.webp"
+              src="/images/odoo-images/odoo-icons/odoo-implementation-company-business-goals.webp"
               alt="Store Icon"
               className="w-16 h-16 sm:w-[5rem] sm:h-[5rem] mr-4 transform transition-transform duration-300 group-hover:scale-110"
             />

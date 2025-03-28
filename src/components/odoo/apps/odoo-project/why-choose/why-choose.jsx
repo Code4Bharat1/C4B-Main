@@ -8,7 +8,7 @@ const Whychoose = () => {
         <div className="relative flex justify-center mb-8 lg:mb-[60px]">
           <div className="shadow-[0_7px_27px_0_rgba(136,92,124)] p-2">
             <img
-              src="https://www.odooimplementers.com/images/Apps/features-of-odoo-project-in-business-icon.png"
+              src="/images/App images/features-of-odoo-project-in-business-icon.png"
               alt="E-commerce"
               className="w-full max-w-xs sm:max-w-md lg:max-w-full"
             />
@@ -19,10 +19,10 @@ const Whychoose = () => {
         <div className="pb-12 sm:pb-[86px] text-center sm:text-left">
         <div className="pr-4 pl-[2rem] sm:pr-12 sm:pl-[0rem]">
           <h2 className="text-gray-900 font-[1000] text-base sm:text-[28px] lg:text-2xl mb-6">
-            Why Choose Oodu Implementers for Odoo Project Software?
+            Why Choose odoo Implementers for Odoo Project Software?
           </h2>
             <div>
-              Oodu Implementers is an official Gold Partner of Odoo, delivering a variety of Odoo business solutions, and catering to the needs of the customers. Oodu Implementers follows a structured approach to deliver Odoo Project Management Software to effectively manage and get the project done. Oodu Implementers is proud of the fact that our team consists of the right experts, with people from your field.
+              odoo Implementers is an official Gold Partner of Odoo, delivering a variety of Odoo business solutions, and catering to the needs of the customers. odoo Implementers follows a structured approach to deliver Odoo Project Management Software to effectively manage and get the project done. odoo Implementers is proud of the fact that our team consists of the right experts, with people from your field.
             </div>
         </div>
         </div>

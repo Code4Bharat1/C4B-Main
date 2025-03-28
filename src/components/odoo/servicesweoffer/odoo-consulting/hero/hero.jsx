@@ -26,17 +26,17 @@ const Hero = () => {
         {/* Right Side - Breadcrumb */}
         <div className="flex flex-col sm:flex-row sm:space-x-4 text-sm sm:text-xl font-medium text-gray-300 space-y-2 sm:space-y-0 text-center sm:text-right">
         <Link href="/">
-          <span className="hover:text-white text-[#885c7c] font-bold cursor-pointer">
+          <span className="hover:text-white text-[#f776d2] font-bold cursor-pointer opacity-100">
             Home
           </span>
           </Link>
-          <span className="hidden sm:block text-[#885c7c]">•</span>
+          <span className="hidden sm:block text-[#f776d2]">•</span>
           <Link href="/servicesweoffer">
-          <span className="hover:text-white text-[#885c7c] font-bold cursor-pointer">
+          <span className="hover:text-white text-[#f776d2] font-bold cursor-pointer">
             Services We Offer
           </span>
           </Link>
-          <span className="hidden sm:block text-[#885c7c]">•</span>
+          <span className="hidden sm:block text-[#f776d2]">•</span>
           <span className="text-white">Odoo Consulting</span>
         </div>
       </div>

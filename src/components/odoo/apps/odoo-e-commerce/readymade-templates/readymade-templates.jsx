@@ -6,18 +6,18 @@ const Readymade = () => {
       {/* Background Images */}
       <div
         className="absolute bottom-0 right-0 w-[200px] sm:w-[264px] h-[300px] sm:h-[362px] bg-contain bg-no-repeat opacity-100"
-        style={{ backgroundImage: 'url(https://www.odooimplementers.com/images/background/bg-art-6.png)' }}
+        style={{ backgroundImage: 'url(/images/App images/bg-art-6.png)' }}
       ></div>
       <div
         className="absolute top-0 left-0 w-[250px] sm:w-[366px] h-[350px] sm:h-[501px] bg-contain bg-no-repeat opacity-100"
-        style={{ backgroundImage: 'url(https://www.odooimplementers.com/images/background/bg-art-5.png)' }}
+        style={{ backgroundImage: 'url(/images/App images/bg-art-5.png)' }}
       ></div>
       {/* Content Container */}
       <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between px-6 sm:px-12 md:px-20 lg:pr-36 lg:pl-36 pt-[0rem] sm:pt-40 md:pt-[6rem] pb-[15rem] sm:pb-13">
         {/* Left Section: CRM Image */}
         <div className="w-full lg:w-1/2">
           <img
-            src="https://www.odooimplementers.com/images/odoo-shopify-oodu-implementers.jpg"
+            src="/images/App images/odoo-shopify-oodu-implementers.jpg"
             alt="Odoo CRM Dashboard"
             className="shadow-2xl border-[11px] border-[#211f3b]/50 shadow-[#895d7d]/100"
           />

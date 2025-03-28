@@ -7,28 +7,28 @@ const CarouselSection = () => {
       title: "Streamlined Business Account Movement",
       content:
         "Keep an eye on your bank account movements with a reliable Odoo tool. An automated backup of all your business transactions by importing and reconciling your bank statements. Your business accounting is well taken care of.",
-      icon: "https://www.odooimplementers.com/images/icon/odoo-invoicing-software-business-account.webp",
+      icon: "/images/App images/App Icons/odoo-invoicing-software-business-account.webp",
     },
     {
       id: 2,
       title: "Simplified Billing Process",
       content:
         "No more need to spend hours generating bills. Generate bills automatically based on sales orders, delivery orders, contracts, or time and material. Odoo is a robust tool to automate your business in a safe and secure method.",
-      icon: "https://www.odooimplementers.com/images/icon/invoicing2.webp",
+      icon: "/images/App images/App Icons/invoicing2.webp",
     },
     {
       id: 3,
       title: "Create Professional and Customizable Invoices",
       content:
-        "Oodu Implementers deliver well-curated Odoo Invoicing to your business needs. We indulge in a complete analysis of your business to implement professional invoicing to take your business to the people.",
-      icon: "https://www.odooimplementers.com/images/icon/odoo-invoicing-billing-process-icon.webp",
+        "odoo Implementers deliver well-curated Odoo Invoicing to your business needs. We indulge in a complete analysis of your business to implement professional invoicing to take your business to the people.",
+      icon: "/images/App images/App Icons/odoo-invoicing-billing-process-icon.webp",
     },
     {
       id: 4,
       title: "Good-Better-Best Options",
       content:
         "Add reliability and upscale your business. Improve the chances of upselling by giving good, better, and best options for invoicing to your customers.",
-      icon: "https://www.odooimplementers.com/images/icon/invoicing2.png",
+      icon: "/images/App images/App Icons/invoicing2.webp",
     },
   ];
 
@@ -47,7 +47,7 @@ const CarouselSection = () => {
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-100"
-        style={{ backgroundImage: "url(https://www.odooimplementers.com/images/background/bg-maps-dots-alt.jpg)" }}
+        style={{ backgroundImage: "url(/images/odoo-images/bg-maps-dots.jpg)" }}
       ></div>
 
       <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">

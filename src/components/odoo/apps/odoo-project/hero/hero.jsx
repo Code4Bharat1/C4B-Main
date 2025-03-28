@@ -4,7 +4,7 @@ import Link from "next/link"; // Import Link from Next.js
 
 const Hero = () => {
   return (
-    <div className="relative pt-[94px] h-[calc(100vh-4rem)] sm:h-[60vh]">
+    <div className="relative pt-[94px] h-[calc(81vh-4rem)] sm:h-[60vh]">
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full">
         <Image
@@ -26,17 +26,17 @@ const Hero = () => {
         {/* Right Side - Breadcrumb */}
         <div className="flex flex-wrap justify-center sm:justify-end items-center space-x-2 sm:space-x-4 text-sm sm:text-xl font-medium text-gray-300">
         <Link href="/">
-          <span className="hover:text-white text-[#885c7c] font-bold cursor-pointer">
+          <span className="hover:text-white text-[#E1306C] font-bold cursor-pointer">
             Home
           </span>
           </Link>
-          <span className="text-[#885c7c]">•</span>
+          <span className="text-[#E1306C]">•</span>
           <Link href="/apps">
-          <span className="hover:text-white text-[#885c7c] font-bold cursor-pointer">
+          <span className="hover:text-white text-[#E1306C] font-bold cursor-pointer">
             Apps
           </span>
           </Link>
-          <span className="text-[#885c7c]">•</span>
+          <span className="text-[#E1306C]">•</span>
           <span className="text-white">Odoo Project</span>
         </div>
       </div>

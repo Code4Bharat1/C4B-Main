@@ -9,7 +9,7 @@ const Whyget = () => {
         <div className="relative flex justify-center mb-8 lg:mb-[60px]">
           <div className="shadow-[0_7px_27px_0_rgba(136,92,124)] p-2">
             <img
-              src="https://www.odooimplementers.com/images/Apps/WhatsApp%20Image%202022-10-01%20at%207.05.51%20PM.jpeg"
+              src="/images/App images/WhatsApp Image odoo.jpeg"
               alt="E-commerce"
               className="w-full max-w-xs sm:max-w-md lg:max-w-full border-white"
             />

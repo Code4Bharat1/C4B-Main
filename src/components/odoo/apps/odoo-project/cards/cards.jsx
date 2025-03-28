@@ -7,21 +7,21 @@ const Cards = () => {
       title: "Strengthen Your Business with Better Employee Collaboration",
       content:
         "A flexible project management software to simplify the project flow. Indulge in active collaboration with employees to sort and prioritize the tasks. Create customized stages for each project by breaking down the project into tasks. Automatically assign tasks to your team and get the task done in the estimated time. Improve the overall project efficiency with Odoo Project Management Software.",
-      icon: "https://www.odooimplementers.com/images/icon/odoo-project-management-better-employee-collaboration-icon.png",
+      icon: "/images/App images/App Icons/odoo-project-management-better-employee-collaboration-icon.png",
     },
     {
       id: 2,
       title: "Interact Better and Share Files With Ease",
       content:
         "Collaborate on tasks in real-time with other employees and coordinate the project most effectively. Communicate with others via chat box, write on a shared real-time notepad or use the live chat. All customizable features are available on a single interface. An email-integrated software to communicate effectively among project members and get the work lined up. Attach short notes or files to a task and stay connected with your team. You no longer have to attend endless follow-up meetings to stay on top of your projects.",
-      icon: "https://www.odooimplementers.com/images/icon/odoo-project-management-share-files-icon.png",
+      icon: "/images/App images/App Icons/odoo-project-management-share-files-icon.png",
     },
     {
       id: 3,
       title: "Conceptualize Your Project Flow",
       content:
         "A functional and dynamic graph view feature with the feasibility of creating graphs. Analyze your data with the powerful search tool and unique visual interfaces to track your project status. Get an insight into your project in graphs and bars to arrive at better decisions. Pre-defined dashboards serve the sole purpose of your project management from a single window.",
-      icon: "https://www.odooimplementers.com/images/icon/project3.png",
+      icon: "/images/App images/App Icons/project3.png",
     },
     {
       id: 4,
@@ -34,7 +34,7 @@ const Cards = () => {
              <li>Automated report generation for detailed project analysis.</li>     
              <li>Track deadlines of your project with a clear calendar view.</li>     
         </ul>,
-      icon: "https://www.odooimplementers.com/images/icon/odoo-project-resources-need.png",
+      icon: "/images/App images/App Icons/odoo-project-resources-need.png",
     },
   ];
 
@@ -87,7 +87,7 @@ const Cards = () => {
         className="absolute inset-0 bg-cover bg-center opacity-100"
         style={{
           backgroundImage:
-            "url(https://www.odooimplementers.com/images/background/bg-maps-dots-alt.jpg)",
+            "url(/images/odoo-images/bg-maps-dots.jpg)",
         }}
       ></div>
 

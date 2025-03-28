@@ -7,7 +7,7 @@ const Services = () => {
       className="relative bg-white py-16 sm:py-24 -mt-[7rem]"
       style={{
         backgroundImage:
-          "url('https://www.odooimplementers.com/images/background/bg-maps-dots.jpg')",
+          "url('/images/odoo-images/bg-maps-dots.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -16,7 +16,7 @@ const Services = () => {
         {/* Header */}
         <div className="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-between mb-8 sm:mb-12 text-center sm:text-left">
           <div>
-            <h3 className="text-purple-600 uppercase text-sm font-bold"> Our Service</h3>
+            <h3 className="text-purple-600 uppercase text-[17px] font-bold"> Our Service</h3>
             <h1 className="text-xl sm:text-3xl font-[1000] text-gray-800 mt-4">
                 Best Odoo Configuration Services
             </h1>
@@ -40,7 +40,7 @@ const Services = () => {
             <div className="relative z-10">
               <div className="flex items-center mb-4">
                 <img
-                  src="https://www.odooimplementers.com/images/icon/odoo-configuration-service.webp"
+                  src="/images/odoo-images/odoo-icons/odoo-configuration-service.webp"
                   alt="Odoo Consulting Services"
                   className="w-12 sm:w-16 h-12 sm:h-16 mr-4"
                 />
@@ -49,7 +49,7 @@ const Services = () => {
                 </h2>
               </div>
               <p className="text-gray-700 text-sm leading-relaxed tracking-wide text-justify">
-                 Configuration simply does not mean setting up a few system parameters. Maintaining and updating the ERP system regularly is equally important for successful ERP implementation. Oodu Implementers offers excellent customer care services round the clock. Our proficient technical team will cater to your business needs and deliver the best business approach.
+                 Configuration simply does not mean setting up a few system parameters. Maintaining and updating the ERP system regularly is equally important for successful ERP implementation. odoo Implementers offers excellent customer care services round the clock. Our proficient technical team will cater to your business needs and deliver the best business approach.
               </p>
             </div>
           </div>
@@ -61,7 +61,7 @@ const Services = () => {
             <div className="relative z-10">
               <div className="flex items-center mb-4">
                 <img
-                  src="https://www.odooimplementers.com/images/icon/odoo-erp-configuration.webp"
+                  src="/images/odoo-images/odoo-icons/odoo-erp-configuration.webp"
                   alt="Odoo Functional Consulting"
                   className="w-12 sm:w-16 h-12 sm:h-16 mr-4"
                 />

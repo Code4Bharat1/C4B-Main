@@ -16,7 +16,7 @@ const Designbrand = () => {
       <div className="container mx-auto px-6 md:px-8 lg:px-[10rem] grid grid-cols-1 lg:grid-cols-2 gap-[3rem] items-center">
         {/* Left Section - Text Content */}
         <div className="text-left">
-          <p className="text-purple-700 text-sm sm:text-[14px] font-semibold uppercase tracking-wider mb-2">
+          <p className="text-purple-700 text-sm sm:text-[17px] font-semibold uppercase tracking-wider mb-2">
             A Strategic Approach to Design a Professional Website
           </p>
           <h1 className="text-2xl sm:text-[29px] font-extrabold text-gray-800 mb-6 leading-snug">
@@ -24,14 +24,14 @@ const Designbrand = () => {
               E-commerce Website with Odoo
           </h1>
           <p className="text-gray-500 text-sm sm:text-base mb-4 leading-relaxed tracking-wide text-justify">
-          Odoo E-commerce notch up your business and give a global reach without any coding. Oodu Implementers are well-equipped in furnishing the best in business, cutting-edge open source website to take your brand to the target audience. We build a reliable relationship between your brand and customers with an inbuilt website.
+          Odoo E-commerce notch up your business and give a global reach without any coding. odoo Implementers are well-equipped in furnishing the best in business, cutting-edge open source website to take your brand to the target audience. We build a reliable relationship between your brand and customers with an inbuilt website.
           </p>
         </div>
 
         {/* Right Section - Image/Video */}
         <div className="relative">
           <img
-            src="https://www.odooimplementers.com/images/Apps/odoo-ecommerce-website-quotation.gif"
+            src="/images/App images/odoo-ecommerce-website-quotation.gif"
             alt="Odoo CRM Software"
             className="shadow-2xl p-[10px] border-white shadow-[#895d7d]/100 sm:w-full md:w-auto"
           />

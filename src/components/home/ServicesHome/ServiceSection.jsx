@@ -83,7 +83,7 @@ const ServiceSection = () => {
             animate={isInView ? "visible" : "hidden"}
             variants={buttonVariants}  // Apply buttonVariants here
           >
-            <Link href="https://wa.me/919594402916?text=Hello%20Code4Bharat,%20I%20need%20your%20help">
+            <Link href="https://wa.me/919594430295">
             <motion.button
               whileHover="hover"
               className="px-8 py-3 text-[4vw] md:text-[1vw] font-medium bg-[#106EB5] text-white rounded-md"
@@ -98,13 +98,13 @@ const ServiceSection = () => {
         <div className="rightside w-full md:w-1/2 flex flex-wrap justify-center items-center gap-5 p-5 ">
           <ServiceCard
             image="/images/servicesimg/webdev.png"
-            imageHover="/images/services"
+            imageHover="/images/servicesimg/webdev.png"
             title="Web Development"
             description="At Code4Bharat, we deliver tailored web development services, including custom websites, e-commerce platforms, and web applications."
           />
           <ServiceCard
             image="/images/servicesimg/mobile.png"
-            imageHover="/images/services"
+            imageHover="/images/servicesimg/mobile.png"
             title="Mobile Development"
             description="We provide custom mobile app development services that bring your vision to life across iOS and Android platforms."
           />
@@ -116,25 +116,25 @@ const ServiceSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 text-[#112D4E]">
           <ServiceCard
             image="/images/servicesimg/it.png"
-            imageHover="/images/services img/itwhite.png"
+            imageHover="/images/servicesimg/it.png"
             title="IT Consulting"
             description="We help businesses navigate digital transformation with tailored solutions in technology strategy, cloud migration, and system integration."
           />
           <ServiceCard
             image="/images/servicesimg/ecommerce.png"
-            imageHover="/images/services img/ecommercewhite.png"
+            imageHover="/images/servicesimg/ecommerce.png"
             title="E-Commerce Solutions"
             description="Code4Bharat provides complete e-commerce solutions, including storefront setup and payment integration, to create secure and scalable platforms that drive business growth."
           />
           <ServiceCard
             image="/images/servicesimg/ofshore.png"
-            imageHover="/images/services img/ofshorewhite.png"
+            imageHover="/images/servicesimg/ofshore.png"
             title="Offshore Development"
             description="We provide high-quality, cost-effective software solutions for international clients, including dedicated teams and ongoing support."
           />
           <ServiceCard
             image="/images/servicesimg/ofshore.png"
-            imageHover="/images/services img/ofshorewhite.png"
+            imageHover="/images/servicesimg/ofshore.png"
             title="Digital Marketing Solutions"
             description="Code4Bharat offers comprehensive digital marketing services such as SEO, social media management, and content marketing."
           />

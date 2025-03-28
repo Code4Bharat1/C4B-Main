@@ -46,7 +46,7 @@ const Transformproduct = () => {
         {/* Right Section - Image/Video */}
         <div className="relative">
           <img
-            src="https://www.odooimplementers.com/images/Apps/odoo-plm-management.webp"
+            src="/images/App images/odoo-plm-management.webp"
             alt="Odoo CRM Software"
             className="shadow-2xl p-[10px] border-white shadow-[#895d7d]/100 sm:w-full md:w-auto"
           />

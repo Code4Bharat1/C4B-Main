@@ -9,7 +9,7 @@ const EcommerceSection = () => {
         <div className="relative flex justify-center mb-8 lg:mb-0">
           <div>
             <img
-              src="https://www.odooimplementers.com/images/odoo-erp-customizations.jpg"
+              src="/images/odoo-images/odoo-erp-customizations.jpg"
               alt="E-commerce"
               className="w-full max-w-xs sm:max-w-md lg:max-w-full"
             />
@@ -18,18 +18,18 @@ const EcommerceSection = () => {
 
         {/* Text Content */}
         <div className="pb-12 sm:pb-[86px] text-center sm:text-left">
-          <h3 className="text-purple-700 uppercase text-sm font-bold">ERP Customization</h3>
+          <h3 className="text-purple-700 uppercase text-[17px] font-bold">ERP Customization</h3>
           <h2 className="text-lg sm:text-xl font-[1000] text-gray-800 mt-4 sm:mt-8">
              Guaranteed Customer Satisfaction with Odoo ERP Customization Services
           </h2>
           <p className="text-gray-600 mt-4 mb-4 sm:mb-[15px] leading-relaxed tracking-wide text-justify">
-               Odoo Customization is a key to successful development for achieving desirable results. We at Oodu Implementers understand the client's industry type and their requirements for a better Odoo Implementation. We guarantee customer satisfaction in return with exemplary development and service.  
+               Odoo Customization is a key to successful development for achieving desirable results. We at Odoo Implementers understand the client's industry type and their requirements for a better Odoo Implementation. We guarantee customer satisfaction in return with exemplary development and service.  
           </p>
           <h3 className="text-lg sm:text-xl font-[1000] text-gray-800 mt-6 sm:mt-8">
                Most effective Process for Odoo Customisation
           </h3>
           <p className="text-gray-600 mt-4 leading-relaxed tracking-wide text-justify">
-               Oodu Implementers have experience in working with different industry verticals and offer the level of technical sophistication needed to achieve a successful outcome. We manage the Odoo Customization process by establishing a clear, company-wide definition of business requirements and project controls. We identify and prioritize functions that should be added as a part of the overall functionality of the existing system.
+               Odoo Implementers have experience in working with different industry verticals and offer the level of technical sophistication needed to achieve a successful outcome. We manage the Odoo Customization process by establishing a clear, company-wide definition of business requirements and project controls. We identify and prioritize functions that should be added as a part of the overall functionality of the existing system.
           </p>
           <div className="mt-6 flex justify-center sm:justify-start">
           <Link href="/servicesweoffer">

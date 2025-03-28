@@ -6,11 +6,11 @@ const Runpowerful = () => {
       {/* Background Images */}
       <div
         className="absolute bottom-0 right-0 w-[200px] sm:w-[264px] h-[300px] sm:h-[362px] bg-contain bg-no-repeat opacity-100"
-        style={{ backgroundImage: 'url(https://www.odooimplementers.com/images/background/bg-art-6.png)' }}
+        style={{ backgroundImage: 'url(/images/App images/bg-art-6.png)' }}
       ></div>
       <div
         className="absolute top-0 left-0 w-[250px] sm:w-[366px] h-[350px] sm:h-[501px] bg-contain bg-no-repeat opacity-100"
-        style={{ backgroundImage: 'url(https://www.odooimplementers.com/images/background/bg-art-5.png)' }}
+        style={{ backgroundImage: 'url(/images/App images/bg-art-5.png)' }}
       ></div>
 
       {/* Content Container */}
@@ -18,7 +18,7 @@ const Runpowerful = () => {
         {/* Left Section: CRM Image */}
         <div className="w-full lg:w-1/2">
           <img
-            src="https://www.odooimplementers.com/images/Apps/odoo-email-marketing%20-development-app.webp"
+            src="/images/App images/odoo-email-marketing -development-app.webp"
             alt="Odoo CRM Dashboard"
             className=""
           />

@@ -16,7 +16,7 @@ const Experiencesimple = () => {
       <div className="container mx-auto px-6 md:px-8 lg:px-[10rem] grid grid-cols-1 lg:grid-cols-2 gap-[3rem] items-center">
         {/* Left Section - Text Content */}
         <div className="text-left">
-          <p className="text-purple-700 text-sm sm:text-[14px] font-semibold uppercase tracking-wider mb-2">
+          <p className="text-purple-700 text-sm sm:text-[17px] font-semibold uppercase tracking-wider mb-2">
             Experience Simple Hiring Processes
           </p>
           <h1 className="text-2xl sm:text-[29px] font-extrabold text-gray-800 mb-6 leading-snug">
@@ -36,7 +36,7 @@ const Experiencesimple = () => {
         {/* Right Section - Image/Video */}
         <div className="relative sm:pl-[5rem]">
           <img
-            src="https://www.odooimplementers.com/images/Apps/track-job-opportunities-with-odoo-recruitment-software.png"
+            src="/images/App images/track-job-opportunities-with-odoo-recruitment-software.png"
             alt="Odoo CRM Software"
             className="shadow-2xl p-[10px] border-white shadow-[#895d7d]/100 sm:w-full md:w-auto"
           />

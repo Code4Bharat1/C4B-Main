@@ -7,7 +7,7 @@ const SecondcontactSection = () => {
       className="relative bg-cover bg-center text-center min-h-[300px] sm:min-h-[400px] flex items-center justify-center mt-4 lg:-mt-[86px]"
       style={{
         backgroundImage:
-          "url('https://www.odooimplementers.com/images/background/bg-cta-home2.jpg')", // Background Image
+          "url('/images/odoo-images/bg-contact-us.jpg')", // Background Image
         backgroundSize: "cover", 
         backgroundPosition: "center", 
       }}
@@ -20,7 +20,7 @@ const SecondcontactSection = () => {
         </h3>
         {/* Heading */}
         <h3 className="text-white text-[20px] sm:text-[22px] mt-4 leading-snug">
-             Get Started with Oodu Implementers
+             Get Started with Odoo Implementers
         </h3>
         {/* Button */}
         <div className="mt-4 sm:mt-6">

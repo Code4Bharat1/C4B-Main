@@ -7,7 +7,7 @@ const Services = () => {
       className="relative bg-white py-16 sm:py-24 -mt-[7rem]"
       style={{
         backgroundImage:
-          "url('https://www.odooimplementers.com/images/background/bg-maps-dots.jpg')",
+          "url('/images/odoo-images/bg-maps-dots.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -40,7 +40,7 @@ const Services = () => {
           <div className="text-center group transform transition-transform hover:scale-105 hover:-translate-y-2">
             <div className="mb-4">
               <img
-                src="https://www.odooimplementers.com/images/icon/odoo-preventive-maintenance-service.png"
+                src="/images/odoo-images/odoo-icons/odoo-preventive-maintenance-service.png"
                 alt="Preventive Maintenance"
                 className="mx-auto h-[7rem] transition-transform transform group-hover:rotate-6"
               />
@@ -58,7 +58,7 @@ const Services = () => {
           <div className="text-center group transform transition-transform hover:scale-105 hover:-translate-y-2">
             <div className="mb-4">
               <img
-                src="https://www.odooimplementers.com/images/icon/odoo-corrective-maintenance-management.png"
+                src="/images/odoo-images/odoo-icons/odoo-corrective-maintenance-management.png"
                 alt="Corrective Maintenance"
                 className="mx-auto h-[7rem] transition-transform transform group-hover:rotate-6"
               />
@@ -76,7 +76,7 @@ const Services = () => {
           <div className="text-center group transform transition-transform hover:scale-105 hover:-translate-y-2">
             <div className="mb-4">
               <img
-                src="https://www.odooimplementers.com/images/icon/odoo-maintenance-management-calendar.png"
+                src="/images/odoo-images/odoo-icons/odoo-maintenance-management-calendar.png"
                 alt="Calendar"
                 className="mx-auto h-[7rem] transition-transform transform group-hover:rotate-6"
               />
@@ -93,7 +93,7 @@ const Services = () => {
           <div className="text-center group transform transition-transform hover:scale-105 hover:-translate-y-2">
             <div className="mb-4">
               <img
-                src="https://www.odooimplementers.com/images/icon/odoo-maintenance-service-statistics.png"
+                src="/images/odoo-images/odoo-icons/odoo-maintenance-service-statistics.png"
                 alt="Statistics"
                 className="mx-auto h-[7rem] transition-transform transform group-hover:rotate-6"
               />

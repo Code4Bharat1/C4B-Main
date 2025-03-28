@@ -16,7 +16,7 @@ const Opensource = () => {
       <div className="container mx-auto px-6 md:px-8 lg:px-[10rem] grid grid-cols-1 lg:grid-cols-2 gap-[3rem] items-center">
         {/* Left Section - Text Content */}
         <div className="text-left">
-          <p className="text-purple-700 text-sm sm:text-[14px] font-semibold uppercase tracking-wider mb-2">
+          <p className="text-purple-700 text-sm sm:text-[17px] font-semibold uppercase tracking-wider mb-2">
             An Open Source Project Management System
           </p>
           <h1 className="text-2xl sm:text-[20px] font-extrabold text-gray-800 mb-6 leading-snug">
@@ -26,14 +26,14 @@ const Opensource = () => {
            Lead and Go Places With Odoo Project Management Tool
           </h4>
           <p className="text-gray-500 text-sm sm:text-base mb-4 leading-relaxed tracking-wide text-justify">
-             Looking for a reliable Odoo Gold Partner to implement the Odoo Project for ease management of your business? Oodu Implementers is a trustworthy and leading Odoo Implementer with years of excellence in guiding companies in their change processes. We strive to execute a structured implementation process to take your business in the direction of growth and excellence.
+             Looking for a reliable Odoo Gold Partner to implement the Odoo Project for ease management of your business? odoo Implementers is a trustworthy and leading Odoo Implementer with years of excellence in guiding companies in their change processes. We strive to execute a structured implementation process to take your business in the direction of growth and excellence.
           </p>
         </div>
 
         {/* Right Section - Image/Video */}
         <div className="relative">
           <img
-            src="https://www.odooimplementers.com/images/Apps/business-with-odoo-project-software.jpg"
+            src="/images/App images/business-with-odoo-project-software.jpg"
             alt="Odoo CRM Software"
             className="shadow-2xl p-[10px] border-white shadow-[#895d7d]/100 sm:w-full md:w-auto"
           />

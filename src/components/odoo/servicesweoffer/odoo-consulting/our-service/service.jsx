@@ -7,7 +7,7 @@ const Services = () => {
       className="relative bg-white py-16 sm:py-24 -mt-[7rem]"
       style={{
         backgroundImage:
-          "url('https://www.odooimplementers.com/images/background/bg-maps-dots.jpg')",
+          "url('/images/odoo-images/bg-maps-dots.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -16,7 +16,7 @@ const Services = () => {
         {/* Header */}
         <div className="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-between mb-8 sm:mb-12 text-center sm:text-left">
           <div>
-            <h3 className="text-purple-600 uppercase text-sm font-bold">Our Service</h3>
+            <h3 className="text-purple-600 uppercase text-[17px] font-bold">Our Service</h3>
             <h1 className="text-xl sm:text-3xl font-[1000] text-gray-800 mt-4">
               Odoo Functional & Technical Consulting Services
             </h1>
@@ -40,7 +40,7 @@ const Services = () => {
             <div className="relative z-10">
               <div className="flex items-center mb-4">
                 <img
-                  src="https://www.odooimplementers.com/images/icon/odoo-consulting-service-technical-and-functional.png"
+                  src="/images/odoo-images/odoo-icons/odoo-consulting-service-technical-and-functional.png"
                   alt="Odoo Consulting Services"
                   className="w-12 sm:w-16 h-12 sm:h-16 mr-4"
                 />
@@ -49,7 +49,7 @@ const Services = () => {
                 </h2>
               </div>
               <p className="text-gray-700 text-sm leading-relaxed tracking-wide text-justify">
-                Oodu Implementers offers Odoo Consulting services to assist you
+                odoo Implementers offers Odoo Consulting services to assist you
                 with customizing and implementing Odoo. Besides, we help with
                 migration and training to ensure that your business has the
                 tools to thrive. We cater to our clients anywhere in the world
@@ -69,7 +69,7 @@ const Services = () => {
             <div className="relative z-10">
               <div className="flex items-center mb-4">
                 <img
-                  src="https://www.odooimplementers.com/images/icon/odoo-service-functional-consulting.png"
+                  src="/images/odoo-images/odoo-icons/odoo-service-functional-consulting.png"
                   alt="Odoo Functional Consulting"
                   className="w-12 sm:w-16 h-12 sm:h-16 mr-4"
                 />
@@ -78,7 +78,7 @@ const Services = () => {
                 </h2>
               </div>
               <p className="text-gray-700 text-sm leading-relaxed tracking-wide text-justify">
-                Oodu Implementers have the best Odoo consultants that provide
+                odoo Implementers have the best Odoo consultants that provide
                 Odoo functional consulting services. Our dedicated team will
                 get in touch with the business to know your business plan,
                 deadline for the project, and the way you want the software. We
@@ -96,7 +96,7 @@ const Services = () => {
             <div className="relative z-10">
               <div className="flex items-center mb-4">
                 <img
-                  src="https://www.odooimplementers.com/images/icon/odoo-service-technical-consulting.png"
+                  src="/images/odoo-images/odoo-icons/odoo-service-technical-consulting.png"
                   alt="Odoo Technical Consulting"
                   className="w-12 sm:w-16 h-12 sm:h-16 mr-4"
                 />

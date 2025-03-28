@@ -16,21 +16,21 @@ const Manage = () => {
       <div className="container mx-auto px-6 md:px-8 lg:px-[10rem] grid grid-cols-1 lg:grid-cols-2 gap-[3rem] items-center">
         {/* Left Section - Text Content */}
         <div className="text-left">
-          <p className="text-purple-700 text-sm sm:text-[14px] font-semibold uppercase tracking-wider mb-2">
+          <p className="text-purple-700 text-sm sm:text-[17px] font-semibold uppercase tracking-wider mb-2">
              Things Go Better with Odoo Sales
           </p>
           <h1 className="text-2xl sm:text-[29px] font-extrabold text-gray-800 mb-6 leading-snug">
           Manage Customers Better with Odoo Sales Software
           </h1>
           <p className="text-gray-500 text-sm sm:text-base mb-4 leading-relaxed tracking-wide text-justify">
-            Odoo Sales sends clear and complete quotations to your prospects that encompass detailed descriptions with related images and additional information by dragging and dropping building blocks. Oodu Implementers brings the best in business practices to give your business the reach it needs. With the industrial experience gained through internal audit and management consulting, we implement the Odoo sales tool in a structured way to benefit the customers to the maximum.
+            Odoo Sales sends clear and complete quotations to your prospects that encompass detailed descriptions with related images and additional information by dragging and dropping building blocks. odoo Implementers brings the best in business practices to give your business the reach it needs. With the industrial experience gained through internal audit and management consulting, we implement the Odoo sales tool in a structured way to benefit the customers to the maximum.
           </p>
         </div>
 
         {/* Right Section - Image/Video */}
         <div className="relative">
           <img
-            src="https://www.odooimplementers.com/images/Apps/manage-customers-better-with-odoo-sales-software.gif"
+            src="/images/App images/manage-customers-better-with-odoo-sales-software.gif"
             alt="Odoo CRM Software"
             className="shadow-2xl p-[10px] border-white shadow-[#895d7d]/100 sm:w-full md:w-auto"
           />

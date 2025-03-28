@@ -16,7 +16,7 @@ const Improveproductivity = () => {
       <div className="container mx-auto px-6 md:px-8 lg:px-[10rem] grid grid-cols-1 lg:grid-cols-2 gap-[3rem] items-center">
         {/* Left Section - Text Content */}
         <div className="text-left">
-          <p className="text-purple-700 text-sm sm:text-[14px] font-semibold uppercase tracking-wider mb-2">
+          <p className="text-purple-700 text-sm sm:text-[17px] font-semibold uppercase tracking-wider mb-2">
             Improve Productivity with Effective Time Management
           </p>
           <h1 className="text-2xl sm:text-[29px] font-extrabold text-gray-800 mb-6 leading-snug">
@@ -26,14 +26,14 @@ const Improveproductivity = () => {
             Accomplish things as quick as you want
           </h3>
           <p className="text-gray-500 text-sm sm:text-base mb-4 leading-relaxed tracking-wide text-justify">
-             Odoo Timesheet app provides your organization with the ability to effectively manage the time of employees and enhance workforce productivity. At Oodu Implementers, we help you customize and integrate the Odoo Timesheet app with your existing business modules and empower you to handle labour, time, attendance and payroll with high accuracy. Our experts will walk along with you throughout the process and help you implement custom functionalities to get the results right.
+             Odoo Timesheet app provides your organization with the ability to effectively manage the time of employees and enhance workforce productivity. At odoo Implementers, we help you customize and integrate the Odoo Timesheet app with your existing business modules and empower you to handle labour, time, attendance and payroll with high accuracy. Our experts will walk along with you throughout the process and help you implement custom functionalities to get the results right.
           </p>
         </div>
 
         {/* Right Section - Image/Video */}
         <div className="relative">
           <img
-            src="https://www.odooimplementers.com/images/Apps/improve-employee-productivity-with-odoo-timesheet.webp"
+            src="/images/App images/improve-employee-productivity-with-odoo-timesheet.webp"
             alt="Odoo CRM Software"
             className="shadow-2xl p-[10px] border-white shadow-[#895d7d]/100 sm:w-full md:w-auto"
           />

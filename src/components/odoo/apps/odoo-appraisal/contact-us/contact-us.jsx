@@ -7,7 +7,7 @@ const ContactSection = () => {
       className="relative bg-cover bg-center text-center min-h-[300px] sm:min-h-[400px] flex items-center justify-center mt-4 lg:-mt-[135px]"
       style={{
         backgroundImage:
-          "url('https://www.odooimplementers.com/images/background/bg-cta-home2.jpg')", // Background Image
+          "url('/images/odoo-images/bg-contact-us.jpg')", // Background Image
         backgroundSize: "cover", 
         backgroundPosition: "center", 
       }}

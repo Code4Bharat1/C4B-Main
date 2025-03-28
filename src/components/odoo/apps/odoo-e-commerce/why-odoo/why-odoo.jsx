@@ -11,14 +11,14 @@ const Whyodoo = () => {
               E-commerce Website?
           </h2>
          <p className="text-gray-500 text-sm sm:text-base leading-relaxed tracking-wide text-justify mt-[]">
-            Oodu Implementers are a team of vibrant and certified professionals with a proven track record in Odoo implementation. We have clients across the globe excelling in their business with Odoo tools. Oodu Implementers serve the best tools, running a thorough analysis of your business and implementing the best strategy for your brand.
+            odoo Implementers are a team of vibrant and certified professionals with a proven track record in Odoo implementation. We have clients across the globe excelling in their business with Odoo tools. odoo Implementers serve the best tools, running a thorough analysis of your business and implementing the best strategy for your brand.
           </p>
         </div>
 
         {/* Right Section - Image */}
         <div className="relative flex justify-center mt-8 sm:mt-0">
           <img
-            src="https://www.odooimplementers.com/images/Apps/oodu-implementers-best-erp-service-providers-best-ecommerce-website-with-odoo.webp"
+            src="/images/App images/oodu-implementers-best-erp-service-providers-best-ecommerce-website-with-odoo.webp"
             alt="E-commerce Development"j
             className="shadow-2xl p-[10px] border-white shadow-[#895d7d]/100 w-[px] sm:w-[570px] h-[223px] sm:h-[270px]"
           />

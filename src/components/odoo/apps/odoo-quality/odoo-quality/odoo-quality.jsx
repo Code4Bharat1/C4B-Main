@@ -16,7 +16,7 @@ const Quality = () => {
       <div className="container mx-auto px-6 md:px-8 lg:px-[10rem] grid grid-cols-1 lg:grid-cols-2 gap-[3rem] items-center">
         {/* Left Section - Text Content */}
         <div className="text-left">
-          <h1 className="text-2xl sm:text-[20px] font-extrabold text-gray-800 mb-6 leading-snug">
+          <h1 className="text-2xl sm:text-[25px] font-extrabold text-gray-800 mb-6 leading-snug">
             Odoo Quality
           </h1>
           <p className="text-gray-500 text-sm sm:text-base mb-4 leading-relaxed tracking-wide text-justify">
@@ -27,7 +27,7 @@ const Quality = () => {
         {/* Right Section - Image/Video */}
         <div className="relative">
           <img
-            src="https://www.odooimplementers.com/images/odoo-point-of-sale-oodu-implementers.jpg"
+            src="/images/App images/odoo-point-of-sale-oodu-implementers.jpg"
             alt="Odoo CRM Software"
             className="shadow-2xl p-[10px] border-white shadow-[#895d7d]/100 sm:w-full md:w-auto"
           />

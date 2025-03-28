@@ -9,7 +9,7 @@ const Customise = () => {
         <div className="relative flex justify-center mb-8 lg:mb-[60px]">
           <div className="shadow-[0_7px_27px_0_rgba(136,92,124)] p-2">
             <img
-              src="https://www.odooimplementers.com/images/Apps/odoo-recruitment-software-for-customizing-the-recruitment-process.gif"
+              src="/images/App images/odoo-recruitment-software-for-customizing-the-recruitment-process.gif"
               alt="E-commerce"
               className="w-full max-w-xs sm:max-w-md lg:max-w-full"
             />

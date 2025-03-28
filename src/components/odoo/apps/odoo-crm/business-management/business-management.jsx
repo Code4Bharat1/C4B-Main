@@ -16,7 +16,7 @@ const BusinessGrowthPage = () => {
       <div className="container mx-auto px-6 md:px-8 lg:px-[10rem] grid grid-cols-1 lg:grid-cols-2 gap-[3rem] items-center">
         {/* Left Section - Text Content */}
         <div className="text-left">
-          <p className="text-purple-700 text-sm sm:text-[14px] font-semibold uppercase tracking-wider mb-2">
+          <p className="text-purple-700 text-sm sm:text-[17px] font-semibold uppercase tracking-wider mb-2">
             BUSINESS MANAGEMENT SUITE FOR EVERY BUSINESS GROWTH
           </p>
           <h1 className="text-2xl sm:text-[29px] font-extrabold text-gray-800 mb-6 leading-snug">
@@ -27,7 +27,7 @@ const BusinessGrowthPage = () => {
           </h2>
           <p className="text-gray-500 text-sm sm:text-base mb-4 leading-relaxed tracking-wide text-justify">
             Odoo CRM implementation can make your business path grow exponentially.
-            Oodu Implementers Private Limited functions with a team of skilled and
+            Odoo Implementers Private Limited functions with a team of skilled and
             certified developers who ensure that the entire Odoo CRM implementation
             process remains smooth. We strive to give the best solutions to our
             clients without disturbing their business operations.
@@ -42,7 +42,7 @@ const BusinessGrowthPage = () => {
         {/* Right Section - Image/Video */}
         <div className="relative">
           <img
-            src="https://www.odooimplementers.com/images/odoo-crm-software-implementation.webp"
+            src="/images/App images/odoo-crm-software-implementation.webp"
             alt="Odoo CRM Software"
             className="shadow-2xl p-[10px] border-white shadow-[#895d7d]/100 sm:w-full md:w-auto"
           />

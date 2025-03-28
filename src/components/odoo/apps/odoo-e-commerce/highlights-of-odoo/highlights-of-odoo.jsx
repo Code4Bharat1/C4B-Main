@@ -8,7 +8,7 @@ const Highlights = () => {
         <div className="relative flex justify-center mb-8 lg:mb-[60px]">
           <div className="shadow-[0_7px_27px_0_rgba(136,92,124)] p-2">
             <img
-              src="https://www.odooimplementers.com/images/Apps/best-odoo-e-commerce-software-oodu-implementers.gif"
+              src="/images/App images/best-odoo-e-commerce-software-oodu-implementers.gif"
               alt="E-commerce"
               className="w-full max-w-xs sm:max-w-md lg:max-w-full border-white"
             />

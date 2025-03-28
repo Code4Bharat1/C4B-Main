@@ -7,28 +7,28 @@ const Card = () => {
       title: "Product availability & Supplier price-lists",
       content:
         "You can easily import the price lists of suppliers and compare them based on promotions, quantities and special contract conditions to perform smart purchases. Check the availability of products in the stock of different vendors and monitor your order status within the app. Concerning your supplier's price, you can even base your selling price.",
-      icon: "https://www.odooimplementers.com/images/icon/odoo-purchase-development-for-smart-purchases-icon.webp",
+      icon: "/images/App images/App Icons/odoo-purchase-development-for-smart-purchases-icon.webp",
     },
     {
       id: 2,
       title: "Avail the best deals with purchase tenders",
       content:
         "You can negotiate with multiple vendors, pick the best deal and purchase items at a beneficial price easily. Odoo purchase allows you to launch purchase tenders, integrate responses from vendors in the process and compare various propositions. Leverage reports analysing the quality of your vendors. You can also buy goods from a supplier at a negotiated price, regularly during a particular time by using a blanket order agreement.",
-      icon: "https://www.odooimplementers.com/images/icon/odoo-purchase-app-for-negotiate-with-multiple-vendor-icon.webp",
+      icon: "/images/App images/App Icons/odoo-purchase-app-for-negotiate-with-multiple-vendor-icon.webp",
     },
     {
       id: 3,
       title: "Get purchases statistics",
       content:
         "Plan your orders efficiently with precise forecasts and analysis. Have detailed and accurate statistics on your suppliers' performance through flexible reporting that includes delays in delivery, negotiated price discounts, purchased quantities and more. Study your contracts' profitability by integrating purchases with analytic accounting.",
-      icon: "https://www.odooimplementers.com/images/icon/odoo-purchase-module-for-your-purchases-Statistics.webp",
+      icon: "/images/App images/App Icons/odoo-purchase-module-for-your-purchases-Statistics.webp",
     },
     {
       id: 4,
       title: "Multiple companies management",
       content:
         "Odoo purchase has multi-company options that allow you to save time and effort. With just a single Odoo instance, you can synchronize multiple operations between various companies or warehouses. Set up sales orders, share customers, products & suppliers and handle invoices for all companies simultaneously. By automating the invoicing between several companies, even more, time can be saved.",
-      icon: "https://www.odooimplementers.com/images/icon/manage-multiple-companies-with-odoo-purchase-software-icon.webp",
+      icon: "/images/App images/App Icons/manage-multiple-companies-with-odoo-purchase-software-icon.webp",
     },
   ];
 
@@ -72,7 +72,7 @@ const Card = () => {
         className="absolute inset-0 bg-cover bg-center opacity-100"
         style={{
           backgroundImage:
-            "url(https://www.odooimplementers.com/images/background/bg-maps-dots-alt.jpg)",
+            "url(/images/odoo-images/bg-maps-dots.jpg)",
         }}
       ></div>
 

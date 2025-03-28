@@ -7,21 +7,21 @@ const Card = () => {
       title: "Manage Your Products Pricing and Sales",
       content:
         "A customizable attribute to design, implement and adjust your pricing strategy to maximize revenue. Take complete command over product variants. Easy and automated computation of shipping costs and print shipping labels. Odoo manages your sales conversion without breaking a sweat.",
-      icon: "https://www.odooimplementers.com/images/icon/manage-your-products-pricing-and-sales-with-odoo-sales-app-icon.webp",
+      icon: "/images/App images/App Icons/odoo-sales-implementation-to-manage-your-sales-pipeline-icon.png",
     },
     {
       id: 2,
       title: "Sell Your Products Effectively with Cutting-edge Interface",
       content:
         "A modern, fast and intuitive user interface that integrates Sales with CRM. An easy implementation to manage your sales pipeline at every stage. Odoo sales bring the necessary tabs under a roof for smooth processing of your orders from qualification to closing. Instant notifications to warn or alert your business on any undesirable business act.",
-      icon: "https://www.odooimplementers.com/images/icon/odoo-sales-implementation-to-manage-your-sales-pipeline-icon.png",
+      icon: "/images/App images/App Icons/track-your-business-sales-with-odoo-sales-software-icon.webp",
     },
     {
       id: 3,
       title: "Track Your Business Sales on a Dashboard and Portal",
       content:
         "A single-window dashboard to keep a trail of your business performance. An intuitive reporting system on the dashboard to get an overview of all your sales activities, performance data, and next actions. Extract your daily report with ease and arrive at conclusions to augment your business.",
-      icon: "https://www.odooimplementers.com/images/icon/track-your-business-sales-with-odoo-sales-software-icon.webp",
+      icon: "/images/App images/App Icons/manage-your-products-pricing-and-sales-with-odoo-sales-app-icon.webp",
     },
   ];
 
@@ -63,7 +63,7 @@ const Card = () => {
         className="absolute inset-0 bg-cover bg-center opacity-100"
         style={{
           backgroundImage:
-            "url(https://www.odooimplementers.com/images/background/bg-maps-dots-alt.jpg)",
+            "url(/images/odoo-images/bg-maps-dots.jpg)",
         }}
       ></div>
 

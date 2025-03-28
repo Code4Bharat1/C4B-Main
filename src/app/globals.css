@@ -11,6 +11,12 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+
+/* Prevent text selection globally */
+* {
+  user-select: none;
+}
+
 /* Custom Marquee Animation */
 @layer utilities {
   /* Keyframes for Marquee Effect */

@@ -9,7 +9,7 @@ const Redeeming = () => {
         <div className="relative flex justify-center mb-8 lg:mb-[60px]">
           <div className="shadow-[0_7px_27px_0_rgba(136,92,124)] p-2">
             <img
-              src="https://www.odooimplementers.com/images/menu/odoo-crm-software-analysis.webp"
+              src="/images/App images/odoo-crm-software-analysis.webp"
               alt="E-commerce"
               className="w-full max-w-xs sm:max-w-md lg:max-w-full"
             />

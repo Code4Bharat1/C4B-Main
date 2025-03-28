@@ -9,7 +9,7 @@ const Whyodoo = () => {
         <div className="relative flex justify-center mb-8 lg:mb-[60px]">
           <div>
             <img
-              src="https://www.odooimplementers.com/images/Apps/easily-analyse-the-employee-working-with-odoo-timesheet.webp"
+              src="/images/App images/easily-analyse-the-employee-working-with-odoo-timesheet.webp"
               alt="E-commerce"
               className="w-full max-w-xs sm:max-w-md lg:max-w-full"
             />
@@ -23,10 +23,10 @@ const Whyodoo = () => {
             Why Odoo Implementers for Odoo Timesheet App
           </h2>
             <div className="list-disc pl-4 sm:pl-6 text-gray-500 text-sm sm:text-base leading-relaxed mb-6">
-              Oodu Implementers is an Official Odoo partner and offers a variety of Odoo apps to suit your business needs and help perform your business operations efficiently.
+              odoo Implementers is an Official Odoo partner and offers a variety of Odoo apps to suit your business needs and help perform your business operations efficiently.
             </div>
             <div className="list-disc pl-4 sm:pl-6 text-gray-500 text-sm sm:text-base leading-relaxed mb-6">
-              With the installation of Odoo Timesheet, Oodu Implementers enables the end user to record the working time of employees over a project. The Timesheet feature in Odoo can help you easily analyse the employee working report and have a quick overview of time spent by employees on tasks per day or week and track time-based on projects and tasks, check the activities done and keep an eye on their work progressions. While performing the analysis, the end user can learn about billable hours & amounts, unvoiced charges and more.
+              With the installation of Odoo Timesheet, odoo Implementers enables the end user to record the working time of employees over a project. The Timesheet feature in Odoo can help you easily analyse the employee working report and have a quick overview of time spent by employees on tasks per day or week and track time-based on projects and tasks, check the activities done and keep an eye on their work progressions. While performing the analysis, the end user can learn about billable hours & amounts, unvoiced charges and more.
             </div>
         </div>
         </div>

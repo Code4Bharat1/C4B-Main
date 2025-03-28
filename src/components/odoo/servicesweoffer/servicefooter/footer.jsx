@@ -9,8 +9,8 @@ const Footer = () => {
           {/* Logo Section */}
           <div className="flex flex-col items-center lg:items-start">
             <img
-              src="https://www.odooimplementers.com/images/oodu-implementers-logo-best-erp-software.webp"
-              alt="Oodu Implementers"
+              src="https://www.odooimplementers.com/images/odoo-implementers-logo-best-erp-software.webp"
+              alt="odoo Implementers"
               className="w-122px mb-4"
             />
             <img
@@ -78,7 +78,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="w-full bottom-0 mt-10 border-t pt-full text-center lg:text-center">
           <p className="text-[16px] text-[#885c7c] whitespace-nowrap">
-            Copyright © Oodu Implementers Private Limited. All Rights Reserved. Website Concept and Development - Kambaa Inc.
+            Copyright © odoo Implementers Private Limited. All Rights Reserved. Website Concept and Development - Kambaa Inc.
           </p>
           {/* Social Media Icons */}
           <div className="flex justify-center lg:justify-start mt-4 space-x-4">

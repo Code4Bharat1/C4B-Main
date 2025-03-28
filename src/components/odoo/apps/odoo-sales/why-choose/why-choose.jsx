@@ -9,7 +9,7 @@ const Whychoose = () => {
         <div className="relative flex justify-center mb-8 lg:mb-[60px]">
           <div className="shadow-[0_7px_27px_0_rgba(136,92,124)] p-2">
             <img
-              src="https://www.odooimplementers.com/images/odoo-sales-software-oodu-implementers.jpg"
+              src="/images/App images/odoo-sales-software-oodu-implementers.jpg"
               alt="E-commerce"
               className="w-full max-w-xs sm:max-w-md lg:max-w-full"
             />
@@ -34,7 +34,7 @@ const Whychoose = () => {
             <li>Real-time monitoring and analysis of orders and invoices.</li>
             <li>Pricelists compute the exact product price.</li>
             <div>
-               Oodu Implementers have the best track record in the business, with our team dedicated to crafting the best strategy to implement the Odoo Sales tool. We primely focus on taking your business to the next level and securing a prominent place in the minds of people.
+               odoo Implementers have the best track record in the business, with our team dedicated to crafting the best strategy to implement the Odoo Sales tool. We primely focus on taking your business to the next level and securing a prominent place in the minds of people.
             </div>
           </ul>
         </div>

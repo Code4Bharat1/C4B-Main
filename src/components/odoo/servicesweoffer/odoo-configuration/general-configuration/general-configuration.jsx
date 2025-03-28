@@ -22,12 +22,12 @@ const GeneralConfiguration = () => {
             <li>AND mode indicates mandatory parallel flows.</li>
           </ul>
           <h3 className="text-gray-900 font-[1000] text-base sm:text-lg sm:text-[24px] lg:text-2xl mb-4">
-            Why Choose Oodu Implementers for Odoo Configuration
+            Why Choose odoo Implementers for Odoo Configuration
           </h3>
           <p className="text-gray-500 text-sm sm:text-base leading-relaxed">
             Configuring the ERP system is an important part of the Odoo
             Implementation, which sets up all the parameters of the software to
-            fit your business needs. Oodu Implementers, a reputed Gold partner
+            fit your business needs. Odoo Implementers, a reputed Gold partner
             of Odoo, configure your ERP system to recognize revenue by certain
             specifications like geographical unit or product line.
           </p>
@@ -36,7 +36,7 @@ const GeneralConfiguration = () => {
         {/* Right Section - Image */}
         <div className="mx-auto sm:-mr-20 sm:ml-12">
           <img
-            src="https://www.odooimplementers.com/images/optimised-images/odoo-configuration-services.webp"
+            src="/images/odoo-images/odoo-configuration-services.webp"
             alt="Configuration Image"
             className="shadow-lg rounded"
           />

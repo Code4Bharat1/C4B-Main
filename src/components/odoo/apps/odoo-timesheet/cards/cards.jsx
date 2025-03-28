@@ -7,35 +7,35 @@ const Card = () => {
       title: "It functions offline",
       content:
         "Odoo Timesheet doesn't demand you to stay online. It runs even if there is no network, so you can just launch your timesheet as usual. Once you’re back online, the data will sync to your account automatically.",
-      icon: "https://www.odooimplementers.com/images/icon/odoo-timesheet-function-offline-icon.png",
+      icon: "/images/App images/odoo-timesheet-function-offline-icon.png",
     },
     {
       id: 2,
       title: "Activities & Workforce Management is so easy",
       content:
         "Leverage Odoo's backend to take control of your projects and manage employee time",
-      icon: "https://www.odooimplementers.com/images/icon/odoo-timesheet-activities-and-workforce-management-icon.png",
+      icon: "/images/App images/odoo-timesheet-activities-and-workforce-management-icon.png",
     },
     {
       id: 3,
       title: "Monitor progress",
       content:
         "Get a clear understanding of your team's progress on every task or project. Keeping a track of estimated time, effective hours and forecasts on each task is very simple.",
-      icon: "https://www.odooimplementers.com/images/icon/odoo-timesheet-function-monitor-progress-icon.png",
+      icon: "/images/App images/odoo-timesheet-function-monitor-progress-icon.png",
     },
     {
       id: 4,
       title: "Focus on what's important",
       content:
         "This Odoo app lets professionals who bill per hour or day, simply focus on their work and record activities at the end of their day.",
-      icon: "https://www.odooimplementers.com/images/icon/odoo-timesheet-focus-icon.png",
+      icon: "/images/App images/odoo-timesheet-focus-icon.png",
     },
     {
       id: 5,
       title: "It's simply fast",
       content:
         "Odoo Timesheet functions as incredibly fast as you are. It allows you to log dozens of activities per day and make every minute count.",
-      icon: "https://www.odooimplementers.com/images/icon/time2.png",
+      icon: "/images/App images/time2.png",
     },
   ];
 
@@ -88,7 +88,7 @@ const Card = () => {
         className="absolute inset-0 bg-cover bg-center opacity-100"
         style={{
           backgroundImage:
-            "url(https://www.odooimplementers.com/images/background/bg-maps-dots-alt.jpg)",
+            "url(/images/odoo-images/bg-maps-dots.jpg)",
         }}
       ></div>
 

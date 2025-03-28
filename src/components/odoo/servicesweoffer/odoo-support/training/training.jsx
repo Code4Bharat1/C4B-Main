@@ -9,7 +9,7 @@ const EcommerceSections = () => {
         <div className="relative flex justify-center mb-8 lg:mb-0">
           <div>
             <img
-              src="https://www.odooimplementers.com/images/optimised-images/odoo-support-services.webp"
+              src="/images/odoo-images/odoo-support-services.webp"
               alt="E-commerce"
               className="w-full max-w-xs sm:max-w-md lg:max-w-full"
             />
@@ -18,12 +18,12 @@ const EcommerceSections = () => {
 
         {/* Text Content */}
         <div className="pb-12 sm:pb-[86px] text-center sm:text-left">
-          <h3 className="text-purple-700 uppercase text-sm font-bold">Training & Backend Support</h3>
+          <h3 className="text-purple-700 uppercase text-[17px] font-bold">Training & Backend Support</h3>
           <h2 className="text-lg sm:text-xl font-[1000] text-gray-800 mt-4 sm:mt-8">
              Reap Great Benefits for your Business with Odoo Support
           </h2>
           <p className="text-gray-600 mt-4 mb-4 sm:mb-[15px] leading-relaxed tracking-wide text-justify">
-               Every deployment needs a support service to run business smoothly. With Odoo Support, you can ensure that your business site will be in good form through advanced features. Oodu Implementers assist your business with mission-critical issues in time and send messages on core updates. 
+               Every deployment needs a support service to run business smoothly. With Odoo Support, you can ensure that your business site will be in good form through advanced features. Odoo Implementers assist your business with mission-critical issues in time and send messages on core updates. 
           </p>
           <h3 className="text-lg sm:text-xl font-[1000] text-gray-800 mt-6 sm:mt-8">
                Best Odoo ERP Support Services

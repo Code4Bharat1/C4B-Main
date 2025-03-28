@@ -37,21 +37,21 @@ const SolutionsSection = () => {
       description:
         "Point of Sale from Odoo is based on a smart interface and provides extreme flexibility. Simple Odoo POS configuration to meet your precise needs. Integrated with various Odoo solutions like accounting to make payments simple and reliable. Sell your products without breaking a sweat with Odoo Point of Sale. Get everything your business needs with Odoo POS.",
       IconComponent: FaFileInvoice,
-      link: "#",
+      link: "/apps/odoo-sales",
     },
     {
       title: "Odoo Accounting",
       description:
         "Odoo Accounting makes business easy for you. Odoo's popular features will change your business without much effort. Fully integrated with other Odoo Accounting Apps, business flow is automated.",
       IconComponent: FaRegClipboard,
-      link: "#",
+      link: "/apps/odoo-accounting",
     },
     {
       title: "Odoo Inventory",
       description:
         "Odoo Inventory tool to optimize your business with the best inventory solutions. Partnered with Odoo, we eliminate the tedious efforts you put into analyzing, optimizing, and organizing your physical inventories. Overcome your inventory inconveniences with Odoo Inventory.",
       IconComponent: FaTabletAlt,
-      link: "#",
+      link: "/apps/odoo-inventory",
     },
     {
       title: "Odoo Project",
@@ -84,7 +84,7 @@ const SolutionsSection = () => {
     {
       title: "Odoo Purchase",
       description:
-        "Odoo Purchase app can help you place purchase orders smoothly and efficiently. At Oodu Implementers, we offer you a complete software solution to handle various activities involved in purchasing such as seller management, seller bills, supply chain and product variation management, stock update and product quality inspections.",
+        "Odoo Purchase app can help you place purchase orders smoothly and efficiently. At odoo Implementers, we offer you a complete software solution to handle various activities involved in purchasing such as seller management, seller bills, supply chain and product variation management, stock update and product quality inspections.",
       IconComponent: FaRegClipboard,
       link: "/apps/odoo-purchase",
     },
@@ -98,7 +98,7 @@ const SolutionsSection = () => {
     {
       title: "Odoo Email Marketing",
       description:
-        "With the installation of Odoo E-mail Marketing, Oodu Implementers assists you to gain comprehensive support for creating, sending and evaluating E-mail marketing campaigns. Odoo's feature-rich E-mail marketing app allows you to manage and analyze the delivery of messages and their status with zero hassles.",
+        "With the installation of Odoo E-mail Marketing, odoo Implementers assists you to gain comprehensive support for creating, sending and evaluating E-mail marketing campaigns. Odoo's feature-rich E-mail marketing app allows you to manage and analyze the delivery of messages and their status with zero hassles.",
       IconComponent: FaFileInvoice,
       link: "/apps/odoo-e-mail-marketing",
     },
@@ -107,21 +107,21 @@ const SolutionsSection = () => {
       description:
         "The Odoo App for Expenses is loaded with advanced features to digitize expense management and needs only a little bit of effort to integrate it with other business modules for seamless operations. Odoo Expenses app makes your job of managing the expenses of your employees very easier.",
       IconComponent: FaRegClipboard,
-      link: "#",
+      link: "/apps/odoo-expenses",
     },
     {
       title: "Odoo Event Management",
       description:
         "Odoo event management is a complete software, capable of handling events from small to large scale. Odoo Events Features takes care of an entire range of event planner's jobs from organizing events and selling tickets to increasing visibility & promotions.",
       IconComponent: FaTabletAlt,
-      link: "#",
+      link: "/apps/odoo-event-management",
     },
     {
       title: "Odoo Leaves",
       description:
         "A Simple reporting tool. Get reports in just a click for each leave request, with information per request type, department, employee and even for the entire organization. View statistics on each leave and plan for the upcoming task to ensure you maintain productivity at the highest level.",
       IconComponent: FaFileInvoice,
-      link: "#",
+      link: "/apps/odoo-timeoff",
     },
     {
       title: "Odoo Recruitment",
@@ -135,28 +135,28 @@ const SolutionsSection = () => {
       description:
         "Keep the encouragement process in your organization by performing periodical evaluations of your employees' performance. Frequently evaluate your human resources to provide benefits for your employees and for your company, whether it’s a small business or a large corporation.",
       IconComponent: FaTabletAlt,
-      link: "#",
+      link: "/apps/odoo-appraisal",
     },
     {
       title: "Odoo Helpdesk",
       description:
-        "Odoo Helpdesk will remain the perfect support ticket tool on your website to help you run things smoothly from one place. At Oodu Implementers, we offer you the effective Odoo Helpdesk module that enables you to provide anytime support to the existing customer as well as encourage potential customers to reach out to you regarding their queries and concerns.",
+        "Odoo Helpdesk will remain the perfect support ticket tool on your website to help you run things smoothly from one place. At odoo Implementers, we offer you the effective Odoo Helpdesk module that enables you to provide anytime support to the existing customer as well as encourage potential customers to reach out to you regarding their queries and concerns.",
       IconComponent: FaFileInvoice,
-      link: "#",
+      link: "/apps/odoo-helpdesk",
     },
     {
       title: "Odoo Marketing Automation",
       description:
         "With Odoo Sales, A friendly visual interface to help customize your workflows easily. Planning a multi-stage campaign with various paths is much easier similar to two-step campaigns. Insert new actions and set up time triggers directly on your workflow.",
       IconComponent: FaRegClipboard,
-      link: "#",
+      link: "/apps/odoo-marketing-automation",
     },
     {
       title: "Odoo Documents",
       description:
-        "Odoo Document Management will be an effective tool for any organization, that deals with an extensive range of documents. At Oodu Implementers, we enable our clients to create new documents, store key files, manage recorded data, retrieve and protect documents conveniently with Odoo Documents Software.",
+        "Odoo Document Management will be an effective tool for any organization, that deals with an extensive range of documents. At odoo Implementers, we enable our clients to create new documents, store key files, manage recorded data, retrieve and protect documents conveniently with Odoo Documents Software.",
       IconComponent: FaTabletAlt,
-      link: "#",
+      link: "/apps/odoo-documents",
     },
   ];
 

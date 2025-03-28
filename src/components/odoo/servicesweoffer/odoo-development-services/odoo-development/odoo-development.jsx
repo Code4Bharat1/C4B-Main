@@ -16,18 +16,18 @@ const OdooDevelopment = () => {
       <div className="container mx-auto px-6 lg:px-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Section - Text Content */}
         <div className="pr-[50px] pl-[50px]">
-        <h2 className="text-[20px] sm:text-3xl font-[1000] text-gray-800 mb-6 leading-snug lg:text-[20px]">
+        <h2 className="text-[20px] sm:text-3xl font-[1000] text-gray-800 mb-6 leading-snug lg:text-[25px]">
           Enhanced Performance & Functionality with Odoo Development
         </h2>
 
           <p className="text-gray-500 text-sm sm:text-base mb-4 leading-relaxed tracking-wide text-justify">
             Enhance the functionality and performance of your business with the
-            help of Odoo development services. Oodu Implementers, one of India’s
+            help of Odoo development services. Odoo Implementers, one of India’s
             leading ERP software companies, offers the next-level Odoo
             development service.
           </p>
           <p className="text-gray-500 text-sm sm:text-base leading-relaxed tracking-wide text-justify">
-            Oodu Implementers is an Odoo Gold partner offering Odoo Development
+            Odoo Implementers is an Odoo Gold partner offering Odoo Development
             Services to prospects and customers alike.
           </p>
         </div>
@@ -37,7 +37,7 @@ const OdooDevelopment = () => {
           {/* Video Thumbnail */}
           <div className="relative">
             <img
-              src="https://www.odooimplementers.com/images/Apps/thumbnail.jpeg"
+              src="/images/odoo-images/thumbnail.jpeg"
               alt="Odoo Development"
               className=""
             />

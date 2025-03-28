@@ -6,7 +6,7 @@ import {
   FaLinkedinIn,
   FaWhatsapp,
 } from "react-icons/fa";
-import { CiTwitter } from "react-icons/ci";
+import { RiTwitterXLine } from "react-icons/ri";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -86,14 +86,14 @@ const Footer = () => {
         {/* Contact Us Section */}
         <div className="w-full md:w-[30%] lg:w-[25%] h-auto flex flex-col items-start">
           <h1 className="text-[5vw] md:text-[1vw] font-bold">Contact Us</h1>
-          <div className="mt-4 space-y-3">
+          <div className="mt-4 ">
             <div className="flex items-center text-[4vw] md:text-[1vw]">
               <span className="font-medium mr-2">Call:</span>
               <a
-                href="tel:+919594402916"
+                href="https://wa.me/919594430295"
                 className="text-blue-600 hover:underline"
               >
-                +91 959 440 2916
+                +91 959 443 0295
               </a>
             </div>
             <div className="flex items-center text-[4vw] md:text-[1vw]">
@@ -146,11 +146,11 @@ const Footer = () => {
           </Link>
           <Link href="https://x.com/Code4Bharat">
             <motion.div
-              className="w-10 h-10 bg-[#1DA1F2] rounded-full flex items-center justify-center"
+              className="w-10 h-10 bg-[#000] rounded-full flex items-center justify-center"
               whileHover={{ scale: 1.2 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
-              <CiTwitter className="text-[4vw] md:text-[1vw] text-white" />
+              <RiTwitterXLine className="text-[4vw] md:text-[1vw] text-white" />
             </motion.div>
           </Link>
           <Link href="http://linkedin.com/company/code4bharat">
@@ -167,7 +167,7 @@ const Footer = () => {
 
       {/* WhatsApp Icon - Fixed */}
       <a
-        href="https://wa.me/919594402916?text=Hello%20Code4Bharat,%20I%20need%20your%20help"
+        href="https://wa.me/919594430295"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-5 right-5 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-200"

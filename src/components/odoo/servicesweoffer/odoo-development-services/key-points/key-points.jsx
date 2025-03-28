@@ -12,7 +12,7 @@ const OdooDevelopmentKeyPoints = () => {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-4 gap-y-8 md:gap-y-12 md:gap-x-6 md:px-[7rem]">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-4 gap-y-8 md:gap-y-12 md:gap-x-6 md:px-[15rem]">
           {/* Card 1 */}
           <div className="group mx-auto">
             <div className="w-[10rem] md:w-[12rem] h-14 md:h-16 bg-[#ec6d9e] rounded-t-3xl shadow-xl"></div>
@@ -28,7 +28,7 @@ const OdooDevelopmentKeyPoints = () => {
                 Web <br /> Development
               </h3>
               <img
-                src="https://www.odooimplementers.com/keypoint/oodu-implementers-web-development-icon.png"
+                src="/images/odoo-images/odoo-icons/oodu-implementers-web-development-icon.png"
                 alt="Web Development Icon"
                 className="w-[50px] h-[60px] md:w-[64px] md:h-[73px] mb-4 mt-[0.5rem] md:mt-[1rem]"
               />
@@ -51,7 +51,7 @@ const OdooDevelopmentKeyPoints = () => {
                 On Demand <br /> Scalability
               </h3>
               <img
-                src="https://www.odooimplementers.com/keypoint/oodu-implementers-on-demand-scalability-icon.png"
+                src="/images/odoo-images/odoo-icons/oodu-implementers-on-demand-scalability-icon.png"
                 alt="On Demand Scalability Icon"
                 className="w-[50px] h-[60px] md:w-[64px] md:h-[73px] mb-4 mt-[0.5rem] md:mt-[1rem]"
               />
@@ -106,7 +106,7 @@ const OdooDevelopmentKeyPoints = () => {
           </div>
 
           {/* Card 5 */}
-          <div className="flex flex-col md:flex-row justify-evenly md:grid-cols-2 lg:grid-cols-4 gap-x-20 gap-y-[8rem] md:pl-[17rem]">
+          <div className="flex flex-col md:flex-row justify-evenly md:grid-cols-2 lg:grid-cols-4 gap-x-[4rem] gap-y-[8rem] md:pl-[9rem]">
           <div className="group mx-auto">
             <div className="w-[10rem] md:w-[12rem] h-14 md:h-16 bg-[#ec6d9e] rounded-t-3xl shadow-xl"></div>
             <div

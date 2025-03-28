@@ -8,14 +8,14 @@ const Evaluatechannels = () => {
         className="absolute bottom-0 right-0 w-[150px] sm:w-[200px] md:w-[264px] h-[250px] sm:h-[300px] md:h-[362px] bg-contain bg-no-repeat"
         style={{
           backgroundImage:
-            "url(https://www.odooimplementers.com/images/background/bg-art-6.png)",
+            "url(/images/App images/bg-art-6.png)",
         }}
       ></div>
       <div
         className="absolute top-0 left-0 w-[180px] sm:w-[250px] md:w-[366px] h-[220px] sm:h-[300px] md:h-[501px] bg-contain bg-no-repeat"
         style={{
           backgroundImage:
-            "url(https://www.odooimplementers.com/images/background/bg-art-5.png)",
+            "url(/images/App images/bg-art-5.png)",
         }}
       ></div>
 
@@ -41,7 +41,7 @@ const Evaluatechannels = () => {
         {/* Left Section: CRM Image */}
         <div className="w-full lg:w-1/2 flex justify-center lg:justify-end mt-6 lg:mt-0">
           <img
-            src="https://www.odooimplementers.com/images/Apps/odoo-recruitment-system-for-best-job-placement-results.gif"
+            src="/images/App images/odoo-recruitment-system-for-best-job-placement-results.gif"
             alt="Odoo CRM Dashboard"
             className="max-w-[90%] sm:max-w-[80%] md:max-w-[60%] lg:max-w-full"
           />

@@ -7,28 +7,28 @@ const CarouselSection = () => {
       title: "Design Your Business Website in a Flash",
       content:
         "Create your online business website effortlessly with Odoo E-Commerce. Odoo has standard functionalities to set your business website unique and bring in more customers. Odoo has a drag and drops building blocks to snap your designs into place and showcase your inventory.",
-      icon: "https://www.odooimplementers.com/images/icon/odoo-ecommerce-website-design.webp",
+      icon: "/images/App images/App Icons/odoo-ecommerce-website-design.webp",
     },
     {
       id: 2,
       title: "Edit Your Website to Your Convenience",
       content:
         "Ready-to-use website to give your brand a global reach. Custom design your business website to display your products in the most sorted way to grab your customers' attention. Give customers the joy of shopping by listing out the product information in the way you want it to be seen. Add product attributes such as color, size, or style to keep product lines easy to navigate.",
-      icon: "https://www.odooimplementers.com/images/icon/odoo-ecommerce-webiste-development.webp",
+      icon: "/images/App images/App Icons/odoo-ecommerce-webiste-development.webp",
     },
     {
       id: 3,
       title: "Promote Your Brand with Odoo Marketing Tools",
       content:
         "Optimize your marketing by setting keywords and increasing your average cart revenue. Boost your sales with cross-selling and upselling opportunities features on product pages, in the cart, or at checkout. Automatically recommend optional products to customers and alternatives to show customers more of the items they might like. Give your customers an increased exposure to all your products in stock.",
-      icon: "https://www.odooimplementers.com/images/icon/odoo-ecommerce-website-businessing-tools.webp",
+      icon: "/images/App images/App Icons/odoo-ecommerce-website-businessing-tools.webp",
     },
     {
       id: 4,
       title: "Grab the Attention of Your Customers",
       content:
         "Retain your existing customers and bring in more customers with engaging rewards and loyalty programs. Provide attractive deals and offers with promo codes and coupons. Focus on promotions and gifts to stay in the minds of customers. Give customers intriguing attributes like search and filter to easily move their desired products to the cart and checkout smoothly.",
-      icon: "https://www.odooimplementers.com/images/icon/app-ecom4.webp",
+      icon: "/images/App images/App Icons/app-ecom4.webp",
     },
   ];
 
@@ -81,7 +81,7 @@ const CarouselSection = () => {
         className="absolute inset-0 bg-cover bg-center opacity-100"
         style={{
           backgroundImage:
-            "url(https://www.odooimplementers.com/images/background/bg-maps-dots-alt.jpg)",
+            "url(/images/odoo-images/bg-maps-dots.jpg)",
         }}
       ></div>
 

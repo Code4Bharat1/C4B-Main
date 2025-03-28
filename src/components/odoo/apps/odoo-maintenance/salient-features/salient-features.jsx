@@ -8,7 +8,7 @@ const Salientfeatures = () => {
         <div className="relative flex justify-center mb-8 lg:mb-[60px]">
           <div className="">
             <img
-              src="https://www.odooimplementers.com/images/Apps/odoo-maintenance-features.webp"
+              src="/images/App images/odoo-maintenance-features.webp"
               alt="E-commerce"
               className="w-full max-w-xs sm:max-w-md lg:max-w-full border-white"
             />

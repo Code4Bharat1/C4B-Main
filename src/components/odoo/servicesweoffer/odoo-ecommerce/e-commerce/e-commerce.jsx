@@ -9,7 +9,7 @@ const EcommerceSection = () => {
         <div className="relative flex justify-center mb-8 lg:mb-0">
           <div className="shadow-[0_7px_27px_0_rgba(136,92,124)] p-2">
             <img
-              src="https://www.odooimplementers.com/images/optimised-images/odoo-e-commerce-online-busniess.webp"
+              src="/images/odoo-images/odoo-e-commerce-online-busniess.webp"
               alt="E-commerce"
               className="w-full max-w-xs sm:max-w-md lg:max-w-full"
             />
@@ -18,7 +18,7 @@ const EcommerceSection = () => {
 
         {/* Text Content */}
         <div className="pb-12 sm:pb-[86px] text-center sm:text-left">
-          <h3 className="text-purple-700 uppercase text-sm font-bold">E-Commerce</h3>
+          <h3 className="text-purple-700 uppercase text-[17px] font-bold">E-Commerce</h3>
           <h2 className="text-lg sm:text-xl font-[1000] text-gray-800 mt-4 sm:mt-8">
             Establish a Powerful Online Business with Odoo E-commerce
           </h2>
@@ -33,7 +33,7 @@ const EcommerceSection = () => {
           </h3>
           <p className="text-gray-600 mt-4 leading-relaxed tracking-wide text-justify">
             Build an authentic online store in no time and connect with your
-            potential business prospects worldwide with Odoo E-commerce. Oodu
+            potential business prospects worldwide with Odoo E-commerce. odoo
             Implementers’ mobilized and customized E-commerce mobile app
             development technology is feasible to work from anywhere and
             anytime. Bootstrapped budget for easy business expansion as demand

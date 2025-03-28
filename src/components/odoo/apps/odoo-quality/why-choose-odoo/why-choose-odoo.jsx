@@ -8,7 +8,7 @@ const Whychoose = () => {
         <div className="relative flex justify-center mb-8 lg:mb-[60px]">
           <div className="">
             <img
-              src="https://www.odooimplementers.com/images/Apps/quality-odoo-point-of-sale-ooduimplementers.jpg"
+              src="/images/App images/odoo-point-of-sale-oodu-implementers.jpg"
               alt="E-commerce"
               className="w-full max-w-xs sm:max-w-md lg:max-w-full"
             />
@@ -19,11 +19,11 @@ const Whychoose = () => {
         <div className="pb-12 sm:pb-[86px] text-center sm:text-left">
         <div className="pr-4 pl-[2rem] sm:pr-12 sm:pl-[0rem]">
           <h2 className="text-gray-900 font-[1000] text-base sm:text-lg sm:text-[24px] lg:text-2xl mb-6">
-            Why Choose Oodu Implementers?
+            Why Choose odoo Implementers?
           </h2>
           <div className=" text-slate-500">
             <div className="mt-4">
-            Oodu Implementers have a legacy of designing and delivering customized Odoo Manufacturing modules to customers across various industries. Our experts cater to your business needs and ensure that the Odoo Manufacturing tool takes your business to a new horizon
+            odoo Implementers have a legacy of designing and delivering customized Odoo Manufacturing modules to customers across various industries. Our experts cater to your business needs and ensure that the Odoo Manufacturing tool takes your business to a new horizon
             </div>
             </div>
         </div>

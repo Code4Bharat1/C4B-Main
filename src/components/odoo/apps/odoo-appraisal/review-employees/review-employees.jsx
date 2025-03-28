@@ -16,7 +16,7 @@ const Reviewemployees = () => {
       <div className="container mx-auto px-6 lg:px-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Section - Text Content */}
         <div className="pr-[50px] pl-[50px]">
-        <p className="text-purple-700 text-sm sm:text-[14px] font-semibold uppercase tracking-wider mb-2">
+        <p className="text-purple-700 text-sm sm:text-[17px] font-semibold uppercase tracking-wider mb-2">
           Review employees' performances in no time and create appraisals
         </p>
         <h2 className="text-[20px] sm:text-3xl font-[1000] text-gray-800 mb-6 leading-snug lg:text-[20px]">
@@ -35,7 +35,7 @@ const Reviewemployees = () => {
         <div className="relative flex justify-center">
           <div className="relative">
             <img
-              src="https://www.odooimplementers.com/images/optimised-images/odoo-appraisal-software.webp"
+              src="/images/App images/odoo-appraisal-software.webp"
               alt="Odoo Development"
               className=""
             />

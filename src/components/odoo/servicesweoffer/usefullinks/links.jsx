@@ -11,7 +11,7 @@ const FooterLinks = () => {
         </h2>
 
         {/* Links Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 text-sm">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 text-sm text-black text-[1000]">
           {/* Services Column */}
           <div>
             <h3 className="text-[#885c7c] text-lg font-bold mb-4">SERVICES</h3>

@@ -6,18 +6,18 @@ const OdooCRM = () => {
       {/* Background Images */}
       <div
         className="absolute bottom-0 right-0 w-[264px] h-[362px] bg-contain bg-no-repeat opacity-100"
-        style={{ backgroundImage: 'url(https://www.odooimplementers.com/images/background/bg-art-6.png)' }}
+        style={{ backgroundImage: 'url(/images/App images/bg-art-6.png)' }}
       ></div>
       <div
         className="absolute top-0 left-0 w-[366px] h-[501px] bg-contain bg-no-repeat opacity-100"
-        style={{ backgroundImage: 'url(https://www.odooimplementers.com/images/background/bg-art-5.png)' }}
+        style={{ backgroundImage: 'url(/images/App images/bg-art-5.png)' }}
       ></div>
       {/* Content Container */}
       <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between px-8 py-12 lg:p-[9rem]">
         {/* Left Section: CRM Image */}
         <div className="w-full lg:w-1/2">
           <img
-            src="https://www.odooimplementers.com/images/menu/odoo-crm-software-development.gif"
+            src="/images/App images/odoo-crm-software-development.gif"
             alt="Odoo CRM Dashboard"
             className="shadow-2xl border-[11px] border-[#211f3b]/50 shadow-[#895d7d]/100"
           />

@@ -9,7 +9,7 @@ const EcommerceSection = () => {
         <div className="relative flex justify-center mb-8 lg:mb-0">
           <div className="shadow-[0_7px_27px_0_rgba(136,92,124)] p-2">
             <img
-              src="https://www.odooimplementers.com/images/odoo-integration-services-oodu-implementers.jpg"
+              src="/images/odoo-images/odoo-integration-services-oodu-implementers.jpg"
               alt="E-commerce"
               className="w-full max-w-xs sm:max-w-md lg:max-w-full"
             />
@@ -18,7 +18,7 @@ const EcommerceSection = () => {
 
         {/* Text Content */}
         <div className="pb-12 sm:pb-[86px] text-center sm:text-left">
-          <h3 className="text-purple-700 uppercase text-sm font-bold"> End-to-End Integration</h3>
+          <h3 className="text-purple-700 uppercase text-[17px] font-bold"> End-to-End Integration</h3>
           <h2 className="text-lg sm:text-xl font-[1000] text-gray-800 mt-4 sm:mt-8">
             Business Information on your Fingertips with Odoo Integration 
           </h2>
@@ -29,7 +29,7 @@ const EcommerceSection = () => {
           Wide Range of Odoo Integration Services
           </h3>
           <p className="text-gray-600 mt-4 leading-relaxed tracking-wide text-justify">
-          Oodu Implementers' Odoo Integration service approach ensures that multi-enterprise applications are integrated and developed to remain flexible and responsive to changes in the business strategy. OI offers a wide range of integration services in Odoo Integrations by analyzing your unique business requirements and delivering the required Odoo services.
+          Odoo Implementers' Odoo Integration service approach ensures that multi-enterprise applications are integrated and developed to remain flexible and responsive to changes in the business strategy. OI offers a wide range of integration services in Odoo Integrations by analyzing your unique business requirements and delivering the required Odoo services.
           </p>
           <div className="mt-6 flex justify-center sm:justify-start">
           <Link href="/servicesweoffer">

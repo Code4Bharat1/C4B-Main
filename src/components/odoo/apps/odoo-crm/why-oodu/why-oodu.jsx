@@ -28,7 +28,7 @@ const GeneralConfiguration = () => {
         {/* Right Section - Image */}
         <div className="mx-auto sm:-mr-[26px] sm:ml-[26px]">
           <img
-            src="https://www.odooimplementers.com/images/menu/odoo-open-source-crm-implementation.webp"
+            src="/images/App images/odoo-open-source-crm-implementation.webp"
             alt="Configuration Image"
             className="shadow-2xl p-[10px] border-white shadow-[#895d7d]/100"
           />
