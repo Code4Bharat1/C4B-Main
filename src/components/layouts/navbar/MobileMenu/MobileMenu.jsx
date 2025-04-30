@@ -16,11 +16,6 @@ const MobileMenu = ({
   // ---------- SUBMENU STATES (Mobile) ----------
   const [isOdooDropdownOpen, setIsOdooDropdownOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
-  const [isConsultingDropdownOpen, setIsConsultingDropdownOpen] = useState(false);
-  const [isImplementationDropdownOpen, setIsImplementationDropdownOpen] =
-    useState(false);
-  const [isSupportDropdownOpen, setIsSupportDropdownOpen] = useState(false);
-
   const [isAppsDropdownOpen, setIsAppsDropdownOpen] = useState(false);
   const [isManufacturingDropdownOpen, setIsManufacturingDropdownOpen] =
     useState(false);
@@ -42,34 +37,13 @@ const MobileMenu = ({
       case "Odoo":
         // Toggling Odoo => close all Odoo submenus
         setIsServicesDropdownOpen(false);
-        setIsConsultingDropdownOpen(false);
-        setIsImplementationDropdownOpen(false);
-        setIsSupportDropdownOpen(false);
         setIsAppsDropdownOpen(false);
         setIsManufacturingDropdownOpen(false);
         setIsHRDropdownOpen(false);
         setIsOdooDropdownOpen((prev) => !prev);
         break;
       case "Services":
-        setIsConsultingDropdownOpen(false);
-        setIsImplementationDropdownOpen(false);
-        setIsSupportDropdownOpen(false);
         setIsServicesDropdownOpen((prev) => !prev);
-        break;
-      case "Consulting":
-        setIsImplementationDropdownOpen(false);
-        setIsSupportDropdownOpen(false);
-        setIsConsultingDropdownOpen((prev) => !prev);
-        break;
-      case "Implementation":
-        setIsConsultingDropdownOpen(false);
-        setIsSupportDropdownOpen(false);
-        setIsImplementationDropdownOpen((prev) => !prev);
-        break;
-      case "Support":
-        setIsConsultingDropdownOpen(false);
-        setIsImplementationDropdownOpen(false);
-        setIsSupportDropdownOpen((prev) => !prev);
         break;
       case "Apps":
         setIsManufacturingDropdownOpen(false);
@@ -178,204 +152,99 @@ const MobileMenu = ({
                               transition={{ duration: 0.3 }}
                             >
                               <div className="p-2">
-                                {/* Consulting */}
-                                <div
-                                  onClick={(e) => {
-                                    e.stopPropagation();
-                                    toggleDropdown("Consulting");
-                                  }}
-                                  className={`flex justify-between items-center py-2 border-b border-gray-200 ${
-                                    isConsultingDropdownOpen
-                                      ? "text-[#873070]"
-                                      : "text-gray-700"
-                                  }`}
+                                {/* Consulting Services - Direct Links */}
+                                <Link
+                                  href="/servicesweoffer/odoo-consulting"
+                                  onClick={handleLinkClick}
                                 >
-                                  <span>Consulting</span>
-                                  <motion.span
-                                    animate={{
-                                      rotate: isConsultingDropdownOpen ? 90 : 0,
-                                    }}
-                                    className="ml-2"
-                                  >
-                                    <AiOutlineRight />
-                                  </motion.span>
-                                </div>
-                                <AnimatePresence>
-                                  {isConsultingDropdownOpen && (
-                                    <motion.div
-                                      className="ml-4 bg-gray-100"
-                                      initial={{ height: 0 }}
-                                      animate={{ height: "auto" }}
-                                      exit={{ height: 0 }}
-                                      transition={{ duration: 0.3 }}
-                                    >
-                                      <div className="p-2 text-gray-700">
-                                        <Link
-                                          href="/servicesweoffer/odoo-consulting"
-                                          onClick={handleLinkClick}
-                                        >
-                                          <div className="py-2 hover:text-[#873070]">
-                                            Odoo Consulting
-                                          </div>
-                                        </Link>
-                                        <Link
-                                          href="/servicesweoffer/odoo-ecommerce"
-                                          onClick={handleLinkClick}
-                                        >
-                                          <div className="py-2 hover:text-[#873070]">
-                                            Odoo E-Commerce
-                                          </div>
-                                        </Link>
-                                      </div>
-                                    </motion.div>
-                                  )}
-                                </AnimatePresence>
+                                  <div className="py-2 hover:text-[#873070] text-gray-700">
+                                    Odoo Consulting
+                                  </div>
+                                </Link>
+                                <Link
+                                  href="/servicesweoffer/odoo-ecommerce"
+                                  onClick={handleLinkClick}
+                                >
+                                  <div className="py-2 hover:text-[#873070] text-gray-700">
+                                    Odoo E-Commerce
+                                  </div>
+                                </Link>
 
-                                {/* Implementation */}
-                                <div
-                                  onClick={(e) => {
-                                    e.stopPropagation();
-                                    toggleDropdown("Implementation");
-                                  }}
-                                  className={`flex justify-between items-center py-2 border-b border-gray-200 ${
-                                    isImplementationDropdownOpen
-                                      ? "text-[#873070]"
-                                      : "text-gray-700"
-                                  }`}
+                                {/* Implementation Services - Direct Links */}
+                                <Link
+                                  href="/servicesweoffer/odoo-integration"
+                                  onClick={handleLinkClick}
                                 >
-                                  <span>Implementation</span>
-                                  <motion.span
-                                    animate={{
-                                      rotate: isImplementationDropdownOpen ? 90 : 0,
-                                    }}
-                                    className="ml-2"
-                                  >
-                                    <AiOutlineRight />
-                                  </motion.span>
-                                </div>
-                                <AnimatePresence>
-                                  {isImplementationDropdownOpen && (
-                                    <motion.div
-                                      className="ml-4 bg-gray-100"
-                                      initial={{ height: 0 }}
-                                      animate={{ height: "auto" }}
-                                      exit={{ height: 0 }}
-                                      transition={{ duration: 0.3 }}
-                                    >
-                                      <div className="p-2 text-gray-700">
-                                        <Link
-                                          href="/servicesweoffer/odoo-integration"
-                                          onClick={handleLinkClick}
-                                        >
-                                          <div className="py-2 hover:text-[#873070]">
-                                            Odoo Integration
-                                          </div>
-                                        </Link>
-                                        <Link
-                                          href="/servicesweoffer/odoo-implementation"
-                                          onClick={handleLinkClick}
-                                        >
-                                          <div className="py-2 hover:text-[#873070]">
-                                            Odoo Implementation
-                                          </div>
-                                        </Link>
-                                        <Link
-                                          href="/servicesweoffer/odoo-customization"
-                                          onClick={handleLinkClick}
-                                        >
-                                          <div className="py-2 hover:text-[#873070]">
-                                            Odoo Customization
-                                          </div>
-                                        </Link>
-                                        <Link
-                                          href="/servicesweoffer/odoo-development-services"
-                                          onClick={handleLinkClick}
-                                        >
-                                          <div className="py-2 hover:text-[#873070]">
-                                            Odoo Development
-                                          </div>
-                                        </Link>
-                                        <Link
-                                          href="/servicesweoffer/odoo-configuration"
-                                          onClick={handleLinkClick}
-                                        >
-                                          <div className="py-2 hover:text-[#873070]">
-                                            Odoo Configuration
-                                          </div>
-                                        </Link>
-                                        <Link
-                                          href="/servicesweoffer/odoo-offshore"
-                                          onClick={handleLinkClick}
-                                        >
-                                          <div className="py-2 hover:text-[#873070]">
-                                            Odoo Offshore Development
-                                          </div>
-                                        </Link>
-                                      </div>
-                                    </motion.div>
-                                  )}
-                                </AnimatePresence>
+                                  <div className="py-2 hover:text-[#873070] text-gray-700">
+                                    Odoo Integration
+                                  </div>
+                                </Link>
+                                <Link
+                                  href="/servicesweoffer/odoo-implementation"
+                                  onClick={handleLinkClick}
+                                >
+                                  <div className="py-2 hover:text-[#873070] text-gray-700">
+                                    Odoo Implementation
+                                  </div>
+                                </Link>
+                                <Link
+                                  href="/servicesweoffer/odoo-customization"
+                                  onClick={handleLinkClick}
+                                >
+                                  <div className="py-2 hover:text-[#873070] text-gray-700">
+                                    Odoo Customization
+                                  </div>
+                                </Link>
+                                <Link
+                                  href="/servicesweoffer/odoo-development-services"
+                                  onClick={handleLinkClick}
+                                >
+                                  <div className="py-2 hover:text-[#873070] text-gray-700">
+                                    Odoo Development
+                                  </div>
+                                </Link>
+                                <Link
+                                  href="/servicesweoffer/odoo-configuration"
+                                  onClick={handleLinkClick}
+                                >
+                                  <div className="py-2 hover:text-[#873070] text-gray-700">
+                                    Odoo Configuration
+                                  </div>
+                                </Link>
+                                <Link
+                                  href="/servicesweoffer/odoo-offshore"
+                                  onClick={handleLinkClick}
+                                >
+                                  <div className="py-2 hover:text-[#873070] text-gray-700">
+                                    Odoo Offshore Development
+                                  </div>
+                                </Link>
 
-                                {/* Support */}
-                                <div
-                                  onClick={(e) => {
-                                    e.stopPropagation();
-                                    toggleDropdown("Support");
-                                  }}
-                                  className={`flex justify-between items-center py-2 border-b border-gray-200 ${
-                                    isSupportDropdownOpen
-                                      ? "text-[#873070]"
-                                      : "text-gray-700"
-                                  }`}
+                                {/* Support Services - Direct Links */}
+                                <Link
+                                  href="/servicesweoffer/odoo-support"
+                                  onClick={handleLinkClick}
                                 >
-                                  <span>Support</span>
-                                  <motion.span
-                                    animate={{
-                                      rotate: isSupportDropdownOpen ? 90 : 0,
-                                    }}
-                                    className="ml-2"
-                                  >
-                                    <AiOutlineRight />
-                                  </motion.span>
-                                </div>
-                                <AnimatePresence>
-                                  {isSupportDropdownOpen && (
-                                    <motion.div
-                                      className="ml-4 bg-gray-100"
-                                      initial={{ height: 0 }}
-                                      animate={{ height: "auto" }}
-                                      exit={{ height: 0 }}
-                                      transition={{ duration: 0.3 }}
-                                    >
-                                      <div className="p-2 text-gray-700">
-                                        <Link
-                                          href="/servicesweoffer/odoo-support"
-                                          onClick={handleLinkClick}
-                                        >
-                                          <div className="py-2 hover:text-[#873070]">
-                                            Odoo Support
-                                          </div>
-                                        </Link>
-                                        <Link
-                                          href="/servicesweoffer/odoo-migration"
-                                          onClick={handleLinkClick}
-                                        >
-                                          <div className="py-2 hover:text-[#873070]">
-                                            Odoo Migration
-                                          </div>
-                                        </Link>
-                                        <Link
-                                          href="/servicesweoffer/odoo-maintenance"
-                                          onClick={handleLinkClick}
-                                        >
-                                          <div className="py-2 hover:text-[#873070]">
-                                            Odoo Maintenance
-                                          </div>
-                                        </Link>
-                                      </div>
-                                    </motion.div>
-                                  )}
-                                </AnimatePresence>
+                                  <div className="py-2 hover:text-[#873070] text-gray-700">
+                                    Odoo Support
+                                  </div>
+                                </Link>
+                                <Link
+                                  href="/servicesweoffer/odoo-migration"
+                                  onClick={handleLinkClick}
+                                >
+                                  <div className="py-2 hover:text-[#873070] text-gray-700">
+                                    Odoo Migration
+                                  </div>
+                                </Link>
+                                <Link
+                                  href="/servicesweoffer/odoo-maintenance"
+                                  onClick={handleLinkClick}
+                                >
+                                  <div className="py-2 hover:text-[#873070] text-gray-700">
+                                    Odoo Maintenance
+                                  </div>
+                                </Link>
                               </div>
                             </motion.div>
                           )}
@@ -402,7 +271,7 @@ const MobileMenu = ({
                           </Link>
                           <motion.span
                             animate={{ rotate: isAppsDropdownOpen ? 90 : 0 }}
-                            className="ml-2 text-xl cursor-pointer"
+                            className="ml-2 "
                           >
                             <AiOutlineRight />
                           </motion.span>

@@ -8,11 +8,6 @@ const DesktopMenu = ({ menuItems, pathname, handleLinkClick }) => {
   // ---------- SUBMENU STATES (Desktop) ----------
   const [isOdooDropdownOpen, setIsOdooDropdownOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
-  const [isConsultingDropdownOpen, setIsConsultingDropdownOpen] = useState(false);
-  const [isImplementationDropdownOpen, setIsImplementationDropdownOpen] =
-    useState(false);
-  const [isSupportDropdownOpen, setIsSupportDropdownOpen] = useState(false);
-
   const [isAppsDropdownOpen, setIsAppsDropdownOpen] = useState(false);
   const [isManufacturingDropdownOpen, setIsManufacturingDropdownOpen] =
     useState(false);
@@ -37,15 +32,6 @@ const DesktopMenu = ({ menuItems, pathname, handleLinkClick }) => {
       case "Services":
         setIsServicesDropdownOpen(true);
         break;
-      case "Consulting":
-        setIsConsultingDropdownOpen(true);
-        break;
-      case "Implementation":
-        setIsImplementationDropdownOpen(true);
-        break;
-      case "Support":
-        setIsSupportDropdownOpen(true);
-        break;
       case "Apps":
         setIsAppsDropdownOpen(true);
         break;
@@ -68,15 +54,6 @@ const DesktopMenu = ({ menuItems, pathname, handleLinkClick }) => {
       case "Services":
         setIsServicesDropdownOpen(false);
         break;
-      case "Consulting":
-        setIsConsultingDropdownOpen(false);
-        break;
-      case "Implementation":
-        setIsImplementationDropdownOpen(false);
-        break;
-      case "Support":
-        setIsSupportDropdownOpen(false);
-        break;
       case "Apps":
         setIsAppsDropdownOpen(false);
         break;
@@ -95,12 +72,6 @@ const DesktopMenu = ({ menuItems, pathname, handleLinkClick }) => {
     switch (dropdownName) {
       case "Services":
         return isServicesDropdownOpen;
-      case "Consulting":
-        return isConsultingDropdownOpen;
-      case "Implementation":
-        return isImplementationDropdownOpen;
-      case "Support":
-        return isSupportDropdownOpen;
       case "Apps":
         return isAppsDropdownOpen;
       case "Manufacturing":
@@ -188,11 +159,11 @@ const DesktopMenu = ({ menuItems, pathname, handleLinkClick }) => {
                   </li> */}
                 </ul>
 
-                {/* Services Submenu */}
+                {/* Services Submenu - Modified to be like Apps */}
                 {isServicesDropdownOpen && (
                   <AnimatePresence>
                     <motion.div
-                      className="absolute top-2 left-full bg-white shadow-lg rounded-lg w-64"
+                      className="absolute top-2 left-full bg-white shadow-lg rounded-lg w-[500px] p-4"
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
@@ -200,184 +171,77 @@ const DesktopMenu = ({ menuItems, pathname, handleLinkClick }) => {
                       onMouseEnter={() => handleDropdownEnter("Services")}
                       onMouseLeave={() => handleDropdownLeave("Services")}
                     >
-                      <ul className="text-gray-700">
-                        {/* Consulting */}
-                        <li
-                          className="relative py-2 px-4 hover:bg-gray-100 hover:text-[#873070] transition-colors duration-200 flex justify-between items-center"
-                          onMouseEnter={() =>
-                            handleDropdownEnter("Consulting")
-                          }
-                          onMouseLeave={() =>
-                            handleDropdownLeave("Consulting")
-                          }
-                        >
-                          <span>Consulting</span>
-                          <motion.span
-                            animate={{ x: isOpen("Consulting") ? 5 : 0 }}
-                            transition={{ duration: 0.2 }}
-                            className="ml-2 hover:text-[#873070]"
-                          >
-                            <AiOutlineRight />
-                          </motion.span>
-                        </li>
+                      {/* Two-column layout similar to Apps */}
+                      <div className="flex justify-between gap-8">
+                        {/* FIRST COLUMN - Consulting & Implementation related items */}
+                        <div className="w-1/2 flex flex-col space-y-1 text-gray-700">
+                          <h4 className="font-bold mb-2">Consulting</h4>
+                          <li className="hover:text-[#873070] transition-colors duration-200 list-none">
+                            <Link href="/servicesweoffer/odoo-consulting">
+                              Odoo Consulting
+                            </Link>
+                          </li>
+                          <li className="hover:text-[#873070] transition-colors duration-200 list-none">
+                            <Link href="/servicesweoffer/odoo-ecommerce">
+                              Odoo E-Commerce
+                            </Link>
+                          </li>
+                          
+                          <h4 className="font-bold mt-4 mb-2">Implementation</h4>
+                          <li className="hover:text-[#873070] transition-colors duration-200 list-none">
+                            <Link href="/servicesweoffer/odoo-integration">
+                              Odoo Integration
+                            </Link>
+                          </li>
+                          <li className="hover:text-[#873070] transition-colors duration-200 list-none">
+                            <Link href="/servicesweoffer/odoo-implementation">
+                              Odoo Implementation
+                            </Link>
+                          </li>
+                          <li className="hover:text-[#873070] transition-colors duration-200 list-none">
+                            <Link href="/servicesweoffer/odoo-customization">
+                              Odoo Customization
+                            </Link>
+                          </li>
+                        </div>
 
-                        {/* Implementation */}
-                        <li
-                          className="relative py-2 px-4 hover:bg-gray-100 hover:text-[#873070] transition-colors duration-200 flex justify-between items-center"
-                          onMouseEnter={() =>
-                            handleDropdownEnter("Implementation")
-                          }
-                          onMouseLeave={() =>
-                            handleDropdownLeave("Implementation")
-                          }
-                        >
-                          <span>Implementation</span>
-                          <motion.span
-                            animate={{ x: isOpen("Implementation") ? 5 : 0 }}
-                            transition={{ duration: 0.2 }}
-                            className="ml-2 hover:text-[#873070]"
-                          >
-                            <AiOutlineRight />
-                          </motion.span>
-                        </li>
-
-                        {/* Support */}
-                        <li
-                          className="relative py-2 px-4 hover:bg-gray-100 hover:text-[#873070] transition-colors duration-200 flex justify-between items-center"
-                          onMouseEnter={() => handleDropdownEnter("Support")}
-                          onMouseLeave={() => handleDropdownLeave("Support")}
-                        >
-                          <span>Support</span>
-                          <motion.span
-                            animate={{ x: isOpen("Support") ? 5 : 0 }}
-                            transition={{ duration: 0.2 }}
-                            className="ml-2 hover:text-[#873070]"
-                          >
-                            <AiOutlineRight />
-                          </motion.span>
-                        </li>
-                      </ul>
-
-                      {/* Consulting -> Child */}
-                      {isConsultingDropdownOpen && (
-                        <AnimatePresence>
-                          <motion.div
-                            className="absolute top-0 left-full bg-white shadow-lg rounded-lg w-64"
-                            initial={{ opacity: 0, y: -10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -10 }}
-                            transition={{ duration: 0.3 }}
-                            onMouseEnter={() =>
-                              handleDropdownEnter("Consulting")
-                            }
-                            onMouseLeave={() =>
-                              handleDropdownLeave("Consulting")
-                            }
-                          >
-                            <ul className="text-gray-700">
-                              <li className="py-2 px-4 hover:bg-gray-100 hover:text-[#873070] transition-colors duration-200">
-                                <Link href="/servicesweoffer/odoo-consulting">
-                                  Odoo Consulting
-                                </Link>
-                              </li>
-                              <li className="py-2 px-4 hover:bg-gray-100 hover:text-[#873070] transition-colors duration-200">
-                                <Link href="/servicesweoffer/odoo-ecommerce">
-                                  Odoo E-Commerce
-                                </Link>
-                              </li>
-                            </ul>
-                          </motion.div>
-                        </AnimatePresence>
-                      )}
-
-                      {/* Implementation -> Child */}
-                      {isImplementationDropdownOpen && (
-                        <AnimatePresence>
-                          <motion.div
-                            className="absolute top-6 left-full bg-white shadow-lg rounded-lg w-64"
-                            initial={{ opacity: 0, y: -10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -10 }}
-                            transition={{ duration: 0.3 }}
-                            onMouseEnter={() =>
-                              handleDropdownEnter("Implementation")
-                            }
-                            onMouseLeave={() =>
-                              handleDropdownLeave("Implementation")
-                            }
-                          >
-                            <ul className="text-gray-700">
-                              <li className="py-2 px-4 hover:bg-gray-100 hover:text-[#873070] transition-colors duration-200">
-                                <Link href="/servicesweoffer/odoo-integration">
-                                  Odoo Integration
-                                </Link>
-                              </li>
-                              <li className="py-2 px-4 hover:bg-gray-100 hover:text-[#873070] transition-colors duration-200">
-                                <Link href="/servicesweoffer/odoo-implementation">
-                                  Odoo Implementation
-                                </Link>
-                              </li>
-                              <li className="py-2 px-4 hover:bg-gray-100 hover:text-[#873070] transition-colors duration-200">
-                                <Link href="/servicesweoffer/odoo-customization">
-                                  Odoo Customization
-                                </Link>
-                              </li>
-                              <li className="py-2 px-4 hover:bg-gray-100 hover:text-[#873070] transition-colors duration-200">
-                                <Link href="/servicesweoffer/odoo-development-services">
-                                  Odoo Development
-                                </Link>
-                              </li>
-                              <li className="py-2 px-4 hover:bg-gray-100 hover:text-[#873070] transition-colors duration-200">
-                                <Link href="/servicesweoffer/odoo-configuration">
-                                  Odoo Configuration
-                                </Link>
-                              </li>
-                              <li className="py-2 px-4 hover:bg-gray-100 hover:text-[#873070] transition-colors duration-200">
-                                <Link href="/servicesweoffer/odoo-offshore">
-                                  Odoo Offshore Development
-                                </Link>
-                              </li>
-                            </ul>
-                          </motion.div>
-                        </AnimatePresence>
-                      )}
-
-                      {/* Support -> Child */}
-                      {isSupportDropdownOpen && (
-                        <AnimatePresence>
-                          <motion.div
-                            className="absolute top-12 left-full bg-white shadow-lg rounded-lg w-64"
-                            initial={{ opacity: 0, y: -10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -10 }}
-                            transition={{ duration: 0.3 }}
-                            onMouseEnter={() =>
-                              handleDropdownEnter("Support")
-                            }
-                            onMouseLeave={() =>
-                              handleDropdownLeave("Support")
-                            }
-                          >
-                            <ul className="text-gray-700">
-                              <li className="py-2 px-4 hover:bg-gray-100 hover:text-[#873070] transition-colors duration-200">
-                                <Link href="/servicesweoffer/odoo-support">
-                                  Odoo Support
-                                </Link>
-                              </li>
-                              <li className="py-2 px-4 hover:bg-gray-100 hover:text-[#873070] transition-colors duration-200">
-                                <Link href="/servicesweoffer/odoo-migration">
-                                  Odoo Migration
-                                </Link>
-                              </li>
-                              <li className="py-2 px-4 hover:bg-gray-100 hover:text-[#873070] transition-colors duration-200">
-                                <Link href="/servicesweoffer/odoo-maintenance">
-                                  Odoo Maintenance
-                                </Link>
-                              </li>
-                            </ul>
-                          </motion.div>
-                        </AnimatePresence>
-                      )}
+                        {/* SECOND COLUMN - Implementation continued & Support */}
+                        <div className="w-1/2 flex flex-col space-y-1 text-gray-700">
+                          {/* <h4 className="font-bold mb-2">Implementation (cont.)</h4> */}
+                          <li className="hover:text-[#873070] transition-colors duration-200 list-none">
+                            <Link href="/servicesweoffer/odoo-development-services">
+                              Odoo Development
+                            </Link>
+                          </li>
+                          <li className="hover:text-[#873070] transition-colors duration-200 list-none">
+                            <Link href="/servicesweoffer/odoo-configuration">
+                              Odoo Configuration
+                            </Link>
+                          </li>
+                          <li className="hover:text-[#873070] transition-colors duration-200 list-none">
+                            <Link href="/servicesweoffer/odoo-offshore">
+                              Odoo Offshore Development
+                            </Link>
+                          </li>
+                          
+                          <h4 className="font-bold mt-4 mb-2">Support</h4>
+                          <li className="hover:text-[#873070] transition-colors duration-200 list-none">
+                            <Link href="/servicesweoffer/odoo-support">
+                              Odoo Support
+                            </Link>
+                          </li>
+                          <li className="hover:text-[#873070] transition-colors duration-200 list-none">
+                            <Link href="/servicesweoffer/odoo-migration">
+                              Odoo Migration
+                            </Link>
+                          </li>
+                          <li className="hover:text-[#873070] transition-colors duration-200 list-none">
+                            <Link href="/servicesweoffer/odoo-maintenance">
+                              Odoo Maintenance
+                            </Link>
+                          </li>
+                        </div>
+                      </div>
                     </motion.div>
                   </AnimatePresence>
                 )}

@@ -170,11 +170,11 @@ const Footer = () => {
         href="https://wa.me/919594430295"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-5 right-5 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-200"
+        className="fixed bottom-5 right-5 w-16 h-16 md:w-20 md:h-20 lg:w-26 lg:h-26 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-200"
       >
-        <FaWhatsapp className="text-white text-[1.5rem] md:text-[1.8rem] lg:text-[2rem]" />
+        <FaWhatsapp className="text-white text-[1.5rem] md:text-[1.8rem] lg:text-[13rem]" />
       </a>
     </div>
   );
 };
-export default Footer;
+export default Footer;              

@@ -108,7 +108,7 @@ const SupportersSection = () => {
       <style jsx>{`
         .animate-marquee {
           display: flex;
-          animation: marquee 30s linear infinite;
+          animation: marquee 5s linear infinite;
           will-change: transform;
         }
 

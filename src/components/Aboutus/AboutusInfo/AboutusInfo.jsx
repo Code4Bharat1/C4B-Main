@@ -1,11 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { FaArrowRight, FaPlay } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const AboutusInfo = () => {
-  const [showVideo, setShowVideo] = useState(false);
-
   // Animation variants for text and button
   const minimalVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -24,7 +22,7 @@ const AboutusInfo = () => {
     },
   };
 
-  const buttonVariants = {
+  const videoVariants = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: {
       opacity: 1,
@@ -105,29 +103,20 @@ const AboutusInfo = () => {
         </motion.div>
       </motion.div>
 
-      {/* Right Section: Video Play Button */}
+      {/* Right Section: Enhanced Video Display */}
       <motion.div
-        className="w-full md:w-[40%] h-auto md:h-full flex items-center justify-center mt-8 mb-8 md:mb-8"
+        className="w-full md:w-[40%] h-auto md:h-full flex items-center justify-center mt-8 mb-8 md:mb-8 relative"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false, amount: 0.2 }}
-        variants={buttonVariants}
+        variants={videoVariants}
       >
-        {!showVideo ? (
-          <motion.div
-            className="w-[70%] md:w-[50%] h-[25vh] md:h-[30vh] bg-yellow-100 relative flex items-center justify-center rounded-lg overflow-hidden"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            onClick={() => setShowVideo(true)}
-          >
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#122932] text-white flex items-center justify-center">
-                <FaPlay className="text-[8vw] md:text-[2vw]" />
-              </div>
-            </div>
-          </motion.div>
-        ) : (
-          <div className="w-[80%] ml-8 md:w-[100%] h-[25vh] md:h-[50vh] flex items-center justify-center mr-8">
+        <div className="w-[80%] ml-8 md:w-[100%] h-[25vh] md:h-[50vh] flex items-center justify-center mr-8 relative group">
+          {/* Glow effect */}
+          <div className="absolute inset-0 bg-blue-100 blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-300 rounded-xl"></div>
+          
+          {/* Video container with modern styling */}
+          <div className="relative w-full h-full overflow-hidden rounded-xl border-2 border-white/30 shadow-xl">
             <iframe
               width="100%"
               height="100%"
@@ -135,10 +124,23 @@ const AboutusInfo = () => {
               frameBorder="0"
               allow="autoplay"
               title="About Code4Bharat Video"
-              className="w-full h-full rounded-lg"
+              className="w-full h-full object-cover"
             />
+            
+            {/* Play button overlay (purely decorative) */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <FaPlay className="text-white" size={20} />
+              </div>
+            </div>
+            
+            {/* Video title overlay */}
+            <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/50 to-transparent">
+              <h3 className="text-white text-sm md:text-base font-medium">Code4Bharat Showcase</h3>
+              <p className="text-white/80 text-xs md:text-sm">See our innovative solutions in action</p>
+            </div>
           </div>
-        )}
+        </div>
       </motion.div>
     </section>
   );
