@@ -1,0 +1,44 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            echo "✅ Connecting to VPS..."
+            cd /home/deployer/C4B-Main
+            echo "📦 Pulling latest code..."
+            git pull origin main
+
+            echo "📁 Installing dependencies (optional)..."
+            if [ -f package.json ]; then
+              npm install
+            fi
+
+            echo "🚀 Restarting or starting PM2 process..."
+            if pm2 list | grep -q "C4B"; then
+              pm2 restart C4B
+              echo "🔄 PM2 process 'C4B' restarted."
+            else
+              pm2 start npm --name "C4B" -- start
+              echo "🆕 PM2 process 'C4B' created and running on port 3002."
+            fi
+
+            echo "💾 Ensuring PM2 auto-start on boot..."
+            pm2 startup
+            pm2 save
+
+            echo "🔁 Restarting Nginx..."
+            sudo systemctl restart nginx
