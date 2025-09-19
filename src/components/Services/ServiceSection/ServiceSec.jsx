@@ -337,8 +337,7 @@ const ServicesSection = () => {
 
       {/* Services Grid */}
       <motion.div
-        className="w-full h-auto px-5 md:px-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
-        variants={containerVariants}
+        className="w-full h-auto px-5 md:px-24 lg:px-32 xl:px-40 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-6 lg:gap-8 xl:gap-10"
         initial="hidden"
         animate="visible"
       >

@@ -14,16 +14,30 @@ import DesktopMenu from "./DesktopMenu/DesktopMenu";
 const Navbar = () => {
   // Mobile Menu open/close
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  // Detect if screen is <= 768px on mount & resize
+  
+  // Detect if screen is mobile (changed to lg breakpoint for better responsive design)
   const [isMobile, setIsMobile] = useState(false);
+  
+  // Scroll detection for enhanced navbar
+  const [isScrolled, setIsScrolled] = useState(false);
+
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 1024); // Changed to lg breakpoint (1024px)
     };
+    
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    
     handleResize();
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener("scroll", handleScroll);
+    
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   // Current route
@@ -37,17 +51,17 @@ const Navbar = () => {
   // Helper: Convert a name to a URL-friendly path
   const convertToPath = (name) => `/${name.toLowerCase().replace(/\s+/g, "")}`;
 
-  // Framer Motion animations for the parent elements
+  // Framer Motion animations
   const navVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: -20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, ease: "easeInOut" },
+      transition: { duration: 0.5, ease: "easeOut" },
     },
   };
 
-  // Main Menu Items (for demonstration)
+  // Main Menu Items
   const menuItems = [
     { name: "Home", path: "/" },
     { name: "About Us", path: convertToPath("About Us") },
@@ -55,44 +69,95 @@ const Navbar = () => {
     { name: "Clients", path: convertToPath("Clients") },
     { name: "Approach", path: convertToPath("Approach") },
     { name: "Services", path: convertToPath("Services") },
-    { name: "", path: convertToPath("Contact Us") }, // "Get in Touch" button
+   
   ];
 
   return (
     <>
       <Head>
-        <title>Navbar Example</title>
-        <meta name="description" content="Your website description" />
+        <title>Code4Bharat - Leading IT Solutions Provider</title>
+        <meta name="description" content="Code4Bharat specializes in cutting-edge web development and comprehensive IT solutions for businesses worldwide" />
       </Head>
 
-      <nav className="w-full h-[15%] flex justify-between items-center px-5 md:px-[6em] shadow-md fixed z-50 bg-white">
-        {/* LOGO Section */}
-        <motion.div
-          className="w-full md:w-[15vw] h-[10vw] flex justify-between items-center"
-          initial="hidden"
-          animate="visible"
-          variants={navVariants}
-        >
-          <Link href="/" onClick={handleLinkClick}>
-            <Image
-              src="/images/logo1.png"
-              alt="Logo"
-              width={150}
-              height={150}
-              className="w-[100%] h-[55%] md:w-[100%] md:h-[100%] object-contain"
-            />
-          </Link>
-        </motion.div>
+      <motion.nav 
+        className={`w-full fixed top-0 z-50 transition-all duration-300 ${
+          isScrolled 
+            ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100" 
+            : "bg-white shadow-md"
+        }`}
+        initial="hidden"
+        animate="visible"
+        variants={navVariants}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16 sm:h-18 lg:h-20 xl:h-22">
+            
+            {/* LOGO Section */}
+            <motion.div
+              className="flex-shrink-0"
+              initial="hidden"
+              animate="visible"
+              variants={navVariants}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+            >
+              <Link href="/" onClick={handleLinkClick}>
+                <Image
+                  src="/images/logo1.png"
+                  alt="Code4Bharat Logo"
+                  width={150}
+                  height={150}
+                  className="h-8 sm:h-10 lg:h-12 xl:h-14 w-auto object-contain"
+                  priority
+                />
+              </Link>
+            </motion.div>
 
-        {/* Hamburger Icon (Mobile) */}
-        <div
-          className="md:hidden cursor-pointer"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          <BiMenuAltRight className="w-8 h-8 text-[#112D4E]" />
+            {/* Mobile Hamburger Icon */}
+            <button
+              className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle mobile menu"
+            >
+              <BiMenuAltRight className="w-6 h-6 sm:w-7 sm:h-7 text-[#112D4E]" />
+            </button>
+
+            {/* Desktop Menu */}
+            {!isMobile && (
+              <div className="flex items-center space-x-4 lg:space-x-6">
+                <DesktopMenu
+                  menuItems={menuItems}
+                  pathname={pathname}
+                  handleLinkClick={handleLinkClick}
+                />
+                
+                {/* Desktop "Get In Touch" Button */}
+                <motion.div
+                  initial="hidden"
+                  animate="visible"
+                  variants={navVariants}
+                >
+                  <Link href={convertToPath("Contact Us")} onClick={handleLinkClick}>
+                    <motion.button
+                      className="text-sm lg:text-base xl:text-lg font-medium border-2 border-[#112D4E] text-[#112D4E] px-4 lg:px-6 xl:px-8 py-2 lg:py-3 rounded-lg transition-all duration-300 ease-in-out hover:shadow-lg"
+                      whileHover={{
+                        scale: 1.05,
+                        backgroundColor: "#112D4E",
+                        color: "#ffffff",
+                        borderColor: "#112D4E",
+                      }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      Get In Touch
+                    </motion.button>
+                  </Link>
+                </motion.div>
+              </div>
+            )}
+          </div>
         </div>
 
-        {/* Mobile Menu (only if isMobile && isMenuOpen) */}
+        {/* Mobile Menu */}
         {isMobile && (
           <MobileMenu
             isMenuOpen={isMenuOpen}
@@ -102,41 +167,10 @@ const Navbar = () => {
             handleLinkClick={handleLinkClick}
           />
         )}
-
-        {/* Desktop Menu (only if not isMobile) */}
-        {!isMobile && (
-          <DesktopMenu
-            menuItems={menuItems}
-            pathname={pathname}
-            handleLinkClick={handleLinkClick}
-          />
-        )}
-
-        {/* Desktop "Get In Touch" Button */}
-        {!isMobile && (
-          <motion.div
-            className="hidden md:block"
-            initial="hidden"
-            animate="visible"
-            variants={navVariants}
-          >
-            <Link href={menuItems[6].path} onClick={handleLinkClick}>
-              <motion.button
-                className="btn text-[1vw] font-medium border-[2.5px] border-[#112D4E] px-10 py-2 rounded-md transition-all duration-300 ease-in-out"
-                whileHover={{
-                  scale: 1.1,
-                  backgroundColor: "#112D4E",
-                  color: "#ffffff",
-                  borderColor: "#ffffff",
-                }}
-                variants={navVariants}
-              >
-                Get In Touch
-              </motion.button>
-            </Link>
-          </motion.div>
-        )}
-      </nav>
+      </motion.nav>
+      
+      {/* Spacer to prevent content from being hidden under fixed navbar */}
+      <div className="h-16 sm:h-18 lg:h-20 xl:h-22"></div>
     </>
   );
 };

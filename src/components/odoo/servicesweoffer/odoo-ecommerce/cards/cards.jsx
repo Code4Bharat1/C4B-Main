@@ -11,7 +11,7 @@ const EcommerceBenefits = () => {
         backgroundPosition: "center",
       }}
     >
-      <div className="container mx-auto grid grid-cols-1 gap-8 sm:grid-cols-2 px-6 sm:px-12 lg:px-48">
+      <div className="container mx-auto grid grid-cols-1 gap-8 sm:grid-cols-2 px-6 sm:px-12 lg:px-24">
         {/* Card 1 */}
         <div className="group bg-white shadow-lg rounded-lg p-4 sm:p-6 h-auto sm:h-[443px] w-full sm:w-[530px] transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
           <div className="flex items-center mb-4">

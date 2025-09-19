@@ -85,7 +85,7 @@ const Services = () => {
 
   return (
     <div className="bg-white">
-      <div className="grid gap-8 py-12 px-4 sm:px-6 lg:pl-[9rem] lg:pr-[13rem]">
+      <div className="grid gap-8 py-12 px-4 sm:px-6 lg:pl-[7rem] lg:pr-[10rem]">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900">
             Odoo ERP Services for Enterprises
