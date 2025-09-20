@@ -1,20 +1,39 @@
 import React from "react";
+import SEOHead from "@/components/SEOHead";
 
 export default function PrivacyPolicy() {
-  return (
-    <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 px-4 py-8">
-      <div className="max-w-5xl w-full bg-white shadow-xl rounded-xl overflow-hidden">
-        {/* Header Section */}
-        <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-12 md:px-12 md:py-16 lg:px-20 lg:py-24 mt-16 md:mt-20">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-white mb-3">
-            Privacy Policy
-          </h1>
-          <p className="text-center text-blue-100 text-sm md:text-base lg:text-lg max-w-2xl mx-auto">
-            Your privacy matters to us. Learn how we protect your personal
-            information
-          </p>
-        </div>
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Privacy Policy - Code4Bharat",
+    url: "https://www.code4bharat.com/privacy-policy",
+    description:
+      "Read Code4Bharat’s privacy policy to learn how we collect, use, and protect your personal information.",
+    inLanguage: "en-IN",
+  };
 
+  return (
+    <>
+      <SEOHead
+        title="Privacy Policy – Code4Bharat"
+        description="Learn how Code4Bharat protects your privacy and handles your personal data responsibly."
+        keywords="privacy policy, data protection, Code4Bharat privacy, user information safety"
+        url="https://www.code4bharat.com/privacy-policy"
+        schema={schema}
+      />
+
+      <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 px-4 py-8">
+        <div className="max-w-5xl w-full bg-white shadow-xl rounded-xl overflow-hidden">
+          {/* Header Section */}
+          <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-12 md:px-12 md:py-16 lg:px-20 lg:py-24 mt-16 md:mt-20">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-white mb-3">
+              Privacy Policy
+            </h1>
+            <p className="text-center text-blue-100 text-sm md:text-base lg:text-lg max-w-2xl mx-auto">
+              Your privacy matters to us. Learn how we protect your personal
+              information.
+            </p>
+          </div>
         {/* Content Section */}
         <div className="px-6 py-8 md:px-10 md:py-12">
           <div className="space-y-8 text-gray-700">
@@ -486,5 +505,6 @@ export default function PrivacyPolicy() {
         </div>
       </div>
     </div>
+    </>
   );
 }

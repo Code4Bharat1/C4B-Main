@@ -1,4 +1,4 @@
-'use client';
+
 import Footer from '@/components/layouts/footer/Footer';
 import Navbar from '@/components/layouts/navbar/Navbar';
 import SecondcontactSection from '@/components/odoo/servicesweoffer/odoo-configuration/contact-us-second/contact-us-second';
@@ -8,11 +8,52 @@ import GeneralConfiguration from '@/components/odoo/servicesweoffer/odoo-configu
 import Hero from '@/components/odoo/servicesweoffer/odoo-configuration/hero/hero';
 import Services from '@/components/odoo/servicesweoffer/odoo-configuration/our-service/our-service';
 import FooterLinks from '@/components/odoo/servicesweoffer/usefullinks/links';
-import React from 'react'
+import React from 'react';
 
-function page() {
+export const metadata = {
+  title: "Odoo Services – Code4Bharat",
+  description: "Explore the range of Odoo services we offer, from ERP modules to general configurations and contact support.",
+  keywords: [
+    "Odoo ERP services",
+    "Odoo configuration",
+    "ERP solutions",
+    "Odoo customization",
+    "Odoo support",
+    "Odoo India",
+  ],
+  openGraph: {
+    title: "Odoo Services – Code4Bharat",
+    description: "Discover our specialized Odoo services and solutions, designed to optimize your business processes.",
+    url: "https://www.code4bharat.com/services/odoo",
+    siteName: "Code4Bharat",
+    images: [
+      {
+        url: "https://www.code4bharat.com/og-image.png",  // Make sure to use the appropriate image for the page
+        width: 1200,
+        height: 630,
+        alt: "Odoo Services Code4Bharat",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Odoo Services – Code4Bharat",
+    description: "Optimize your business with our professional Odoo services, from configuration to support.",
+    images: ["https://www.code4bharat.com/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://www.code4bharat.com/services/odoo",  // Make sure the URL is correct
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+const OdooServicesPage = () => {
   return (
-    <div>
+    <div className="odoo-services-page">
       <Navbar />
       <Hero />
       <EcommerceSection />
@@ -23,7 +64,7 @@ function page() {
       <FooterLinks />
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default OdooServicesPage;

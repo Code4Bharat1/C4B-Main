@@ -207,9 +207,8 @@ const ServicesSection = () => {
         animate="visible"
         variants={containerVariants}
       >
-        <h1 className="font-sans text-4xl md:text-5xl font-bold text-center">
-          Our Clients
-        </h1>
+        <h1>Our Clients – Collaborations & Partnerships with Code4Bharat</h1>
+
       </motion.div>
 
       {/* Clients Grid */}

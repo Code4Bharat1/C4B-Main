@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import SEOHead from "../SEOHead";
 
 export default function CancellationPolicy() {
   // Animation Variants
@@ -8,10 +9,7 @@ export default function CancellationPolicy() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        duration: 0.6,
-        staggerChildren: 0.2,
-      },
+      transition: { duration: 0.6, staggerChildren: 0.2 },
     },
   };
 
@@ -33,25 +31,54 @@ export default function CancellationPolicy() {
     },
   };
 
+  // Schema for SEO
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "CancellationPolicy",
+    name: "Cancellation Policy",
+    url: "https://www.code4bharat.com/cancellationpolicy",
+    description:
+      "Read Code4Bharat’s cancellation policy. Learn the conditions and guidelines for cancelling your course enrollment.",
+    publisher: {
+      "@type": "Organization",
+      name: "Code4Bharat",
+      url: "https://www.code4bharat.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.code4bharat.com/og-image.png",
+      },
+    },
+    inLanguage: "en-IN",
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-10 px-4 sm:px-6 lg:px-8">
-      <motion.div
-        className="max-w-5xl mx-auto"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        {/* Hero Section */}
-        <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-12 md:px-12 md:py-16 lg:px-20 lg:py-24 mt-16 md:mt-20">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-white mb-4">
-            Cancellation Policy
-          </h1>
-          <p className="text-center text-blue-100 text-sm md:text-base lg:text-lg max-w-2xl mx-auto">
-            At <strong>Code4Bharat</strong>, we aim to provide a transparent and
-            user-friendly cancellation process. You may cancel your course
-            enrollment under the following conditions:
-          </p>
-        </div>
+    <>
+      <SEOHead
+        title="Cancellation Policy – Code4Bharat"
+        description="Read Code4Bharat’s cancellation policy. Learn about eligibility, process, and conditions for cancelling your course enrollment."
+        keywords="Code4Bharat cancellation policy, cancel course enrollment, cancellation rules India, course cancellation guidelines"
+        url="https://www.code4bharat.com/cancellationpolicy"
+        schema={schema}
+      />
+
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-10 px-4 sm:px-6 lg:px-8">
+        <motion.div
+          className="max-w-5xl mx-auto"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {/* Hero Section */}
+          <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-12 md:px-12 md:py-16 lg:px-20 lg:py-24 mt-16 md:mt-20">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-white mb-4">
+              Cancellation Policy
+            </h1>
+            <p className="text-center text-blue-100 text-sm md:text-base lg:text-lg max-w-2xl mx-auto">
+              At <strong>Code4Bharat</strong>, we aim to provide a transparent and
+              user-friendly cancellation process. You may cancel your course
+              enrollment under the following conditions:
+            </p>
+          </div>
 
         {/* Policy Section */}
         <motion.div
@@ -103,5 +130,6 @@ export default function CancellationPolicy() {
         </motion.div>
       </motion.div>
     </div>
+    </>
   );
 }

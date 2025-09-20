@@ -9,7 +9,7 @@ const ApproachSection = () => {
     {
       id: 1,
       title: "Understand Your Needs",
-      imgSrc: "/images/Web development.png",
+      imgSrc: "/images/Web development.png ",
       description:
         "We begin by thoroughly understanding your business requirements and goals.",
       details:
@@ -57,9 +57,8 @@ const ApproachSection = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <h1 className="font-sans text-4xl md:text-5xl font-bold text-center">
-          Our Approach
-        </h1>
+        <h1>Our Approach – How Code4Bharat Empowers Developers in India</h1>
+
       </motion.div>
 
       {/* Approach Grid */}

@@ -1,6 +1,9 @@
+'use client';
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from "next/link";
+import SEOHead from "@/components/SEOHead";  // Ensure this import is correct
 
 export default function About() {
   // Animation variants
@@ -8,10 +11,7 @@ export default function About() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        duration: 0.6,
-        staggerChildren: 0.2
-      }
+      transition: { duration: 0.6, staggerChildren: 0.2 }
     }
   };
 
@@ -20,10 +20,7 @@ export default function About() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut"
-      }
+      transition: { duration: 0.5, ease: "easeOut" }
     }
   };
 
@@ -32,50 +29,74 @@ export default function About() {
     visible: {
       opacity: 1,
       scale: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
+      transition: { duration: 0.6, ease: "easeOut" }
     }
   };
 
+  // Schema for SEO
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: "About Code4Bharat",
+    url: "https://www.code4bharat.com/about",
+    description:
+      "Learn more about Code4Bharat’s mission to empower students and developers in India with coding tutorials, tools, and innovative learning programs.",
+    publisher: {
+      "@type": "Organization",
+      name: "Code4Bharat",
+      url: "https://www.code4bharat.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.code4bharat.com/og-image.png",
+      },
+    },
+    inLanguage: "en-IN",
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-8 px-4 sm:px-6 lg:px-8">
-      <motion.div
-        className="max-w-7xl mx-auto"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        {/* Hero Section */}
-         <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-12 md:px-12 md:py-16 lg:px-20 lg:py-24 mt-16 md:mt-20">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center text-white mb-4">
-            Abouts Us
-          </h1>
-          
-        </div>
+    <>
+      <SEOHead
+        title="About Code4Bharat – Empowering Students & Developers in India"
+        description="Discover Code4Bharat’s mission, vision, and values. We provide coding tutorials, innovative learning solutions, and skill-building programs to empower students and developers in India."
+        keywords="About Code4Bharat, developer community India, coding tutorials India, future-ready skills, education transformation"
+        url="https://www.code4bharat.com/about"
+        schema={schema}
+      />
 
-        {/* Welcome Section */}
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-8 px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="bg-white/80 backdrop-blur-sm shadow-xl rounded-2xl p-6 sm:p-8 lg:p-12 mb-8 lg:mb-12 border border-white/20"
-          variants={cardVariants}
+          className="max-w-7xl mx-auto"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
         >
-          <div className="text-center space-y-6">
-            <motion.h2
-              className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#106EB5]"
-              variants={itemVariants}
-            >
-              Welcome to Code4Bharat
-            </motion.h2>
-            <motion.p
-              className="text-gray-700 text-lg sm:text-xl lg:text-2xl max-w-4xl mx-auto leading-relaxed"
-              variants={itemVariants}
-            >
-              Empowering students with future-ready skills through innovative education solutions.
-            </motion.p>
+          {/* Hero Section */}
+          <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-12 md:px-12 md:py-16 lg:px-20 lg:py-24 mt-16 md:mt-20">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center text-white mb-4">
+              About Us
+            </h1>
           </div>
-        </motion.div>
 
+          {/* Welcome Section */}
+          <motion.div
+            className="bg-white/80 backdrop-blur-sm shadow-xl rounded-2xl p-6 sm:p-8 lg:p-12 mb-8 lg:mb-12 border border-white/20"
+            variants={cardVariants}
+          >
+            <div className="text-center space-y-6">
+              <motion.h2
+                className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#106EB5]"
+                variants={itemVariants}
+              >
+                Welcome to Code4Bharat
+              </motion.h2>
+              <motion.p
+                className="text-gray-700 text-lg sm:text-xl lg:text-2xl max-w-4xl mx-auto leading-relaxed"
+                variants={itemVariants}
+              >
+                Empowering students with future-ready skills through innovative education solutions.
+              </motion.p>
+            </div>
+          </motion.div>
         {/* Why Choose Us Section */}
         <motion.div
           className="bg-white/80 backdrop-blur-sm shadow-xl rounded-2xl p-6 sm:p-8 lg:p-12 mb-8 lg:mb-12 border border-white/20"
@@ -202,37 +223,38 @@ export default function About() {
           </div>
         </motion.div>
 
-        {/* Call to Action Section */}
-        <motion.div
-          className="bg-gradient-to-r from-[#106EB5] to-[#0d5694] rounded-2xl p-6 sm:p-8 lg:p-12 text-center text-white shadow-2xl"
-          variants={cardVariants}
-        >
-          <motion.h2
-            className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6 lg:mb-8"
-            variants={itemVariants}
+       {/* CTA Section */}
+          <motion.div
+            className="bg-gradient-to-r from-[#106EB5] to-[#0d5694] rounded-2xl p-6 sm:p-8 lg:p-12 text-center text-white shadow-2xl"
+            variants={cardVariants}
           >
-            🚀 Join the Revolution
-          </motion.h2>
-          <motion.p
-            className="text-base sm:text-lg lg:text-xl max-w-4xl mx-auto leading-relaxed mb-8"
-            variants={itemVariants}
-          >
-            Become a part of the education transformation with Code4Bharat and take the first step towards a brighter,
-            future-ready career.
-          </motion.p>
-          <motion.div variants={itemVariants}>
-  <Link href="/contactus">
-    <motion.button
-      className="bg-white text-[#106EB5] font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-    >
-      Get Started Today →
-    </motion.button>
-  </Link>
-</motion.div>
+            <motion.h2
+              className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6 lg:mb-8"
+              variants={itemVariants}
+            >
+              🚀 Join the Revolution
+            </motion.h2>
+            <motion.p
+              className="text-base sm:text-lg lg:text-xl max-w-4xl mx-auto leading-relaxed mb-8"
+              variants={itemVariants}
+            >
+              Become a part of the education transformation with Code4Bharat and take the first step towards a brighter, future-ready career.
+            </motion.p>
+            <motion.div variants={itemVariants}>
+              <Link href="/contactus">
+                <motion.button
+                  className="bg-white text-[#106EB5] font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Get Started Today →
+                </motion.button>
+              </Link>
+            </motion.div>
+          </motion.div>
         </motion.div>
-      </motion.div>
-    </div>
+      </div>
+    </>
   );
 }
+

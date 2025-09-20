@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import SEOHead from "../SEOHead";
 
 export default function ShippingPolicy() {
   const itemVariants = {
@@ -11,20 +12,49 @@ export default function ShippingPolicy() {
     },
   };
 
+  // Schema for SEO
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ShippingDeliveryTime",
+    name: "Shipping & Delivery Policy",
+    url: "https://www.code4bharat.com/deliverypolicy",
+    description:
+      "Read Code4Bharat’s shipping & delivery policy. Learn how we manage deliveries of physical materials or certificates for courses.",
+    publisher: {
+      "@type": "Organization",
+      name: "Code4Bharat",
+      url: "https://www.code4bharat.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.code4bharat.com/og-image.png",
+      },
+    },
+    inLanguage: "en-IN",
+  };
+
   return (
-    <div className="min-h-screen bg-gray-100 px-4 py-12">
-      <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-6 md:p-10">
-        {/* Hero Section */}
-        <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-12 md:px-12 md:py-16 lg:px-20 lg:py-24 mt-16 md:mt-20">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-white mb-4">
-            Shipping & Delivery Policy
-          </h1>
-          <p className="text-center text-blue-100 text-sm md:text-base lg:text-lg max-w-2xl mx-auto">
-            At <strong>Code4Bharat</strong>, we ensure a seamless shipping and
-            delivery process for any physical materials or certificates (if
-            applicable).
-          </p>
-        </div>
+    <>
+      <SEOHead
+        title="Shipping & Delivery Policy – Code4Bharat"
+        description="Read Code4Bharat’s shipping and delivery policy for physical course materials or certificates. Learn about timelines, availability, and process."
+        keywords="Code4Bharat shipping policy, delivery policy, course certificates delivery, education material shipping India"
+        url="https://www.code4bharat.com/deliverypolicy"
+        schema={schema}
+      />
+
+      <div className="min-h-screen bg-gray-100 px-4 py-12">
+        <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-6 md:p-10">
+          {/* Hero Section */}
+          <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-12 md:px-12 md:py-16 lg:px-20 lg:py-24 mt-16 md:mt-20">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-white mb-4">
+              Shipping & Delivery Policy
+            </h1>
+            <p className="text-center text-blue-100 text-sm md:text-base lg:text-lg max-w-2xl mx-auto">
+              At <strong>Code4Bharat</strong>, we ensure a seamless shipping and
+              delivery process for any physical materials or certificates (if
+              applicable).
+            </p>
+          </div>
 
         {/* Policy Content */}
         <div className="space-y-6 text-gray-700 text-lg pt-6 md:pt-10">
@@ -72,5 +102,6 @@ export default function ShippingPolicy() {
         </div>
       </div>
     </div>
+    </>
   );
 }

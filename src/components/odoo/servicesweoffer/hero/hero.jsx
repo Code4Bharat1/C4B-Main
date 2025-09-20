@@ -1,5 +1,5 @@
-import React from "react"
-import Image from "next/image"
+import React from "react";
+import Image from "next/image";
 
 const Hero = () => {
   return (
@@ -8,7 +8,7 @@ const Hero = () => {
       <div className="absolute w-full h-full">
         <Image
           src="/images/bg-image/Shamsservices.jpg"
-          alt="Background"
+          alt="Odoo Services Background"
           layout="fill"
           objectFit="cover"
           priority
@@ -16,19 +16,27 @@ const Hero = () => {
       </div>
 
       {/* Text Content */}
-      <div className="relative z-10 flex flex-col h-full w-full items-center justify-center px-4 sm:px-16">
+      <div className="relative z-10 flex flex-col h-full w-full items-center justify-center px-4 sm:px-16 bg-black/40">
         {/* Main Title */}
-        <h2 className="text-3xl sm:text-5xl font-bold text-white text-center mb-4 sm:mb-8">Odoo All Services</h2>
+        <h1 className="text-3xl sm:text-5xl font-extrabold text-white text-center mb-4 sm:mb-8 drop-shadow-lg">
+          Odoo All Services
+        </h1>
 
-        {/* Navigation Text */}
-        <div className="text-white flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6">
-          <h2 className="text-lg sm:text-xl font-bold text-purple-300">Home</h2>
-          <h2 className="text-lg sm:text-xl font-bold">Odoo All Services</h2>
-        </div>
+        {/* Navigation Text (Breadcrumbs) */}
+        <nav
+          aria-label="Breadcrumb"
+          className="text-white flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6"
+        >
+          <span className="text-lg sm:text-xl font-semibold text-purple-300 hover:underline cursor-pointer">
+            Home
+          </span>
+          <span className="text-lg sm:text-xl font-semibold">
+            Odoo All Services
+          </span>
+        </nav>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Hero
-
+export default Hero;

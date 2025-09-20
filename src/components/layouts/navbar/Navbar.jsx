@@ -169,8 +169,7 @@ const Navbar = () => {
         )}
       </motion.nav>
       
-      {/* Spacer to prevent content from being hidden under fixed navbar */}
-      <div className="h-16 sm:h-18 lg:h-20 xl:h-22"></div>
+      
     </>
   );
 };

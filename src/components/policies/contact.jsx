@@ -1,18 +1,54 @@
 import React from "react";
+import SEOHead from "../SEOHead";
 
 export default function ContactUs() {
+  // Schema for SEO
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: "Contact Code4Bharat",
+    url: "https://www.code4bharat.com/contact",
+    description:
+      "Contact Code4Bharat for support, collaborations, or developer resources. Reach out to our team to learn more about tutorials, tools, and community initiatives.",
+    publisher: {
+      "@type": "Organization",
+      name: "Code4Bharat",
+      url: "https://www.code4bharat.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.code4bharat.com/og-image.png",
+      },
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "Customer Support",
+      availableLanguage: "English",
+      email: "support@code4bharat.com",
+    },
+    inLanguage: "en-IN",
+  };
+
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 px-4 py-8">
-      <div className="max-w-4xl w-full bg-white shadow-xl rounded-xl overflow-hidden">
-        {/* Header Section */}
-        <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-12 md:px-12 md:py-16 lg:px-20 lg:py-24 mt-16 md:mt-20">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center text-white mb-4">
-            Contact Us
-          </h1>
-          <p className="text-center text-blue-100 text-sm md:text-base lg:text-lg max-w-2xl mx-auto">
-            We're here to help and answer any questions you might have
-          </p>
-        </div>
+    <>
+      <SEOHead
+        title="Contact Code4Bharat – Get in Touch with Our Team"
+        description="Have questions or want to collaborate? Contact Code4Bharat today for developer support, coding resources, and community collaborations."
+        keywords="Contact Code4Bharat, developer support India, coding help, web development inquiries, programming collaboration"
+        url="https://www.code4bharat.com/contact"
+        schema={schema}
+      />
+
+      <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 px-4 py-8">
+        <div className="max-w-4xl w-full bg-white shadow-xl rounded-xl overflow-hidden">
+          {/* Header Section */}
+          <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-12 md:px-12 md:py-16 lg:px-20 lg:py-24 mt-16 md:mt-20">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center text-white mb-4">
+              Contact Us
+            </h1>
+            <p className="text-center text-blue-100 text-sm md:text-base lg:text-lg max-w-2xl mx-auto">
+              We're here to help and answer any questions you might have
+            </p>
+          </div>
 
         {/* Content Section */}
         <div className="px-6 py-8 md:px-10 md:py-12">
@@ -181,5 +217,6 @@ export default function ContactUs() {
         </div>
       </div>
     </div>
+    </>
   );
 }

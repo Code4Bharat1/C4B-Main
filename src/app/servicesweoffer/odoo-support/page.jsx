@@ -1,4 +1,8 @@
 'use client';
+
+import React from 'react';
+import Head from 'next/head';
+
 import Footer from '@/components/layouts/footer/Footer';
 import Navbar from '@/components/layouts/navbar/Navbar';
 import EcommerceBenefits from '@/components/odoo/servicesweoffer/odoo-support/cards/cards';
@@ -8,11 +12,38 @@ import SecondcontactSection from '@/components/odoo/servicesweoffer/odoo-support
 import EcommerceSections from '@/components/odoo/servicesweoffer/odoo-support/training/training';
 import WhyChooseUs from '@/components/odoo/servicesweoffer/odoo-support/why-choose/why-choose';
 import FooterLinks from '@/components/odoo/servicesweoffer/usefullinks/links';
-import React from 'react'
 
-function page() {
+function Page() {
   return (
-    <div>
+    <>
+      <Head>
+        <title>Odoo Support & Training Services – Code4Bharat</title>
+        <meta
+          name="description"
+          content="Get expert Odoo support and training services from Code4Bharat. Enhance your team's skills and optimize your Odoo ERP system."
+        />
+        <meta
+          name="keywords"
+          content="Odoo support, Odoo training, Odoo ERP support, Odoo expert services, Code4Bharat Odoo"
+        />
+        <meta property="og:title" content="Odoo Support & Training Services – Code4Bharat" />
+        <meta
+          property="og:description"
+          content="Get expert Odoo support and training services from Code4Bharat. Enhance your team's skills and optimize your Odoo ERP system."
+        />
+        <meta property="og:url" content="https://www.code4bharat.com/services/odoo-support" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.code4bharat.com/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Odoo Support & Training Services – Code4Bharat" />
+        <meta
+          name="twitter:description"
+          content="Get expert Odoo support and training services from Code4Bharat. Enhance your team's skills and optimize your Odoo ERP system."
+        />
+        <meta name="twitter:image" content="https://www.code4bharat.com/og-image.png" />
+        <link rel="canonical" href="https://www.code4bharat.com/services/odoo-support" />
+      </Head>
+
       <Navbar />
       <Hero />
       <EcommerceSections />
@@ -22,8 +53,8 @@ function page() {
       <SecondcontactSection />
       <FooterLinks />
       <Footer />
-    </div>
-  )
+    </>
+  );
 }
 
-export default page
+export default Page;

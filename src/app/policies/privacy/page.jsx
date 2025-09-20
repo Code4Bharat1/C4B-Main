@@ -1,16 +1,59 @@
-import Footer from '@/components/layouts/footer/Footer'
-import Navbar from '@/components/layouts/navbar/Navbar'
-import PrivacyPolicy from '@/components/policies/Privacy'
-import React from 'react'
+import Footer from "@/components/layouts/footer/Footer";
+import Navbar from "@/components/layouts/navbar/Navbar";
+import PrivacyPolicy from "@/components/policies/Privacy";
+import React from "react";
 
-const page = () => {
+export const metadata = {
+  title: "Privacy Policy – Code4Bharat",
+  description:
+    "Read Code4Bharat’s Privacy Policy to understand how we collect, use, and protect your personal data while providing coding tutorials, tools, and web development resources.",
+  keywords: [
+    "Code4Bharat privacy policy",
+    "data protection India",
+    "personal information policy",
+    "user privacy Code4Bharat",
+    "developer data security"
+  ],
+  openGraph: {
+    title: "Privacy Policy – Code4Bharat",
+    description:
+      "Learn how Code4Bharat protects your data and ensures transparency with our Privacy Policy.",
+    url: "https://www.code4bharat.com/policies/privacy",
+    siteName: "Code4Bharat",
+    images: [
+      {
+        url: "https://www.code4bharat.com/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Code4Bharat Privacy Policy",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy – Code4Bharat",
+    description:
+      "Read Code4Bharat’s Privacy Policy to see how we safeguard your personal information and data.",
+    images: ["https://www.code4bharat.com/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://www.code4bharat.com/policies/privacy",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+const Page = () => {
   return (
-    <div className='w-screen h-screen overflow-x-hidden'>
-        <Navbar/>
-        <PrivacyPolicy/>
-        <Footer/>
+    <div className="w-screen h-screen overflow-x-hidden">
+      <Navbar />
+      <PrivacyPolicy />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default Page;
