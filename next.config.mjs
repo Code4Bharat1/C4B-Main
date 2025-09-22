@@ -19,7 +19,7 @@ const nextConfig = {
       {
         source: '/(.*)',
         has: [{ type: 'host', value: 'code4bharat.com' }],
-        destination: 'https://www.code4bharat.com/:1',
+        destination: 'https://www.code4bharat.com/:path*',
         permanent: true,
       },
     ];
