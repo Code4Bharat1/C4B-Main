@@ -25,7 +25,7 @@ const TestimonialsSection = () => {
           >
             Testimonials
           </motion.span>
-          <motion.h2
+          <motion.h3
             className="text-[6vw] md:text-[2.5vw] font-sans font-bold leading-tight md:leading-none"
             initial={{ opacity: 0, x: -100 }} // Hidden and off-screen to the left
             whileInView={{ opacity: 1, x: 0 }} // Animate into view
@@ -33,7 +33,7 @@ const TestimonialsSection = () => {
             transition={{ duration: 0.6, delay: 0.4, ease: "easeInOut" }} // Cascading effect
           >
             What Our Clients <br /> Say
-          </motion.h2>
+          </motion.h3>
         </motion.div>
 
         {/* Animate the description */}
