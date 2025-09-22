@@ -48,7 +48,7 @@ const ContactUsHeroSection = () => {
               className="text-[7vw] md:text-[3.5vw] font-bold font-sans leading-tight md:leading-none text-center md:text-left"
               variants={textVariants}
             >
-              Contact Code4Bharat – We’re Here to Help Developers in India
+              <h1>Contact Code4Bharat – We’re Here to Help Developers in India</h1>
 
             </motion.h1>
           </div>

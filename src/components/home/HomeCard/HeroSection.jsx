@@ -37,10 +37,10 @@ const HeroSection = () => {
             animate="visible"
             variants={minimalVariants}
           >
-            <h2 className="text-[7vw] md:text-[3.5vw] font-bold font-sans leading-tight md:leading-none text-center md:text-left">
+            <h1 className="text-[7vw] md:text-[3.5vw] font-bold font-sans leading-tight md:leading-none text-center md:text-left">
               Boost Your <br className="hidden md:block" /> Business with{" "}
               <br className="hidden md:block" /> Cutting-Edge IT Solutions
-            </h2>
+            </h1>
           </motion.div>
 
           {/* Minimalistic Paragraph animation */}

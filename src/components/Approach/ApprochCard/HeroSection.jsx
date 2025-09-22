@@ -41,7 +41,7 @@ const ApproachHeroSection = () => {
               className="text-[7vw] md:text-[3.5vw] font-bold font-sans leading-tight md:leading-none text-center md:text-left"
               variants={textVariants}
             >
-              Our Approach <br className="hidden md:block" /> Driving Success <br className="hidden md:block" /> through Innovation
+              <h1>Our Approach <br className="hidden md:block" /> Driving Success <br className="hidden md:block" /> through Innovation </h1>
             </motion.h1>
           </div>
           <div className="w-full hidden md:block">

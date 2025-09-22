@@ -41,8 +41,8 @@ const ClientsHeroSection = () => {
               className="text-[7vw] md:text-[3.5vw] font-bold font-sans leading-tight md:leading-none text-center md:text-left"
               variants={textVariants}
             >
-              Our Clients <br className="hidden md:block" /> Building Success{" "}
-              <br className="hidden md:block" /> Together
+              <h1>Our Clients <br className="hidden md:block" /> Building Success{" "}
+              <br className="hidden md:block" /> Together </h1>
             </motion.h1>
           </div>
 
