@@ -42,7 +42,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://media.licdn.com/dms/image/v2/D4D0BAQHvTMcK1-GpCw/company-logo_200_200/company-logo_200_200/0/1728390314876/code4bharat_logo?e=2147483647&v=beta&t=8FYnrV5k1jaxQHZCAKGij_DDJlKBhJaIBr6AgoRisHs",
+        url: "https://media.licdn.com/dms/image/v2/D4D0BAQHvTMcK1-GpCw/company-logo_200_200/company-logo_200_200/0/1728390314876/code4bharat_logo.png",
         width: 200,
         height: 200,
         alt: "Code4Bharat Logo",
@@ -55,12 +55,15 @@ export const metadata = {
     description:
       "Code4Bharat boosts your business with custom web & mobile apps, IT consulting, and tailored e-commerce solutions.",
     images: [
-      "https://media.licdn.com/dms/image/v2/D4D0BAQHvTMcK1-GpCw/company-logo_200_200/company-logo_200_200/0/1728390314876/code4bharat_logo?e=2147483647&v=beta&t=8FYnrV5k1jaxQHZCAKGij_DDJlKBhJaIBr6AgoRisHs",
+      "https://media.licdn.com/dms/image/v2/D4D0BAQHvTMcK1-GpCw/company-logo_200_200/company-logo_200_200/0/1728390314876/code4bharat_logo.png",
     ],
   },
   robots: {
     index: true,
     follow: true,
+  },
+  alternates: {
+    canonical: "https://www.code4bharat.com/",
   },
 };
 
@@ -70,20 +73,26 @@ export default function Page() {
       <Home />
 
       {/* ✅ Organization Schema for SEO */}
-      <Script id="org-schema" type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          name: "Code4Bharat",
-          url: "https://www.code4bharat.com",
-          logo: "https://media.licdn.com/dms/image/v2/D4D0BAQHvTMcK1-GpCw/company-logo_200_200/company-logo_200_200/0/1728390314876/code4bharat_logo?e=2147483647&v=beta&t=8FYnrV5k1jaxQHZCAKGij_DDJlKBhJaIBr6AgoRisHs",
-          sameAs: [
-            "https://twitter.com/Code4Bharat",
-            "https://linkedin.com/company/code4bharat",
-            "https://github.com/Code4Bharat",
-          ],
-        })}
-      </Script>
+    {/* Organization Schema */}
+<Script id="org-schema" type="application/ld+json" strategy="afterInteractive">
+  {JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Code4Bharat",
+    url: "https://www.code4bharat.com",
+    logo: "https://media.licdn.com/.../code4bharat_logo.png",
+    sameAs: [
+      "https://twitter.com/Code4Bharat",
+      "https://linkedin.com/company/code4bharat",
+      "https://github.com/Code4Bharat",
+    ],
+  })}
+</Script>
+
+{/* JS Scripts */}
+<Script src="/js/main.js" strategy="defer" />
+<Script src="/js/analytics.js" strategy="afterInteractive" />
+
     </div>
   );
 }

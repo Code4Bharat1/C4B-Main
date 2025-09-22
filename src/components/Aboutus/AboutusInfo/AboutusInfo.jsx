@@ -124,6 +124,7 @@ const AboutusInfo = () => {
               height="100%"
               src="https://drive.google.com/file/d/1JGxiJ1lhe5tgBIBFLg6heIQxkmHKSFNt/preview"
               frameBorder="0"
+              loading="lazy"
               allow="autoplay"
               title="About Code4Bharat Video"
               className="w-full h-full object-cover"
