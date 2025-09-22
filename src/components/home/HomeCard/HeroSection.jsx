@@ -25,9 +25,9 @@ const HeroSection = () => {
 
   return (
     <section
-      className="herosection w-full h-[calc(80vh-10vh)] flex items-center justify-center relative mb-16" // Added 'mt-[15%]' to create gap
+      className="herosection w-full h-[calc(80vh-10vh)] flex items-center justify-center relative mb-15" // Added 'mt-[15%]' to create gap
     >
-      <div className="w-[90%] h-[80%] bg-[#106EB5] rounded-3xl flex overflow-hidden text-white flex-col md:flex-row mt-40">
+      <div className="w-[90%] h-[80%] bg-[#106EB5] rounded-3xl flex overflow-hidden text-white flex-col md:flex-row mt-30">
         {/* Left Section */}
         <div className="left w-full md:w-[70%] h-[50%] md:h-full px-5 md:px-10 flex flex-col items-center justify-center gap-5">
           {/* Minimalistic H1 animation */}
@@ -37,10 +37,10 @@ const HeroSection = () => {
             animate="visible"
             variants={minimalVariants}
           >
-            <h1 className="text-[7vw] md:text-[3.5vw] font-bold font-sans leading-tight md:leading-none text-center md:text-left">
+            <h2 className="text-[7vw] md:text-[3.5vw] font-bold font-sans leading-tight md:leading-none text-center md:text-left">
               Boost Your <br className="hidden md:block" /> Business with{" "}
               <br className="hidden md:block" /> Cutting-Edge IT Solutions
-            </h1>
+            </h2>
           </motion.div>
 
           {/* Minimalistic Paragraph animation */}
@@ -51,8 +51,8 @@ const HeroSection = () => {
             variants={minimalVariants}
             transition={{ delay: 0.2 }}
           >
-            <p className="text-[.9vw] font-medium">
-              Unlock your full potential with our tailored <br /> technology
+            <p className="text-[1.2vw] font-medium">
+              Unlock your full potential with our tailored  technology
               services. From innovative software <br /> development to robust
               cybersecurity, we empower your business to thrive in the digital
               age.

@@ -1,12 +1,12 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
-import Image from "next/image";
+import { motion } from "framer-motion"; // Importing Framer Motion for animations
+import Image from "next/image"; // Using Next.js Image component for optimization
 import Link from "next/link";
-
 const ServiceHeroSection = () => {
+  // Minimal animation variants
   const minimalVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 30 }, // Start slightly below with low opacity
     visible: {
       opacity: 1,
       y: 0,
@@ -23,36 +23,42 @@ const ServiceHeroSection = () => {
   };
 
   return (
-    <section className="herosection w-full min-h-screen md:h-[calc(80vh-10vh)] flex items-center justify-center relative mb-16">
-      <div className="w-[90%] bg-[#106EB5] rounded-3xl flex overflow-hidden text-white flex-col md:flex-row mt-20 md:mt-40 p-6 md:p-12 min-h-[60vh]">
-
-        
+    <section className="herosection w-full h-[calc(80vh-10vh)] flex items-center justify-center relative">
+      <div className="w-[90%] h-[80%] bg-[#106EB5] rounded-3xl flex overflow-hidden text-white flex-col md:flex-row pt-10 md:pt-0">
         {/* Left Section */}
-        <div className="left w-full md:w-[60%] flex flex-col items-center md:items-start justify-center gap-5 text-center md:text-left">
-          <motion.h1
+        <div className="left w-full md:w-[70%] h-[50%] md:h-full px-5 md:px-10 flex flex-col items-center justify-center gap-5">
+          {/* Minimalistic H1 animation */}
+          <motion.div
+            className="w-full"
             initial="hidden"
             animate="visible"
             variants={minimalVariants}
-            className="text-[7vw] md:text-[3.5vw] font-bold font-sans leading-tight"
           >
-            Our Services <br className="hidden md:block" />
-            Empowering Businesses <br className="hidden md:block" />
-            with Innovation
-          </motion.h1>
+            <h1 className="text-[7vw] md:text-[3.5vw] font-bold font-sans leading-tight md:leading-none text-center md:text-left">
+              Our Services <br className="hidden md:block" /> Empowering
+              Businesses <br className="hidden md:block" /> with Innovation
+            </h1>
+          </motion.div>
 
-          <motion.p
+          {/* Minimalistic Paragraph animation */}
+          <motion.div
+            className="w-full hidden md:block"
             initial="hidden"
             animate="visible"
             variants={minimalVariants}
             transition={{ delay: 0.2 }}
-            className="hidden md:block text-[.9vw] font-medium"
           >
-            At Code4Bharat, we specialize in delivering innovative IT solutions.
-            From tailored software development to web design, we help businesses
-            succeed in the digital world.
-          </motion.p>
+            <p className="text-[1.2vw] font-medium">
+              At Code4Bharat, we specialize in delivering innovative IT
+              solutions. <br />
+              From tailored software development to web design, <br />
+              we help businesses succeed in the digital world.
+            </p>
+          </motion.div>
 
+          {/* Button with subtle hover effect */}
           <motion.div
+            className="w-full text-center md:text-left"
             initial="hidden"
             animate="visible"
             variants={minimalVariants}
@@ -60,8 +66,8 @@ const ServiceHeroSection = () => {
           >
             <Link href="/services">
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                className="px-6 py-3 text-[4vw] md:text-[1vw] font-medium bg-white text-black rounded-lg shadow-md hover:shadow-lg transition"
+                whileHover={{ scale: 1.03 }} // Slight hover effect
+                className="px-6 py-3 text-[4vw] md:text-[1vw] font-medium bg-white text-black rounded-md"
               >
                 Learn More About Our Services
               </motion.button>
@@ -69,19 +75,19 @@ const ServiceHeroSection = () => {
           </motion.div>
         </div>
 
-        {/* Right Section */}
+        {/* Right Section (Image) */}
         <motion.div
+          className="right w-full md:w-[40%] h-[50%] md:h-full flex items-center justify-center"
           initial="hidden"
           animate="visible"
           variants={imageVariants}
-          className="right w-full md:w-[40%] flex items-center justify-center mt-6 md:mt-0"
         >
           <Image
             src="/images/services.jpg"
             alt="Our Services Banner"
-            width={500}
+            width={400}
             height={400}
-            className="w-[90%] md:w-[80%] h-auto object-cover rounded-lg"
+            className="w-[60%] h-[60%] md:w-[80%] md:h-[80%] object-cover"
           />
         </motion.div>
       </div>

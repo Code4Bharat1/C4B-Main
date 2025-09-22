@@ -82,7 +82,7 @@ export default function CancellationPolicy() {
 
         {/* Policy Section */}
         <motion.div
-          className="bg-white/80 backdrop-blur-sm shadow-xl rounded-2xl p-6 sm:p-8 lg:p-12 border border-white/20"
+          className="bg-white/80 backdrop-blur-sm shadow-xl rounded-2xl p-6 sm:p-8 lg:p-12 border border-white/20 "
           variants={cardVariants}
         >
           <ol className="list-decimal list-inside space-y-6 text-gray-700 text-base sm:text-lg leading-relaxed">

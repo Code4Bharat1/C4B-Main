@@ -69,6 +69,7 @@ const Navbar = () => {
     { name: "Clients", path: convertToPath("Clients") },
     { name: "Approach", path: convertToPath("Approach") },
     { name: "Services", path: convertToPath("Services") },
+    { name: "Get in touch", path: convertToPath("Contact Us") },
    
   ];
 
@@ -89,7 +90,7 @@ const Navbar = () => {
         animate="visible"
         variants={navVariants}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 sm:h-18 lg:h-20 xl:h-22">
             
             {/* LOGO Section */}
@@ -103,11 +104,11 @@ const Navbar = () => {
             >
               <Link href="/" onClick={handleLinkClick}>
                 <Image
-                  src="/images/logo1.png"
+                  src="/images/logo_trans.png"
                   alt="Code4Bharat Logo"
-                  width={150}
-                  height={150}
-                  className="h-8 sm:h-10 lg:h-12 xl:h-14 w-auto object-contain"
+                  width={200}
+                  height={200}
+                  className="h-50 sm:h-30 lg:h-50 xl:h-65 w-auto object-contain"
                   priority
                 />
               </Link>
@@ -131,27 +132,7 @@ const Navbar = () => {
                   handleLinkClick={handleLinkClick}
                 />
                 
-                {/* Desktop "Get In Touch" Button */}
-                <motion.div
-                  initial="hidden"
-                  animate="visible"
-                  variants={navVariants}
-                >
-                  <Link href={convertToPath("Contact Us")} onClick={handleLinkClick}>
-                    <motion.button
-                      className="text-sm lg:text-base xl:text-lg font-medium border-2 border-[#112D4E] text-[#112D4E] px-4 lg:px-6 xl:px-8 py-2 lg:py-3 rounded-lg transition-all duration-300 ease-in-out hover:shadow-lg"
-                      whileHover={{
-                        scale: 1.05,
-                        backgroundColor: "#112D4E",
-                        color: "#ffffff",
-                        borderColor: "#112D4E",
-                      }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      Get In Touch
-                    </motion.button>
-                  </Link>
-                </motion.div>
+                
               </div>
             )}
           </div>
@@ -169,7 +150,8 @@ const Navbar = () => {
         )}
       </motion.nav>
       
-      
+      {/* Spacer to prevent content from being hidden under fixed navbar */}
+      <div className="h-16 sm:h-18 lg:h-20 xl:h-22"></div>
     </>
   );
 };

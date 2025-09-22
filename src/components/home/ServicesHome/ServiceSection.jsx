@@ -57,9 +57,9 @@ const ServiceSection = () => {
             animate={isInView ? "visible" : "hidden"}
             variants={textVariants}  // Apply textVariants here
           >
-            <h1 className="font-sans text-[6vw] md:text-[2.5vw] font-bold">
+            <h2 className="font-sans text-[6vw] md:text-[2.5vw] font-bold">
               Amazing Services
-            </h1>
+            </h2>
           </motion.div>
 
           {/* Description */}

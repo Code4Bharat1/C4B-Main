@@ -51,9 +51,9 @@ const ApproachSection = () => {
           <span className="text-[6vw] md:text-[1.5vw] font-semibold text-[#A4D7E3]">
             How it Works?
           </span>
-          <h1 className="text-[8vw] md:text-[2.5vw] w-full font-sans font-bold leading-tight md:leading-none">
+          <h2 className="text-[8vw] md:text-[2.5vw] w-full font-sans font-bold leading-tight md:leading-none">
             Our Process <br /> Workflow
-          </h1>
+          </h2>
         </motion.div>
 
         {/* Workflow Steps */}

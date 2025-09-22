@@ -4,7 +4,7 @@ import Script from "next/script";
 export const metadata = {
   title: "Code4Bharat",
   description:
-    "At Code4Bharat, we drive your business forward with custom web and mobile app development, strategic IT consulting, and robust e-commerce solutions tailored to your needs.",
+    "Code4Bharat boosts your business with custom web & mobile apps, IT consulting, and tailored e-commerce solutions.",
   keywords: [
     "Code4Bharat",
     "web development India",
@@ -37,7 +37,7 @@ export const metadata = {
   openGraph: {
     title: "Code4Bharat",
     description:
-      "At Code4Bharat, we drive your business forward with custom web and mobile app development, strategic IT consulting, and robust e-commerce solutions tailored to your needs.",
+      "Code4Bharat boosts your business with custom web & mobile apps, IT consulting, and tailored e-commerce solutions.",
     url: "https://www.code4bharat.com",
     type: "website",
     images: [
@@ -53,7 +53,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Code4Bharat",
     description:
-      "At Code4Bharat, we drive your business forward with custom web and mobile app development, strategic IT consulting, and robust e-commerce solutions tailored to your needs.",
+      "Code4Bharat boosts your business with custom web & mobile apps, IT consulting, and tailored e-commerce solutions.",
     images: [
       "https://media.licdn.com/dms/image/v2/D4D0BAQHvTMcK1-GpCw/company-logo_200_200/company-logo_200_200/0/1728390314876/code4bharat_logo?e=2147483647&v=beta&t=8FYnrV5k1jaxQHZCAKGij_DDJlKBhJaIBr6AgoRisHs",
     ],

@@ -1,157 +1,90 @@
-import "./globals.css";
-import Script from "next/script";
+import "@/app/globals.css";
 
 export const metadata = {
-  title: "Code4Bharat – Empowering Developers in India",
+  title: "Code4Bharat",
   description:
-    "Code4Bharat is a platform built to empower developers in India with tutorials, tools, and resources for modern web development.",
+    "Code4Bharat boosts your business with custom web & mobile apps, IT consulting, and tailored e-commerce solutions.",
   keywords: [
     "Code4Bharat",
-    "web development",
-    "nextjs",
-    "programming tutorials",
-    "developer tools",
-    "India coding platform",
-    "learn to code India",
-    "web development tutorials",
-    "React tutorials",
-    "JavaScript tutorials",
-    "frontend development",
-    "backend development",
-    "fullstack development",
-    "modern web development",
-    "coding resources India",
-    "developer community India",
-    "open source projects India",
-    "software development tutorials",
-    "programming courses India",
-    "coding bootcamp India",
-    "learn React India",
-    "learn Next.js India",
-    "tech tutorials India",
-    "software engineering tutorials",
-    "programming challenges",
-    "developer blog India",
-    "mobile app development India",
-    "technology tutorials",
-    "web app development tutorials"
+    "web development India",
+    "mobile app development",
+    "IT consulting",
+    "e-commerce solutions",
+    "custom software development",
+    "software development company India",
+    "digital transformation services",
+    "enterprise app development",
+    "cloud solutions India",
+    "React development services",
+    "Next.js development company",
+    "Node.js development",
+    "UI/UX design services",
+    "agile software development",
+    "startup app development",
+    "e-commerce website development",
+    "mobile app design",
+    "android app development India",
+    "ios app development India",
+    "IT strategy consulting",
+    "technology consulting firm",
+    "business process automation",
+    "software maintenance services",
+    "custom CRM development",
+    "backend development services",
+    "full-stack development India",
   ],
-  authors: [{ name: "Code4Bharat Team" }],
-  creator: "Code4Bharat",
-  publisher: "Code4Bharat",
-  metadataBase: new URL("https://www.code4bharat.com"),
-  openGraph: {
-    title: "Code4Bharat – Empowering Developers in India",
-    description:
-      "Code4Bharat provides tutorials, tools, and resources for developers in India to learn modern web technologies.",
-    url: "https://www.code4bharat.com",
-    siteName: "Code4Bharat",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Code4Bharat",
-      },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: '32x32', type: 'image/x-icon' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
     ],
-    locale: "en_IN",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Code4Bharat – Empowering Developers in India",
-    description:
-      "Learn Next.js, React, and modern web development with Code4Bharat.",
-    creator: "@Code4Bharat",
-    images: ["/og-image.png"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+  }
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en-IN" dir="ltr">
+    <html lang="en">
       <head>
-        {/* ✅ Character Encoding */}
-        <meta charSet="UTF-8" />
+        {/* Google Fonts */}
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Archivo:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        />
 
-        {/* ✅ Responsive Viewport */}
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
 
-        {/* ✅ Favicons */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" href="/favicon.png" />
-
-        {/* ✅ Canonical URL */}
-        <link rel="canonical" href="https://www.code4bharat.com" />
-
-        {/* ✅ Theme Color */}
-        <meta name="theme-color" content="#2563eb" />
-
-        {/* ✅ Google Search Console Verification */}
-        <meta
-          name="google-site-verification"
-          content="FpT8vyz4FajVkRmympX15FZ4jlefoZyxS20-dq-Fpy0"
+        {/* Organization JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Code4Bharat",
+              url: "https://www.code4bharat.com",
+              logo: "https://media.licdn.com/dms/image/v2/D4D0BAQHvTMcK1-GpCw/company-logo_200_200/company-logo_200_200/0/1728390314876/code4bharat_logo?e=2147483647&v=beta&t=8FYnrV5k1jaxQHZCAKGij_DDJlKBhJaIBr6AgoRisHs",
+              sameAs: [
+                "https://twitter.com/Code4Bharat",
+                "https://linkedin.com/company/code4bharat",
+                "https://github.com/Code4Bharat",
+              ],
+            }),
+          }}
         />
       </head>
-      <body className="non-selective">
+      <body
+        style={{
+          fontFamily: "'Archivo', 'Montserrat', sans-serif",
+          fontSize: "20px", // increased base font size
+          lineHeight: "1.6", // improved line height for readability
+        }}
+      >
         {children}
-
-        {/* ✅ Organization Schema */}
-        <Script id="organization-schema" type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "Code4Bharat",
-            url: "https://www.code4bharat.com",
-            logo: "https://www.code4bharat.com/og-image.png",
-            sameAs: [
-              "https://twitter.com/Code4Bharat",
-              "https://github.com/Code4Bharat",
-            ],
-          })}
-        </Script>
-
-        {/* ✅ Website Schema */}
-        <Script id="website-schema" type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            name: "Code4Bharat",
-            url: "https://www.code4bharat.com",
-            potentialAction: {
-              "@type": "SearchAction",
-              target:
-                "https://www.code4bharat.com/search?q={search_term_string}",
-              "query-input": "required name=search_term_string",
-            },
-          })}
-        </Script>
-
-        {/* ✅ Google Analytics */}
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-2DMPGE1KGS"
-        />
-        <Script id="google-analytics">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-2DMPGE1KGS');
-          `}
-        </Script>
       </body>
     </html>
   );

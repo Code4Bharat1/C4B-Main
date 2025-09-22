@@ -92,7 +92,7 @@ const ServiceCard = ({ client }) => {
 
   return (
     <motion.div
-      className="w-full sm:w-80 h-96 bg-white rounded-2xl p-5 flex items-center justify-center shadow-lg cursor-pointer"
+      className="w-full sm:w-80 h-96 bg-white rounded-2xl p-5 flex items-center justify-center shadow-lg cursor-pointer font-sans"
       style={{ perspective: "1000px" }}
       variants={cardVariants}
       whileHover={{ scale: 1.05 }}
@@ -125,8 +125,10 @@ const ServiceCard = ({ client }) => {
 
           {/* Client Title and Description */}
           <div className="w-full h-1/2 flex flex-col items-center justify-center text-center gap-2 px-2">
-            <h3 className="text-lg font-bold">{client.title}</h3>
-            <p className="text-sm font-medium text-gray-600">
+            <h3 className="text-xl md:text-2xl font-bold font-serif">
+              {client.title}
+            </h3>
+            <p className="text-sm md:text-base font-medium text-gray-600 leading-snug">
               {client.description}
             </p>
           </div>
@@ -135,7 +137,7 @@ const ServiceCard = ({ client }) => {
           <div className="w-full h-1/6 flex items-center justify-center">
             <motion.button
               aria-label={`Read more about ${client.title}`}
-              className="flex items-center gap-2 text-sm font-semibold text-blue-600 focus:outline-none"
+              className="flex items-center gap-2 text-sm md:text-base font-semibold text-blue-600 focus:outline-none"
               whileHover={{ x: 5 }}
               transition={{ type: "spring", stiffness: 300 }}
               onClick={(e) => {
@@ -149,7 +151,7 @@ const ServiceCard = ({ client }) => {
         </div>
 
         {/* Back Side */}
-        <div
+        <las
           className="absolute w-full h-full flex flex-col items-center justify-between bg-[#f8f9fa] rounded-2xl p-5"
           style={{
             backfaceVisibility: "hidden",
@@ -157,30 +159,28 @@ const ServiceCard = ({ client }) => {
           }}
         >
           {/* Client Details */}
-          <div className="w-full h-full overflow-y-auto px-2">
-            <div className="text-sm space-y-2">
-              <p>
-                <strong>Client:</strong> {client.details.client}
-              </p>
-              <p>
-                <strong>Project Summary:</strong>{" "}
-                {client.details.projectSummary}
-              </p>
-              <p>
-                <strong>Technologies Used:</strong>{" "}
-                {client.details.technologiesUsed}
-              </p>
-              <p className="text-gray-700 mt-2">
-                <strong>{client.date}</strong>
-              </p>
-            </div>
+          <div className="w-full h-full overflow-y-auto px-2 text-sm md:text-1xl font-sans leading-relaxed">
+            <p>
+              <strong>Client:</strong> {client.details.client}
+            </p>
+            <p>
+              <strong>Project Summary:</strong>{" "}
+              {client.details.projectSummary}
+            </p>
+            <p>
+              <strong>Technologies Used:</strong>{" "}
+              {client.details.technologiesUsed}
+            </p>
+            <p className="text-gray-700 mt-2 font-semibold">
+              {client.date}
+            </p>
           </div>
 
           {/* Close Button */}
           <div className="w-full h-1/6 flex items-center justify-center">
             <motion.button
               aria-label={`Close details about ${client.title}`}
-              className="flex items-center gap-2 text-sm font-semibold text-blue-600 focus:outline-none"
+              className="flex items-center gap-2 text-sm md:text-2xl font-semibold text-blue-600 focus:outline-none"
               whileHover={{ x: -5 }}
               transition={{ type: "spring", stiffness: 300 }}
               onClick={(e) => {
@@ -191,7 +191,7 @@ const ServiceCard = ({ client }) => {
               <FaArrowLeft /> Back
             </motion.button>
           </div>
-        </div>
+        </las>
       </motion.div>
     </motion.div>
   );
@@ -207,13 +207,14 @@ const ServicesSection = () => {
         animate="visible"
         variants={containerVariants}
       >
-        <h1>Our Clients – Collaborations & Partnerships with Code4Bharat</h1>
-
+        <h2 className="text-2xl md:text-3xl font-bold font-serif text-gray-800 text-center">
+          Our Clients – Collaborations & Partnerships with Code4Bharat
+        </h2>
       </motion.div>
 
       {/* Clients Grid */}
       <motion.div
-        className="w-full px-5 md:px-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-8"
+        className="w-full px-5 md:px-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
         variants={containerVariants}
         initial="hidden"
         animate="visible"

@@ -73,7 +73,7 @@ const ContactForm = () => {
   return (
     <section className="contactsection w-full bg-gradient-to-r from-[#DBE2EF] to-[#A3BFFA] p-5 md:px-16 lg:px-24 py-12">
       <motion.form
-        className="bg-white p-8 md:p-12 rounded-3xl shadow-lg max-w-7xl mx-auto"
+        className="bg-white p-8 md:p-12 rounded-3xl shadow-lg max-w-9xl mx-auto"
         initial="hidden"
         animate="visible"
         variants={{

@@ -24,9 +24,9 @@ const ClientsHeroSection = () => {
   };
 
   return (
-    <section className="herosection w-full h-[calc(80vh-10vh)] flex items-center justify-center relative mb-16">
+    <section className="herosection w-full h-[calc(80vh-10vh)] flex items-center justify-center relative mb-15">
       <motion.div
-        className="w-[90%] h-[80%] bg-[#106EB5] rounded-3xl flex overflow-hidden text-white flex-col md:flex-row mt-40"
+        className="w-[90%] h-[80%] bg-[#106EB5] rounded-3xl flex overflow-hidden text-white flex-col md:flex-row mt-30"
         initial="hidden"
         whileInView="visible" // Trigger the animation when this section is in view
         viewport={{ once: false, amount: 0.3 }} // Re-trigger the animation every time it enters the viewport
@@ -48,7 +48,7 @@ const ClientsHeroSection = () => {
 
           <div className="w-full hidden md:block">
             <motion.p
-              className="text-[.9vw] font-medium"
+              className="text-[1.2vw] font-medium"
               variants={textVariants}
               transition={{ delay: 0.2 }}
             >
