@@ -12,6 +12,18 @@ const nextConfig = {
   },
   poweredByHeader: false,
   compress: true,             // Enable Gzip compression
+
+  // ✅ Redirect www/non-www
+  async redirects() {
+    return [
+      {
+        source: '/(.*)',
+        has: [{ type: 'host', value: 'code4bharat.com' }],
+        destination: 'https://www.code4bharat.com/:1',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
