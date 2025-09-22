@@ -17,9 +17,9 @@ const Services = () => {
         <div className="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-between mb-8 sm:mb-12 text-center sm:text-left">
           <div>
             <h3 className="text-purple-600 uppercase text-[17px] font-bold">Our Service</h3>
-            <h1 className="text-xl sm:text-3xl font-[1000] text-gray-800 mt-4">
+            <h2 className="text-xl sm:text-3xl font-[1000] text-gray-800 mt-4">
               Odoo Functional & Technical Consulting Services
-            </h1>
+            </h2>
           </div>
           {/* All Services Button with Routing */}
           <div className="mt-6 sm:mt-0">

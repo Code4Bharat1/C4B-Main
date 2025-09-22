@@ -42,7 +42,7 @@ const ServiceHeroSection = () => {
               className="text-[7vw] md:text-[3.5vw] font-bold font-sans leading-tight md:leading-none text-center md:text-left"
               variants={textVariants}
             >
-              <h1>Our Services – Empowering Developers in India with Web Development Resources</h1>
+              Our Services – Empowering Developers in India with Web Development Resources
             </motion.h1>
           </div>
           <div className="w-full hidden md:block">

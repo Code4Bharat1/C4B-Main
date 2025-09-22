@@ -73,9 +73,9 @@ const ApproachSection = () => {
             >
               <div className="w-[20%] md:w-[15%] flex items-center justify-center mb-5 md:mb-0">
                 <div className="w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center border-4 border-[#A4D7E3]">
-                  <h1 className="text-[4vw] md:text-[1.5vw] font-sans font-extrabold">
+                  <h2 className="text-[4vw] md:text-[1.5vw] font-sans font-extrabold">
                     {step.id < 10 ? `0${step.id}` : step.id}
-                  </h1>
+                  </h2>
                 </div>
               </div>
               <div className="w-full md:w-[75%] flex flex-col justify-center text-center md:text-left">
@@ -121,9 +121,9 @@ const ApproachSection = () => {
             >
               <div className="w-[20%] md:w-[15%] flex items-center justify-center mb-5 md:mb-0">
                 <div className="w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center border-4 border-[#A4D7E3]">
-                  <h1 className="text-[4vw] md:text-[1.5vw] font-sans font-extrabold">
+                  <h3 className="text-[4vw] md:text-[1.5vw] font-sans font-extrabold">
                     {step.id < 10 ? `0${step.id}` : step.id}
-                  </h1>
+                  </h3>
                 </div>
               </div>
               <div className="w-full md:w-[75%] flex flex-col justify-center text-center md:text-left">
