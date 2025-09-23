@@ -1,9 +1,13 @@
+# robots.txt for Code4Bharat
 User-agent: *
 Disallow: /admin/
 Disallow: /private/
 Disallow: /tmp/
 Disallow: /cgi-bin/
+Disallow: /*?*utm_*        # Blocks duplicate tracking URLs
+Disallow: /*?*sessionid=*  # Blocks duplicate session URLs
 
 Allow: /
 
+# Sitemap
 Sitemap: https://code4bharat.com/sitemap.xml
