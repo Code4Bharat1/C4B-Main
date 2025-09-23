@@ -108,7 +108,7 @@ const Navbar = () => {
                   alt="Code4Bharat Logo"
                   width={200}
                   height={200}
-                  className="h-50 sm:h-30 lg:h-50 xl:h-65 w-auto object-contain"
+                  className="h-50 sm:h-25 lg:h-50 xl:h-65 w-auto object-contain"
                   priority
                 />
               </Link>
