@@ -1,67 +1,53 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion"; // Import Framer Motion
-import Image from "next/image"; // Importing Next.js Image component
+import { motion } from "framer-motion";
+import Image from "next/image";
 
-const ServiceCard = ({
-  image,
-  imageHover,
-  title,
-  description,
-  noLineHeight,
-}) => {
-  const [isHovered, setIsHovered] = useState(false); // Track hover state
-
-  const handleHoverStart = () => {
-    setIsHovered(true); // Set hover to true on hover start
-  };
-
-  const handleHoverEnd = () => {
-    setIsHovered(false); // Set hover to false on hover end
-  };
+const ServiceCard = ({ image, imageHover, title, description, noLineHeight }) => {
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <motion.div
-      className={`w-[80vw] md:w-[30vw] lg:w-[22vw] h-[40vh] cursor-pointer rounded-2xl flex-shrink-0 shadow-lg p-4 transition-all duration-300
-        ${isHovered ? "bg-[#112D4E]" : "bg-white"}`} // Faster background change
-      initial={{ rotateY: 0, rotateX: 0 }} // Initial no rotation
-      whileHover={{ rotateY: -20, rotateX: 5 }} // Tilt on hover
-      transition={{ duration: 0.2, ease: "easeInOut" }} // Faster tilt effect
-      onMouseEnter={handleHoverStart} // Track hover start
-      onMouseLeave={handleHoverEnd} // Track hover end
+      className={`w-[80vw] md:w-[30vw] lg:w-[22vw] min-h-[45vh] cursor-pointer rounded-2xl flex flex-col items-start justify-start p-5 shadow-lg transition-all duration-300
+        ${isHovered ? "shadow-2xl bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-500" : "bg-white"}`}
+      initial={{ scale: 1 }}
+      whileHover={{ scale: 1.05 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="w-full h-[25%] flex items-center justify-between px-5 md:px-10">
-        <div className="w-[20%] md:w-[15%] h-[50%] md:h-[70%]">
-          {/* Change image source based on hover */}
-          <Image
-            src={isHovered ? imageHover : image} // Swap image on hover
-            alt={title}
-            width={100}
-            height={100}
-            className="w-full h-full object-contain"
-          />
-        </div>
-        <div className="w-[70%]">
-          <h3
-            className={`text-[4vw] md:text-[1.2vw] font-sans font-bold transition-colors duration-200 ${
-              isHovered ? "text-white" : "text-black" // Faster text color change
-            } ${noLineHeight ? "leading-none" : ""}`}
-          >
-            {title}
-          </h3>
-        </div>
-      </div>
-      <div className="w-full h-[55%] flex items-center">
-        <p
-          className={`ml-[1.5em] md:ml-[3em] text-[3.5vw] md:text-[1vw] transition-colors duration-200 ${
-            isHovered ? "text-white" : "text-black" // Faster text color change
-          }`}
+      {/* Logo/Image */}
+      <div className="w-full flex justify-center md:justify-start mb-4">
+        <motion.div
+          className="w-[60px] md:w-[80px] h-[60px] md:h-[80px] relative"
+          animate={{ scale: isHovered ? 1.1 : 1 }}
+          transition={{ duration: 0.3 }}
         >
-          {description}
-        </p>
+          <Image
+            src={isHovered ? imageHover : image}
+            alt={title}
+            fill
+            className="object-contain"
+          />
+        </motion.div>
       </div>
-      <div className="w-full h-[20%] flex items-center">
-       
-      </div>
+
+      {/* Title */}
+      <h3
+        className={`text-lg md:text-xl font-bold transition-colors duration-300 mb-2 ${
+          isHovered ? "text-white" : "text-gray-900"
+        } ${noLineHeight ? "leading-none" : "leading-snug"}`}
+      >
+        {title}
+      </h3>
+
+      {/* Description */}
+      <p
+        className={`text-sm md:text-base transition-colors duration-300 ${
+          isHovered ? "text-white/90" : "text-gray-700"
+        }`}
+      >
+        {description}
+      </p>
     </motion.div>
   );
 };

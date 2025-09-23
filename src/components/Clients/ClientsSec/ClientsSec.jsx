@@ -65,7 +65,37 @@ const clients = [
       technologiesUsed: "Python, Flask, PostgreSQL",
     },
   },
+  {
+    id: 5,
+    title: "Logistics",
+    imgSrc: "/images/logistics.jpg",
+    clientName: "ShipRight",
+    date: "Project Date: September 2023",
+    description:
+      "Created a real-time logistics tracking and management system.",
+    details: {
+      client: "ShipRight",
+      projectSummary:
+        "Developed a logistics platform to track shipments, optimize routes, and provide real-time updates to clients, enhancing operational efficiency.",
+      technologiesUsed: "React, Node.js, PostgreSQL, Mapbox API",
+    },
+  },
+  {
+   id: 14,
+    title: "Social Networking",
+    imgSrc: "/images/social.jpg",
+    clientName: "Connectify",
+    date: "Project Date: August 2024",
+    description: "Built a niche social networking platform for professionals.",
+    details: {
+      client: "Connectify",
+      projectSummary:
+        "Developed a professional networking platform with profiles, messaging, groups, and event organization features.",
+      technologiesUsed: "React, Node.js, MongoDB, Socket.io",
+    },
+  },
 ];
+
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -92,7 +122,7 @@ const ServiceCard = ({ client }) => {
 
   return (
     <motion.div
-      className="w-full sm:w-80 h-96 bg-white rounded-2xl p-5 flex items-center justify-center shadow-lg cursor-pointer font-sans"
+      className="w-full sm:w-80 h-96 bg-white rounded-2xl p-5 flex items-center justify-center shadow-lg cursor-pointer font-sans "
       style={{ perspective: "1000px" }}
       variants={cardVariants}
       whileHover={{ scale: 1.05 }}
@@ -214,7 +244,7 @@ const ServicesSection = () => {
 
       {/* Clients Grid */}
       <motion.div
-        className="w-full px-5 md:px-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+        className="w-full px-1 md:px-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 "
         variants={containerVariants}
         initial="hidden"
         animate="visible"

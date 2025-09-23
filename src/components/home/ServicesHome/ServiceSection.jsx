@@ -3,16 +3,16 @@ import React, { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import ServiceCard from "./ServicesCard/Card";
 import Link from "next/link";
-// Define Animation Variants
+
 const textVariants = {
-  hidden: { opacity: 0, y: 20 },  // Initially, the text is hidden and slightly shifted downwards
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },  // Text fades in and moves up
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
 const buttonVariants = {
-  hidden: { opacity: 0, y: 20 },  // Button starts off hidden and shifted downwards
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.3 } },  // Button fades in and moves up with a slight delay
-  hover: { scale: 1.05 },  // Button scales up slightly on hover
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.3 } },
+  hover: { scale: 1.05 },
 };
 
 const ServiceSection = () => {
@@ -21,123 +21,109 @@ const ServiceSection = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsInView(true);
-        } else {
-          setIsInView(false);
-        }
-      },
-      { threshold: 0.2 } // Adjust threshold as needed
+      ([entry]) => setIsInView(entry.isIntersecting),
+      { threshold: 0.2 }
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
     };
   }, []);
 
   return (
     <section
       ref={sectionRef}
-      className="servicesection w-full bg-[#DBE2EF] flex flex-col py-10 relative"
+      className="w-full bg-[#DBE2EF] flex flex-col py-10 relative"
     >
-      {/* Left heading and description */}
-      <div className="leftheading w-full flex flex-col md:flex-row md:h-[50vh]">
-        <div className="leftside w-full md:w-1/2 flex flex-col items-center justify-center gap-4 px-5 md:px-10">
-          {/* Heading with fade-in animation */}
-          <motion.div
-            className="w-full md:w-[80%] text-center md:text-left"
+      <div className="w-full flex flex-col md:flex-row md:h-[50vh]">
+        {/* Left Text Section */}
+        <div className="w-full md:w-1/2 flex flex-col items-center justify-center gap-4 px-5 md:px-10">
+          <motion.h2
+            className="font-sans text-[6vw] md:text-[2.5vw] font-bold text-center md:text-left"
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            variants={textVariants}  // Apply textVariants here
+            variants={textVariants}
           >
-            <h2 className="font-sans text-[6vw] md:text-[2.5vw] font-bold">
-              Amazing Services
-            </h2>
-          </motion.div>
+            Amazing Services
+          </motion.h2>
 
-          {/* Description */}
-          <motion.div
-            className="w-full md:w-[80%] text-center md:text-left"
+          <motion.p
+            className="text-[3.5vw] md:text-[1.3vw] font-medium text-center md:text-left"
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            variants={textVariants}  // Apply textVariants to description too
-            transition={{ delay: 0.1 }}  // slight delay for the description
+            variants={textVariants}
+            transition={{ delay: 0.1 }}
           >
-            <p className="text-[3.5vw] md:text-[.9vw] font-medium">
-              At Code4Bharat, we drive your business forward with custom web and mobile app development,
-              strategic IT consulting, and robust e-commerce solutions tailored to your needs.
-            </p>
-          </motion.div>
+            At Code4Bharat, we drive your business forward with custom web and mobile app development,
+            strategic IT consulting, and robust e-commerce solutions tailored to your needs.
+          </motion.p>
 
-          {/* Button with hover and animation */}
           <motion.div
-            className="w-full md:w-[80%] text-center md:text-left"
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            variants={buttonVariants}  // Apply buttonVariants here
+            variants={buttonVariants}
+            className="mt-4"
           >
             <Link href="https://wa.me/919594430295">
-            <motion.button
-              whileHover="hover"
-              className="px-8 py-3 text-[4vw] md:text-[1vw] font-medium bg-[#106EB5] text-white rounded-md"
-            >
-              Let's Talk
-            </motion.button>
+              <motion.button
+                whileHover="hover"
+                className="px-8 py-3 md:px-6 md:py-2 text-[4vw] md:text-[1vw] font-medium bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-md shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                Let's Talk
+              </motion.button>
             </Link>
           </motion.div>
         </div>
 
         {/* Cards Section */}
-        <div className="rightside w-full md:w-1/2 flex flex-wrap justify-center items-center gap-5 p-5 ">
-          <ServiceCard
-            image="/images/servicesimg/webdev.png"
-            imageHover="/images/servicesimg/webdev.png"
-            title="Web Development"
-            description="At Code4Bharat, we deliver tailored web development services, including custom websites, e-commerce platforms, and web applications."
-          />
-          <ServiceCard
-            image="/images/servicesimg/mobile.png"
-            imageHover="/images/servicesimg/mobile.png"
-            title="Mobile Development"
-            description="We provide custom mobile app development services that bring your vision to life across iOS and Android platforms."
-          />
+        <div className="w-full md:w-1/2 flex flex-wrap justify-center items-center gap-5 p-5">
+          {[{
+            image: "/images/servicesimg/webdev.png",
+            title: "Web Development",
+            description: "Tailored web development services including custom websites, e-commerce, and web apps."
+          },{
+            image: "/images/servicesimg/mobile.png",
+            title: "Mobile Development",
+            description: "Custom iOS & Android mobile apps to bring your ideas to life."
+          }].map((card, idx) => (
+            <ServiceCard
+              key={idx}
+              image={card.image}
+              imageHover={card.image}
+              title={card.title}
+              description={card.description}
+              hoverEffect={{
+                scale: 1.05,
+                shadow: "shadow-2xl",
+                background: "bg-gradient-to-r from-blue-100 to-purple-100"
+              }}
+            />
+          ))}
         </div>
       </div>
 
       {/* Additional Cards */}
-      <div className="w-full flex justify-center items-center p-5 md:p-10 ">
+      <div className="w-full flex justify-center items-center p-5 md:p-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 text-[#112D4E]">
-          <ServiceCard
-            image="/images/servicesimg/it.png"
-            imageHover="/images/servicesimg/it.png"
-            title="IT Consulting"
-            description="We help businesses navigate digital transformation with tailored solutions in technology strategy, cloud migration, and system integration."
-          />
-          <ServiceCard
-            image="/images/servicesimg/ecommerce.png"
-            imageHover="/images/servicesimg/ecommerce.png"
-            title="E-Commerce Solutions"
-            description="Code4Bharat provides complete e-commerce solutions, including storefront setup and payment integration, to create secure and scalable platforms that drive business growth."
-          />
-          <ServiceCard
-            image="/images/servicesimg/ofshore.png"
-            imageHover="/images/servicesimg/ofshore.png"
-            title="Offshore Development"
-            description="We provide high-quality, cost-effective software solutions for international clients, including dedicated teams and ongoing support."
-          />
-          <ServiceCard
-            image="/images/servicesimg/ofshore.png"
-            imageHover="/images/servicesimg/ofshore.png"
-            title="Digital Marketing Solutions"
-            description="Code4Bharat offers comprehensive digital marketing services such as SEO, social media management, and content marketing."
-          />
+          {[
+            { image: "/images/servicesimg/it.png", title: "IT Consulting", description: "Digital transformation solutions for strategy, cloud, and systems." },
+            { image: "/images/servicesimg/ecommerce.png", title: "E-Commerce Solutions", description: "Complete e-commerce setup, payment integration, and growth solutions." },
+            { image: "/images/servicesimg/ofshore.png", title: "Offshore Development", description: "Cost-effective, high-quality offshore software solutions with dedicated teams." },
+            { image: "/images/servicesimg/ofshore.png", title: "Digital Marketing Solutions", description: "SEO, social media management, and content marketing to boost business visibility." }
+          ].map((card, idx) => (
+            <ServiceCard
+              key={idx}
+              image={card.image}
+              imageHover={card.image}
+              title={card.title}
+              description={card.description}
+              hoverEffect={{
+                scale: 1.05,
+                shadow: "shadow-2xl",
+                background: "bg-gradient-to-r from-blue-50 to-purple-50"
+              }}
+            />
+          ))}
         </div>
       </div>
     </section>

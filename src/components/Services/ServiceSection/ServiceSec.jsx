@@ -178,6 +178,29 @@ const services = [
       </>
     ),
   },
+  {
+    id: 9,
+  title: "Cybersecurity Solutions",
+  imgSrc: "/images/cyber.jpg",
+  date: "Launching: October 2025",
+  description:
+    "Protect your business with our advanced cybersecurity solutions.",
+  details: (
+    <>
+      <p>
+        <strong>Cybersecurity Solutions:</strong> Our team ensures your
+        systems, networks, and data are secure from modern threats. We offer:
+      </p>
+      <ul className="list-disc list-inside space-y-1 mt-2">
+        <li>Network Security</li>
+        <li>Application Security</li>
+        <li>Threat Monitoring & Response</li>
+        <li>Compliance & Auditing</li>
+      </ul>
+    </>
+  ),
+}
+
 ];
 
 // Animation Variants for Framer Motion

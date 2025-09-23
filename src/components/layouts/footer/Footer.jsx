@@ -174,60 +174,59 @@ const Footer = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="w-full border-t border-gray-300 flex flex-col md:flex-row items-center justify-between px-6 md:px-24 py-6">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-sm text-gray-600 mb-4 md:mb-0"
-        >
-          © 2011-2024 <span className="font-semibold">Code4Bharat</span>. All
-          Rights Reserved.
-        </motion.p>
+      <div className="w-full border-t border-gray-300 flex flex-col items-center justify-center px-6 py-6 space-y-4">
+  {/* Copyright */}
+  <motion.p
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6 }}
+    viewport={{ once: true }}
+    className="text-sm text-gray-600 text-center"
+  >
+    © 2011-2024 <span className="font-semibold">Code4Bharat</span>. All Rights Reserved.
+  </motion.p>
 
-        {/* Social Icons */}
-        <div className="flex space-x-4 justify-start md:justify-center">
-          {[
-            {
-              href: "https://www.facebook.com/profile.php?id=61552341000278",
-              icon: <FaFacebookF />,
-              color: "bg-[#3b5998]",
-            },
-            {
-              href: "https://www.instagram.com/code4bharat_/",
-              icon: <FaInstagram />,
-              color:
-                "bg-gradient-to-tr from-[#f58529] via-[#e4405f] to-[#bc2a8d]",
-            },
-            {
-              href: "https://x.com/Code4Bharat",
-              icon: <RiTwitterXLine />,
-              color: "bg-black",
-            },
-            {
-              href: "http://linkedin.com/company/code4bharat",
-              icon: <FaLinkedinIn />,
-              color: "bg-[#0077b5]",
-            },
-          ].map((item, i) => (
-            <motion.a
-              key={i}
-              href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              whileHover={{ scale: 1.15 }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-              viewport={{ once: true }}
-              className={`${item.color} w-10 h-10 flex items-center justify-center rounded-full text-white shadow-md transition`}
-            >
-              {item.icon}
-            </motion.a>
-          ))}
-        </div>
-      </div>
+  {/* Social Icons */}
+  <div className="flex space-x-4">
+    {[
+      {
+        href: "https://www.facebook.com/profile.php?id=61552341000278",
+        icon: <FaFacebookF />,
+        color: "bg-[#3b5998]",
+      },
+      {
+        href: "https://www.instagram.com/code4bharat_/",
+        icon: <FaInstagram />,
+        color: "bg-gradient-to-tr from-[#f58529] via-[#e4405f] to-[#bc2a8d]",
+      },
+      {
+        href: "https://x.com/Code4Bharat",
+        icon: <RiTwitterXLine />,
+        color: "bg-black",
+      },
+      {
+        href: "http://linkedin.com/company/code4bharat",
+        icon: <FaLinkedinIn />,
+        color: "bg-[#0077b5]",
+      },
+    ].map((item, i) => (
+      <motion.a
+        key={i}
+        href={item.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        whileHover={{ scale: 1.15 }}
+        transition={{ duration: 0.4, delay: i * 0.1 }}
+        viewport={{ once: true }}
+        className={`${item.color} w-10 h-10 flex items-center justify-center rounded-full text-white shadow-md transition`}
+      >
+        {item.icon}
+      </motion.a>
+    ))}
+  </div>
+</div>
 
       {/* WhatsApp Floating */}
       <motion.a
