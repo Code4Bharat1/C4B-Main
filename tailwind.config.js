@@ -8,13 +8,23 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Archivo", "sans-serif"],
-        serif: ["Montserrat", "serif"],
+        body: ["Archivo", "sans-serif"],
+        heading: ["Montserrat", "sans-serif"],
+      },
+      colors: {
+        primary: '#1a73e8',
+        secondary: '#ff6600',
+      },
+      borderRadius: {
+        xl: '1rem',
       },
     },
   },
   plugins: [
-    
-    require('tailwind-scrollbar-hide')
+    require('tailwind-scrollbar-hide'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/aspect-ratio'),
   ],
+  darkMode: 'class',
 };
