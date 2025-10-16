@@ -1,182 +1,194 @@
-import React from "react";
+import React, { useState } from 'react';
+import { FaGlobe, FaChartLine, FaRocket, FaTasks, FaBroadcastTower, FaCogs, FaSyncAlt } from 'react-icons/fa';
 
 const OdooDevelopmentKeyPoints = () => {
+  const [hoveredCard, setHoveredCard] = useState(null);
+
+  const keyPoints = [
+    {
+      id: 1,
+      title: "Web Development",
+      icon: "/images/odoo-images/odoo-icons/oodu-implementers-web-development-icon.png",
+      color: "from-pink-500 to-rose-500",
+      hoverColor: "from-pink-100 to-rose-100"
+    },
+    {
+      id: 2,
+      title: "On Demand Scalability",
+      icon: "/images/odoo-images/odoo-icons/oodu-implementers-on-demand-scalability-icon.png",
+      color: "from-purple-500 to-indigo-500",
+      hoverColor: "from-purple-100 to-indigo-100"
+    },
+    {
+      id: 3,
+      title: "Uplift Business",
+      icon: "/images/business-icon.png",
+      color: "from-pink-500 to-rose-500",
+      hoverColor: "from-pink-100 to-rose-100"
+    },
+    {
+      id: 4,
+      title: "Result-Oriented Workflow",
+      icon: "/images/workflow-icon.png",
+      color: "from-purple-500 to-indigo-500",
+      hoverColor: "from-purple-100 to-indigo-100"
+    },
+    {
+      id: 5,
+      title: "Omni Channel Reach",
+      icon: "/images/reach-icon.png",
+      color: "from-pink-500 to-rose-500",
+      hoverColor: "from-pink-100 to-rose-100"
+    },
+    {
+      id: 6,
+      title: "Enhanced Functionality",
+      icon: "/images/functionality-icon.png",
+      color: "from-purple-500 to-indigo-500",
+      hoverColor: "from-purple-100 to-indigo-100"
+    },
+    {
+      id: 7,
+      title: "Updated Technology",
+      icon: "/images/technology-icon.png",
+      color: "from-pink-500 to-rose-500",
+      hoverColor: "from-pink-100 to-rose-100"
+    }
+  ];
+
   return (
-    <section className="bg-gray-50 py-16">
-      <div className="container mx-auto px-4">
+    <section className="relative bg-gradient-to-br from-slate-50 via-purple-50/30 to-pink-50/30 py-20 overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute top-20 left-10 w-64 h-64 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+      <div className="absolute bottom-20 right-10 w-64 h-64 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+
+      <div className="container mx-auto px-6 sm:px-12 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <h3 className="text-[24px] md:text-[28px] font-[1000] text-[#5c48f1] bg-[#cec9f7] py-2 md:py-3 px-[50px] md:px-[200px] inline-block">
-            Odoo Development Key Points
-          </h3>
+        <div className="text-center mb-16 animate-fade-in">
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-full mb-4 shadow-lg">
+            <FaCogs className="text-xl animate-spin-slow" />
+            <span className="font-bold uppercase text-sm tracking-wider">Key Points</span>
+          </div>
+          
+          <h2 className="text-4xl sm:text-5xl font-extrabold">
+            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+              Odoo Development
+            </span>
+            <br />
+            <span className="text-slate-800">Key Features</span>
+          </h2>
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-4 gap-y-8 md:gap-y-12 md:gap-x-6 md:px-[15rem]">
-          {/* Card 1 */}
-          <div className="group mx-auto">
-            <div className="w-[10rem] md:w-[12rem] h-14 md:h-16 bg-[#ec6d9e] rounded-t-3xl shadow-xl"></div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+          {keyPoints.map((point, index) => (
             <div
-              className="p-4 md:p-6 w-[10rem] md:w-[12rem] flex flex-col items-center bg-white shadow-xl
-                group-hover:bg-gradient-to-b 
-                group-hover:from-transparent 
-                group-hover:via-[#f3a5b7] 
-                group-hover:to-[#ec6d9e] 
-                transition duration-300"
+              key={point.id}
+              className="group mx-auto animate-fade-in-up"
+              style={{ animationDelay: `${index * 100}ms` }}
+              onMouseEnter={() => setHoveredCard(point.id)}
+              onMouseLeave={() => setHoveredCard(null)}
             >
-              <h3 className="text-sm md:text-md font-bold text-gray-800 text-center">
-                Web <br /> Development
-              </h3>
-              <img
-                src="/images/odoo-images/odoo-icons/oodu-implementers-web-development-icon.png"
-                alt="Web Development Icon"
-                className="w-[50px] h-[60px] md:w-[64px] md:h-[73px] mb-4 mt-[0.5rem] md:mt-[1rem]"
-              />
-            </div>
-            <div className="w-[10rem] md:w-[12rem] h-14 md:h-16 bg-[#ec6d9e] rounded-b-3xl shadow-xl"></div>
-          </div>
+              {/* Card Container */}
+              <div className="relative transform hover:scale-105 transition-all duration-300">
+                {/* Top Cap */}
+                <div className={`w-48 h-16 bg-gradient-to-r ${point.color} rounded-t-3xl shadow-xl`}></div>
 
-          {/* Card 2 */}
-          <div className="group mx-auto">
-            <div className="w-[10rem] md:w-[12rem] h-14 md:h-16 bg-purple-500 rounded-t-3xl shadow-xl"></div>
-            <div
-              className="p-4 md:p-6 w-[10rem] md:w-[12rem] flex flex-col items-center bg-white shadow-xl
-                group-hover:bg-gradient-to-b 
-                group-hover:from-transparent 
-                group-hover:via-[#d1b1f5] 
-                group-hover:to-purple-500 
-                transition duration-300"
-            >
-              <h3 className="text-sm md:text-md font-bold text-gray-800 text-center">
-                On Demand <br /> Scalability
-              </h3>
-              <img
-                src="/images/odoo-images/odoo-icons/oodu-implementers-on-demand-scalability-icon.png"
-                alt="On Demand Scalability Icon"
-                className="w-[50px] h-[60px] md:w-[64px] md:h-[73px] mb-4 mt-[0.5rem] md:mt-[1rem]"
-              />
-            </div>
-            <div className="w-[10rem] md:w-[12rem] h-14 md:h-16 bg-purple-500 rounded-b-3xl shadow-xl"></div>
-          </div>
+                {/* Main Card */}
+                <div className={`p-6 w-48 flex flex-col items-center bg-white shadow-2xl relative overflow-hidden transition-all duration-500 ${hoveredCard === point.id ? 'bg-gradient-to-b from-white via-opacity-80 to-opacity-90' : ''}`}>
+                  {/* Gradient Overlay on Hover */}
+                  <div className={`absolute inset-0 bg-gradient-to-b ${point.hoverColor} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
 
-          {/* Card 3 */}
-          <div className="group mx-auto">
-            <div className="w-[10rem] md:w-[12rem] h-14 md:h-16 bg-[#ec6d9e] rounded-t-3xl shadow-xl"></div>
-            <div
-              className="p-4 md:p-6 w-[10rem] md:w-[12rem] flex flex-col items-center bg-white shadow-xl
-                group-hover:bg-gradient-to-b 
-                group-hover:from-transparent 
-                group-hover:via-[#f3a5b7] 
-                group-hover:to-[#ec6d9e] 
-                transition duration-300"
-            >
-              <h3 className="text-sm md:text-md font-bold text-gray-800 text-center">
-                Uplift <br /> Business
-              </h3>
-              <img
-                src="/images/business-icon.png"
-                alt="Uplift Business Icon"
-                className="w-[50px] h-[60px] md:w-[64px] md:h-[73px] mb-4 mt-[0.5rem] md:mt-[1rem]"
-              />
-            </div>
-            <div className="w-[10rem] md:w-[12rem] h-14 md:h-16 bg-[#ec6d9e] rounded-b-3xl shadow-xl"></div>
-          </div>
+                  {/* Content */}
+                  <div className="relative z-10">
+                    <h3 className="text-base font-extrabold text-slate-800 text-center mb-4 min-h-[3rem] flex items-center justify-center leading-tight">
+                      {point.title}
+                    </h3>
+                    
+                    {/* Icon Container */}
+                    <div className="relative mb-4">
+                      <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
+                      <img
+                        src={point.icon}
+                        alt={`${point.title} Icon`}
+                        className="relative w-16 h-20 object-contain mx-auto transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-500"
+                      />
+                    </div>
+                  </div>
+                </div>
 
-          {/* Card 4 */}
-          <div className="group mx-auto">
-            <div className="w-[10rem] md:w-[12rem] h-14 md:h-16 bg-purple-500 rounded-t-3xl shadow-xl"></div>
-            <div
-              className="p-4 md:p-6 w-[10rem] md:w-[12rem] flex flex-col items-center bg-white shadow-xl
-                group-hover:bg-gradient-to-b 
-                group-hover:from-transparent 
-                group-hover:via-[#d1b1f5] 
-                group-hover:to-purple-500 
-                transition duration-300"
-            >
-              <h3 className="text-sm md:text-md font-bold text-gray-800 text-center">
-                Result-Oriented <br /> Workflow
-              </h3>
-              <img
-                src="/images/workflow-icon.png"
-                alt="Result-Oriented Workflow Icon"
-                className="w-[50px] h-[60px] md:w-[64px] md:h-[73px] mb-4 mt-[0.5rem] md:mt-[1rem]"
-              />
-            </div>
-            <div className="w-[10rem] md:w-[12rem] h-14 md:h-16 bg-purple-500 rounded-b-3xl shadow-xl"></div>
-          </div>
+                {/* Bottom Cap */}
+                <div className={`w-48 h-16 bg-gradient-to-r ${point.color} rounded-b-3xl shadow-xl`}></div>
 
-          {/* Card 5 */}
-          <div className="flex flex-col md:flex-row justify-evenly md:grid-cols-2 lg:grid-cols-4 gap-x-[4rem] gap-y-[8rem] md:pl-[9rem]">
-          <div className="group mx-auto">
-            <div className="w-[10rem] md:w-[12rem] h-14 md:h-16 bg-[#ec6d9e] rounded-t-3xl shadow-xl"></div>
-            <div
-              className="p-4 md:p-6 w-[10rem] md:w-[12rem] flex flex-col items-center bg-white shadow-xl
-                group-hover:bg-gradient-to-b 
-                group-hover:from-transparent 
-                group-hover:via-[#f3a5b7] 
-                group-hover:to-[#ec6d9e] 
-                transition duration-300"
-            >
-              <h3 className="text-sm md:text-md font-bold text-gray-800 text-center">
-                Omni Channel <br /> Reach
-              </h3>
-              <img
-                src="/images/reach-icon.png"
-                alt="Omni Channel Reach Icon"
-                className="w-[50px] h-[60px] md:w-[64px] md:h-[73px] mb-4 mt-[0.5rem] md:mt-[1rem]"
-              />
+                {/* Hover Glow Effect */}
+                {hoveredCard === point.id && (
+                  <div className={`absolute inset-0 -m-1 bg-gradient-to-r ${point.color} opacity-30 blur-xl rounded-3xl animate-pulse`}></div>
+                )}
+              </div>
             </div>
-            <div className="w-[10rem] md:w-[12rem] h-14 md:h-16 bg-[#ec6d9e] rounded-b-3xl shadow-xl"></div>
-          </div>
-
-          {/* Card 6 */}
-          <div className="group mx-auto sm:mt-0 -mt-24">
-            <div className="w-[10rem] md:w-[12rem] h-14 md:h-16 bg-purple-500 rounded-t-3xl shadow-xl"></div>
-            <div
-              className="p-4 md:p-6 w-[10rem] md:w-[12rem] flex flex-col items-center bg-white shadow-xl
-                group-hover:bg-gradient-to-b 
-                group-hover:from-transparent 
-                group-hover:via-[#d1b1f5] 
-                group-hover:to-purple-500 
-                transition duration-300"
-            >
-              <h3 className="text-sm md:text-md font-bold text-gray-800 text-center">
-                Enhanced <br /> Functionality
-              </h3>
-              <img
-                src="/images/functionality-icon.png"
-                alt="Enhanced Functionality Icon"
-                className="w-[50px] h-[60px] md:w-[64px] md:h-[73px] mb-4 mt-[0.5rem] md:mt-[1rem]"
-              />
-            </div>
-            <div className="w-[10rem] md:w-[12rem] h-14 md:h-16 bg-purple-500 rounded-b-3xl shadow-xl"></div>
-          </div>
-
-          {/* Card 7 */}
-          <div className="group mx-auto sm:mt-0 -mt-24">
-            <div className="w-[10rem] md:w-[12rem] h-14 md:h-16 bg-[#ec6d9e] rounded-t-3xl shadow-xl"></div>
-            <div
-              className="p-4 md:p-6 w-[10rem] md:w-[12rem] flex flex-col items-center bg-white shadow-xl
-                group-hover:bg-gradient-to-b 
-                group-hover:from-transparent 
-                group-hover:via-[#f3a5b7] 
-                group-hover:to-[#ec6d9e] 
-                transition duration-300"
-            >
-              <h3 className="text-sm md:text-md font-bold text-gray-800 text-center">
-                Updated <br /> Technology
-              </h3>
-              <img
-                src="/images/technology-icon.png"
-                alt="Updated Technology Icon"
-                className="w-[50px] h-[60px] md:w-[64px] md:h-[73px] mb-4 mt-[0.5rem] md:mt-[1rem]"
-              />
-            </div>
-            <div className="w-[10rem] md:w-[12rem] h-14 md:h-16 bg-[#ec6d9e] rounded-b-3xl shadow-xl"></div>
-          </div>
+          ))}
         </div>
+
+        {/* Bottom CTA */}
+        <div className="text-center mt-16 animate-fade-in-up animation-delay-800">
+          <p className="text-slate-600 text-lg mb-6">
+            Discover how our <span className="font-semibold text-purple-600">Odoo Development</span> solutions can transform your business
+          </p>
+          <a href="#contact">
+            <button className="group inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold px-8 py-4 rounded-full shadow-2xl hover:shadow-pink-500/50 hover:scale-105 transition-all duration-300">
+              <FaRocket className="text-xl group-hover:rotate-12 transition-transform" />
+              Get Started Today
+            </button>
+          </a>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes blob {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          33% { transform: translate(30px, -50px) scale(1.1); }
+          66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+
+        @keyframes fade-in {
+          from { opacity: 0; transform: translateY(-20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fade-in-up {
+          from { opacity: 0; transform: translateY(30px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-blob {
+          animation: blob 7s infinite;
+        }
+
+        .animate-fade-in {
+          animation: fade-in 0.8s ease-out;
+        }
+
+        .animate-fade-in-up {
+          animation: fade-in-up 0.8s ease-out backwards;
+        }
+
+        .animate-spin-slow {
+          animation: spin 3s linear infinite;
+        }
+
+        @keyframes spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+
+        .animation-delay-800 {
+          animation-delay: 0.8s;
+        }
+
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+      `}</style>
     </section>
   );
 };

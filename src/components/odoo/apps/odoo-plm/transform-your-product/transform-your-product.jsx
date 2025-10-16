@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Play, X, Sparkles, FileText, TrendingUp, GitBranch, Layers } from "lucide-react";
 
 const Transformproduct = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -11,82 +12,217 @@ const Transformproduct = () => {
     setIsModalOpen(false);
   };
 
+  const features = [
+    {
+      icon: FileText,
+      title: "Integrated Document Management",
+      description: "Store plans and worksheets directly on BOM and Routing.",
+      color: "green"
+    },
+    {
+      icon: TrendingUp,
+      title: "Analysis",
+      description: "of Gap between requirements and existing Odoo ERP.",
+      color: "emerald"
+    },
+    {
+      icon: GitBranch,
+      title: "Manage Engineering Change",
+      description: "Real-time communication with Odoo PLM.",
+      color: "teal"
+    },
+    {
+      icon: Layers,
+      title: "Smart Versioning",
+      description: "Track changes effectively across multiple version.",
+      color: "green"
+    }
+  ];
+
+  const getColorClasses = (color) => {
+    const colors = {
+      green: "text-green-600 bg-green-100 border-green-200",
+      emerald: "text-emerald-600 bg-emerald-100 border-emerald-200",
+      teal: "text-teal-600 bg-teal-100 border-teal-200"
+    };
+    return colors[color];
+  };
+
   return (
-    <section className="bg-gray-50 py-16 sm:py-24">
-      <div className="container mx-auto px-6 md:px-8 lg:px-[10rem] grid grid-cols-1 lg:grid-cols-2 gap-[3rem] items-center">
-        {/* Left Section - Text Content */}
-        <div className="text-left">
-          <h1 className="text-2xl sm:text-[20px] font-extrabold text-gray-800 mb-6 leading-snug">
-            Transform your Product with Odoo Product Life Cycle Management
+    <section className="relative bg-gradient-to-br from-white via-gray-50 to-green-50 py-16 sm:py-24 overflow-hidden">
+      {/* Animated Glowing Orbs */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '2s' }}></div>
+      
+      {/* Floating Decorative Shapes */}
+      <div className="absolute top-1/4 right-1/4 w-20 h-20 border-2 border-green-300 rounded-full opacity-30 animate-bounce" style={{ animationDelay: '1s', animationDuration: '3s' }}></div>
+      <div className="absolute bottom-1/3 left-1/3 w-16 h-16 border-2 border-emerald-300 rounded-lg opacity-30 animate-bounce" style={{ animationDelay: '0.5s', animationDuration: '4s' }}></div>
+
+      <div className="relative z-10 container mx-auto px-6 md:px-8 lg:px-[10rem] grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        {/* Left Section - Enhanced Text Content */}
+        <div className="text-left space-y-6">
+          {/* Premium Badge */}
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-100 to-emerald-100 px-4 py-2 rounded-full border border-green-200">
+            <Sparkles className="w-5 h-5 text-green-600" />
+            <span className="text-sm font-semibold text-green-800 uppercase tracking-wider">
+              Product Lifecycle Excellence
+            </span>
+          </div>
+
+          {/* Main Heading with Gradient */}
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
+            Transform your Product with{" "}
+            <span className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent">
+              Odoo PLM
+            </span>
           </h1>
-          <p className="text-gray-500 text-sm sm:text-base mb-4 leading-relaxed tracking-wide text-justify">
+
+          {/* Decorative Accent Line */}
+          <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full"></div>
+
+          {/* Description */}
+          <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
             Product Life Cycle Management for modern companies. Drive business growth with modern Odoo PLM. Transform your product value chain to rapidly innovate, develop and commercialize.
           </p>
-          <h1 className="text-2xl sm:text-[29px] font-extrabold text-gray-800 mb-6 leading-snug">
-            Odoo Product Life Cycle Management Features
-          </h1>
-          <ul className="list-disc list-inside text-gray-600 text-sm sm:text-base space-y-2">
-            <li>
-              <span className="font-bold">Integrated Document Management -  </span> Store plans and worksheets directly on BOM and Routing.
-            </li>
-            <li>
-              <span className="font-bold">Analysis</span>{" "}
-               of Gap between requirements and existing Odoo ERP.
-            </li>
-            <li>
-              <span className="font-bold">Manage Engineering Change- Real-time communication with Odoo PLM.</span>{" "}
-            </li>
-            <li>
-              <span className="font-bold">Smart Versioning- </span>{" "}
-               Track changes effectively across multiple version.
-            </li>
-          </ul>
+
+          {/* Features Section Header */}
+          <div className="pt-6">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6">
+              Odoo Product Life Cycle{" "}
+              <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+                Management Features
+              </span>
+            </h2>
+
+            {/* Enhanced Feature List */}
+            <div className="space-y-4">
+              {features.map((feature, index) => {
+                const Icon = feature.icon;
+                return (
+                  <div
+                    key={index}
+                    className="flex items-start gap-4 bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group hover:translate-x-2"
+                  >
+                    {/* Icon Container */}
+                    <div className={`flex-shrink-0 w-10 h-10 rounded-lg ${getColorClasses(feature.color)} border flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                      <Icon className="w-5 h-5" />
+                    </div>
+
+                    {/* Text Content */}
+                    <div className="flex-1">
+                      <h3 className="font-bold text-gray-800 mb-1">{feature.title}</h3>
+                      <p className="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
 
-        {/* Right Section - Image/Video */}
-        <div className="relative">
-          <img
-            src="/images/App images/odoo-plm-management.webp"
-            alt="Odoo CRM Software"
-            className="shadow-2xl p-[10px] border-white shadow-[#895d7d]/100 sm:w-full md:w-auto"
-          />
+        {/* Right Section - Enhanced Image/Video */}
+        <div className="relative group">
+          {/* Glowing Hover Effect */}
+          <div className="absolute -inset-2 bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 rounded-2xl blur-xl opacity-30 group-hover:opacity-60 transition duration-500"></div>
 
-          {/* Play Button */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <button
-              onClick={handlePlayVideo}
-              className="bg-purple-700 text-white rounded-full w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center shadow-lg hover:bg-black transition animate-bounce"
-            >
-              ▶
-            </button>
+          {/* Image Container with Border and Corner Accents */}
+          <div className="relative bg-white rounded-2xl p-3 shadow-2xl transform group-hover:scale-105 transition duration-500">
+            {/* Colorful Corner Accents */}
+            <div className="absolute top-0 left-0 w-20 h-20 bg-green-500 opacity-20 rounded-tl-2xl"></div>
+            <div className="absolute top-0 right-0 w-20 h-20 bg-emerald-500 opacity-20 rounded-tr-2xl"></div>
+            <div className="absolute bottom-0 left-0 w-20 h-20 bg-teal-500 opacity-20 rounded-bl-2xl"></div>
+            <div className="absolute bottom-0 right-0 w-20 h-20 bg-green-600 opacity-20 rounded-br-2xl"></div>
+
+            {/* Image */}
+            <img
+              src="/images/App images/odoo-plm-management.webp"
+              alt="Odoo PLM Management"
+              className="rounded-xl w-full h-auto"
+            />
+
+            {/* Enhanced Play Button */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <button
+                onClick={handlePlayVideo}
+                className="group/play relative bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 text-white rounded-full w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center shadow-2xl hover:shadow-green-500/50 transition-all duration-300 transform hover:scale-110"
+              >
+                {/* Pulsing Ring */}
+                <div className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-30"></div>
+                
+                {/* Play Icon */}
+                <Play className="w-8 h-8 sm:w-10 sm:h-10 ml-1 relative z-10 group-hover/play:scale-110 transition-transform duration-300" fill="white" />
+              </button>
+            </div>
+
+            {/* "Watch Demo" Badge */}
+            <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg flex items-center gap-2 animate-bounce" style={{ animationDuration: '2s' }}>
+              <Play className="w-4 h-4 text-green-600" />
+              <span className="text-sm font-bold text-gray-800">Watch Demo</span>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Video Modal */}
+      {/* Enhanced Video Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
-          <div className="relative bg-white rounded-lg overflow-hidden w-full max-w-4xl">
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fadeIn">
+          <div className="relative bg-gradient-to-br from-white to-gray-50 rounded-2xl overflow-hidden w-full max-w-5xl shadow-2xl transform animate-scaleIn">
+            {/* Decorative Header Bar */}
+            <div className="h-2 bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500"></div>
+
             {/* Close Button */}
             <button
               onClick={handleCloseModal}
-              className="absolute top-2 right-2 bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center shadow hover:bg-red-600 transition"
+              className="absolute top-4 right-4 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:shadow-red-500/50 hover:scale-110 transition-all duration-300 z-10"
             >
-              ✕
+              <X className="w-5 h-5" />
             </button>
-            {/* Video */}
-            <iframe
-              width="100%"
-              height="500"
-              src="https://www.youtube.com/embed/xrf7zIACGvw?si=D_LUTRGT-Eayu7vw"
-              title="Odoo Development Video"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+
+            {/* Video Container */}
+            <div className="p-4">
+              <div className="relative rounded-xl overflow-hidden shadow-xl">
+                <iframe
+                  width="100%"
+                  height="500"
+                  src="https://www.youtube.com/embed/xrf7zIACGvw?si=D_LUTRGT-Eayu7vw&autoplay=1"
+                  title="Odoo PLM Video"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="rounded-xl"
+                ></iframe>
+              </div>
+            </div>
           </div>
         </div>
       )}
+
+      <style jsx>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+        @keyframes scaleIn {
+          from {
+            transform: scale(0.9);
+            opacity: 0;
+          }
+          to {
+            transform: scale(1);
+            opacity: 1;
+          }
+        }
+        .animate-fadeIn {
+          animation: fadeIn 0.3s ease-out;
+        }
+        .animate-scaleIn {
+          animation: scaleIn 0.3s ease-out;
+        }
+      `}</style>
     </section>
   );
 };

@@ -1,97 +1,270 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion"; // Importing Framer Motion
-import Image from "next/image"; // Using Next.js Image component for optimization
+import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 
 const HeroSection = () => {
-  // Minimal animation variants
-  const minimalVariants = {
-    hidden: { opacity: 0, y: 30 }, // Start slightly below with low opacity
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, ease: "easeOut" },
+      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
     },
   };
 
   const imageVariants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 0, scale: 0.9, rotate: -5 },
     visible: {
       opacity: 1,
-      transition: { duration: 0.7, ease: "easeOut", delay: 0.3 },
+      scale: 1,
+      rotate: 0,
+      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+    },
+  };
+
+  const floatingVariants = {
+    animate: {
+      y: [0, -20, 0],
+      transition: {
+        duration: 4,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
     },
   };
 
   return (
-    <section
-      className="herosection w-full h-[calc(80vh-10vh)] flex items-center justify-center relative mb-15" // Added 'mt-[15%]' to create gap
-    >
-      <div className="w-[90%] h-[80%] bg-[#106EB5] rounded-3xl flex overflow-hidden text-white flex-col md:flex-row mt-30">
-        {/* Left Section */}
-        <div className="left w-full md:w-[70%] h-[50%] md:h-full px-5 md:px-10 flex flex-col items-center justify-center gap-5">
-          {/* Minimalistic H1 animation */}
-          <motion.div
-            className="w-full"
-            initial="hidden"
-            animate="visible"
-            variants={minimalVariants}
-          >
-            <h1 className="text-[7vw] md:text-[3.5vw] font-bold font-sans leading-tight md:leading-none text-center md:text-left">
-              Boost Your <br className="hidden md:block" /> Business with{" "}
-              <br className="hidden md:block" /> Cutting-Edge IT Solutions
-            </h1>
-          </motion.div>
+    <section className="w-full min-h-[calc(80vh-10vh)] flex items-center justify-center relative py-8 md:py-12 overflow-hidden">
+      {/* Animated gradient background blobs */}
+      <motion.div
+        className="absolute top-10 left-10 w-72 h-72 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full opacity-20 blur-3xl"
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.2, 0.3, 0.2],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+      <motion.div
+        className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-violet-500 to-purple-600 rounded-full opacity-15 blur-3xl"
+        animate={{
+          scale: [1, 1.3, 1],
+          opacity: [0.15, 0.25, 0.15],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1,
+        }}
+      />
 
-          {/* Minimalistic Paragraph animation */}
-          <motion.div
-            className="w-full hidden md:block"
-            initial="hidden"
-            animate="visible"
-            variants={minimalVariants}
-            transition={{ delay: 0.2 }}
-          >
-            <p className="text-[1.2vw] font-medium">
-              Unlock your full potential with our tailored  technology
-              services. From innovative software <br /> development to robust
-              cybersecurity, we empower your business to thrive in the digital
-              age.
-            </p>
-          </motion.div>
-
-          {/* Button with subtle hover effect */}
-          <motion.div
-            className="w-full text-center md:text-left"
-            initial="hidden"
-            animate="visible"
-            variants={minimalVariants}
-            transition={{ delay: 0.4 }}
-          >
-            <Link href="/contactus">
-              <motion.button
-                whileHover={{ scale: 1.03 }} // Slight hover effect
-                className="px-6 py-3 text-[4vw] md:text-[1vw] font-medium bg-white text-black rounded-md"
-              >
-                Get Started Today!
-              </motion.button>
-            </Link>
-          </motion.div>
-        </div>
-
-        {/* Right Section (Image) */}
+      <div className="w-[95%] lg:w-[90%] relative z-10">
+        {/* Glassmorphic container with gradient border */}
         <motion.div
-          className="right w-full md:w-[40%] h-[50%] md:h-full flex items-center justify-center"
-          initial="hidden"
-          animate="visible"
-          variants={imageVariants}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7 }}
+          className="relative rounded-3xl overflow-hidden"
         >
-          <Image
-            src="/images/herosection.png"
-            alt="Banner"
-            width={400}
-            height={400}
-            className="w-[60%] h-[60%] md:w-[80%] md:h-[80%] object-cover"
-          />
+          {/* Gradient border effect */}
+          <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 opacity-80" />
+          
+          {/* Inner container with backdrop blur */}
+          <div className="relative m-[2px] rounded-3xl bg-gradient-to-br from-[#0a4d7d]/95 via-[#106EB5]/95 to-[#1a5f99]/95 backdrop-blur-xl">
+            <div className="flex flex-col md:flex-row overflow-hidden text-white">
+              {/* Left Section */}
+              <motion.div
+                className="w-full md:w-[60%] px-6 md:px-12 py-12 md:py-16 flex flex-col justify-center gap-6 md:gap-8 relative"
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                {/* Decorative elements */}
+                <div className="absolute top-8 right-8 w-20 h-20 border border-white/10 rounded-full" />
+                <div className="absolute bottom-12 left-8 w-16 h-16 border border-white/10 rounded-lg rotate-45" />
+
+                {/* Animated badge */}
+                <motion.div variants={itemVariants} className="inline-flex">
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20"
+                  >
+                    <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                    <span className="text-xs md:text-sm font-medium">
+                      Trusted by 500+ Businesses
+                    </span>
+                  </motion.div>
+                </motion.div>
+
+                {/* Main heading with gradient text */}
+                <motion.div variants={itemVariants}>
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                    Boost Your{" "}
+                    <span className="bg-gradient-to-r from-cyan-300 via-blue-300 to-purple-300 bg-clip-text text-transparent">
+                      Business
+                    </span>
+                    <br />
+                    with Cutting-Edge
+                    <br />
+                    <span className="relative inline-block">
+                      IT Solutions
+                      <motion.div
+                        className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full"
+                        initial={{ width: 0 }}
+                        animate={{ width: "100%" }}
+                        transition={{ duration: 1, delay: 1 }}
+                      />
+                    </span>
+                  </h1>
+                </motion.div>
+
+                {/* Description */}
+                <motion.div variants={itemVariants} className="hidden md:block">
+                  <p className="text-base lg:text-lg text-blue-100/90 font-medium leading-relaxed max-w-xl">
+                    Unlock your full potential with our tailored technology
+                    services. From innovative software development to robust
+                    cybersecurity, we empower your business to thrive in the
+                    digital age.
+                  </p>
+                </motion.div>
+
+                {/* Feature pills */}
+                <motion.div
+                  variants={itemVariants}
+                  className="hidden md:flex flex-wrap gap-3"
+                >
+                  {["AI-Powered", "24/7 Support", "Secure & Scalable"].map(
+                    (feature, index) => (
+                      <motion.div
+                        key={index}
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium backdrop-blur-sm"
+                      >
+                        {feature}
+                      </motion.div>
+                    )
+                  )}
+                </motion.div>
+
+                {/* CTA Button with enhanced effects */}
+                <motion.div variants={itemVariants} className="flex gap-4">
+                  <Link href="/contactus">
+                    <motion.button
+                      whileHover={{ scale: 1.05, y: -2 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="group relative px-8 py-4 text-base md:text-lg font-semibold bg-white text-blue-900 rounded-xl overflow-hidden shadow-lg shadow-blue-500/20"
+                    >
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500"
+                        initial={{ x: "100%" }}
+                        whileHover={{ x: 0 }}
+                        transition={{ duration: 0.3 }}
+                      />
+                      <span className="relative z-10 flex items-center gap-2">
+                        Get Started Today
+                        <motion.span
+                          animate={{ x: [0, 4, 0] }}
+                          transition={{
+                            duration: 1.5,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                          }}
+                        >
+                          →
+                        </motion.span>
+                      </span>
+                    </motion.button>
+                  </Link>
+
+                  {/* <motion.button
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="px-8 py-4 text-base md:text-lg font-semibold bg-white/10 backdrop-blur-sm border-2 border-white/20 rounded-xl hover:bg-white/15 transition-colors"
+                  >
+                    Learn More
+                  </motion.button> */}
+                </motion.div>
+              </motion.div>
+
+              {/* Right Section (Image) */}
+              <motion.div
+                className="w-full md:w-[40%] flex items-center justify-center p-8 md:p-12 relative"
+                variants={floatingVariants}
+                animate="animate"
+              >
+                {/* Decorative glow behind image */}
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-purple-500/20 blur-3xl" />
+
+                <motion.div
+                  variants={imageVariants}
+                  initial="hidden"
+                  animate="visible"
+                  className="relative z-10 w-full max-w-md"
+                >
+                  {/* Rotating border effect */}
+                  <motion.div
+                    className="absolute -inset-4 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 rounded-3xl opacity-30 blur-xl"
+                    animate={{ rotate: 360 }}
+                    transition={{
+                      duration: 20,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                  />
+
+                  <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+                    <Image
+                      src="/images/herosection.png"
+                      alt="IT Solutions Banner"
+                      width={400}
+                      height={400}
+                      className="w-full h-auto object-contain drop-shadow-2xl"
+                    />
+                  </div>
+                </motion.div>
+
+                {/* Floating stats cards */}
+                <motion.div
+                  className="hidden lg:block absolute top-8 right-8 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 shadow-xl"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1 }}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <div className="text-2xl font-bold text-cyan-300">99.9%</div>
+                  <div className="text-xs text-blue-100">Uptime</div>
+                </motion.div>
+
+                <motion.div
+                  className="hidden lg:block absolute bottom-12 right-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 shadow-xl"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1.2 }}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <div className="text-2xl font-bold text-purple-300">500+</div>
+                  <div className="text-xs text-blue-100">Projects</div>
+                </motion.div>
+              </motion.div>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>

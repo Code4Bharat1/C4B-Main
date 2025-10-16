@@ -1,30 +1,111 @@
 import React from "react";
-import Link from "next/link"; // Import Link from Next.js
+import Link from "next/link";
+import { Sparkles, ArrowRight, Phone, MessageCircle, Clock } from "lucide-react";
 
 const ContactSection = () => {
   return (
-    <section
-      className="relative bg-cover bg-center text-center min-h-[300px] sm:min-h-[400px] flex items-center justify-center mt-4 lg:-mt-[86px]"
-      style={{
-        backgroundImage:
-          "url('/images/odoo-images/bg-contact-us.jpg')", // Background Image
-        backgroundSize: "cover", 
-        backgroundPosition: "center", 
-      }}
-    >
-      <div className="absolute inset-0 bg-black bg-opacity-0"></div>
-      <div className="relative z-10 px-4 sm:px-0">
-        {/* Subheading */}
-        <h3 className="text-white text-[16px] sm:text-[22px] leading-tight">
-          For any queries on Odoo or new app implementation with Odoo
-        </h3>
-        {/* Button */}
-        <div className="mt-4 sm:mt-6">
-        <Link href="https://wa.me/9594430295">
-          <button className="bg-[#885c7c] hover:bg-purple-700 text-white font-bold py-2 px-4 sm:p-[15px] sm:px-[2.2rem] shadow-md transition">
-            Contact Us
-          </button>
-          </Link>
+    <section className="relative overflow-hidden mt-4 lg:-mt-01">
+      {/* Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50 to-white"></div>
+      
+      {/* Decorative Blur Circles */}
+      <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-green-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-emerald-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
+      
+      {/* Main Content Container */}
+      <div className="relative z-10 min-h-[300px] sm:min-h-[400px] flex items-center justify-center px-4 sm:px-0">
+        {/* Image Container with Glow Effect */}
+        <div className="relative group max-w-6xl w-full">
+          {/* Glowing Border Effect */}
+          <div className="absolute -inset-1 bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"></div>
+          
+          {/* Background Image Container */}
+          <div
+            className="relative bg-cover bg-center text-center min-h-[300px] sm:min-h-[400px] flex items-center justify-center rounded-2xl overflow-hidden"
+            style={{
+              backgroundImage: "url('/images/odoo-images/bg-contact-us.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            {/* Dark Overlay with Gradient */}
+            <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/50 to-black/60"></div>
+            
+            {/* Floating Badges */}
+            {/* Top-right: Timesheet Excellence Badge */}
+            <div className="absolute top-6 right-6 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg flex items-center gap-2 hover:scale-105 transition-transform duration-300">
+              <Clock className="w-5 h-5 text-green-600" />
+              <span className="text-sm font-semibold text-gray-800">Time Tracking Pro</span>
+            </div>
+            
+            {/* Bottom-left: 24/7 Support Badge */}
+            <div className="absolute bottom-6 left-6 bg-gradient-to-r from-green-500 to-emerald-500 px-4 py-2 rounded-full shadow-lg flex items-center gap-2 animate-pulse hover:scale-105 transition-transform duration-300">
+              <Phone className="w-5 h-5 text-white" />
+              <span className="text-sm font-bold text-white">Expert Support</span>
+            </div>
+            
+            {/* Text Content */}
+            <div className="relative z-10 px-4 sm:px-8 max-w-3xl">
+              {/* Icon Badge */}
+              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 mb-6">
+                <Sparkles className="w-4 h-4 text-green-400" />
+                <span className="text-sm font-semibold text-green-300 uppercase tracking-wider">
+                  Get Started Today
+                </span>
+              </div>
+
+              {/* Main Heading */}
+              <h3 className="text-lg sm:text-2xl leading-tight font-semibold drop-shadow-lg mb-3 text-white">
+                For any queries on Odoo or new app implementation with Odoo
+              </h3>
+
+              {/* CTA Heading with Gradient */}
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold leading-snug mb-6">
+                <span className="bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 bg-clip-text text-transparent drop-shadow-lg">
+                  Start Tracking Time Better
+                </span>
+              </h2>
+
+              {/* Decorative Line */}
+              <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mx-auto mb-6"></div>
+              
+              {/* Buttons Group */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                {/* Primary CTA Button */}
+                <Link href="https://wa.me/9594430295">
+                  <button className="group bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 hover:from-green-700 hover:via-emerald-700 hover:to-teal-700 text-white font-bold py-4 px-8 rounded-xl shadow-2xl hover:shadow-green-500/50 transform hover:scale-105 transition-all duration-300 flex items-center gap-3">
+                    <Phone className="w-5 h-5" />
+                    <span>Contact Us</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </button>
+                </Link>
+
+                {/* Secondary Button */}
+                <Link href="/demo">
+                  <button className="group bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-bold py-4 px-8 rounded-xl border-2 border-white/30 hover:border-white/50 shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center gap-3">
+                    <MessageCircle className="w-5 h-5" />
+                    <span>Request Demo</span>
+                  </button>
+                </Link>
+              </div>
+
+              {/* Trust Indicators */}
+              <div className="flex flex-wrap justify-center gap-4 mt-8">
+                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  <span className="text-sm text-white font-medium">Free Consultation</span>
+                </div>
+                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                  <span className="text-sm text-white font-medium">Quick Setup</span>
+                </div>
+                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+                  <div className="w-2 h-2 bg-teal-400 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+                  <span className="text-sm text-white font-medium">Expert Team</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

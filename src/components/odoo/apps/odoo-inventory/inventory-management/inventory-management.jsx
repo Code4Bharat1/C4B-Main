@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Play, X, Zap, Package, TrendingUp, CheckCircle, Award } from "lucide-react";
 
 const Inventorymanagement = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -11,63 +12,146 @@ const Inventorymanagement = () => {
     setIsModalOpen(false);
   };
 
+  const features = [
+    { icon: <Package className="w-5 h-5" />, text: "Central Repository" },
+    { icon: <TrendingUp className="w-5 h-5" />, text: "Optimized Solutions" },
+    { icon: <CheckCircle className="w-5 h-5" />, text: "User-Friendly Interface" }
+  ];
+
   return (
-    <section className="bg-gray-50 py-16 sm:py-24">
-      <div className="container mx-auto px-6 md:px-8 lg:px-[10rem] grid grid-cols-1 lg:grid-cols-2 gap-[3rem] items-center">
+    <section className="relative bg-gradient-to-br from-gray-50 via-white to-blue-50 py-16 sm:py-24 overflow-hidden">
+      {/* Decorative Background Elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-200 rounded-full opacity-20 blur-3xl"></div>
+      
+      {/* Floating Shapes */}
+      <div className="absolute top-20 left-10 w-20 h-20 border-4 border-blue-300 rounded-full opacity-30 animate-pulse"></div>
+      <div className="absolute bottom-20 right-20 w-16 h-16 bg-cyan-400 rounded-lg opacity-20 rotate-45 animate-pulse delay-500"></div>
+
+      <div className="container mx-auto px-6 md:px-8 lg:px-[10rem] grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
         {/* Left Section - Text Content */}
-        <div className="text-left">
-          <p className="text-purple-700 text-sm sm:text-[17px] font-semibold uppercase tracking-wider mb-2">
-           Manage, Monitor and Maintain Your Inventory
-          </p>
-          <h1 className="text-2xl sm:text-[28px] font-extrabold text-gray-800 mb-6 leading-snug">
-           Inventory Management with Odoo
+        <div className="text-left space-y-6">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-5 py-2 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider shadow-lg animate-pulse">
+            <Zap className="w-4 h-4" />
+            Manage, Monitor and Maintain Your Inventory
+          </div>
+
+          {/* Main Heading */}
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-800 leading-tight">
+            <span className="bg-gradient-to-r from-blue-700 via-cyan-600 to-blue-700 bg-clip-text text-transparent">
+              Inventory Management
+            </span>{" "}
+            with Odoo
           </h1>
-          <p className="text-gray-500 text-sm sm:text-base mb-4 leading-relaxed tracking-wide text-justify">
-            Maintain a central repository with modern warehouse management software—Odoo Inventory. odoo Implementers in Coimbatore deliver a user-friendly Odoo Inventory tool to optimize your business with the best inventory solutions. Partnered with Odoo, we eliminate the tedious efforts you put into analyzing, optimizing, and organizing your physical inventories. Overcome your inventory inconveniences with Odoo Inventory.
-          </p>
+
+          {/* Subheading with Accent */}
+          <div className="flex items-start gap-2">
+            <div className="w-1 h-32 bg-gradient-to-b from-blue-600 to-cyan-600 rounded-full flex-shrink-0"></div>
+            <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
+              Maintain a central repository with modern warehouse management software—Odoo Inventory. odoo Implementers in Coimbatore deliver a user-friendly Odoo Inventory tool to optimize your business with the best inventory solutions. Partnered with Odoo, we eliminate the tedious efforts you put into analyzing, optimizing, and organizing your physical inventories. Overcome your inventory inconveniences with Odoo Inventory.
+            </p>
+          </div>
+
+          {/* Feature Pills */}
+          <div className="flex flex-wrap gap-3 pt-4">
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-md border border-blue-100 hover:shadow-lg hover:scale-105 transition-all duration-300"
+              >
+                <div className="text-blue-600">{feature.icon}</div>
+                <span className="text-sm font-semibold text-gray-700">{feature.text}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Additional Info Box */}
+          <div className="bg-gradient-to-r from-blue-50 to-cyan-50 p-6 rounded-2xl border-2 border-blue-200 shadow-lg">
+            <div className="flex items-start gap-3">
+              <div className="flex-shrink-0 mt-1">
+                <div className="bg-gradient-to-r from-blue-600 to-cyan-600 p-2 rounded-full">
+                  <Award className="w-5 h-5 text-white" />
+                </div>
+              </div>
+              <p className="text-gray-700 text-sm leading-relaxed">
+                <strong>Odoo Partner Excellence:</strong> Partnered with Odoo to deliver cutting-edge inventory solutions that transform your warehouse operations.
+              </p>
+            </div>
+          </div>
         </div>
 
-        {/* Right Section - Image/Video */}
-        <div className="relative">
-          <img
-            src="/images/App images/inventory-management-with-odoo.gif"
-            alt="Odoo CRM Software"
-            className="shadow-2xl p-[10px] border-white shadow-[#895d7d]/100 sm:w-full md:w-auto"
-          />
+        {/* Right Section - Enhanced Media */}
+        <div className="relative group">
+          {/* Glowing Background */}
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-3xl opacity-0 group-hover:opacity-20 blur-2xl transition-all duration-500"></div>
+          
+          {/* Main Image Container */}
+          <div className="relative bg-white p-4 rounded-3xl shadow-2xl transform transition-all duration-500 group-hover:scale-105 group-hover:shadow-blue-500/30 border-4 border-white">
+            {/* Decorative Corner Accents */}
+            <div className="absolute -top-3 -left-3 w-8 h-8 border-t-4 border-l-4 border-blue-600 rounded-tl-2xl"></div>
+            <div className="absolute -top-3 -right-3 w-8 h-8 border-t-4 border-r-4 border-cyan-600 rounded-tr-2xl"></div>
+            <div className="absolute -bottom-3 -left-3 w-8 h-8 border-b-4 border-l-4 border-cyan-600 rounded-bl-2xl"></div>
+            <div className="absolute -bottom-3 -right-3 w-8 h-8 border-b-4 border-r-4 border-blue-600 rounded-br-2xl"></div>
 
-          {/* Play Button */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <button
-              onClick={handlePlayVideo}
-              className="bg-purple-700 text-white rounded-full w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center shadow-lg hover:bg-black transition animate-bounce"
-            >
-              ▶
-            </button>
+            <img
+              src="/images/App images/inventory-management-with-odoo.gif"
+              alt="Odoo Inventory Management"
+              className="rounded-2xl w-full h-auto"
+            />
+
+            {/* Enhanced Play Button */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <button
+                onClick={handlePlayVideo}
+                className="group/play relative bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white rounded-full w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 animate-pulse"
+              >
+                {/* Ripple Effect */}
+                <div className="absolute inset-0 bg-blue-500 rounded-full animate-ping opacity-75"></div>
+                <Play className="w-8 h-8 relative z-10 ml-1" fill="currentColor" />
+              </button>
+            </div>
+
+            {/* Watch Video Badge */}
+            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 bg-white/90 backdrop-blur-sm px-6 py-2 rounded-full shadow-xl flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <Play className="w-4 h-4 text-blue-600" />
+              <span className="text-sm font-bold text-gray-800">Watch Demo</span>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Video Modal */}
+      {/* Enhanced Video Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
-          <div className="relative bg-white rounded-lg overflow-hidden w-full max-w-4xl">
+        <div className="fixed inset-0 bg-black/90 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fadeIn">
+          <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-2xl overflow-hidden w-full max-w-5xl shadow-2xl border border-blue-500/30">
             {/* Close Button */}
             <button
               onClick={handleCloseModal}
-              className="absolute top-2 right-2 bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center shadow hover:bg-red-600 transition"
+              className="absolute top-4 right-4 z-10 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 hover:rotate-90"
             >
-              ✕
+              <X className="w-6 h-6" />
             </button>
-            {/* Video */}
-            <iframe
-              width="100%"
-              height="500"
-              src="https://www.youtube.com/embed/wrzf-LWruvo?si=3hWgR2_c1NEJfipY"
-              title="Odoo Development Video"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+
+            {/* Video Title Bar */}
+            <div className="bg-gradient-to-r from-blue-600 to-cyan-600 px-6 py-4">
+              <h3 className="text-white font-bold text-lg flex items-center gap-2">
+                <Play className="w-5 h-5" />
+                Odoo Inventory Demo
+              </h3>
+            </div>
+
+            {/* Video Container */}
+            <div className="relative pb-[56.25%] bg-black">
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/wrzf-LWruvo?si=3hWgR2_c1NEJfipY&autoplay=1"
+                title="Odoo Development Video"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
           </div>
         </div>
       )}

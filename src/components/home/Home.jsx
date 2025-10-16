@@ -3,7 +3,7 @@ import Head from "next/head";
 import Navbar from "../layouts/navbar/Navbar";
 import HeroSection from "./HomeCard/HeroSection";
 import ServiceSection from "../home/ServicesHome/ServiceSection";
-import TestimonialsSection from "../home/Testimonial/TestimonialSection";
+
 import Footer from "../layouts/footer/Footer";
 import ApproachSection from "../home/Approach/ApproachSection";
 
@@ -41,9 +41,7 @@ const Home = () => {
         <Navbar />
         <HeroSection />
         <ServiceSection />
-        <div className="mb-[2em] md:mb-0">
-          <TestimonialsSection />
-        </div>
+       
         <ApproachSection />
         <Footer />
       </div>

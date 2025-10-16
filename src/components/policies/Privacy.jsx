@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import SEOHead from "@/components/SEOHead";
+import { Shield, FileText, Zap, Lock, Users, Cookie, RefreshCw, Mail, Phone, User, CreditCard } from "lucide-react";
 
 export default function PrivacyPolicy() {
   const schema = {
@@ -8,9 +10,77 @@ export default function PrivacyPolicy() {
     name: "Privacy Policy - Code4Bharat",
     url: "https://www.code4bharat.com/privacy-policy",
     description:
-      "Read Code4Bharat’s privacy policy to learn how we collect, use, and protect your personal information.",
+      "Read Code4Bharat's privacy policy to learn how we collect, use, and protect your personal information.",
     inLanguage: "en-IN",
   };
+
+  const sections = [
+    {
+      number: 1,
+      title: "Data Collection",
+      icon: <FileText className="w-6 h-6" />,
+      color: "from-green-500 to-emerald-500",
+      dataTypes: [
+        { icon: <User className="w-5 h-5" />, label: "Name" },
+        { icon: <Mail className="w-5 h-5" />, label: "Email" },
+        { icon: <Phone className="w-5 h-5" />, label: "Phone" },
+        { icon: <CreditCard className="w-5 h-5" />, label: "Payment" }
+      ],
+      content: "We collect only the essential personal data required to provide you with our services. This information helps us process your enrollment and ensure a seamless user experience."
+    },
+    {
+      number: 2,
+      title: "Data Usage",
+      icon: <Zap className="w-6 h-6" />,
+      color: "from-blue-500 to-cyan-500",
+      points: [
+        "Processing your course enrollment and payments.",
+        "Sending updates regarding our programs, services, and policies.",
+        "Enhancing and personalizing your experience by improving our offerings."
+      ],
+      content: "Your personal information is used strictly for specific purposes. We value your trust and ensure your data is used responsibly."
+    },
+    {
+      number: 3,
+      title: "Data Security",
+      icon: <Lock className="w-6 h-6" />,
+      color: "from-red-500 to-pink-500",
+      securityFeatures: [
+        { title: "Encryption", desc: "Industry-standard encryption to protect your sensitive information." },
+        { title: "Secure Storage", desc: "Secure storage systems to prevent unauthorized access." }
+      ],
+      content: "We take your data security seriously and have implemented robust measures. Your privacy is our priority, and we continuously enhance our security protocols."
+    },
+    {
+      number: 4,
+      title: "Third-Party Sharing",
+      icon: <Users className="w-6 h-6" />,
+      color: "from-purple-500 to-indigo-500",
+      content: "Your data is never shared with third parties except for secure payment processing via trusted payment gateways. We ensure that all third-party service providers adhere to strict data protection standards."
+    },
+    {
+      number: 5,
+      title: "Cookies",
+      icon: <Cookie className="w-6 h-6" />,
+      color: "from-orange-500 to-yellow-500",
+      points: [
+        "Enhance your browsing experience.",
+        "Analyze website traffic and improve functionality."
+      ],
+      content: "Our website uses cookies for various purposes. You can manage your cookie preferences through your browser settings."
+    },
+    {
+      number: 6,
+      title: "Policy Updates",
+      icon: <RefreshCw className="w-6 h-6" />,
+      color: "from-indigo-500 to-purple-500",
+      points: [
+        "All updates will be communicated through our website.",
+        "We encourage you to review the policy periodically to stay informed."
+      ],
+      content: "Code4Bharat reserves the right to update this privacy policy to reflect changes in our practices or legal requirements."
+    }
+  ];
 
   return (
     <>
@@ -22,489 +92,178 @@ export default function PrivacyPolicy() {
         schema={schema}
       />
 
-      <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 px-4 py-8">
-        <div className="max-w-5xl w-full bg-white shadow-xl rounded-xl overflow-hidden">
+      <div className="relative min-h-screen bg-gradient-to-br from-gray-50 via-green-50 to-gray-50 px-4 py-8 overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-green-200 rounded-full filter blur-3xl opacity-20"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-200 rounded-full filter blur-3xl opacity-20"></div>
+
+        <div className="relative z-10 max-w-6xl mx-auto">
           {/* Header Section */}
-          <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-12 md:px-12 md:py-16 lg:px-20 lg:py-24 mt-16 md:mt-20">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-white mb-3">
-              Privacy Policy
-            </h1>
-            <p className="text-center text-blue-100 text-sm md:text-base lg:text-lg max-w-2xl mx-auto">
-              Your privacy matters to us. Learn how we protect your personal
-              information.
-            </p>
+          <div className="relative bg-gradient-to-r from-green-600 via-emerald-600 to-cyan-600 rounded-3xl overflow-hidden shadow-2xl mb-12 mt-24 md:mt-28">
+            {/* Animated background pattern */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full filter blur-2xl animate-pulse"></div>
+              <div className="absolute bottom-10 right-10 w-40 h-40 bg-cyan-300 rounded-full filter blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+            </div>
+
+            <div className="relative px-6 py-12 md:px-12 md:py-16 lg:px-20 lg:py-20 text-center">
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 shadow-lg">
+                <Shield className="w-4 h-4" />
+                <span>Your Privacy Matters</span>
+              </div>
+
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+                Privacy{" "}
+                <span className="bg-gradient-to-r from-cyan-300 to-green-200 bg-clip-text text-transparent">
+                  Policy
+                </span>
+              </h1>
+              <p className="text-green-100 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
+                Your privacy matters to us. Learn how we protect your personal information.
+              </p>
+            </div>
           </div>
-        {/* Content Section */}
-        <div className="px-6 py-8 md:px-10 md:py-12">
-          <div className="space-y-8 text-gray-700">
+
+          {/* Main Content */}
+          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
             {/* Introduction */}
-            <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg">
-              <p className="text-base md:text-lg leading-relaxed">
-                At <strong className="text-blue-700">Code4Bharat</strong>, we
-                are committed to safeguarding your privacy. This policy explains
-                how we collect, use, and protect your personal information to
-                ensure a secure and transparent experience.
+            <div className="relative bg-gradient-to-r from-green-50 to-cyan-50 border-l-4 border-green-600 rounded-r-xl p-6 mb-10 overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-green-200 rounded-full filter blur-2xl opacity-30"></div>
+              <p className="relative text-base md:text-lg leading-relaxed text-gray-700">
+                At <strong className="text-green-700">Code4Bharat</strong>, we are committed to safeguarding your privacy. This policy explains how we collect, use, and protect your personal information to ensure a secure and transparent experience.
               </p>
             </div>
 
             {/* Privacy Sections */}
-            <div className="space-y-6">
-              <ol className="space-y-6">
-                {/* Data Collection */}
-                <li className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow duration-200">
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-sm mr-4 mt-1">
-                      1
-                    </div>
-                    <div className="flex-grow">
-                      <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-3 flex items-center">
-                        <svg
-                          className="w-5 h-5 mr-2 text-green-600"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                          />
-                        </svg>
-                        Data Collection
-                      </h3>
-                      <p className="text-base md:text-lg leading-relaxed mb-4">
-                        We collect only the essential personal data required to
-                        provide you with our services, including:
-                      </p>
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
-                        <div className="bg-white p-3 rounded-lg border border-gray-200 text-center">
-                          <svg
-                            className="w-6 h-6 mx-auto mb-2 text-blue-600"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                            />
-                          </svg>
-                          <span className="text-sm font-medium">Name</span>
-                        </div>
-                        <div className="bg-white p-3 rounded-lg border border-gray-200 text-center">
-                          <svg
-                            className="w-6 h-6 mx-auto mb-2 text-blue-600"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                            />
-                          </svg>
-                          <span className="text-sm font-medium">Email</span>
-                        </div>
-                        <div className="bg-white p-3 rounded-lg border border-gray-200 text-center">
-                          <svg
-                            className="w-6 h-6 mx-auto mb-2 text-blue-600"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                            />
-                          </svg>
-                          <span className="text-sm font-medium">Phone</span>
-                        </div>
-                        <div className="bg-white p-3 rounded-lg border border-gray-200 text-center">
-                          <svg
-                            className="w-6 h-6 mx-auto mb-2 text-blue-600"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
-                            />
-                          </svg>
-                          <span className="text-sm font-medium">Payment</span>
-                        </div>
-                      </div>
-                      <p className="text-base md:text-lg leading-relaxed">
-                        This information helps us process your enrollment and
-                        ensure a seamless user experience.
-                      </p>
-                    </div>
-                  </div>
-                </li>
+            <div className="space-y-6 mb-10">
+              {sections.map((section, index) => (
+                <div
+                  key={index}
+                  className="group relative bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden"
+                >
+                  {/* Decorative gradient on hover */}
+                  <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${section.color} rounded-full filter blur-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 -translate-y-1/2 translate-x-1/2`}></div>
 
-                {/* Data Usage */}
-                <li className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow duration-200">
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm mr-4 mt-1">
-                      2
+                  <div className="relative flex items-start gap-4">
+                    {/* Icon */}
+                    <div className={`flex-shrink-0 w-12 h-12 bg-gradient-to-br ${section.color} rounded-xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                      {section.icon}
                     </div>
-                    <div className="flex-grow">
-                      <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-3 flex items-center">
-                        <svg
-                          className="w-5 h-5 mr-2 text-blue-600"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M13 10V3L4 14h7v7l9-11h-7z"
-                          />
-                        </svg>
-                        Data Usage
-                      </h3>
-                      <p className="text-base md:text-lg leading-relaxed mb-4">
-                        Your personal information is used strictly for:
-                      </p>
-                      <div className="space-y-3">
-                        <div className="flex items-start bg-white p-3 rounded-lg border border-gray-200">
-                          <div className="w-2 h-2 bg-blue-600 rounded-full mr-3 mt-3 flex-shrink-0"></div>
-                          <span className="text-sm md:text-base">
-                            Processing your course enrollment and payments.
-                          </span>
-                        </div>
-                        <div className="flex items-start bg-white p-3 rounded-lg border border-gray-200">
-                          <div className="w-2 h-2 bg-blue-600 rounded-full mr-3 mt-3 flex-shrink-0"></div>
-                          <span className="text-sm md:text-base">
-                            Sending updates regarding our programs, services,
-                            and policies.
-                          </span>
-                        </div>
-                        <div className="flex items-start bg-white p-3 rounded-lg border border-gray-200">
-                          <div className="w-2 h-2 bg-blue-600 rounded-full mr-3 mt-3 flex-shrink-0"></div>
-                          <span className="text-sm md:text-base">
-                            Enhancing and personalizing your experience by
-                            improving our offerings.
-                          </span>
-                        </div>
-                      </div>
-                      <p className="text-base md:text-lg leading-relaxed mt-4">
-                        We value your trust and ensure your data is used
-                        responsibly.
-                      </p>
-                    </div>
-                  </div>
-                </li>
 
-                {/* Data Security */}
-                <li className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow duration-200">
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-sm mr-4 mt-1">
-                      3
-                    </div>
+                    {/* Content */}
                     <div className="flex-grow">
-                      <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-3 flex items-center">
-                        <svg
-                          className="w-5 h-5 mr-2 text-red-600"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                          />
-                        </svg>
-                        Data Security
+                      <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">
+                        {section.number}. {section.title}
                       </h3>
-                      <p className="text-base md:text-lg leading-relaxed mb-4">
-                        We take your data security seriously and have
-                        implemented the following measures:
-                      </p>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="bg-white p-4 rounded-lg border border-gray-200">
-                          <div className="flex items-center mb-2">
-                            <svg
-                              className="w-5 h-5 mr-2 text-green-600"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                              />
-                            </svg>
-                            <span className="font-medium text-gray-900">
-                              Encryption
-                            </span>
-                          </div>
-                          <p className="text-sm text-gray-600">
-                            Industry-standard encryption to protect your
-                            sensitive information.
-                          </p>
-                        </div>
-                        <div className="bg-white p-4 rounded-lg border border-gray-200">
-                          <div className="flex items-center mb-2">
-                            <svg
-                              className="w-5 h-5 mr-2 text-green-600"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"
-                              />
-                            </svg>
-                            <span className="font-medium text-gray-900">
-                              Secure Storage
-                            </span>
-                          </div>
-                          <p className="text-sm text-gray-600">
-                            Secure storage systems to prevent unauthorized
-                            access.
-                          </p>
-                        </div>
-                      </div>
-                      <p className="text-base md:text-lg leading-relaxed mt-4">
-                        Your privacy is our priority, and we continuously
-                        enhance our security protocols.
-                      </p>
-                    </div>
-                  </div>
-                </li>
 
-                {/* Third-Party Sharing */}
-                <li className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow duration-200">
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-sm mr-4 mt-1">
-                      4
-                    </div>
-                    <div className="flex-grow">
-                      <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-3 flex items-center">
-                        <svg
-                          className="w-5 h-5 mr-2 text-purple-600"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                          />
-                        </svg>
-                        Third-Party Sharing
-                      </h3>
-                      <p className="text-base md:text-lg leading-relaxed mb-4">
-                        Your data is never shared with third parties except in
-                        the following scenarios:
-                      </p>
-                      <div className="bg-white p-4 rounded-lg border border-gray-200">
-                        <div className="flex items-start">
-                          <div className="w-2 h-2 bg-purple-600 rounded-full mr-3 mt-3 flex-shrink-0"></div>
-                          <span className="text-sm md:text-base">
-                            For secure payment processing via trusted payment
-                            gateways.
-                          </span>
+                      {/* Data Types Grid */}
+                      {section.dataTypes && (
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+                          {section.dataTypes.map((type, idx) => (
+                            <div key={idx} className="bg-white p-3 rounded-lg border border-gray-200 text-center hover:shadow-md transition-shadow duration-200">
+                              <div className="text-blue-600 flex justify-center mb-2">
+                                {type.icon}
+                              </div>
+                              <span className="text-sm font-medium text-gray-700">{type.label}</span>
+                            </div>
+                          ))}
                         </div>
-                      </div>
-                      <p className="text-base md:text-lg leading-relaxed mt-4">
-                        We ensure that all third-party service providers adhere
-                        to strict data protection standards.
-                      </p>
-                    </div>
-                  </div>
-                </li>
+                      )}
 
-                {/* Cookies */}
-                <li className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow duration-200">
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 w-8 h-8 bg-orange-600 text-white rounded-full flex items-center justify-center font-bold text-sm mr-4 mt-1">
-                      5
-                    </div>
-                    <div className="flex-grow">
-                      <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-3 flex items-center">
-                        <svg
-                          className="w-5 h-5 mr-2 text-orange-600"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                          />
-                        </svg>
-                        Cookies
-                      </h3>
-                      <p className="text-base md:text-lg leading-relaxed mb-4">
-                        Our website uses cookies to:
-                      </p>
-                      <div className="space-y-3">
-                        <div className="flex items-start bg-white p-3 rounded-lg border border-gray-200">
-                          <div className="w-2 h-2 bg-orange-600 rounded-full mr-3 mt-3 flex-shrink-0"></div>
-                          <span className="text-sm md:text-base">
-                            Enhance your browsing experience.
-                          </span>
+                      {/* Points List */}
+                      {section.points && (
+                        <div className="space-y-3 mb-4">
+                          {section.points.map((point, idx) => (
+                            <div key={idx} className="flex items-start bg-white p-3 rounded-lg border border-gray-200">
+                              <div className={`w-2 h-2 bg-gradient-to-br ${section.color} rounded-full mr-3 mt-2 flex-shrink-0`}></div>
+                              <span className="text-sm md:text-base text-gray-700">{point}</span>
+                            </div>
+                          ))}
                         </div>
-                        <div className="flex items-start bg-white p-3 rounded-lg border border-gray-200">
-                          <div className="w-2 h-2 bg-orange-600 rounded-full mr-3 mt-3 flex-shrink-0"></div>
-                          <span className="text-sm md:text-base">
-                            Analyze website traffic and improve functionality.
-                          </span>
-                        </div>
-                      </div>
-                      <p className="text-base md:text-lg leading-relaxed mt-4">
-                        You can manage your cookie preferences through your
-                        browser settings.
-                      </p>
-                    </div>
-                  </div>
-                </li>
+                      )}
 
-                {/* Policy Updates */}
-                <li className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow duration-200">
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-sm mr-4 mt-1">
-                      6
-                    </div>
-                    <div className="flex-grow">
-                      <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-3 flex items-center">
-                        <svg
-                          className="w-5 h-5 mr-2 text-indigo-600"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-                          />
-                        </svg>
-                        Policy Updates
-                      </h3>
-                      <p className="text-base md:text-lg leading-relaxed mb-4">
-                        <strong className="text-blue-700">Code4Bharat</strong>{" "}
-                        reserves the right to update this privacy policy to
-                        reflect changes in our practices or legal requirements.
+                      {/* Security Features */}
+                      {section.securityFeatures && (
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                          {section.securityFeatures.map((feature, idx) => (
+                            <div key={idx} className="bg-white p-4 rounded-lg border border-gray-200 hover:shadow-md transition-shadow duration-200">
+                              <div className="flex items-center mb-2">
+                                <Shield className="w-5 h-5 mr-2 text-green-600" />
+                                <span className="font-medium text-gray-900">{feature.title}</span>
+                              </div>
+                              <p className="text-sm text-gray-600">{feature.desc}</p>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+
+                      <p className="text-base md:text-lg leading-relaxed text-gray-700">
+                        {section.content}
                       </p>
-                      <div className="space-y-3">
-                        <div className="flex items-start bg-white p-3 rounded-lg border border-gray-200">
-                          <div className="w-2 h-2 bg-indigo-600 rounded-full mr-3 mt-3 flex-shrink-0"></div>
-                          <span className="text-sm md:text-base">
-                            All updates will be communicated through our
-                            website.
-                          </span>
-                        </div>
-                        <div className="flex items-start bg-white p-3 rounded-lg border border-gray-200">
-                          <div className="w-2 h-2 bg-indigo-600 rounded-full mr-3 mt-3 flex-shrink-0"></div>
-                          <span className="text-sm md:text-base">
-                            We encourage you to review the policy periodically
-                            to stay informed.
-                          </span>
-                        </div>
-                      </div>
                     </div>
                   </div>
-                </li>
-              </ol>
+                </div>
+              ))}
             </div>
 
             {/* Closing Statement */}
-            <div className="bg-blue-50 rounded-lg p-6">
-              <p className="text-base md:text-lg leading-relaxed text-center">
-                If you have any questions or concerns about this policy, please
-                feel free to contact us. At{" "}
-                <strong className="text-blue-700">Code4Bharat</strong>, your
-                privacy and trust are of utmost importance to us.
+            <div className="relative bg-gradient-to-r from-green-50 to-cyan-50 rounded-xl p-8 mb-10 overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-green-200 rounded-full filter blur-2xl opacity-30"></div>
+              <p className="relative text-base md:text-lg leading-relaxed text-center text-gray-700">
+                If you have any questions or concerns about this policy, please feel free to contact us. At{" "}
+                <strong className="text-green-700">Code4Bharat</strong>, your privacy and trust are of utmost importance to us.
               </p>
             </div>
 
             {/* Contact Information */}
-            <div className="bg-green-50 rounded-lg p-6">
-              <h3 className="font-semibold text-green-900 mb-3 text-lg">
-                Questions about Privacy?
-              </h3>
-              <p className="text-green-800 text-sm md:text-base mb-4">
-                If you have any questions about this Privacy Policy, please
-                contact us:
-              </p>
-              <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-6 space-y-2 sm:space-y-0 text-sm md:text-base">
-                <a
-                  href="mailto:nexcorealliance@gmail.com"
-                  className="text-green-600 hover:text-green-800 hover:underline transition-colors duration-200 flex items-center"
-                >
-                  <svg
-                    className="w-4 h-4 mr-2"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+            <div className="relative bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-8 mb-10 overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-green-200 rounded-full filter blur-2xl opacity-30"></div>
+              <div className="relative">
+                <h3 className="font-bold text-green-900 mb-3 text-lg flex items-center gap-2">
+                  <Mail className="w-5 h-5" />
+                  Questions about Privacy?
+                </h3>
+                <p className="text-green-800 text-sm md:text-base mb-6">
+                  If you have any questions about this Privacy Policy, please contact us:
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <a
+                    href="mailto:nexcorealliance@gmail.com"
+                    className="group flex items-center gap-3 bg-white p-4 rounded-lg hover:shadow-md transition-all duration-300 border border-green-100"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
-                  nexcorealliance@gmail.com
-                </a>
-                <a
-                  href="tel:+919594430295"
-                  className="text-green-600 hover:text-green-800 hover:underline transition-colors duration-200 flex items-center"
-                >
-                  <svg
-                    className="w-4 h-4 mr-2"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+                    <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <Mail className="w-5 h-5 text-white" />
+                    </div>
+                    <span className="text-green-600 hover:text-green-800 font-medium text-sm break-all">
+                      nexcorealliance@gmail.com
+                    </span>
+                  </a>
+                  <a
+                    href="tel:+919594430295"
+                    className="group flex items-center gap-3 bg-white p-4 rounded-lg hover:shadow-md transition-all duration-300 border border-green-100"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                    />
-                  </svg>
-                  +91-9594430295
-                </a>
+                    <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <Phone className="w-5 h-5 text-white" />
+                    </div>
+                    <span className="text-green-600 hover:text-green-800 font-medium">
+                      +91-9594430295
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
 
             {/* Last Updated */}
             <div className="text-center pt-6 border-t border-gray-200">
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-gray-500 flex items-center justify-center gap-2">
+                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
                 Last updated: January 2025
               </p>
             </div>
           </div>
         </div>
       </div>
-    </div>
     </>
   );
 }

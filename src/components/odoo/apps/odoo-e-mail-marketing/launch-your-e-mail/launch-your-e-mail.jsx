@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Play, X, Sparkles, Mail, TrendingUp, Users, Zap, CheckCircle, BarChart3 } from "lucide-react";
 
 const Launchmail = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -12,68 +13,197 @@ const Launchmail = () => {
   };
 
   return (
-    <section className="bg-gray-50 py-16 sm:py-24">
-      <div className="container mx-auto px-6 md:px-8 lg:px-[10rem] grid grid-cols-1 lg:grid-cols-2 gap-[3rem] items-center">
-        {/* Left Section - Text Content */}
-        <div className="text-left">
-          <p className="text-purple-700 text-sm sm:text-[17px] font-semibold uppercase tracking-wider mb-2">
-            Launch Your E-mail Marketing Campaign In Minutes
-          </p>
-          <h1 className="text-2xl sm:text-[29px] font-extrabold text-gray-800 mb-6 leading-snug">
-           Get the Best ROI for your E-mail Marketing Campaigns with Odoo
+    <section className="relative bg-gradient-to-br from-white via-gray-50 to-green-50 py-16 sm:py-24 overflow-hidden">
+      {/* Animated Glowing Orbs */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '2s' }}></div>
+      
+      {/* Floating Decorative Shapes */}
+      <div className="absolute top-1/4 right-1/4 w-20 h-20 border-2 border-green-300 rounded-full opacity-30 animate-bounce" style={{ animationDelay: '1s', animationDuration: '3s' }}></div>
+      <div className="absolute bottom-1/3 left-1/3 w-16 h-16 border-2 border-emerald-300 rounded-lg opacity-30 animate-bounce" style={{ animationDelay: '0.5s', animationDuration: '4s' }}></div>
+
+      <div className="relative z-10 container mx-auto px-6 md:px-8 lg:px-[10rem] grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        {/* Left Section - Enhanced Text Content */}
+        <div className="text-left space-y-6">
+          {/* Premium Badge */}
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-100 to-emerald-100 px-4 py-2 rounded-full border border-green-200">
+            <Mail className="w-5 h-5 text-green-600" />
+            <span className="text-sm font-semibold text-green-800 uppercase tracking-wider">
+              Launch Your E-mail Marketing Campaign In Minutes
+            </span>
+          </div>
+
+          {/* Main Heading with Gradient */}
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
+            Get the Best{" "}
+            <span className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent">
+              ROI
+            </span>{" "}
+            for your E-mail Marketing Campaigns with Odoo
           </h1>
-          <h4 className="text-2xl sm:text-base font-extrabold text-gray-500 mb-6 leading-snug">
-           Draft Customer Winning E-mails In Just A Few Steps
-          </h4>
-          <p className="text-gray-500 text-sm sm:text-base mb-4 leading-relaxed tracking-wide text-justify">
-          Odoo E-mail Marketing app enables businesses to multiply their potential by distributing timely auto-generated messages. odoo Implementers helps you engage with your customers by leveraging one of the most powerful low-cost marketing tools to send business notifications. Our team of specialists will assist you in the entire configuration process of the Odoo E-mail Marketing app and guide you to efficiently create, organize and generate reports of your mailings.
+
+          {/* Decorative Accent Line */}
+          <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full"></div>
+
+          {/* Subheading with Icon */}
+          <div className="flex items-center gap-3 bg-white/80 backdrop-blur-sm p-4 rounded-xl border border-green-200">
+            <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center">
+              <Zap className="w-5 h-5 text-white" />
+            </div>
+            <h4 className="text-lg sm:text-xl font-bold text-gray-800">
+              Draft Customer Winning E-mails In Just A Few Steps
+            </h4>
+          </div>
+
+          {/* Description */}
+          <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
+            Odoo E-mail Marketing app enables businesses to multiply their potential by distributing timely auto-generated messages. Odoo Implementers helps you engage with your customers by leveraging one of the most powerful low-cost marketing tools to send business notifications. Our team of specialists will assist you in the entire configuration process of the Odoo E-mail Marketing app and guide you to efficiently create, organize and generate reports of your mailings.
           </p>
+
+          {/* Feature Pills */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+            {/* Auto-Generated Messages */}
+            <div className="flex items-center gap-3 bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:translate-x-2">
+              <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-green-100 border border-green-200 flex items-center justify-center">
+                <Mail className="w-5 h-5 text-green-600" />
+              </div>
+              <span className="text-gray-800 font-semibold">Auto-Generated</span>
+            </div>
+
+            {/* Customer Engagement */}
+            <div className="flex items-center gap-3 bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:translate-x-2">
+              <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-emerald-100 border border-emerald-200 flex items-center justify-center">
+                <Users className="w-5 h-5 text-emerald-600" />
+              </div>
+              <span className="text-gray-800 font-semibold">High Engagement</span>
+            </div>
+
+            {/* ROI Tracking */}
+            <div className="flex items-center gap-3 bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:translate-x-2">
+              <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-teal-100 border border-teal-200 flex items-center justify-center">
+                <TrendingUp className="w-5 h-5 text-teal-600" />
+              </div>
+              <span className="text-gray-800 font-semibold">ROI Tracking</span>
+            </div>
+
+            {/* Detailed Reports */}
+            <div className="flex items-center gap-3 bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:translate-x-2">
+              <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-green-100 border border-green-200 flex items-center justify-center">
+                <BarChart3 className="w-5 h-5 text-green-600" />
+              </div>
+              <span className="text-gray-800 font-semibold">Detailed Reports</span>
+            </div>
+          </div>
         </div>
 
-        {/* Right Section - Image/Video */}
-        <div className="relative">
-          <img
-            src="/images/App images/demo-email-marketing-campaign-with-odoo.jpg"
-            alt="Odoo CRM Software"
-            className="shadow-2xl p-[10px] border-white shadow-[#895d7d]/100 sm:w-full md:w-auto"
-          />
+        {/* Right Section - Enhanced Image/Video */}
+        <div className="relative group">
+          {/* Glowing Hover Effect */}
+          <div className="absolute -inset-2 bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 rounded-2xl blur-xl opacity-30 group-hover:opacity-60 transition duration-500"></div>
 
-          {/* Play Button */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <button
-              onClick={handlePlayVideo}
-              className="bg-purple-700 text-white rounded-full w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center shadow-lg hover:bg-black transition animate-bounce"
-            >
-              ▶
-            </button>
+          {/* Image Container with Border and Corner Accents */}
+          <div className="relative bg-white rounded-2xl p-3 shadow-2xl transform group-hover:scale-105 transition duration-500">
+            {/* Colorful Corner Accents */}
+            <div className="absolute top-0 left-0 w-20 h-20 bg-green-500 opacity-20 rounded-tl-2xl"></div>
+            <div className="absolute top-0 right-0 w-20 h-20 bg-emerald-500 opacity-20 rounded-tr-2xl"></div>
+            <div className="absolute bottom-0 left-0 w-20 h-20 bg-teal-500 opacity-20 rounded-bl-2xl"></div>
+            <div className="absolute bottom-0 right-0 w-20 h-20 bg-green-600 opacity-20 rounded-br-2xl"></div>
+
+            {/* Image */}
+            <img
+              src="/images/App images/demo-email-marketing-campaign-with-odoo.jpg"
+              alt="Email Marketing Campaign Demo"
+              className="rounded-xl w-full h-auto"
+            />
+
+            {/* Enhanced Play Button */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <button
+                onClick={handlePlayVideo}
+                className="group/play relative bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 text-white rounded-full w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center shadow-2xl hover:shadow-green-500/50 transition-all duration-300 transform hover:scale-110"
+              >
+                {/* Pulsing Ring */}
+                <div className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-30"></div>
+                
+                {/* Play Icon */}
+                <Play className="w-8 h-8 sm:w-10 sm:h-10 ml-1 relative z-10 group-hover/play:scale-110 transition-transform duration-300" fill="white" />
+              </button>
+            </div>
+
+            {/* Floating Badges */}
+            <div className="absolute top-6 right-6 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg flex items-center gap-2 animate-bounce" style={{ animationDuration: '2s' }}>
+              <Sparkles className="w-4 h-4 text-green-600" />
+              <span className="text-sm font-bold text-gray-800">Watch Demo</span>
+            </div>
+
+            <div className="absolute bottom-6 left-6 bg-gradient-to-r from-green-500 to-emerald-500 px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
+              <CheckCircle className="w-4 h-4 text-white" />
+              <span className="text-sm font-bold text-white">Quick Setup</span>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Video Modal */}
+      {/* Enhanced Video Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
-          <div className="relative bg-white rounded-lg overflow-hidden w-full max-w-4xl">
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fadeIn">
+          <div className="relative bg-gradient-to-br from-white to-gray-50 rounded-2xl overflow-hidden w-full max-w-5xl shadow-2xl transform animate-scaleIn">
+            {/* Decorative Header Bar */}
+            <div className="h-2 bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500"></div>
+
             {/* Close Button */}
             <button
               onClick={handleCloseModal}
-              className="absolute top-2 right-2 bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center shadow hover:bg-red-600 transition"
+              className="absolute top-4 right-4 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:shadow-red-500/50 hover:scale-110 transition-all duration-300 z-10"
             >
-              ✕
+              <X className="w-5 h-5" />
             </button>
-            {/* Video */}
-            <iframe
-              width="100%"
-              height="500"
-              src="https://www.youtube.com/embed/pBX9t7L0PuA?si=OeRYLeArj0Z4N7Fq"
-              title="Odoo Development Video"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+
+            {/* Video Container */}
+            <div className="p-4">
+              <div className="relative rounded-xl overflow-hidden shadow-xl">
+                <iframe
+                  width="100%"
+                  height="500"
+                  src="https://www.youtube.com/embed/pBX9t7L0PuA?si=OeRYLeArj0Z4N7Fq&autoplay=1"
+                  title="Odoo Email Marketing Video"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="rounded-xl"
+                ></iframe>
+              </div>
+            </div>
           </div>
         </div>
       )}
+
+      <style jsx>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+        @keyframes scaleIn {
+          from {
+            transform: scale(0.9);
+            opacity: 0;
+          }
+          to {
+            transform: scale(1);
+            opacity: 1;
+          }
+        }
+        .animate-fadeIn {
+          animation: fadeIn 0.3s ease-out;
+        }
+        .animate-scaleIn {
+          animation: scaleIn 0.3s ease-out;
+        }
+      `}</style>
     </section>
   );
 };

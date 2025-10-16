@@ -63,13 +63,13 @@ const Navbar = () => {
 
   // Main Menu Items
   const menuItems = [
-    { name: "Home", path: "/" },
-    { name: "About Us", path: convertToPath("About Us") },
+    { name: "Hub", path: "/" },
+    { name: "Behind the code", path: convertToPath("About Us") },
     { name: "Odoo", path: convertToPath("servicesweoffer") },
-    { name: "Clients", path: convertToPath("Clients") },
-    { name: "Approach", path: convertToPath("Approach") },
-    { name: "Services", path: convertToPath("Services") },
-    { name: "Get in touch", path: convertToPath("Contact Us") },
+    { name: "Trusted By", path: convertToPath("Clients") },
+    { name: "Strategy", path: convertToPath("Approach") },
+    { name: "What we offer", path: convertToPath("Services") },
+    { name: "Reach out", path: convertToPath("Contact Us") },
    
   ];
 
@@ -104,7 +104,7 @@ const Navbar = () => {
             >
               <Link href="/" onClick={handleLinkClick}>
                 <Image
-                  src="/images/logo_trans.png"
+                  src="/images/c4b.png"
                   alt="Code4Bharat Logo"
                   width={200}
                   height={200}

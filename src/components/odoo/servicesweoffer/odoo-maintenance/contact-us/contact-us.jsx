@@ -1,35 +1,122 @@
 import React from "react";
-import Link from "next/link"; // Import Link from Next.js
+import { MessageCircle, ArrowRight, Phone, Mail, Sparkles, Workflow } from "lucide-react";
 
 const ContactSection = () => {
   return (
     <section
-      className="relative bg-cover bg-center text-center min-h-[400px] sm:min-h-[400px] flex items-center justify-center -mt-[35px]"
+      className="relative bg-cover bg-center min-h-[450px] sm:min-h-[500px] flex items-center justify-center overflow-hidden"
       style={{
-        backgroundImage:
-          "url('/images/odoo-images/bg-contact-us.jpg')", 
-        backgroundSize: "cover", 
-        backgroundPosition: "center", 
+        backgroundImage: "url('/images/odoo-images/bg-contact-us.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0 bg-black bg-opacity-0"></div>
-      <div className="relative z-10 px-4 sm:px-0">
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-purple-900/85 via-purple-800/75 to-pink-900/85"></div>
+      
+      {/* Animated particles effect */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 left-20 w-2 h-2 bg-white rounded-full animate-pulse opacity-60"></div>
+        <div className="absolute top-40 right-32 w-1 h-1 bg-pink-300 rounded-full animate-pulse opacity-40"></div>
+        <div className="absolute bottom-32 left-1/4 w-1.5 h-1.5 bg-purple-300 rounded-full animate-pulse opacity-50"></div>
+        <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-white rounded-full animate-pulse opacity-30"></div>
+        <div className="absolute bottom-20 right-20 w-1 h-1 bg-pink-200 rounded-full animate-pulse opacity-60"></div>
+      </div>
+
+      <div className="relative z-10 px-4 sm:px-8 max-w-4xl mx-auto">
+        {/* Decorative badge */}
+        <div className="flex justify-center mb-6">
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-lg">
+            <Sparkles className="w-4 h-4 text-yellow-300" />
+            <span>Expert Support Available</span>
+          </div>
+        </div>
+
         {/* Subheading */}
-        <h3 className="text-white text-[18px] sm:text-[24px] leading-tight">
+        <h3 className="text-white/90 text-lg sm:text-xl md:text-2xl leading-relaxed mb-4 font-medium">
           Drop us a line! We are here to answer your questions
         </h3>
-        {/* Heading */}
-        <h3 className="text-white font-[1000] text-[25px] mt-4 leading-snug">
-          Odoo Maintenance Process Flow
-        </h3>
-        {/* Button */}
-        <div className="mt-6">
-        <Link href="https://wa.me/9594430295">
-          <button className="bg-[#885c7c] hover:bg-purple-700 text-white font-bold py-2 px-6 sm:p-[15px] sm:px-[2.2rem] shadow-md transition">
-            Contact Us
-          </button>
-          </Link>
+
+        {/* Main Heading */}
+        <div className="mb-8">
+          <div className="inline-flex items-center justify-center gap-3 mb-3">
+            <div className="w-12 h-12 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg flex items-center justify-center">
+              <Workflow className="w-6 h-6 text-yellow-300" />
+            </div>
+          </div>
+          <h2 className="text-white font-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-4 drop-shadow-lg">
+            Odoo Maintenance{" "}
+            <span className="bg-gradient-to-r from-yellow-300 to-pink-300 bg-clip-text text-transparent">
+              Process Flow
+            </span>
+          </h2>
+          <p className="text-white/80 text-base sm:text-lg max-w-2xl mx-auto">
+            Let us help you streamline your maintenance operations with our proven process
+          </p>
         </div>
+
+        {/* Features row */}
+        <div className="flex flex-wrap justify-center gap-4 mb-8">
+          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-lg text-white text-sm">
+            <Phone className="w-4 h-4 text-green-400" />
+            <span>Instant Response</span>
+          </div>
+          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-lg text-white text-sm">
+            <MessageCircle className="w-4 h-4 text-blue-400" />
+            <span>24/7 Available</span>
+          </div>
+          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-lg text-white text-sm">
+            <Mail className="w-4 h-4 text-purple-400" />
+            <span>Expert Team</span>
+          </div>
+        </div>
+
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          {/* WhatsApp Button */}
+          <a
+            href="https://wa.me/9594430295"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-4 px-8 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <MessageCircle className="w-5 h-5 relative z-10" />
+            <span className="relative z-10">Chat on WhatsApp</span>
+            <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
+          </a>
+
+          {/* Contact Us Button */}
+          <button className="group relative inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border-2 border-white/30 hover:bg-white hover:text-purple-700 text-white font-bold py-4 px-8 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+            <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+            <span>Call Us Now</span>
+          </button>
+        </div>
+
+        {/* Process Flow Steps Preview */}
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-4 gap-4">
+          {[
+            { num: "01", label: "Analysis", icon: "📊" },
+            { num: "02", label: "Planning", icon: "📋" },
+            { num: "03", label: "Execution", icon: "⚙️" },
+            { num: "04", label: "Support", icon: "🛟" }
+          ].map((step, index) => (
+            <div
+              key={index}
+              className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4 hover:bg-white/10 hover:border-white/30 transition-all duration-300"
+            >
+              <div className="text-3xl mb-2">{step.icon}</div>
+              <div className="text-white/50 text-xs font-bold mb-1">{step.num}</div>
+              <div className="text-white font-semibold text-sm">{step.label}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom text */}
+        <p className="text-white/70 text-sm mt-8 flex items-center justify-center gap-2">
+          <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+          Our maintenance experts typically respond within 2 hours
+        </p>
       </div>
     </section>
   );

@@ -1,25 +1,159 @@
 import React from "react";
+import { Award, Users, Shield, TrendingUp, Zap, MessageSquare, Star, CheckCircle2 } from "lucide-react";
 
 const WhyChooseUs = () => {
-  return (
-    <section className="relative bg-white py-16 sm:py-24">
-      <div className="container mx-auto px-6 lg:pl-48 lg:pr-48 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-4 sm:mt-4 lg:mt-[-80px]">
-        {/* Left Section - Text Content */}
-        <div className="pr-4 sm:pr-[79px] pl-4 sm:pl-[-1px]">
-          <h2 className="text-[22px] sm:text-[28px] sm:text-3xl font-bold text-gray-800 mb-4 sm:mb-6 leading-snug text-center sm:text-left">
-          Why Choose Odoo Implementers for Odoo Integration
-          </h2>
-          <p className="text-gray-500 text-sm sm:text-base leading-relaxed tracking-wide text-justify mt-[]">
-          With a legacy of over 10 years, Odoo Implementers functions with technical expertise in all Odoo modules and delivers high coding standard services. We stand out from our competitors with our transparency and streamlined communication at every stage of the process.
-          </p>
-        </div>
+  const features = [
+    {
+      icon: <Award className="w-5 h-5" />,
+      title: "10+ Years Experience",
+      description: "Proven expertise",
+      color: "from-yellow-500 to-orange-500"
+    },
+    {
+      icon: <Shield className="w-5 h-5" />,
+      title: "High Coding Standards",
+      description: "Quality guaranteed",
+      color: "from-blue-500 to-cyan-500"
+    },
+    {
+      icon: <MessageSquare className="w-5 h-5" />,
+      title: "Transparent Communication",
+      description: "Clear & streamlined",
+      color: "from-purple-500 to-pink-500"
+    },
+    {
+      icon: <Users className="w-5 h-5" />,
+      title: "Expert Team",
+      description: "Technical mastery",
+      color: "from-green-500 to-emerald-500"
+    }
+  ];
 
-        {/* Right Section - Image */}
-        <div className="relative flex justify-center mt-8 sm:mt-0">
-          <img
-            src="/images/odoo-images/odoo-integration-modules-and-services.webp"
-            className="shadow-lg w-[300px] sm:w-[570px] h-[223px] sm:h-[423px]"
-          />
+  const keyPoints = [
+    "Technical expertise in all Odoo modules",
+    "High coding standard services",
+    "Transparent process at every stage",
+    "Streamlined communication workflow"
+  ];
+
+  return (
+    <section className="relative bg-gradient-to-br from-gray-50 to-white py-16 sm:py-24 overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-purple-100 rounded-full filter blur-3xl opacity-30 -translate-y-1/2 translate-x-1/2"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-100 rounded-full filter blur-3xl opacity-30 translate-y-1/2 -translate-x-1/2"></div>
+      
+      <div className="container mx-auto px-6 lg:px-48 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:-mt-20">
+          {/* Left Section - Text Content */}
+          <div className="space-y-6">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+              <Star className="w-4 h-4" />
+              <span>10+ Years of Excellence</span>
+            </div>
+
+            {/* Main Heading */}
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+              Why Choose{" "}
+              <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                Odoo Implementers
+              </span>{" "}
+              for Odoo Integration
+            </h2>
+
+            {/* Description */}
+            <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
+              With a legacy of over 10 years, Odoo Implementers functions with technical expertise in all Odoo modules and delivers high coding standard services. We stand out from our competitors with our transparency and streamlined communication at every stage of the process.
+            </p>
+
+            {/* Feature Grid */}
+            <div className="grid grid-cols-2 gap-4 py-4">
+              {features.map((feature, index) => (
+                <div
+                  key={index}
+                  className="group relative bg-white p-4 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer border border-gray-100"
+                >
+                  <div className={`inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-br ${feature.color} mb-3 text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                    {feature.icon}
+                  </div>
+                  <h3 className="font-bold text-gray-900 text-sm mb-1">
+                    {feature.title}
+                  </h3>
+                  <p className="text-xs text-gray-500 leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Key Points Checklist */}
+            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 border border-blue-100">
+              <h3 className="font-bold text-gray-900 text-lg mb-4 flex items-center gap-2">
+                <CheckCircle2 className="w-5 h-5 text-blue-600" />
+                <span>What Sets Us Apart</span>
+              </h3>
+              <div className="space-y-3">
+                {keyPoints.map((point, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-5 h-5 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center mt-0.5">
+                      <CheckCircle2 className="w-3 h-3 text-white" />
+                    </div>
+                    <p className="text-gray-700 text-sm font-medium leading-relaxed">
+                      {point}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* CTA Button */}
+            <div className="pt-2">
+              <button className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-bold py-4 px-8 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 overflow-hidden">
+                <span className="relative z-10">Partner With Us</span>
+                <Award className="w-5 h-5 relative z-10 group-hover:rotate-12 transition-transform duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </button>
+            </div>
+          </div>
+
+          {/* Right Section - Image */}
+          <div className="relative flex justify-center lg:justify-end">
+            <div className="relative group">
+              {/* Glowing border effect */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
+              
+              {/* Image container */}
+              <div className="relative bg-white p-3 rounded-2xl shadow-2xl">
+                <img
+                  src="/images/odoo-images/odoo-integration-modules-and-services.webp"
+                  alt="Odoo Integration Modules and Services"
+                  className="rounded-xl w-full h-auto object-cover"
+                />
+                
+                {/* Floating badge - Top */}
+                <div className="absolute -top-4 -right-4 bg-white px-5 py-3 rounded-xl shadow-xl border border-gray-100">
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                    <div>
+                      <p className="text-xs text-gray-500 font-medium">Experience</p>
+                      <p className="text-sm font-bold text-yellow-600">10+ Years</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Floating badge - Bottom */}
+                <div className="absolute -bottom-4 -left-4 bg-white px-5 py-3 rounded-xl shadow-xl border border-gray-100">
+                  <div className="flex items-center gap-3">
+                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                    <div>
+                      <p className="text-xs text-gray-500 font-medium">Success Rate</p>
+                      <p className="text-lg font-bold text-gray-900">100%</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

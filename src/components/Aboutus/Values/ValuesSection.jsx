@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
-import { motion } from "framer-motion"; // Importing Framer Motion
+import { FaArrowRight, FaCode, FaLaptopCode, FaRocket, FaTimes } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
 
 const values = [
   {
@@ -9,13 +9,14 @@ const values = [
     title: "Software Solutions",
     description:
       "We deliver exceptional web development services tailored to meet the specific needs of businesses.",
-    imageSrc: "/images/layers.png",
+    Icon: FaCode,
+    gradient: "from-blue-500 to-cyan-500",
     details: (
       <>
         <p>
           <strong>Code4Bharat</strong> specializes in providing IT solutions, including but not limited to:
         </p>
-        <ul className="list-disc list-inside space-y-1">
+        <ul className="list-disc list-inside space-y-2 mt-3">
           <li>Web Development</li>
           <li>Mobile Application Development</li>
           <li>Custom Software Solutions</li>
@@ -34,13 +35,14 @@ const values = [
     title: "Web Development",
     description:
       "We deliver exceptional web development services tailored to meet the specific needs of businesses.",
-    imageSrc: "/images/domain (1).png",
+    Icon: FaLaptopCode,
+    gradient: "from-purple-500 to-pink-500",
     details: (
       <>
         <p>
           At <strong>Code4Bharat</strong>, we deliver exceptional web development services tailored to meet the specific needs of businesses. From creating responsive, user-friendly websites to developing sophisticated web applications, we cover it all. Our expertise includes:
         </p>
-        <ul className="list-disc list-inside space-y-1">
+        <ul className="list-disc list-inside space-y-2 mt-3">
           <li><strong>Custom Website Development</strong></li>
           <li><strong>E-commerce Platforms</strong></li>
           <li><strong>Content Management Systems (CMS)</strong></li>
@@ -57,13 +59,14 @@ const values = [
     title: "Digital Transformation",
     description:
       "We leverage cutting-edge technologies to transform your business processes, enhance customer experiences, and drive innovation.",
-    imageSrc: "/images/connection.png",
+    Icon: FaRocket,
+    gradient: "from-orange-500 to-red-500",
     details: (
       <>
         <p>
           <strong>Digital Transformation</strong> at Code4Bharat involves leveraging cutting-edge technologies to transform your business processes, enhance customer experiences, and drive innovation. Our services include:
         </p>
-        <ul className="list-disc list-inside space-y-1">
+        <ul className="list-disc list-inside space-y-2 mt-3">
           <li>Cloud Computing Solutions</li>
           <li>Data Analytics and Business Intelligence</li>
           <li>Automation and AI Integration</li>
@@ -77,175 +80,169 @@ const values = [
   },
 ];
 
-// Animation variants for text and cards
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.3, // Stagger the appearance of each card
-    },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
-
-const textVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
-
-// ValueCard component with flip functionality
 const ValueCard = ({ value }) => {
-  const [isFlipped, setIsFlipped] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   return (
-    <motion.div
-      className="w-[90%] md:w-[25%] h-[400px] md:h-[400px] bg-white rounded-2xl p-5 flex items-center justify-center shadow-lg cursor-pointer mt-8"
-      variants={cardVariants}
-      whileHover={{ scale: 1.05 }} // Slight hover effect on card
-      onClick={() => setIsFlipped(!isFlipped)}
-      style={{ perspective: "1000px" }} // Add perspective for 3D effect
-    >
+    <>
       <motion.div
-        className="relative w-full h-full"
-        style={{
-          transformStyle: "preserve-3d",
-        }}
-        animate={{ rotateY: isFlipped ? 180 : 0 }}
-        transition={{ duration: 0.8 }}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.3 }}
+        transition={{ duration: 0.6 }}
+        whileHover={{ y: -8 }}
+        className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all cursor-pointer border border-slate-200"
+        onClick={() => setShowModal(true)}
       >
-        {/* Front Side */}
-        <div
-          className="absolute w-full h-full flex flex-col items-center justify-between bg-white rounded-2xl gap-8 p-5"
-          style={{
-            backfaceVisibility: "hidden",
-          }}
-        >
-          <div className="w-full h-[30%] flex items-center justify-center">
-            <div className="w-20 h-20">
-              <img
-                src={value.imageSrc}
-                alt={value.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
+        {/* Gradient glow on hover */}
+        <div className={`absolute -inset-0.5 bg-gradient-to-r ${value.gradient} opacity-0 group-hover:opacity-20 blur-xl rounded-2xl transition-opacity`} />
+        
+        <div className="relative z-10 space-y-6">
+          {/* Icon */}
+          <div className={`w-16 h-16 bg-gradient-to-br ${value.gradient} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform`}>
+            <value.Icon className="w-8 h-8 text-white" />
           </div>
-          <div className="w-full h-[50%] flex items-center justify-center flex-col text-center gap-2 md:gap-5 px-2">
-            <span className="text-lg md:text-xl font-bold font-sans">
-              {value.title}
-            </span>
-            <p className="text-sm md:text-md font-medium">
-              {value.description}
-            </p>
-          </div>
-          <div className="w-full h-[20%] flex items-center justify-center mt-2 md:mt-5">
-            <motion.span
-              className="flex items-center gap-2 text-sm md:text-md font-semibold text-blue-600"
-              whileHover={{ x: 5 }} // Move text slightly on hover
-              transition={{ type: "spring", stiffness: 300 }}
-              onClick={(e) => {
-                e.stopPropagation(); // Prevent triggering the card flip
-                setIsFlipped(true);
-              }}
-            >
-              Read More <FaArrowRight />
-            </motion.span>
-          </div>
-        </div>
 
-        {/* Back Side */}
-        <div
-          className="absolute w-full h-full flex flex-col items-center justify-between bg-[#f8f9fa] rounded-2xl p-5"
-          style={{
-            backfaceVisibility: "hidden",
-            transform: "rotateY(180deg)",
-          }}
-        >
-          <div className="w-full h-auto flex items-center justify-center">
-            <div className="w-20 h-20">
-              <img
-                src={value.imageSrc}
-                alt={`${value.title} Back`}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-          <div className="w-full h-[60%] overflow-y-auto px-2">
-            <div className="text-sm md:text-xs space-y-2">
-              {value.details}
-            </div>
-          </div>
-          <div className="w-full h-[20%] flex items-center justify-center mt-2 md:mt-5">
-            <motion.span
-              className="flex items-center gap-2 text-sm md:text-xs font-semibold text-blue-600"
-              whileHover={{ x: -5 }} // Move text slightly on hover
-              transition={{ type: "spring", stiffness: 300 }}
-              onClick={(e) => {
-                e.stopPropagation(); // Prevent triggering the card flip
-                setIsFlipped(false);
-              }}
-            >
-              <FaArrowLeft /> Back
-            </motion.span>
-          </div>
+          {/* Title */}
+          <h3 className="text-2xl font-bold text-slate-900 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text transition-all">
+            {value.title}
+          </h3>
+
+          {/* Description */}
+          <p className="text-slate-600 leading-relaxed line-clamp-3">
+            {value.description}
+          </p>
+
+          {/* Read More Button */}
+          <motion.div
+            className="flex items-center gap-2 text-blue-600 font-semibold group-hover:gap-4 transition-all"
+            whileHover={{ x: 4 }}
+          >
+            <span>Learn More</span>
+            <FaArrowRight className="w-4 h-4" />
+          </motion.div>
+
+          {/* Decorative corner */}
+          <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-slate-200 rounded-tr-xl opacity-0 group-hover:opacity-100 transition-opacity" />
         </div>
       </motion.div>
-    </motion.div>
+
+      {/* Modal */}
+      <AnimatePresence>
+        {showModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            onClick={() => setShowModal(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", damping: 25 }}
+              className="bg-white rounded-3xl max-w-2xl w-full max-h-[80vh] overflow-hidden shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Modal Header */}
+              <div className={`bg-gradient-to-r ${value.gradient} p-8 relative`}>
+                <motion.button
+                  whileHover={{ scale: 1.1, rotate: 90 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors"
+                  onClick={() => setShowModal(false)}
+                >
+                  <FaTimes className="w-5 h-5" />
+                </motion.button>
+
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
+                    <value.Icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-3xl font-bold text-white">
+                    {value.title}
+                  </h3>
+                </div>
+              </div>
+
+              {/* Modal Content */}
+              <div className="p-8 overflow-y-auto max-h-[50vh]">
+                <div className="prose prose-slate max-w-none text-slate-700 leading-relaxed">
+                  {value.details}
+                </div>
+              </div>
+
+              {/* Modal Footer */}
+              <div className="p-6 border-t border-slate-200 bg-slate-50">
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className={`w-full py-3 bg-gradient-to-r ${value.gradient} text-white font-semibold rounded-xl shadow-lg`}
+                  onClick={() => setShowModal(false)}
+                >
+                  Got it, thanks!
+                </motion.button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
 const ValuesSection = () => {
   return (
-    <section className="w-full h-auto md:h-[90%] bg-[#DBE2EF] p-5 md:p-10 bg-cover bg-center">
-      {/* Header Section */}
-      <motion.div
-        className="w-full h-auto md:h-[20%] flex items-center justify-center flex-col gap-5 mb-5 md:mb-0"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible" // Trigger animation on entering the section
-        viewport={{ once: false, amount: 0.3 }} // Controls the re-trigger and when it starts
-      >
-        <motion.div
-          className="w-[35%] md:w-[15%] h-auto md:h-[25%] rounded-full flex items-center justify-center bg-[#112D4E]"
-          variants={textVariants} // Apply animation to the text header
-        >
-          <h1 className="font-semibold text-xl md:text-lg text-white">
-            Our Values
-          </h1>
-        </motion.div>
-        <motion.h1
-          className="text-2xl md:text-4xl font-sans font-bold leading-tight text-center"
-          variants={textVariants} // Apply animation to the main heading
-        >
-          Discover the <br />
-          Values of Code4Bharat
-        </motion.h1>
-      </motion.div>
+    <section className="w-full py-20 md:py-32 bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute top-20 right-10 w-72 h-72 bg-blue-200/30 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-10 w-96 h-96 bg-purple-200/20 rounded-full blur-3xl" />
+      
+      {/* Subtle grid pattern */}
+      <div className="absolute inset-0 opacity-[0.03]" style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+                         linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px)`,
+        backgroundSize: '40px 40px',
+      }} />
 
-      {/* Values Cards with animation */}
-      <motion.div
-        className="w-full h-auto md:h-[80%] flex flex-wrap justify-center gap-5"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.3 }}
-      >
-        {values.map((value) => (
-          <ValueCard key={value.id} value={value} />
-        ))}
-      </motion.div>
+      <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
+        {/* Header Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.5 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16 space-y-6"
+        >
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-blue-100 to-purple-100 border border-blue-200">
+            <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
+            <span className="text-sm text-blue-700 font-semibold">
+              Our Values
+            </span>
+          </div>
+
+          {/* Main Heading */}
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 leading-tight">
+            Discover the Values of{" "}
+            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
+              Code4Bharat
+            </span>
+          </h2>
+
+          <p className="text-slate-600 text-lg max-w-2xl mx-auto">
+            We're committed to delivering excellence through innovative solutions and unwavering dedication
+          </p>
+        </motion.div>
+
+        {/* Values Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {values.map((value) => (
+            <ValueCard key={value.id} value={value} />
+          ))}
+        </div>
+      </div>
     </section>
   );
 };
