@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import Head from "next/head";
 import { motion } from "framer-motion";
 
+
 // Import our new smaller components
 import MobileMenu from "./MobileMenu/MobileMenu";
 import DesktopMenu from "./DesktopMenu/DesktopMenu";
@@ -64,12 +65,14 @@ const Navbar = () => {
   // Main Menu Items
   const menuItems = [
     { name: "Hub", path: "/" },
-    { name: "Behind the code", path: convertToPath("About Us") },
+    //{ name: "Behind the code", path: convertToPath("About Us") },
     { name: "Odoo", path: convertToPath("servicesweoffer") },
-    { name: "Trusted By", path: convertToPath("Clients") },
-    { name: "Strategy", path: convertToPath("Approach") },
-    { name: "What we offer", path: convertToPath("Services") },
+    //{ name: "Trusted By", path: convertToPath("Clients") },
+    //{ name: "Strategy", path: convertToPath("Approach") },
+    //{ name: "What we offer", path: convertToPath("Services") },
+    {name: "AI Solutions", path: convertToPath("AISolutions")},
     { name: "Reach out", path: convertToPath("Contact Us") },
+
    
   ];
 

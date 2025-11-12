@@ -6,6 +6,13 @@ import ServiceSection from "../home/ServicesHome/ServiceSection";
 
 import Footer from "../layouts/footer/Footer";
 import ApproachSection from "../home/Approach/ApproachSection";
+import AboutusInfo from "../Aboutus/AboutusInfo/AboutusInfo";
+import SupportersSection from "../Aboutus/OurSupporters/SupporterSection";
+import ValuesSection from "../Aboutus/Values/ValuesSection";
+import Clientsec from "../Clients/ClientsSec/ClientsSec";
+import ApproachSec from "../Approach/ApproachSec/ApproachSec";
+import ServicesSection from "../Services/ServiceSection/ServiceSec";
+
 
 const Home = () => {
   return (
@@ -43,6 +50,12 @@ const Home = () => {
         <ServiceSection />
        
         <ApproachSection />
+        <AboutusInfo/>
+        <SupportersSection />
+        <ValuesSection />
+        <Clientsec />
+        <ApproachSec />
+        <ServicesSection />
         <Footer />
       </div>
     </>
