@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { AiOutlineRight } from "react-icons/ai";
@@ -12,6 +12,26 @@ const DesktopMenu = ({ menuItems, pathname, handleLinkClick }) => {
   const [isManufacturingDropdownOpen, setIsManufacturingDropdownOpen] =
     useState(false);
   const [isHRDropdownOpen, setIsHRDropdownOpen] = useState(false);
+
+  const menuRef = useRef(null);
+  
+  
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setIsOdooDropdownOpen(false);
+        setIsServicesDropdownOpen(false);
+        setIsAppsDropdownOpen(false);
+        setIsManufacturingDropdownOpen(false);
+        setIsHRDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   // Framer Motion animations
   const navVariants = {
@@ -84,7 +104,8 @@ const DesktopMenu = ({ menuItems, pathname, handleLinkClick }) => {
   };
 
   return (
-    <motion.div
+    <motion.div 
+      ref={menuRef}
       className="hidden md:flex gap-4 lg:gap-8 xl:gap-12 mr-4 lg:mr-8 xl:mr-16"
       initial="hidden"
       animate="visible"
@@ -95,36 +116,43 @@ const DesktopMenu = ({ menuItems, pathname, handleLinkClick }) => {
           key={idx}
           variants={navVariants}
           className="relative group"
-          onMouseEnter={() => handleDropdownEnter(name)}
-          onMouseLeave={() => handleDropdownLeave(name)}
         >
           <Link href={path} onClick={handleLinkClick}>
             <h3
-              className={`text-sm lg:text-base xl:text-lg font-medium capitalize whitespace-nowrap flex items-center gap-1 ${
-                pathname === path
-                  ? "text-[#3b84d6] font-bold border-b-2 border-[#3b84d6]"
-                  : "hover:text-[#3b84d6] transition-colors duration-200"
-              }`}
-            >
-              {name}
-              {name === "Odoo" && (
-                <motion.svg
-                  className="w-4 h-4"
-                  animate={{ rotate: isOdooDropdownOpen ? 180 : 0 }}
-                  transition={{ duration: 0.3 }}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </motion.svg>
-              )}
-            </h3>
+  onClick={(e) => {
+    if (name === "Odoo") {
+      e.preventDefault(); // prevent page navigation
+      setIsOdooDropdownOpen((prev) => !prev);
+    } else {
+      handleLinkClick?.();
+    }
+  }}
+  className={`text-sm lg:text-base xl:text-lg font-medium capitalize whitespace-nowrap flex items-center gap-1 ${
+    pathname === path
+      ? "text-[#3b84d6] font-bold border-b-2 border-[#3b84d6]"
+      : "hover:text-[#3b84d6] transition-colors duration-200"
+  }`}
+>
+  {name}
+  {name === "Odoo" && (
+    <motion.svg
+      className="w-4 h-4"
+      animate={{ rotate: isOdooDropdownOpen ? 180 : 0 }}
+      transition={{ duration: 0.3 }}
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M19 9l-7 7-7-7"
+      />
+    </motion.svg>
+  )}
+</h3>
+
           </Link>
 
           {/* Odoo Dropdown */}

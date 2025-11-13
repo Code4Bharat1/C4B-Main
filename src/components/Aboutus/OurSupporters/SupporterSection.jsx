@@ -34,11 +34,14 @@ const SupportersSection = () => {
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
       
       {/* Grid pattern overlay */}
-      <div className="absolute inset-0 opacity-5" style={{
-        backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+      <div
+        className="absolute inset-0 opacity-5"
+        style={{
+          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
                          linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)`,
-        backgroundSize: '60px 60px',
-      }} />
+          backgroundSize: "60px 60px",
+        }}
+      />
 
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         {/* Header Section */}
@@ -47,7 +50,7 @@ const SupportersSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.5 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16 space-y-6"
+          className="text-center mb-10 space-y-6"  // reduced from mb-16
         >
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-cyan-500/20 border border-cyan-400/30">
@@ -58,14 +61,14 @@ const SupportersSection = () => {
           </div>
 
           {/* Main Heading */}
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight">
             Our Valued{" "}
             <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
               Clients & Partners
             </span>
           </h2>
 
-          <p className="text-slate-300 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-300 text-xl max-w-2xl mx-auto">
             Proud to collaborate with innovative companies worldwide
           </p>
 
@@ -101,13 +104,9 @@ const SupportersSection = () => {
           transition={{ duration: 0.8 }}
           className="relative"
         >
-          {/* Gradient overlays for fade effect */}
-          {/* <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-slate-900 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-slate-800 to-transparent z-10 pointer-events-none" /> */}
-
-          {/* Top Row - Left to Right */}
-          <div className="relative overflow-hidden group mb-8">
-            <div className="flex animate-marquee-ltr">
+          <div className="relative overflow-hidden group mb-4"> 
+            <div className="marquee-track animate-marquee-ltr flex items-center">
+            
               {supporters.concat(supporters).map((supporter, index) => (
                 <div key={`supporter-top-${index}`} className="px-4 flex-shrink-0">
                   <SupporterCard
@@ -118,20 +117,6 @@ const SupportersSection = () => {
               ))}
             </div>
           </div>
-
-          {/* Bottom Row - Right to Left */}
-          {/* <div className="relative overflow-hidden group">
-            <div className="flex animate-marquee-rtl">
-              {supporters.concat(supporters).map((supporter, index) => (
-                <div key={`supporter-bottom-${index}`} className="px-4 flex-shrink-0">
-                  <SupporterCard
-                    imageSrc={supporter.imageSrc}
-                    altText={supporter.altText}
-                  />
-                </div>
-              ))}
-            </div>
-          </div> */}
         </motion.div>
 
         {/* Bottom Text */}
@@ -140,11 +125,11 @@ const SupportersSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-center mt-16"
+          className="text-center mt-10" // reduced from mt-16
         >
-          <p className="text-slate-400 text-sm">
+          <h1 className="text-white text-3xl md:text-4xl font-semibold leading-snug">
             Join our growing family of satisfied clients and industry partners
-          </p>
+          </h1>
         </motion.div>
       </div>
 
@@ -153,12 +138,6 @@ const SupportersSection = () => {
         .animate-marquee-ltr {
           display: flex;
           animation: marquee-ltr 40s linear infinite;
-          will-change: transform;
-        }
-
-        .animate-marquee-rtl {
-          display: flex;
-          animation: marquee-rtl 45s linear infinite;
           will-change: transform;
         }
 
@@ -171,18 +150,7 @@ const SupportersSection = () => {
           }
         }
 
-        @keyframes marquee-rtl {
-          0% {
-            transform: translateX(-50%);
-          }
-          100% {
-            transform: translateX(0%);
-          }
-        }
-
-        /* Pause on hover */
-        .group:hover .animate-marquee-ltr,
-        .group:hover .animate-marquee-rtl {
+        .group:hover .animate-marquee-ltr {
           animation-play-state: paused;
         }
       `}</style>

@@ -167,7 +167,8 @@ const AboutusInfo = () => {
               {/* Main video card */}
               <div className="relative bg-white rounded-2xl p-3 shadow-2xl">
                 {/* Video wrapper with rounded corners */}
-                <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-900 group">
+                <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden bg-slate-900 group">
+
                   <iframe
                     width="100%"
                     height="100%"
