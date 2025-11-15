@@ -91,12 +91,12 @@ const TermsAndConditions = () => {
               Welcome to{" "}
               <strong className="text-blue-700">NEXCORE ALLIANCE LLP</strong>. By accessing or using our website{" "}
               <a
-                href="https://NEXCORE ALLIANCE LLP.com/"
+                href="https://nexcorealliance.com/"
                 className="text-blue-600 hover:text-blue-800 underline font-medium transition-colors duration-200"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                www.NEXCORE ALLIANCE LLP.com
+                www.nexcorealliance.com/
               </a>
               , you agree to comply with the following terms and conditions:
             </p>
