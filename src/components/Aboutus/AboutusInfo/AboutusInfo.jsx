@@ -54,7 +54,7 @@ const AboutusInfo = () => {
       {/* Background decorative elements */}
       <div className="absolute top-20 right-10 w-72 h-72 bg-blue-200/30 rounded-full blur-3xl" />
       <div className="absolute bottom-20 left-10 w-96 h-96 bg-purple-200/20 rounded-full blur-3xl" />
-      
+
       {/* Subtle grid pattern */}
       <div className="absolute inset-0 opacity-[0.03]" style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
@@ -251,16 +251,16 @@ const AboutusInfo = () => {
             <p className="text-slate-300 max-w-xl">
               Let's transform your business with innovative IT solutions
             </p>
-            <Link href="/contactus">
-  <motion.a
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}
-    className="items-center gap-2 px-10 py-4 bg-white text-slate-900 font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all inline-flex justify-center"
-  >
-    Get Started Today
-    <FaArrowRight className="w-4 h-4" />
-  </motion.a>
-</Link>
+            <Link href="/contactus"
+              // {/* <motion.a
+              //   whileHover={{ scale: 1.05 }}
+              //   whileTap={{ scale: 0.95 }} */}
+                className="items-center gap-2 px-10 py-4 bg-white text-slate-900 font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all inline-flex justify-center"
+              >
+                Get Started Today
+                <FaArrowRight className="w-4 h-4" />
+              {/* </motion.a> */}
+            </Link>
           </div>
         </motion.div>
       </div>

@@ -6,6 +6,7 @@ import {
   FaLinkedinIn,
   FaWhatsapp,
   FaArrowRight,
+  FaYoutube,
 } from "react-icons/fa";
 import { RiTwitterXLine } from "react-icons/ri";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
@@ -37,7 +38,7 @@ const Footer = () => {
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
-      
+
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 opacity-5" style={{
         backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
@@ -56,39 +57,45 @@ const Footer = () => {
         >
           {/* Logo + About */}
           <motion.div variants={itemVariants} className="lg:col-span-1">
-            <div className="mb-6">
+            <div className="mb-6 w-full h-24 rounded-xl shadow-lg flex items-center justify-center bg-white/80">
               <img
-                src="/images/c4b.png"
+                src="/nex.png"
+                // src="/images/c4b.png"
                 alt="NEXCORE ALLIANCE LLP"
-                className="w-48 h-auto object-contain "
+                className="w-48 h-auto object-cover"
               />
             </div>
             <p className="text-slate-300 leading-relaxed mb-6">
-              NEXCORE ALLIANCE LLP is at the forefront of providing world-class IT
+              Nexcore Alliance is at the forefront of providing world-class IT
               solutions, helping businesses globally leverage technology for
               growth and success.
             </p>
-            
+
             {/* Social Icons */}
             <div className="flex gap-3">
               {[
                 {
-                  href: "https://www.facebook.com/profile.php?id=61552341000278",
+                  href: "https://www.facebook.com/profile.php?id=61570113656994",
                   icon: <FaFacebookF />,
                   gradient: "from-blue-600 to-blue-700",
                 },
                 {
-                  href: "https://www.instagram.com/NEXCORE ALLIANCE LLP_/",
+                  href: "https://www.instagram.com/nexcorealliancellp/",
                   icon: <FaInstagram />,
                   gradient: "from-pink-600 via-purple-600 to-orange-500",
                 },
                 {
-                  href: "https://x.com/NEXCORE ALLIANCE LLP",
+                  href: "https://twitter.com/nexcore",
                   icon: <RiTwitterXLine />,
                   gradient: "from-slate-800 to-slate-900",
                 },
                 {
-                  href: "http://linkedin.com/company/NEXCORE ALLIANCE LLP",
+                  href: "https://www.youtube.com/channel/UCYqpIltw48XxkMRLC-HCgag",
+                  icon: <FaYoutube />,
+                  gradient: "from-red-600 to-red-700",
+                },
+                {
+                  href: "https://www.linkedin.com/company/105730702/admin/dashboard/",
                   icon: <FaLinkedinIn />,
                   gradient: "from-blue-600 to-blue-700",
                 },
@@ -115,11 +122,11 @@ const Footer = () => {
             </h3>
             <ul className="space-y-3">
               {[
-                { name: "Home", path: "/" },
-                { name: "About Us", path: "/aboutus" },
-                { name: "Our Services", path: "/services" },
-                { name: "Our Clients", path: "/clients" },
-                { name: "Our Approach", path: "/approach" },
+                { name: "Hub", path: "/" },
+                { name: "Behind the code", path: "/aboutus" },
+                { name: "What we offer", path: "/services" },
+                { name: "Trusted By", path: "/clients" },
+                { name: "Strategy", path: "/approach" },
               ].map((link, i) => (
                 <motion.li
                   key={i}
@@ -144,7 +151,7 @@ const Footer = () => {
             </h3>
             <ul className="space-y-3">
               {[
-                { name: "About C4B", path: "/policies/about" },
+                { name: "About Nexcore Alliance", path: "/policies/about" },
                 { name: "Contact", path: "/policies/contact" },
                 { name: "Terms & Conditions", path: "/policies/termsandcondition" },
                 { name: "Privacy Policy", path: "/policies/privacy" },
@@ -182,8 +189,8 @@ const Footer = () => {
                 },
                 {
                   icon: <FiMail className="w-5 h-5" />,
-                  text: "NEXCORE ALLIANCE LLP@gmail.com",
-                  href: "mailto:NEXCORE ALLIANCE LLP@gmail.com",
+                  text: "nexcorealliance@gmail.com",
+                  href: "mailto:nexcorealliance@gmail.com",
                   gradient: "from-blue-500 to-cyan-500",
                 },
                 {
@@ -257,7 +264,7 @@ const Footer = () => {
             className="flex flex-col md:flex-row items-center justify-between gap-4"
           >
             <p className="text-slate-400 text-sm text-center md:text-left">
-              © 2011-2025 <span className="font-semibold text-white">NEXCORE ALLIANCE LLP</span>. All Rights Reserved.
+              © 2011-2025 <span className="font-semibold text-white">Nexcore Alliance</span>. All Rights Reserved.
             </p>
             <div className="flex items-center gap-6 text-sm text-slate-400">
               <Link href="/policies/privacy">
@@ -283,7 +290,7 @@ const Footer = () => {
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center shadow-2xl z-50 group"
         whileHover={{ scale: 1.1 }}
-        animate={{ 
+        animate={{
           y: [0, -8, 0],
           boxShadow: [
             "0 20px 25px -5px rgba(34, 197, 94, 0.3)",
@@ -291,14 +298,14 @@ const Footer = () => {
             "0 20px 25px -5px rgba(34, 197, 94, 0.3)",
           ]
         }}
-        transition={{ 
-          repeat: Infinity, 
+        transition={{
+          repeat: Infinity,
           duration: 2,
           ease: "easeInOut"
         }}
       >
         <FaWhatsapp className="text-white text-3xl group-hover:scale-110 transition-transform" />
-        
+
         {/* Ping effect */}
         <span className="absolute inset-0 rounded-full bg-green-400 animate-ping opacity-20" />
       </motion.a>

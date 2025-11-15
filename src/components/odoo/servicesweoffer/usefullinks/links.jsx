@@ -197,14 +197,14 @@ const FooterLinks = () => {
           Get in touch with our team and we'll help you find the perfect solution
         </p>
 
-        <Link href="/contactus">
-          <motion.a
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+        <Link href="/contactus"
+          // {/* <motion.a */}
+            // {/* whileHover={{ scale: 1.05 }} */}
+            // {/* whileTap={{ scale: 0.95 }} */}
             className="px-8 py-3 bg-white text-slate-900 font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center gap-2"
           >
             Contact Us
-          </motion.a>
+          {/* </motion.a> */}
         </Link>
       </div>
     </motion.div>

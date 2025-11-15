@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
+import { Headphones, Globe2, MessageCircle } from "lucide-react";
 
 const ContactUsHeroSection = () => {
   const containerVariants = {
@@ -47,8 +48,8 @@ const ContactUsHeroSection = () => {
     {
       Icon: FaEnvelope,
       label: "Email Us",
-      value: "NEXCORE ALLIANCE LLP@gmail.com",
-      href: "mailto:NEXCORE ALLIANCE LLP@gmail.com",
+      value: "nexcorealliance@gmail.com",
+      href: "mailto:nexcorealliance@gmail.com",
       gradient: "from-purple-500 to-pink-500",
     },
     {
@@ -132,7 +133,7 @@ const ContactUsHeroSection = () => {
               variants={itemVariants}
               className="text-lg text-slate-300 leading-relaxed max-w-xl"
             >
-              At <span className="font-semibold text-white">NEXCORE ALLIANCE LLP</span>, we are dedicated to providing you with the best support. 
+              At <span className="font-semibold text-white">Nexcore Alliance</span>, we are dedicated to providing you with the best support.
               Whether you have questions or need assistance, we are just a message away.
             </motion.p>
 
@@ -185,7 +186,7 @@ const ContactUsHeroSection = () => {
                 </motion.button>
               </Link>
 
-              <Link href="mailto:NEXCORE ALLIANCE LLP@gmail.com">
+              <Link href="mailto:nexcorealliance@gmail.com">
                 <motion.button
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
@@ -203,16 +204,17 @@ const ContactUsHeroSection = () => {
               className="flex gap-8 pt-4 border-t border-slate-700/50"
             >
               {[
-                { icon: "⚡", label: "24hr Response" },
-                { icon: "🌍", label: "Global Support" },
-                { icon: "💬", label: "Live Chat" },
+                { icon: <Headphones className="w-6 h-6 text-orange-400" />, label: "24hr Response" },
+                { icon: <Globe2 className="w-6 h-6 text-blue-400" />, label: "Global Support" },
+                { icon: <MessageCircle className="w-6 h-6 text-green-400" />, label: "Live Chat" },
               ].map((stat, i) => (
                 <div key={i} className="flex items-center gap-2">
-                  <span className="text-2xl">{stat.icon}</span>
+                  <span>{stat.icon}</span>
                   <span className="text-sm text-slate-300">{stat.label}</span>
                 </div>
               ))}
             </motion.div>
+
           </motion.div>
 
           {/* Right: Image with 3D effect */}
@@ -236,7 +238,7 @@ const ContactUsHeroSection = () => {
             >
               {/* Glow effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 opacity-20 blur-3xl rounded-3xl scale-105" />
-              
+
               {/* Main card */}
               <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl rounded-3xl p-8 border border-slate-700/50 shadow-2xl">
                 <Image
@@ -246,7 +248,7 @@ const ContactUsHeroSection = () => {
                   height={600}
                   className="w-full h-auto rounded-2xl relative z-10"
                 />
-                
+
                 {/* Decorative elements */}
                 <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl opacity-20 blur-2xl" />
                 <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-cyan-500 to-teal-500 rounded-2xl opacity-20 blur-2xl" />

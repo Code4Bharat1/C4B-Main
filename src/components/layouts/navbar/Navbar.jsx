@@ -107,11 +107,12 @@ const Navbar = () => {
             >
               <Link href="/" onClick={handleLinkClick}>
                 <Image
-                  src="/images/c4b.png"
+                  src="/nex.png"
+                  // src="/images/c4b.png"
                   alt="NEXCORE ALLIANCE LLP Logo"
-                  width={200}
-                  height={200}
-                  className="h-50 sm:h-25 lg:h-50 xl:h-65 w-auto object-contain"
+                  width={150}
+                  height={150}
+                  className="h-40 sm:h-25 lg:h-50 xl:h-65 w-auto object-contain"
                   priority
                 />
               </Link>

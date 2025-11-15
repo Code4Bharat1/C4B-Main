@@ -487,7 +487,7 @@ const ClientCard = ({ client }) => {
                   Want similar results? <span className="font-semibold text-slate-900">Let's discuss your project</span>
                 </p>
                 <div className="flex gap-3">
-                  <Link href="/contact-us">
+                  <Link href="/contactus">
                     <button className={`px-6 py-3 bg-gradient-to-r ${client.gradient} text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all`}>
                       Start Your Project
                     </button>
@@ -562,7 +562,7 @@ const ClientsSection = () => {
               Let's discuss how we can help you achieve similar results.
             </p>
             <div className="flex gap-4 justify-center mt-8">
-              <Link href="/contact-us">
+              <Link href="/contactus">
                 <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all">
                   Start Your Project
                 </button>

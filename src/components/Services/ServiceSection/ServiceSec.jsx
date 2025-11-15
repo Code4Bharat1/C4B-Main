@@ -622,12 +622,12 @@ const ServiceCard = ({ service }) => {
                     Ready to transform your business with {service.title}?
                   </p>
                   <div className="flex gap-3">
-                    <Link href="/contact-us">
+                    <Link href="/contactus">
                       <button className="px-6 py-2.5 bg-white text-teal-700 rounded-xl font-semibold hover:shadow-lg transition-all text-sm">
                         Get Started
                       </button>
                     </Link>
-                    <Link href="/contact-us">
+                    <Link href="/contactus">
                       <button className="px-6 py-2.5 bg-white/20 backdrop-blur-sm text-white rounded-xl font-semibold hover:bg-white/30 transition-all text-sm border border-white/30">
                         Learn More
                       </button>
@@ -741,12 +741,12 @@ const ServicesSection = () => {
                 Get in touch with our experts today.
               </p>
               <div className="flex gap-4 justify-center flex-wrap mt-8">
-                <Link href="/contact-us">
+                <Link href="/contactus">
                   <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all">
                     Schedule Consultation
                   </button>
                 </Link>
-                <Link href="/contact-us">
+                <Link href="/contactus">
                   <button className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-bold rounded-xl border border-white/20 hover:bg-white/20 transition-all">
                     View Case Studies
                   </button>

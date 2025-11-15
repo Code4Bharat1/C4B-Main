@@ -155,14 +155,13 @@ const ApproachSection = () => {
 
             {/* CTA Button */}
             <motion.div variants={itemVariants}>
-  <Link href="/contactus">
-    <motion.a
-      whileHover={{ scale: 1.05, y: -2 }}
-      whileTap={{ scale: 0.95 }}
+  <Link href="/contactus"
+    
+      // whileHover={{ scale: 1.05, y: -2 }}
+      // whileTap={{ scale: 0.95 }}
       className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-xl shadow-lg shadow-cyan-500/30 hover:shadow-xl hover:shadow-cyan-500/50 transition-all inline-flex justify-center items-center"
-    >
+      >
       Start Your Project
-    </motion.a>
   </Link>
 </motion.div>
           </motion.div>
