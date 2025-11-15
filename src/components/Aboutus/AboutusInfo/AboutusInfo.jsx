@@ -63,7 +63,7 @@ const AboutusInfo = () => {
       }} />
 
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-1 gap-12 lg:gap-16 items-center">
           {/* Left Section: Content */}
           <motion.div
             initial="hidden"
@@ -143,7 +143,7 @@ const AboutusInfo = () => {
           </motion.div>
 
           {/* Right Section: Video */}
-          <motion.div
+          {/* <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.3 }}
@@ -161,12 +161,9 @@ const AboutusInfo = () => {
               }}
               className="relative"
             >
-              {/* Outer glow effect */}
               <div className="absolute -inset-4 bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 opacity-30 blur-2xl rounded-3xl" />
 
-              {/* Main video card */}
               <div className="relative bg-white rounded-2xl p-3 shadow-2xl">
-                {/* Video wrapper with rounded corners */}
                 <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden bg-slate-900 group">
 
                   <iframe
@@ -180,7 +177,6 @@ const AboutusInfo = () => {
                     className="w-full h-full"
                   />
 
-                  {/* Hover overlay with play button */}
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
                     <motion.div
                       whileHover={{ scale: 1.15 }}
@@ -191,7 +187,6 @@ const AboutusInfo = () => {
                   </div>
                 </div>
 
-                {/* Video info bar */}
                 <div className="mt-3 flex items-center justify-between px-2">
                   <div>
                     <h3 className="text-slate-900 text-sm font-bold">
@@ -210,7 +205,6 @@ const AboutusInfo = () => {
                 </div>
               </div>
 
-              {/* Floating stat badges */}
               <motion.div
                 className="absolute -top-4 -left-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl px-4 py-3 shadow-xl"
                 initial={{ opacity: 0, scale: 0 }}
@@ -233,7 +227,7 @@ const AboutusInfo = () => {
                 <div className="text-purple-100 text-xs font-medium whitespace-nowrap">Success</div>
               </motion.div>
             </motion.div>
-          </motion.div>
+          </motion.div> */}
         </div>
 
         {/* Bottom CTA Section */}

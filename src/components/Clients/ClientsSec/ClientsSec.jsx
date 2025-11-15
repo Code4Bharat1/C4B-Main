@@ -293,14 +293,9 @@ const ClientCard = ({ client }) => {
           </div>
 
           <div>
-            <h3 className="text-2xl font-bold text-slate-900 mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text" style={{
-              backgroundImage: client.gradient.includes('blue') ? 'linear-gradient(to right, #2563eb, #06b6d4)' :
-                              client.gradient.includes('emerald') ? 'linear-gradient(to right, #059669, #14b8a6)' :
-                              client.gradient.includes('purple') ? 'linear-gradient(to right, #9333ea, #ec4899)' :
-                              client.gradient.includes('orange') ? 'linear-gradient(to right, #ea580c, #dc2626)' :
-                              client.gradient.includes('indigo') ? 'linear-gradient(to right, #4f46e5, #9333ea)' :
-                              'linear-gradient(to right, #ec4899, #f43f5e)'
-            }}>
+            <h3
+            className="text-2xl font-bold text-slate-900 mb-2"
+            >
               {client.clientName}
             </h3>
             <p className="text-sm font-semibold text-slate-600 mb-3">{client.tagline}</p>
@@ -340,7 +335,7 @@ const ClientCard = ({ client }) => {
           onClick={() => setShowModal(false)}
         >
           <div
-            className="bg-white rounded-3xl max-w-5xl w-full max-h-[90vh] overflow-hidden shadow-2xl"
+            className="bg-white rounded-3xl max-w-3xl w-full max-h-[95vh] overflow-hidden shadow-2xl mt-10 mb-10"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}

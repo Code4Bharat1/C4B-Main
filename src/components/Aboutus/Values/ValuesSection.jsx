@@ -134,7 +134,7 @@ const ValueCard = ({ value }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 mt-20"
             onClick={() => setShowModal(false)}
           >
             <motion.div
@@ -142,7 +142,7 @@ const ValueCard = ({ value }) => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ type: "spring", damping: 25 }}
-              className="bg-white rounded-3xl max-w-2xl w-full max-h-[80vh] overflow-hidden shadow-2xl"
+              className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-hidden shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal Header */}
@@ -174,7 +174,7 @@ const ValueCard = ({ value }) => {
               </div>
 
               {/* Modal Footer */}
-              <div className="p-6 border-t border-slate-200 bg-slate-50">
+              <div className="p-6 border-t border-slate-200 bg-slate-50 mb-50">
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
