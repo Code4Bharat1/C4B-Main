@@ -8,17 +8,17 @@ export default function About() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
-    name: "About Code4Bharat",
-    url: "https://www.code4bharat.com/about",
+    name: "About NEXCORE ALLIANCE LLP",
+    url: "https://www.NEXCORE ALLIANCE LLP.com/about",
     description:
-      "Learn more about Code4Bharat's mission to empower students and developers in India with coding tutorials, tools, and innovative learning programs.",
+      "Learn more about NEXCORE ALLIANCE LLP's mission to empower students and developers in India with coding tutorials, tools, and innovative learning programs.",
     publisher: {
       "@type": "Organization",
-      name: "Code4Bharat",
-      url: "https://www.code4bharat.com",
+      name: "NEXCORE ALLIANCE LLP",
+      url: "https://www.NEXCORE ALLIANCE LLP.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://www.code4bharat.com/og-image.png",
+        url: "https://www.NEXCORE ALLIANCE LLP.com/og-image.png",
       },
     },
     inLanguage: "en-IN",
@@ -81,10 +81,10 @@ export default function About() {
   return (
     <>
       <SEOHead
-        title="About Code4Bharat – Empowering Students & Developers in India"
-        description="Discover Code4Bharat's mission, vision, and values. We provide coding tutorials, innovative learning solutions, and skill-building programs to empower students and developers in India."
-        keywords="About Code4Bharat, developer community India, coding tutorials India, future-ready skills, education transformation"
-        url="https://www.code4bharat.com/about"
+        title="About NEXCORE ALLIANCE LLP – Empowering Students & Developers in India"
+        description="Discover NEXCORE ALLIANCE LLP's mission, vision, and values. We provide coding tutorials, innovative learning solutions, and skill-building programs to empower students and developers in India."
+        keywords="About NEXCORE ALLIANCE LLP, developer community India, coding tutorials India, future-ready skills, education transformation"
+        url="https://www.NEXCORE ALLIANCE LLP.com/about"
         schema={schema}
       />
 
@@ -112,7 +112,7 @@ export default function About() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg">
               About{" "}
               <span className="bg-gradient-to-r from-cyan-300 to-blue-200 bg-clip-text text-transparent">
-                Code4Bharat
+                NEXCORE ALLIANCE LLP
               </span>
             </h1>
             <p className="text-blue-100 text-base md:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed">
@@ -142,7 +142,7 @@ export default function About() {
           <p className="text-gray-600 text-lg md:text-xl text-center max-w-3xl mx-auto leading-relaxed mb-8">
             Welcome to{" "}
             <span className="font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-              Code4Bharat
+              NEXCORE ALLIANCE LLP
             </span>{" "}
             - your gateway to transformative education and skill development.
           </p>
@@ -193,7 +193,7 @@ export default function About() {
               Ready to transform your future with cutting-edge skills?
             </h2>
             <p className="text-blue-100 text-base md:text-lg mb-6 max-w-2xl mx-auto">
-              Join thousands of students who are building their future with Code4Bharat
+              Join thousands of students who are building their future with NEXCORE ALLIANCE LLP
             </p>
             <a
               href="/contactus"

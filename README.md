@@ -1,10 +1,10 @@
 ```markdown
-# 🚀 Code4Bharat Website
+# 🚀 NEXCORE ALLIANCE LLP Website
 
-Code4Bharat is a technology solutions provider offering a range of services to help businesses leverage digital tools for growth and success. This project is built using **Next.js 15 (App Router)** with **Tailwind CSS** for styling, along with modern React libraries like Framer Motion, GSAP, and React Icons.
+NEXCORE ALLIANCE LLP is a technology solutions provider offering a range of services to help businesses leverage digital tools for growth and success. This project is built using **Next.js 15 (App Router)** with **Tailwind CSS** for styling, along with modern React libraries like Framer Motion, GSAP, and React Icons.
 
 ## 🌐 Live Website
-Visit the live website here: [code4bharat.com](https://code4bharat.com)
+Visit the live website here: [NEXCORE ALLIANCE LLP.com](https://NEXCORE ALLIANCE LLP.com)
 
 ---
 
@@ -106,7 +106,7 @@ Visit [http://localhost:3000](http://localhost:3000) to view the site.
 Create a `.env` file in the root directory and add the following:
 
 ```env
-NEXT_PUBLIC_API_URL=https://api.code4bharat.com
+NEXT_PUBLIC_API_URL=https://api.NEXCORE ALLIANCE LLP.com
 ```
 
 ---
@@ -131,8 +131,8 @@ We welcome contributions! Feel free to submit pull requests or open issues for b
 ## 📞 Contact
 
 For more information or to get in touch:
-- 🌐 [Website](https://code4bharat.com)
-- 📧 Email: code4bharat@gmail.com
+- 🌐 [Website](https://NEXCORE ALLIANCE LLP.com)
+- 📧 Email: NEXCORE ALLIANCE LLP@gmail.com
 
 ---
 

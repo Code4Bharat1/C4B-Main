@@ -23,16 +23,16 @@ export default function ShippingPolicy() {
     "@context": "https://schema.org",
     "@type": "ShippingDeliveryTime",
     name: "Shipping & Delivery Policy",
-    url: "https://www.code4bharat.com/deliverypolicy",
+    url: "https://www.NEXCORE ALLIANCE LLP.com/deliverypolicy",
     description:
-      "Read Code4Bharat’s shipping & delivery policy. Learn how we manage deliveries of physical materials or certificates for courses.",
+      "Read NEXCORE ALLIANCE LLP’s shipping & delivery policy. Learn how we manage deliveries of physical materials or certificates for courses.",
     publisher: {
       "@type": "Organization",
-      name: "Code4Bharat",
-      url: "https://www.code4bharat.com",
+      name: "NEXCORE ALLIANCE LLP",
+      url: "https://www.NEXCORE ALLIANCE LLP.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://www.code4bharat.com/og-image.png",
+        url: "https://www.NEXCORE ALLIANCE LLP.com/og-image.png",
       },
     },
     inLanguage: "en-IN",
@@ -42,10 +42,10 @@ export default function ShippingPolicy() {
     <>
       {/* SEO */}
       <SEOHead
-        title="Shipping & Delivery Policy – Code4Bharat"
-        description="Read Code4Bharat’s shipping and delivery policy for physical course materials or certificates. Learn about timelines, availability, and process."
-        keywords="Code4Bharat shipping policy, delivery policy, course certificates delivery, education material shipping India"
-        url="https://www.code4bharat.com/deliverypolicy"
+        title="Shipping & Delivery Policy – NEXCORE ALLIANCE LLP"
+        description="Read NEXCORE ALLIANCE LLP’s shipping and delivery policy for physical course materials or certificates. Learn about timelines, availability, and process."
+        keywords="NEXCORE ALLIANCE LLP shipping policy, delivery policy, course certificates delivery, education material shipping India"
+        url="https://www.NEXCORE ALLIANCE LLP.com/deliverypolicy"
         schema={schema}
       />
 
@@ -58,7 +58,7 @@ export default function ShippingPolicy() {
               Shipping & Delivery Policy
             </h1>
             <p className="text-center text-blue-100 text-sm md:text-base lg:text-lg max-w-2xl mx-auto">
-              At <strong>Code4Bharat</strong>, we ensure a seamless shipping and delivery process for any physical materials or certificates (if applicable).
+              At <strong>NEXCORE ALLIANCE LLP</strong>, we ensure a seamless shipping and delivery process for any physical materials or certificates (if applicable).
             </p>
           </div>
 

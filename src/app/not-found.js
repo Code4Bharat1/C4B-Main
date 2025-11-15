@@ -83,7 +83,7 @@ export default function NotFound() {
             <div className="w-8 h-8 bg-[#106EB5] rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-sm">C4B</span>
             </div>
-            <span className="font-bold text-gray-800 text-lg hidden sm:block">Code4Bharat</span>
+            <span className="font-bold text-gray-800 text-lg hidden sm:block">NEXCORE ALLIANCE LLP</span>
           </div>
           
           <button
@@ -139,7 +139,7 @@ export default function NotFound() {
             >
               <p className="text-[3.5vw] md:text-[1.2vw] lg:text-base font-medium leading-relaxed">
                 Looks like this page took a wrong turn in the digital world! <br className="hidden md:block" />
-                Don't worry, our team at Code4Bharat is here to guide you back. <br className="hidden md:block" />
+                Don't worry, our team at NEXCORE ALLIANCE LLP is here to guide you back. <br className="hidden md:block" />
                 Let's get you where you need to be.
               </p>
             </div>
@@ -245,7 +245,7 @@ export default function NotFound() {
       {/* Bottom Info */}
       <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg">
         <p className="text-sm text-gray-600">
-          <strong>Code4Bharat</strong> - Empowering Developers in India 🇮🇳
+          <strong>NEXCORE ALLIANCE LLP</strong> - Empowering Developers in India 🇮🇳
         </p>
       </div>
 

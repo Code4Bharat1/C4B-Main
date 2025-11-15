@@ -4,40 +4,40 @@ import TermsAndConditions from "@/components/policies/TermsAndConditions";
 import React from "react";
 
 export const metadata = {
-  title: "Terms and Conditions – Code4Bharat",
+  title: "Terms and Conditions – NEXCORE ALLIANCE LLP",
   description:
-    "Review the terms and conditions for using Code4Bharat’s services, courses, and website.",
+    "Review the terms and conditions for using NEXCORE ALLIANCE LLP’s services, courses, and website.",
   keywords: [
-    "Code4Bharat terms and conditions",
+    "NEXCORE ALLIANCE LLP terms and conditions",
     "website usage terms",
     "course terms",
-    "service agreement Code4Bharat",
+    "service agreement NEXCORE ALLIANCE LLP",
   ],
   openGraph: {
-    title: "Terms and Conditions – Code4Bharat",
+    title: "Terms and Conditions – NEXCORE ALLIANCE LLP",
     description:
-      "Understand Code4Bharat’s terms and conditions for using our platform and services.",
-    url: "https://www.code4bharat.com/policies/terms-and-conditions",
-    siteName: "Code4Bharat",
+      "Understand NEXCORE ALLIANCE LLP’s terms and conditions for using our platform and services.",
+    url: "https://www.NEXCORE ALLIANCE LLP.com/policies/terms-and-conditions",
+    siteName: "NEXCORE ALLIANCE LLP",
     images: [
       {
-        url: "https://www.code4bharat.com/og-image.png",
+        url: "https://www.NEXCORE ALLIANCE LLP.com/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Code4Bharat Terms and Conditions",
+        alt: "NEXCORE ALLIANCE LLP Terms and Conditions",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Terms and Conditions – Code4Bharat",
+    title: "Terms and Conditions – NEXCORE ALLIANCE LLP",
     description:
-      "Read Code4Bharat’s terms and conditions for using our services and courses.",
-    images: ["https://www.code4bharat.com/og-image.png"],
+      "Read NEXCORE ALLIANCE LLP’s terms and conditions for using our services and courses.",
+    images: ["https://www.NEXCORE ALLIANCE LLP.com/og-image.png"],
   },
   alternates: {
-    canonical: "https://www.code4bharat.com/policies/terms-and-conditions",
+    canonical: "https://www.NEXCORE ALLIANCE LLP.com/policies/terms-and-conditions",
   },
   robots: {
     index: true,

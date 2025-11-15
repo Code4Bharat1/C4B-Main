@@ -69,7 +69,7 @@ function AISolutions() {
 
           <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-sky-600 to-blue-600 bg-clip-text text-transparent">
             Transform Your Business
-            <br /> with Code4Bharat AI Solutions
+            <br /> with NEXCORE ALLIANCE LLP AI Solutions
           </h1>
           <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-10">
             We build intelligent systems that automate workflows, enhance decision-making,
@@ -143,7 +143,7 @@ function AISolutions() {
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="text-4xl font-bold mb-6 text-gray-800">
-              Why Choose Code4Bharat AI?
+              Why Choose NEXCORE ALLIANCE LLP AI?
             </h2>
             <p className="text-gray-600 mb-8">
               Our AI suite is designed to integrate seamlessly into your business ecosystem,
@@ -199,7 +199,7 @@ function AISolutions() {
             Ready to Transform Your Business?
           </h2>
           <p className="text-lg text-sky-50 mb-8">
-            Join leading companies leveraging Code4Bharat's AI-driven innovation today.
+            Join leading companies leveraging NEXCORE ALLIANCE LLP's AI-driven innovation today.
           </p>
           <button
             onClick={() => router.push("/contactus")}

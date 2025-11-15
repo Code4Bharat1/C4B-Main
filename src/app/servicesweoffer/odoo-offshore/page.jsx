@@ -17,31 +17,31 @@ function Page() {
   return (
     <>
       <Head>
-        <title>Odoo Offshore Development Services – Code4Bharat</title>
+        <title>Odoo Offshore Development Services – NEXCORE ALLIANCE LLP</title>
         <meta
           name="description"
-          content="Partner with Code4Bharat for reliable Odoo offshore development services. Scale your business efficiently with expert remote Odoo developers."
+          content="Partner with NEXCORE ALLIANCE LLP for reliable Odoo offshore development services. Scale your business efficiently with expert remote Odoo developers."
         />
         <meta
           name="keywords"
-          content="Odoo offshore development, offshore Odoo developers, remote Odoo services, Odoo outsourcing India, Code4Bharat Odoo offshore"
+          content="Odoo offshore development, offshore Odoo developers, remote Odoo services, Odoo outsourcing India, NEXCORE ALLIANCE LLP Odoo offshore"
         />
-        <meta property="og:title" content="Odoo Offshore Development Services – Code4Bharat" />
+        <meta property="og:title" content="Odoo Offshore Development Services – NEXCORE ALLIANCE LLP" />
         <meta
           property="og:description"
-          content="Partner with Code4Bharat for reliable Odoo offshore development services. Scale your business efficiently with expert remote Odoo developers."
+          content="Partner with NEXCORE ALLIANCE LLP for reliable Odoo offshore development services. Scale your business efficiently with expert remote Odoo developers."
         />
-        <meta property="og:url" content="https://www.code4bharat.com/services/odoo-offshore" />
+        <meta property="og:url" content="https://www.NEXCORE ALLIANCE LLP.com/services/odoo-offshore" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://www.code4bharat.com/og-image.png" />
+        <meta property="og:image" content="https://www.NEXCORE ALLIANCE LLP.com/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Odoo Offshore Development Services – Code4Bharat" />
+        <meta name="twitter:title" content="Odoo Offshore Development Services – NEXCORE ALLIANCE LLP" />
         <meta
           name="twitter:description"
-          content="Partner with Code4Bharat for reliable Odoo offshore development services. Scale your business efficiently with expert remote Odoo developers."
+          content="Partner with NEXCORE ALLIANCE LLP for reliable Odoo offshore development services. Scale your business efficiently with expert remote Odoo developers."
         />
-        <meta name="twitter:image" content="https://www.code4bharat.com/og-image.png" />
-        <link rel="canonical" href="https://www.code4bharat.com/services/odoo-offshore" />
+        <meta name="twitter:image" content="https://www.NEXCORE ALLIANCE LLP.com/og-image.png" />
+        <link rel="canonical" href="https://www.NEXCORE ALLIANCE LLP.com/services/odoo-offshore" />
       </Head>
 
       <Navbar />

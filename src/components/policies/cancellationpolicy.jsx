@@ -37,16 +37,16 @@ export default function CancellationPolicy() {
     "@context": "https://schema.org",
     "@type": "CancellationPolicy",
     name: "Cancellation Policy",
-    url: "https://www.code4bharat.com/cancellationpolicy",
+    url: "https://www.NEXCORE ALLIANCE LLP.com/cancellationpolicy",
     description:
-      "Read Code4Bharat's cancellation policy. Learn the conditions and guidelines for cancelling your course enrollment.",
+      "Read NEXCORE ALLIANCE LLP's cancellation policy. Learn the conditions and guidelines for cancelling your course enrollment.",
     publisher: {
       "@type": "Organization",
-      name: "Code4Bharat",
-      url: "https://www.code4bharat.com",
+      name: "NEXCORE ALLIANCE LLP",
+      url: "https://www.NEXCORE ALLIANCE LLP.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://www.code4bharat.com/og-image.png",
+        url: "https://www.NEXCORE ALLIANCE LLP.com/og-image.png",
       },
     },
     inLanguage: "en-IN",
@@ -88,10 +88,10 @@ export default function CancellationPolicy() {
   return (
     <>
       <SEOHead
-        title="Cancellation Policy – Code4Bharat"
-        description="Read Code4Bharat's cancellation policy. Learn about eligibility, process, and conditions for cancelling your course enrollment."
-        keywords="Code4Bharat cancellation policy, cancel course enrollment, cancellation rules India, course cancellation guidelines"
-        url="https://www.code4bharat.com/cancellationpolicy"
+        title="Cancellation Policy – NEXCORE ALLIANCE LLP"
+        description="Read NEXCORE ALLIANCE LLP's cancellation policy. Learn about eligibility, process, and conditions for cancelling your course enrollment."
+        keywords="NEXCORE ALLIANCE LLP cancellation policy, cancel course enrollment, cancellation rules India, course cancellation guidelines"
+        url="https://www.NEXCORE ALLIANCE LLP.com/cancellationpolicy"
         schema={schema}
       />
 
@@ -128,7 +128,7 @@ export default function CancellationPolicy() {
                 </span>
               </h1>
               <p className="text-orange-100 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
-                At <strong>Code4Bharat</strong>, we aim to provide a transparent and user-friendly cancellation process. You may cancel your course enrollment under the following conditions:
+                At <strong>NEXCORE ALLIANCE LLP</strong>, we aim to provide a transparent and user-friendly cancellation process. You may cancel your course enrollment under the following conditions:
               </p>
             </div>
           </div>

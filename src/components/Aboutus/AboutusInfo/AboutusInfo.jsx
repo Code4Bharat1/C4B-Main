@@ -77,7 +77,7 @@ const AboutusInfo = () => {
               <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-blue-100 to-purple-100 border border-blue-200">
                 <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
                 <span className="text-sm text-blue-700 font-semibold">
-                  About Code4Bharat
+                  About NEXCORE ALLIANCE LLP
                 </span>
               </div>
             </motion.div>
@@ -89,7 +89,7 @@ const AboutusInfo = () => {
             >
               Your Guide to{" "}
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
-                Code4Bharat
+                NEXCORE ALLIANCE LLP
               </span>
             </motion.h2>
 
@@ -98,7 +98,7 @@ const AboutusInfo = () => {
               variants={itemVariants}
               className="text-xl md:text-2xl font-semibold text-slate-700 leading-relaxed"
             >
-              Code4Bharat is a leading IT solutions provider, specializing in cutting-edge web development
+              NEXCORE ALLIANCE LLP is a leading IT solutions provider, specializing in cutting-edge web development
             </motion.p>
 
             {/* Features List */}
@@ -176,7 +176,7 @@ const AboutusInfo = () => {
                     frameBorder="0"
                     loading="lazy"
                     allow="autoplay"
-                    title="About Code4Bharat Video"
+                    title="About NEXCORE ALLIANCE LLP Video"
                     className="w-full h-full"
                   />
 
@@ -195,7 +195,7 @@ const AboutusInfo = () => {
                 <div className="mt-3 flex items-center justify-between px-2">
                   <div>
                     <h3 className="text-slate-900 text-sm font-bold">
-                      Code4Bharat Showcase
+                      NEXCORE ALLIANCE LLP Showcase
                     </h3>
                     <p className="text-slate-500 text-xs">
                       Our innovative solutions

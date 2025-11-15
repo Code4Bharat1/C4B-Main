@@ -14,7 +14,7 @@ const values = [
     details: (
       <>
         <p>
-          <strong>Code4Bharat</strong> specializes in providing IT solutions, including but not limited to:
+          <strong>NEXCORE ALLIANCE LLP</strong> specializes in providing IT solutions, including but not limited to:
         </p>
         <ul className="list-disc list-inside space-y-2 mt-3">
           <li>Web Development</li>
@@ -25,7 +25,7 @@ const values = [
           <li>UI/UX Design</li>
         </ul>
         <p className="mt-4">
-          Clients who engage Code4Bharat for these services will enter into a separate Service Agreement that details the specific terms of the project, including deliverables, timelines, payments, and warranties.
+          Clients who engage NEXCORE ALLIANCE LLP for these services will enter into a separate Service Agreement that details the specific terms of the project, including deliverables, timelines, payments, and warranties.
         </p>
       </>
     ),
@@ -40,7 +40,7 @@ const values = [
     details: (
       <>
         <p>
-          At <strong>Code4Bharat</strong>, we deliver exceptional web development services tailored to meet the specific needs of businesses. From creating responsive, user-friendly websites to developing sophisticated web applications, we cover it all. Our expertise includes:
+          At <strong>NEXCORE ALLIANCE LLP</strong>, we deliver exceptional web development services tailored to meet the specific needs of businesses. From creating responsive, user-friendly websites to developing sophisticated web applications, we cover it all. Our expertise includes:
         </p>
         <ul className="list-disc list-inside space-y-2 mt-3">
           <li><strong>Custom Website Development</strong></li>
@@ -64,7 +64,7 @@ const values = [
     details: (
       <>
         <p>
-          <strong>Digital Transformation</strong> at Code4Bharat involves leveraging cutting-edge technologies to transform your business processes, enhance customer experiences, and drive innovation. Our services include:
+          <strong>Digital Transformation</strong> at NEXCORE ALLIANCE LLP involves leveraging cutting-edge technologies to transform your business processes, enhance customer experiences, and drive innovation. Our services include:
         </p>
         <ul className="list-disc list-inside space-y-2 mt-3">
           <li>Cloud Computing Solutions</li>
@@ -227,7 +227,7 @@ const ValuesSection = () => {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 leading-tight">
             Discover the Values of{" "}
             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
-              Code4Bharat
+              NEXCORE ALLIANCE LLP
             </span>
           </h2>
 

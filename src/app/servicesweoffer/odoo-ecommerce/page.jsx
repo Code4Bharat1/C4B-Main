@@ -12,42 +12,42 @@ import SecondContactSection from '@/components/odoo/servicesweoffer/odoo-ecommer
 import FooterLinks from '@/components/odoo/servicesweoffer/usefullinks/links';
 
 export const metadata = {
-  title: 'Odoo eCommerce Development Services – Code4Bharat',
+  title: 'Odoo eCommerce Development Services – NEXCORE ALLIANCE LLP',
   description:
-    'Unlock your digital store’s potential with Code4Bharat’s Odoo eCommerce development services. From storefront customization to backend automation.',
+    'Unlock your digital store’s potential with NEXCORE ALLIANCE LLP’s Odoo eCommerce development services. From storefront customization to backend automation.',
   keywords: [
     'Odoo eCommerce services',
     'eCommerce development Odoo',
     'custom Odoo storefront',
     'Odoo eCommerce India',
     'ERP eCommerce integration',
-    'Code4Bharat eCommerce solutions',
+    'NEXCORE ALLIANCE LLP eCommerce solutions',
   ],
   openGraph: {
-    title: 'Odoo eCommerce Development Services – Code4Bharat',
+    title: 'Odoo eCommerce Development Services – NEXCORE ALLIANCE LLP',
     description:
-      'Build high-performance Odoo eCommerce platforms with Code4Bharat. We help you customize, integrate, and optimize online stores.',
-    url: 'https://www.code4bharat.com/services/odoo-ecommerce',
-    siteName: 'Code4Bharat',
+      'Build high-performance Odoo eCommerce platforms with NEXCORE ALLIANCE LLP. We help you customize, integrate, and optimize online stores.',
+    url: 'https://www.NEXCORE ALLIANCE LLP.com/services/odoo-ecommerce',
+    siteName: 'NEXCORE ALLIANCE LLP',
     images: [
       {
-        url: 'https://www.code4bharat.com/og-image.png',
+        url: 'https://www.NEXCORE ALLIANCE LLP.com/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Code4Bharat Odoo eCommerce',
+        alt: 'NEXCORE ALLIANCE LLP Odoo eCommerce',
       },
     ],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Odoo eCommerce Development Services – Code4Bharat',
+    title: 'Odoo eCommerce Development Services – NEXCORE ALLIANCE LLP',
     description:
-      'Custom Odoo eCommerce development by Code4Bharat. Enhance your store’s performance and customer experience.',
-    images: ['https://www.code4bharat.com/og-image.png'],
+      'Custom Odoo eCommerce development by NEXCORE ALLIANCE LLP. Enhance your store’s performance and customer experience.',
+    images: ['https://www.NEXCORE ALLIANCE LLP.com/og-image.png'],
   },
   alternates: {
-    canonical: 'https://www.code4bharat.com/services/odoo-ecommerce',
+    canonical: 'https://www.NEXCORE ALLIANCE LLP.com/services/odoo-ecommerce',
   },
   robots: {
     index: true,

@@ -47,8 +47,8 @@ const ContactUsHeroSection = () => {
     {
       Icon: FaEnvelope,
       label: "Email Us",
-      value: "code4bharat@gmail.com",
-      href: "mailto:code4bharat@gmail.com",
+      value: "NEXCORE ALLIANCE LLP@gmail.com",
+      href: "mailto:NEXCORE ALLIANCE LLP@gmail.com",
       gradient: "from-purple-500 to-pink-500",
     },
     {
@@ -132,7 +132,7 @@ const ContactUsHeroSection = () => {
               variants={itemVariants}
               className="text-lg text-slate-300 leading-relaxed max-w-xl"
             >
-              At <span className="font-semibold text-white">Code4Bharat</span>, we are dedicated to providing you with the best support. 
+              At <span className="font-semibold text-white">NEXCORE ALLIANCE LLP</span>, we are dedicated to providing you with the best support. 
               Whether you have questions or need assistance, we are just a message away.
             </motion.p>
 
@@ -185,7 +185,7 @@ const ContactUsHeroSection = () => {
                 </motion.button>
               </Link>
 
-              <Link href="mailto:code4bharat@gmail.com">
+              <Link href="mailto:NEXCORE ALLIANCE LLP@gmail.com">
                 <motion.button
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}

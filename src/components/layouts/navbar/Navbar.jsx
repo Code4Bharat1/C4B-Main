@@ -79,8 +79,8 @@ const Navbar = () => {
   return (
     <>
       <Head>
-        <title>Code4Bharat - Leading IT Solutions Provider</title>
-        <meta name="description" content="Code4Bharat specializes in cutting-edge web development and comprehensive IT solutions for businesses worldwide" />
+        <title>NEXCORE ALLIANCE LLP - Leading IT Solutions Provider</title>
+        <meta name="description" content="NEXCORE ALLIANCE LLP specializes in cutting-edge web development and comprehensive IT solutions for businesses worldwide" />
       </Head>
 
       <motion.nav 
@@ -108,7 +108,7 @@ const Navbar = () => {
               <Link href="/" onClick={handleLinkClick}>
                 <Image
                   src="/images/c4b.png"
-                  alt="Code4Bharat Logo"
+                  alt="NEXCORE ALLIANCE LLP Logo"
                   width={200}
                   height={200}
                   className="h-50 sm:h-25 lg:h-50 xl:h-65 w-auto object-contain"

@@ -23,7 +23,7 @@ export default function ContactSection() {
       icon: <MapPin className="w-6 h-6" />,
       title: "Address",
       value: "Off BKC, Mumbai, India 400070",
-      link: "https://www.google.com/maps/place/Code4Bharat/@19.0726494,72.8804081,17z",
+      link: "https://www.google.com/maps/place/NEXCORE ALLIANCE LLP/@19.0726494,72.8804081,17z",
       color: "from-purple-500 to-pink-500",
       responseTime: "Visit us"
     },

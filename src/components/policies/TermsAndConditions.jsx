@@ -21,14 +21,14 @@ const TermsAndConditions = () => {
     {
       number: 3,
       title: "Intellectual Property",
-      content: "All content, materials, and courses on our platform are owned by Code4Bharat and protected by copyright laws. Unauthorized sharing, duplication, or distribution is strictly prohibited and may lead to legal action.",
+      content: "All content, materials, and courses on our platform are owned by NEXCORE ALLIANCE LLP and protected by copyright laws. Unauthorized sharing, duplication, or distribution is strictly prohibited and may lead to legal action.",
       icon: <Shield className="w-6 h-6" />,
       color: "from-purple-500 to-pink-500"
     },
     {
       number: 4,
       title: "Service Modifications",
-      content: "Code4Bharat reserves the right to modify, suspend, or discontinue any service or course without prior notice.",
+      content: "NEXCORE ALLIANCE LLP reserves the right to modify, suspend, or discontinue any service or course without prior notice.",
       icon: <Zap className="w-6 h-6" />,
       color: "from-orange-500 to-red-500"
     },
@@ -89,14 +89,14 @@ const TermsAndConditions = () => {
             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-200 rounded-full filter blur-2xl opacity-30"></div>
             <p className="relative text-base md:text-lg leading-relaxed text-gray-700">
               Welcome to{" "}
-              <strong className="text-blue-700">Code4Bharat</strong>. By accessing or using our website{" "}
+              <strong className="text-blue-700">NEXCORE ALLIANCE LLP</strong>. By accessing or using our website{" "}
               <a
-                href="https://code4bharat.com/"
+                href="https://NEXCORE ALLIANCE LLP.com/"
                 className="text-blue-600 hover:text-blue-800 underline font-medium transition-colors duration-200"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                www.code4bharat.com
+                www.NEXCORE ALLIANCE LLP.com
               </a>
               , you agree to comply with the following terms and conditions:
             </p>

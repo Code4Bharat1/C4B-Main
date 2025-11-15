@@ -1,4 +1,4 @@
-# robots.txt for Code4Bharat
+# robots.txt for NEXCORE ALLIANCE LLP
 User-agent: *
 Disallow: /admin/
 Disallow: /private/
@@ -10,4 +10,4 @@ Disallow: /*?*sessionid=*  # Blocks duplicate session URLs
 Allow: /
 
 # Sitemap
-Sitemap: https://code4bharat.com/sitemap.xml
+Sitemap: https://NEXCORE ALLIANCE LLP.com/sitemap.xml

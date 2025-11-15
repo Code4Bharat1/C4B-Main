@@ -7,42 +7,42 @@ import FooterLinks from '@/components/odoo/servicesweoffer/usefullinks/links';
 import React from 'react';
 
 export const metadata = {
-  title: 'Odoo Services – Code4Bharat',
+  title: 'Odoo Services – NEXCORE ALLIANCE LLP',
   description:
-    'Explore comprehensive Odoo services by Code4Bharat including implementation, customization, support, and more.',
+    'Explore comprehensive Odoo services by NEXCORE ALLIANCE LLP including implementation, customization, support, and more.',
   keywords: [
     'Odoo services',
     'Odoo implementation',
     'Odoo customization',
     'Odoo support',
     'ERP services India',
-    'Code4Bharat Odoo',
+    'NEXCORE ALLIANCE LLP Odoo',
   ],
   openGraph: {
-    title: 'Odoo Services – Code4Bharat',
+    title: 'Odoo Services – NEXCORE ALLIANCE LLP',
     description:
-      'Get expert Odoo services tailored for your business needs by Code4Bharat.',
-    url: 'https://www.code4bharat.com/services/odoo-services',
-    siteName: 'Code4Bharat',
+      'Get expert Odoo services tailored for your business needs by NEXCORE ALLIANCE LLP.',
+    url: 'https://www.NEXCORE ALLIANCE LLP.com/services/odoo-services',
+    siteName: 'NEXCORE ALLIANCE LLP',
     images: [
       {
-        url: 'https://www.code4bharat.com/og-image.png',
+        url: 'https://www.NEXCORE ALLIANCE LLP.com/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Odoo Services by Code4Bharat',
+        alt: 'Odoo Services by NEXCORE ALLIANCE LLP',
       },
     ],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Odoo Services – Code4Bharat',
+    title: 'Odoo Services – NEXCORE ALLIANCE LLP',
     description:
-      'Explore comprehensive Odoo services by Code4Bharat including implementation, customization, and support.',
-    images: ['https://www.code4bharat.com/og-image.png'],
+      'Explore comprehensive Odoo services by NEXCORE ALLIANCE LLP including implementation, customization, and support.',
+    images: ['https://www.NEXCORE ALLIANCE LLP.com/og-image.png'],
   },
   alternates: {
-    canonical: 'https://www.code4bharat.com/services/odoo-services',
+    canonical: 'https://www.NEXCORE ALLIANCE LLP.com/services/odoo-services',
   },
   robots: {
     index: true,

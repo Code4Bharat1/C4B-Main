@@ -15,7 +15,7 @@ const steps = [
     id: 1,
     title: "Understanding Your Needs",
     description:
-      "At Code4Bharat, we begin every project with a consultation to align our solutions with your business objectives and technology needs.",
+      "At NEXCORE ALLIANCE LLP, we begin every project with a consultation to align our solutions with your business objectives and technology needs.",
     icon: FaComments,
     color: "from-blue-500 to-cyan-500",
   },

@@ -4,40 +4,40 @@ import PrivacyAndSecurity from "@/components/policies/Privacy";
 import React from "react";
 
 export const metadata = {
-  title: "Privacy and Security – Code4Bharat",
+  title: "Privacy and Security – NEXCORE ALLIANCE LLP",
   description:
-    "Learn about Code4Bharat's privacy and security policies to understand how we handle your data and ensure your privacy while using our services.",
+    "Learn about NEXCORE ALLIANCE LLP's privacy and security policies to understand how we handle your data and ensure your privacy while using our services.",
   keywords: [
-    "Code4Bharat privacy policy",
+    "NEXCORE ALLIANCE LLP privacy policy",
     "privacy and security",
     "data protection",
-    "user privacy Code4Bharat",
+    "user privacy NEXCORE ALLIANCE LLP",
   ],
   openGraph: {
-    title: "Privacy and Security – Code4Bharat",
+    title: "Privacy and Security – NEXCORE ALLIANCE LLP",
     description:
-      "Review Code4Bharat’s privacy and security policies, and learn how we protect your personal information.",
-    url: "https://www.code4bharat.com/policies/privacy",
-    siteName: "Code4Bharat",
+      "Review NEXCORE ALLIANCE LLP’s privacy and security policies, and learn how we protect your personal information.",
+    url: "https://www.NEXCORE ALLIANCE LLP.com/policies/privacy",
+    siteName: "NEXCORE ALLIANCE LLP",
     images: [
       {
-        url: "https://www.code4bharat.com/og-image.png",
+        url: "https://www.NEXCORE ALLIANCE LLP.com/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Code4Bharat Privacy and Security",
+        alt: "NEXCORE ALLIANCE LLP Privacy and Security",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Privacy and Security – Code4Bharat",
+    title: "Privacy and Security – NEXCORE ALLIANCE LLP",
     description:
-      "Understand Code4Bharat’s approach to protecting your privacy and securing your data on our platform.",
-    images: ["https://www.code4bharat.com/og-image.png"],
+      "Understand NEXCORE ALLIANCE LLP’s approach to protecting your privacy and securing your data on our platform.",
+    images: ["https://www.NEXCORE ALLIANCE LLP.com/og-image.png"],
   },
   alternates: {
-    canonical: "https://www.code4bharat.com/policies/privacy",
+    canonical: "https://www.NEXCORE ALLIANCE LLP.com/policies/privacy",
   },
   robots: {
     index: true,

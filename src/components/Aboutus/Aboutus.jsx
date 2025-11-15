@@ -11,28 +11,28 @@ const Aboutus = () => {
   return (
     <>
       <Head>
-        <title>About Code4Bharat – Empowering Developers in India</title>
+        <title>About NEXCORE ALLIANCE LLP – Empowering Developers in India</title>
         <meta
           name="description"
-          content="Learn more about Code4Bharat’s mission to empower developers in India with tutorials, tools, and resources for modern web development. Discover our values, supporters, and community impact."
+          content="Learn more about NEXCORE ALLIANCE LLP’s mission to empower developers in India with tutorials, tools, and resources for modern web development. Discover our values, supporters, and community impact."
         />
         <meta
           name="keywords"
-          content="About Code4Bharat, Code4Bharat team, Code4Bharat mission, developer community India, coding resources India"
+          content="About NEXCORE ALLIANCE LLP, NEXCORE ALLIANCE LLP team, NEXCORE ALLIANCE LLP mission, developer community India, coding resources India"
         />
-        <meta name="author" content="Code4Bharat Team" />
+        <meta name="author" content="NEXCORE ALLIANCE LLP Team" />
         <meta name="robots" content="index, follow" />
 
         {/* Open Graph for Social Media */}
         <meta
           property="og:title"
-          content="About Code4Bharat – Empowering Developers in India"
+          content="About NEXCORE ALLIANCE LLP – Empowering Developers in India"
         />
         <meta
           property="og:description"
-          content="Code4Bharat is a platform built to support developers in India with free tutorials, coding tools, and modern web development resources."
+          content="NEXCORE ALLIANCE LLP is a platform built to support developers in India with free tutorials, coding tools, and modern web development resources."
         />
-        <meta property="og:url" content="https://www.code4bharat.com/about" />
+        <meta property="og:url" content="https://www.NEXCORE ALLIANCE LLP.com/about" />
         <meta property="og:image" content="/og-image.png" />
         <meta property="og:type" content="website" />
 
@@ -40,11 +40,11 @@ const Aboutus = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="About Code4Bharat – Empowering Developers in India"
+          content="About NEXCORE ALLIANCE LLP – Empowering Developers in India"
         />
         <meta
           name="twitter:description"
-          content="Learn more about Code4Bharat’s mission, supporters, and values to empower developers in India."
+          content="Learn more about NEXCORE ALLIANCE LLP’s mission, supporters, and values to empower developers in India."
         />
         <meta name="twitter:image" content="/og-image.png" />
 
@@ -55,17 +55,17 @@ const Aboutus = () => {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "AboutPage",
-              name: "About Code4Bharat",
-              url: "https://www.code4bharat.com/about",
+              name: "About NEXCORE ALLIANCE LLP",
+              url: "https://www.NEXCORE ALLIANCE LLP.com/about",
               description:
-                "Code4Bharat is a platform created to empower developers in India with tutorials, tools, and resources for modern web development.",
+                "NEXCORE ALLIANCE LLP is a platform created to empower developers in India with tutorials, tools, and resources for modern web development.",
               publisher: {
                 "@type": "Organization",
-                name: "Code4Bharat",
-                url: "https://www.code4bharat.com",
+                name: "NEXCORE ALLIANCE LLP",
+                url: "https://www.NEXCORE ALLIANCE LLP.com",
                 logo: {
                   "@type": "ImageObject",
-                  url: "https://www.code4bharat.com/og-image.png",
+                  url: "https://www.NEXCORE ALLIANCE LLP.com/og-image.png",
                 },
               },
             }),

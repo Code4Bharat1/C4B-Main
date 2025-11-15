@@ -45,7 +45,7 @@
 //           transition={{ duration: 0.6, delay: 0.6, ease: "easeInOut" }} // Delayed cascading effect
 //         >
 //           <p className="text-[4vw] md:text-[1vw] font-medium text-black">
-//             At Code4Bharat, we’re proud to partner with clients across
+//             At NEXCORE ALLIANCE LLP, we’re proud to partner with clients across
 //             e-commerce, healthcare, education, and finance. Our commitment to
 //             understanding their unique needs has fostered long-term
 //             relationships.
@@ -58,42 +58,42 @@
 //         {/* Testimonial Cards */}
 //         <TestimonialCard
 //           image="/images/faces/peoples_image1.webp"
-//           description="Code4Bharat transformed our online operations with efficient, timely solutions and unmatched quality."
+//           description="NEXCORE ALLIANCE LLP transformed our online operations with efficient, timely solutions and unmatched quality."
 //           name="Neelesh Shukla"
 //           username="Education"
 //           stars={5}
 //         />
 //         <TestimonialCard
 //           image="/images/faces/peoples_image2.webp"
-//           description="We’re thrilled with the custom CRM Code4Bharat delivered. Their attention to detail and support have greatly improved our operations."
+//           description="We’re thrilled with the custom CRM NEXCORE ALLIANCE LLP delivered. Their attention to detail and support have greatly improved our operations."
 //           name="Utkarsh Tiwari"
 //           username="Hospitality "
 //           stars={4}
 //         />
 //         <TestimonialCard
 //           image="/images/faces/peoples_image3.webp"
-//           description="Code4Bharat’s expertise in scalable web solutions helped us manage property listings and client interactions efficiently. A trusted partner for real estate."
+//           description="NEXCORE ALLIANCE LLP’s expertise in scalable web solutions helped us manage property listings and client interactions efficiently. A trusted partner for real estate."
 //           name="Snehashish Datta"
 //           username="Real Estate"
 //           stars={5}
 //         />
 //         <TestimonialCard
 //           image="/images/faces/peoples_image4.webp"
-//           description="Working with Code4Bharat was a great experience. They enhanced our e-commerce platform with advanced features, boosting our user experience. Highly recommended"
+//           description="Working with NEXCORE ALLIANCE LLP was a great experience. They enhanced our e-commerce platform with advanced features, boosting our user experience. Highly recommended"
 //           name="Varada Jadhav"
 //           username="Retail"
 //           stars={5}
 //         />
 //         <TestimonialCard
 //           image="/images/faces/peoples_image5.webp"
-//           description="Code4Bharat did an excellent job revamping our website and integrating a seamless booking system, delivering exceptional results."
+//           description="NEXCORE ALLIANCE LLP did an excellent job revamping our website and integrating a seamless booking system, delivering exceptional results."
 //           name="Isha Sawant"
 //           username="Healthcare"
 //           stars={5}
 //         />
 //         <TestimonialCard
 //           image="/images/faces/peoples_image6.webp"
-//           description="Code4Bharat’s Odoo expertise streamlined our processes, boosting efficiency and productivity with tailored solutions."
+//           description="NEXCORE ALLIANCE LLP’s Odoo expertise streamlined our processes, boosting efficiency and productivity with tailored solutions."
 //           name="Ankit Chaurasia"
 //           username="Manufacturing "
 //           stars={5}

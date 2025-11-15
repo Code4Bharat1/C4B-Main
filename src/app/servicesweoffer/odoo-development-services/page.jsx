@@ -17,31 +17,31 @@ function Page() {
   return (
     <>
       <Head>
-        <title>Odoo Development Services – Code4Bharat</title>
+        <title>Odoo Development Services – NEXCORE ALLIANCE LLP</title>
         <meta
           name="description"
-          content="Get robust, scalable, and tailored Odoo development services from Code4Bharat. We help you build, integrate, and optimize Odoo apps for your business."
+          content="Get robust, scalable, and tailored Odoo development services from NEXCORE ALLIANCE LLP. We help you build, integrate, and optimize Odoo apps for your business."
         />
         <meta
           name="keywords"
-          content="Odoo development, Odoo ERP development India, custom Odoo modules, Odoo app development, Code4Bharat Odoo services"
+          content="Odoo development, Odoo ERP development India, custom Odoo modules, Odoo app development, NEXCORE ALLIANCE LLP Odoo services"
         />
-        <meta property="og:title" content="Odoo Development Services – Code4Bharat" />
+        <meta property="og:title" content="Odoo Development Services – NEXCORE ALLIANCE LLP" />
         <meta
           property="og:description"
-          content="Explore professional Odoo development services from Code4Bharat. We develop custom modules, integrate features, and deliver complete ERP solutions."
+          content="Explore professional Odoo development services from NEXCORE ALLIANCE LLP. We develop custom modules, integrate features, and deliver complete ERP solutions."
         />
-        <meta property="og:url" content="https://www.code4bharat.com/services/odoo-development" />
+        <meta property="og:url" content="https://www.NEXCORE ALLIANCE LLP.com/services/odoo-development" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://www.code4bharat.com/og-image.png" />
+        <meta property="og:image" content="https://www.NEXCORE ALLIANCE LLP.com/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Odoo Development Services – Code4Bharat" />
+        <meta name="twitter:title" content="Odoo Development Services – NEXCORE ALLIANCE LLP" />
         <meta
           name="twitter:description"
-          content="Custom Odoo app development and integration services tailored to your business needs by Code4Bharat."
+          content="Custom Odoo app development and integration services tailored to your business needs by NEXCORE ALLIANCE LLP."
         />
-        <meta name="twitter:image" content="https://www.code4bharat.com/og-image.png" />
-        <link rel="canonical" href="https://www.code4bharat.com/services/odoo-development" />
+        <meta name="twitter:image" content="https://www.NEXCORE ALLIANCE LLP.com/og-image.png" />
+        <link rel="canonical" href="https://www.NEXCORE ALLIANCE LLP.com/services/odoo-development" />
       </Head>
 
       <Navbar />

@@ -1,13 +1,13 @@
 import "@/app/globals.css";
 
 export const metadata = {
-  title: "Code4Bharat | Web & App Development Company in Mumbai & Kurla",
+  title: "NEXCORE ALLIANCE LLP | Web & App Development Company in Mumbai & Kurla",
   description:
-    "Code4Bharat boosts businesses with custom web & mobile app development, IT consulting, and tailored e-commerce solutions in Kurla & Mumbai.",
+    "NEXCORE ALLIANCE LLP boosts businesses with custom web & mobile app development, IT consulting, and tailored e-commerce solutions in Kurla & Mumbai.",
   keywords: [
-    "Code4Bharat",
-    "Code4Bharat web development",
-    "Code4Bharat app development",
+    "NEXCORE ALLIANCE LLP",
+    "NEXCORE ALLIANCE LLP web development",
+    "NEXCORE ALLIANCE LLP app development",
     "web development company Mumbai",
     "mobile app development Kurla",
     "IT consulting Mumbai",
@@ -23,7 +23,7 @@ export const metadata = {
   ],
   robots: { index: true, follow: true },
   alternates: {
-    canonical: "https://www.code4bharat.com/",
+    canonical: "https://www.NEXCORE ALLIANCE LLP.com/",
   },
   icons: {
     icon: [
@@ -57,10 +57,10 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              name: "Code4Bharat",
-              url: "https://www.code4bharat.com",
-              logo: "https://www.code4bharat.com/assets/code4bharat-logo.png",
-              image: "https://www.code4bharat.com/assets/code4bharat-og-image.png",
+              name: "NEXCORE ALLIANCE LLP",
+              url: "https://www.NEXCORE ALLIANCE LLP.com",
+              logo: "https://www.NEXCORE ALLIANCE LLP.com/assets/NEXCORE ALLIANCE LLP-logo.png",
+              image: "https://www.NEXCORE ALLIANCE LLP.com/assets/NEXCORE ALLIANCE LLP-og-image.png",
               telephone: "+91-9594402915",
               address: {
                 "@type": "PostalAddress",
@@ -77,9 +77,9 @@ export default function RootLayout({ children }) {
                 longitude: "72.88261",
               },
               sameAs: [
-                "https://twitter.com/Code4Bharat",
-                "https://linkedin.com/company/code4bharat",
-                "https://github.com/Code4Bharat",
+                "https://twitter.com/NEXCORE ALLIANCE LLP",
+                "https://linkedin.com/company/NEXCORE ALLIANCE LLP",
+                "https://github.com/NEXCORE ALLIANCE LLP",
               ],
               openingHours: "Mo-Fr 10:00-19:00",
               priceRange: "$$",

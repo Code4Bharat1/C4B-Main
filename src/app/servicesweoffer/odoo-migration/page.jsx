@@ -17,31 +17,31 @@ function Page() {
   return (
     <>
       <Head>
-        <title>Odoo Migration Services – Code4Bharat</title>
+        <title>Odoo Migration Services – NEXCORE ALLIANCE LLP</title>
         <meta
           name="description"
-          content="Seamlessly migrate your Odoo ERP with expert services from Code4Bharat. Ensure smooth transitions and zero downtime."
+          content="Seamlessly migrate your Odoo ERP with expert services from NEXCORE ALLIANCE LLP. Ensure smooth transitions and zero downtime."
         />
         <meta
           name="keywords"
-          content="Odoo migration, ERP migration, Odoo upgrade, seamless Odoo migration, Code4Bharat Odoo services"
+          content="Odoo migration, ERP migration, Odoo upgrade, seamless Odoo migration, NEXCORE ALLIANCE LLP Odoo services"
         />
-        <meta property="og:title" content="Odoo Migration Services – Code4Bharat" />
+        <meta property="og:title" content="Odoo Migration Services – NEXCORE ALLIANCE LLP" />
         <meta
           property="og:description"
-          content="Seamlessly migrate your Odoo ERP with expert services from Code4Bharat. Ensure smooth transitions and zero downtime."
+          content="Seamlessly migrate your Odoo ERP with expert services from NEXCORE ALLIANCE LLP. Ensure smooth transitions and zero downtime."
         />
-        <meta property="og:url" content="https://www.code4bharat.com/services/odoo-migration" />
+        <meta property="og:url" content="https://www.NEXCORE ALLIANCE LLP.com/services/odoo-migration" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://www.code4bharat.com/og-image.png" />
+        <meta property="og:image" content="https://www.NEXCORE ALLIANCE LLP.com/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Odoo Migration Services – Code4Bharat" />
+        <meta name="twitter:title" content="Odoo Migration Services – NEXCORE ALLIANCE LLP" />
         <meta
           name="twitter:description"
-          content="Seamlessly migrate your Odoo ERP with expert services from Code4Bharat. Ensure smooth transitions and zero downtime."
+          content="Seamlessly migrate your Odoo ERP with expert services from NEXCORE ALLIANCE LLP. Ensure smooth transitions and zero downtime."
         />
-        <meta name="twitter:image" content="https://www.code4bharat.com/og-image.png" />
-        <link rel="canonical" href="https://www.code4bharat.com/services/odoo-migration" />
+        <meta name="twitter:image" content="https://www.NEXCORE ALLIANCE LLP.com/og-image.png" />
+        <link rel="canonical" href="https://www.NEXCORE ALLIANCE LLP.com/services/odoo-migration" />
       </Head>
 
       <Navbar />

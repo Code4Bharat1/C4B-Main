@@ -2,43 +2,43 @@ import React from "react";
 import Aboutus from "@/components/Aboutus/Aboutus";
 
 export const metadata = {
-  title: "About Code4Bharat – Empowering Developers in India",
+  title: "About NEXCORE ALLIANCE LLP – Empowering Developers in India",
   description:
-    "Learn more about Code4Bharat’s mission to empower developers in India with tutorials, tools, and modern web development resources.",
+    "Learn more about NEXCORE ALLIANCE LLP’s mission to empower developers in India with tutorials, tools, and modern web development resources.",
   keywords: [
-    "About Code4Bharat",
+    "About NEXCORE ALLIANCE LLP",
     "developer community India",
     "coding tutorials India",
     "future-ready skills",
     "education transformation"
   ],
   openGraph: {
-    title: "About Code4Bharat – Empowering Developers in India",
+    title: "About NEXCORE ALLIANCE LLP – Empowering Developers in India",
     description:
-      "Code4Bharat provides tutorials, coding tools, and resources for students and developers in India.",
-    url: "https://www.code4bharat.com/about",
-    siteName: "Code4Bharat",
+      "NEXCORE ALLIANCE LLP provides tutorials, coding tools, and resources for students and developers in India.",
+    url: "https://www.NEXCORE ALLIANCE LLP.com/about",
+    siteName: "NEXCORE ALLIANCE LLP",
     images: [
       {
-        url: "https://media.licdn.com/dms/image/v2/D4D0BAQHvTMcK1-GpCw/company-logo_200_200/company-logo_200_200/0/1728390314876/code4bharat_logo?e=2147483647&v=beta&t=8FYnrV5k1jaxQHZCAKGij_DDJlKBhJaIBr6AgoRisHs",
+        url: "https://media.licdn.com/dms/image/v2/D4D0BAQHvTMcK1-GpCw/company-logo_200_200/company-logo_200_200/0/1728390314876/NEXCORE ALLIANCE LLP_logo?e=2147483647&v=beta&t=8FYnrV5k1jaxQHZCAKGij_DDJlKBhJaIBr6AgoRisHs",
         width: 200,
         height: 200,
-        alt: "Code4Bharat Logo"
+        alt: "NEXCORE ALLIANCE LLP Logo"
       }
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Code4Bharat – Empowering Developers in India",
+    title: "About NEXCORE ALLIANCE LLP – Empowering Developers in India",
     description:
-      "Discover Code4Bharat’s mission, values, and commitment to empowering developers in India.",
+      "Discover NEXCORE ALLIANCE LLP’s mission, values, and commitment to empowering developers in India.",
     images: [
-      "https://media.licdn.com/dms/image/v2/D4D0BAQHvTMcK1-GpCw/company-logo_200_200/company-logo_200_200/0/1728390314876/code4bharat_logo?e=2147483647&v=beta&t=8FYnrV5k1jaxQHZCAKGij_DDJlKBhJaIBr6AgoRisHs"
+      "https://media.licdn.com/dms/image/v2/D4D0BAQHvTMcK1-GpCw/company-logo_200_200/company-logo_200_200/0/1728390314876/NEXCORE ALLIANCE LLP_logo?e=2147483647&v=beta&t=8FYnrV5k1jaxQHZCAKGij_DDJlKBhJaIBr6AgoRisHs"
     ],
   },
   alternates: {
-    canonical: "https://www.code4bharat.com/about",
+    canonical: "https://www.NEXCORE ALLIANCE LLP.com/about",
   },
   robots: {
     index: true,

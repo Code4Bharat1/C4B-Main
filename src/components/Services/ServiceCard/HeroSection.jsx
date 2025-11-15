@@ -115,7 +115,7 @@ const ServiceHeroSection = () => {
               variants={itemVariants}
               className="text-lg text-slate-300 leading-relaxed max-w-xl"
             >
-              At <span className="font-semibold text-white">Code4Bharat</span>, we specialize in delivering innovative IT solutions. 
+              At <span className="font-semibold text-white">NEXCORE ALLIANCE LLP</span>, we specialize in delivering innovative IT solutions. 
               From tailored software development to web design, we help businesses succeed in the digital world.
             </motion.p>
 

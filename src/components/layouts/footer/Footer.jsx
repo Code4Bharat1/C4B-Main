@@ -59,12 +59,12 @@ const Footer = () => {
             <div className="mb-6">
               <img
                 src="/images/c4b.png"
-                alt="Code4Bharat"
+                alt="NEXCORE ALLIANCE LLP"
                 className="w-48 h-auto object-contain "
               />
             </div>
             <p className="text-slate-300 leading-relaxed mb-6">
-              Code4Bharat is at the forefront of providing world-class IT
+              NEXCORE ALLIANCE LLP is at the forefront of providing world-class IT
               solutions, helping businesses globally leverage technology for
               growth and success.
             </p>
@@ -78,17 +78,17 @@ const Footer = () => {
                   gradient: "from-blue-600 to-blue-700",
                 },
                 {
-                  href: "https://www.instagram.com/code4bharat_/",
+                  href: "https://www.instagram.com/NEXCORE ALLIANCE LLP_/",
                   icon: <FaInstagram />,
                   gradient: "from-pink-600 via-purple-600 to-orange-500",
                 },
                 {
-                  href: "https://x.com/Code4Bharat",
+                  href: "https://x.com/NEXCORE ALLIANCE LLP",
                   icon: <RiTwitterXLine />,
                   gradient: "from-slate-800 to-slate-900",
                 },
                 {
-                  href: "http://linkedin.com/company/code4bharat",
+                  href: "http://linkedin.com/company/NEXCORE ALLIANCE LLP",
                   icon: <FaLinkedinIn />,
                   gradient: "from-blue-600 to-blue-700",
                 },
@@ -182,8 +182,8 @@ const Footer = () => {
                 },
                 {
                   icon: <FiMail className="w-5 h-5" />,
-                  text: "code4bharat@gmail.com",
-                  href: "mailto:code4bharat@gmail.com",
+                  text: "NEXCORE ALLIANCE LLP@gmail.com",
+                  href: "mailto:NEXCORE ALLIANCE LLP@gmail.com",
                   gradient: "from-blue-500 to-cyan-500",
                 },
                 {
@@ -257,7 +257,7 @@ const Footer = () => {
             className="flex flex-col md:flex-row items-center justify-between gap-4"
           >
             <p className="text-slate-400 text-sm text-center md:text-left">
-              © 2011-2025 <span className="font-semibold text-white">Code4Bharat</span>. All Rights Reserved.
+              © 2011-2025 <span className="font-semibold text-white">NEXCORE ALLIANCE LLP</span>. All Rights Reserved.
             </p>
             <div className="flex items-center gap-6 text-sm text-slate-400">
               <Link href="/policies/privacy">

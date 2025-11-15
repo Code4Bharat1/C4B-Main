@@ -115,7 +115,7 @@ const ApproachHeroSection = () => {
               variants={itemVariants}
               className="text-lg text-slate-300 leading-relaxed max-w-xl"
             >
-              At <span className="font-semibold text-white">Code4Bharat</span>, we focus on understanding your needs and delivering tailored IT solutions. 
+              At <span className="font-semibold text-white">NEXCORE ALLIANCE LLP</span>, we focus on understanding your needs and delivering tailored IT solutions. 
               Our approach is designed to foster growth and innovation in the digital landscape.
             </motion.p>
 

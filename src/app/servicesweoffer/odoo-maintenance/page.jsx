@@ -18,31 +18,31 @@ function Page() {
   return (
     <>
       <Head>
-        <title>Odoo Maintenance Services – Code4Bharat</title>
+        <title>Odoo Maintenance Services – NEXCORE ALLIANCE LLP</title>
         <meta
           name="description"
-          content="Keep your Odoo ERP running smoothly with Code4Bharat’s comprehensive Odoo Maintenance Services. Preventive maintenance and support tailored to your business."
+          content="Keep your Odoo ERP running smoothly with NEXCORE ALLIANCE LLP’s comprehensive Odoo Maintenance Services. Preventive maintenance and support tailored to your business."
         />
         <meta
           name="keywords"
-          content="Odoo maintenance, Odoo preventive maintenance, ERP support services, Code4Bharat Odoo maintenance, Odoo module configuration"
+          content="Odoo maintenance, Odoo preventive maintenance, ERP support services, NEXCORE ALLIANCE LLP Odoo maintenance, Odoo module configuration"
         />
-        <meta property="og:title" content="Odoo Maintenance Services – Code4Bharat" />
+        <meta property="og:title" content="Odoo Maintenance Services – NEXCORE ALLIANCE LLP" />
         <meta
           property="og:description"
-          content="Keep your Odoo ERP running smoothly with Code4Bharat’s comprehensive Odoo Maintenance Services. Preventive maintenance and support tailored to your business."
+          content="Keep your Odoo ERP running smoothly with NEXCORE ALLIANCE LLP’s comprehensive Odoo Maintenance Services. Preventive maintenance and support tailored to your business."
         />
-        <meta property="og:url" content="https://www.code4bharat.com/services/odoo-maintenance" />
+        <meta property="og:url" content="https://www.NEXCORE ALLIANCE LLP.com/services/odoo-maintenance" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://www.code4bharat.com/og-image.png" />
+        <meta property="og:image" content="https://www.NEXCORE ALLIANCE LLP.com/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Odoo Maintenance Services – Code4Bharat" />
+        <meta name="twitter:title" content="Odoo Maintenance Services – NEXCORE ALLIANCE LLP" />
         <meta
           name="twitter:description"
-          content="Keep your Odoo ERP running smoothly with Code4Bharat’s comprehensive Odoo Maintenance Services. Preventive maintenance and support tailored to your business."
+          content="Keep your Odoo ERP running smoothly with NEXCORE ALLIANCE LLP’s comprehensive Odoo Maintenance Services. Preventive maintenance and support tailored to your business."
         />
-        <meta name="twitter:image" content="https://www.code4bharat.com/og-image.png" />
-        <link rel="canonical" href="https://www.code4bharat.com/services/odoo-maintenance" />
+        <meta name="twitter:image" content="https://www.NEXCORE ALLIANCE LLP.com/og-image.png" />
+        <link rel="canonical" href="https://www.NEXCORE ALLIANCE LLP.com/services/odoo-maintenance" />
       </Head>
 
       <Navbar />

@@ -7,11 +7,11 @@ import React from "react";
 
 // Define metadata here for SEO
 export const metadata = {
-  title: "About Policy – Code4Bharat",
+  title: "About Policy – NEXCORE ALLIANCE LLP",
   description:
-    "Learn about Code4Bharat’s company background, mission, and values. Discover how we empower developers in India through coding tutorials, tools, and modern web development resources.",
+    "Learn about NEXCORE ALLIANCE LLP’s company background, mission, and values. Discover how we empower developers in India through coding tutorials, tools, and modern web development resources.",
   keywords: [
-    "Code4Bharat about",
+    "NEXCORE ALLIANCE LLP about",
     "company background",
     "mission and values",
     "empowering developers in India",
@@ -19,27 +19,27 @@ export const metadata = {
     "web development resources"
   ],
   openGraph: {
-    title: "About Policy – Code4Bharat",
+    title: "About Policy – NEXCORE ALLIANCE LLP",
     description:
-      "Learn about Code4Bharat’s company background, mission, and values. Discover how we empower developers in India through coding tutorials, tools, and modern web development resources.",
-    url: "https://www.code4bharat.com/policies/about",
-    siteName: "Code4Bharat",
+      "Learn about NEXCORE ALLIANCE LLP’s company background, mission, and values. Discover how we empower developers in India through coding tutorials, tools, and modern web development resources.",
+    url: "https://www.NEXCORE ALLIANCE LLP.com/policies/about",
+    siteName: "NEXCORE ALLIANCE LLP",
     images: [
       {
-        url: "https://www.code4bharat.com/og-image.png",
+        url: "https://www.NEXCORE ALLIANCE LLP.com/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Code4Bharat About Page",
+        alt: "NEXCORE ALLIANCE LLP About Page",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Policy – Code4Bharat",
+    title: "About Policy – NEXCORE ALLIANCE LLP",
     description:
-      "Learn about Code4Bharat’s company background, mission, and values. Discover how we empower developers in India through coding tutorials, tools, and modern web development resources.",
-    images: ["https://www.code4bharat.com/og-image.png"],
+      "Learn about NEXCORE ALLIANCE LLP’s company background, mission, and values. Discover how we empower developers in India through coding tutorials, tools, and modern web development resources.",
+    images: ["https://www.NEXCORE ALLIANCE LLP.com/og-image.png"],
   },
   robots: {
     index: true,

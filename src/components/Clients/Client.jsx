@@ -9,25 +9,25 @@ const Client = () => {
   return (
     <>
       <Head>
-        <title>Our Clients – Code4Bharat Partnerships & Collaborations</title>
+        <title>Our Clients – NEXCORE ALLIANCE LLP Partnerships & Collaborations</title>
         <meta
           name="description"
-          content="Discover Code4Bharat’s clients and partnerships. We collaborate with developers, organizations, and communities across India to build modern web development solutions."
+          content="Discover NEXCORE ALLIANCE LLP’s clients and partnerships. We collaborate with developers, organizations, and communities across India to build modern web development solutions."
         />
         <meta
           name="keywords"
-          content="Code4Bharat clients, developer partnerships India, coding collaborations, IT clients India, software development partners"
+          content="NEXCORE ALLIANCE LLP clients, developer partnerships India, coding collaborations, IT clients India, software development partners"
         />
-        <meta name="author" content="Code4Bharat Team" />
+        <meta name="author" content="NEXCORE ALLIANCE LLP Team" />
         <meta name="robots" content="index, follow" />
 
         {/* Open Graph for Social Media */}
-        <meta property="og:title" content="Our Clients – Code4Bharat" />
+        <meta property="og:title" content="Our Clients – NEXCORE ALLIANCE LLP" />
         <meta
           property="og:description"
-          content="See Code4Bharat’s clients and collaborations with developers and organizations across India."
+          content="See NEXCORE ALLIANCE LLP’s clients and collaborations with developers and organizations across India."
         />
-        <meta property="og:url" content="https://www.code4bharat.com/clients" />
+        <meta property="og:url" content="https://www.NEXCORE ALLIANCE LLP.com/clients" />
         <meta property="og:image" content="/og-image.png" />
         <meta property="og:type" content="website" />
 
@@ -35,11 +35,11 @@ const Client = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Our Clients – Code4Bharat Partnerships & Collaborations"
+          content="Our Clients – NEXCORE ALLIANCE LLP Partnerships & Collaborations"
         />
         <meta
           name="twitter:description"
-          content="Explore Code4Bharat’s collaborations with developers, businesses, and communities across India."
+          content="Explore NEXCORE ALLIANCE LLP’s collaborations with developers, businesses, and communities across India."
         />
         <meta name="twitter:image" content="/og-image.png" />
 
@@ -50,17 +50,17 @@ const Client = () => {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebPage",
-              name: "Our Clients – Code4Bharat",
-              url: "https://www.code4bharat.com/clients",
+              name: "Our Clients – NEXCORE ALLIANCE LLP",
+              url: "https://www.NEXCORE ALLIANCE LLP.com/clients",
               description:
-                "Code4Bharat collaborates with clients, developers, and organizations in India to deliver modern web development solutions and resources.",
+                "NEXCORE ALLIANCE LLP collaborates with clients, developers, and organizations in India to deliver modern web development solutions and resources.",
               publisher: {
                 "@type": "Organization",
-                name: "Code4Bharat",
-                url: "https://www.code4bharat.com",
+                name: "NEXCORE ALLIANCE LLP",
+                url: "https://www.NEXCORE ALLIANCE LLP.com",
                 logo: {
                   "@type": "ImageObject",
-                  url: "https://www.code4bharat.com/og-image.png",
+                  url: "https://www.NEXCORE ALLIANCE LLP.com/og-image.png",
                 },
               },
             }),

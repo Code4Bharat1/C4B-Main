@@ -113,7 +113,7 @@ const ClientsHeroSection = () => {
               variants={itemVariants}
               className="text-lg text-slate-300 leading-relaxed max-w-xl"
             >
-              At <span className="font-semibold text-white">Code4Bharat</span>, we value our clients and strive to provide
+              At <span className="font-semibold text-white">NEXCORE ALLIANCE LLP</span>, we value our clients and strive to provide
               exceptional IT solutions. Our commitment is to empower businesses and foster growth in the
               digital landscape.
             </motion.p>

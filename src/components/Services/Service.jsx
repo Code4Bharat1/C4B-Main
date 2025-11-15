@@ -9,25 +9,25 @@ const Service = () => {
   return (
     <>
       <Head>
-        <title>Our Services – Code4Bharat Web Development & Developer Resources</title>
+        <title>Our Services – NEXCORE ALLIANCE LLP Web Development & Developer Resources</title>
         <meta
           name="description"
-          content="Explore Code4Bharat’s services, including web development tutorials, coding tools, and developer resources. We empower developers in India with modern web technologies."
+          content="Explore NEXCORE ALLIANCE LLP’s services, including web development tutorials, coding tools, and developer resources. We empower developers in India with modern web technologies."
         />
         <meta
           name="keywords"
-          content="Code4Bharat services, web development services India, coding tutorials, developer tools, programming resources India"
+          content="NEXCORE ALLIANCE LLP services, web development services India, coding tutorials, developer tools, programming resources India"
         />
-        <meta name="author" content="Code4Bharat Team" />
+        <meta name="author" content="NEXCORE ALLIANCE LLP Team" />
         <meta name="robots" content="index, follow" />
 
         {/* Open Graph for Social Media */}
-        <meta property="og:title" content="Our Services – Code4Bharat" />
+        <meta property="og:title" content="Our Services – NEXCORE ALLIANCE LLP" />
         <meta
           property="og:description"
-          content="Learn more about Code4Bharat’s services for developers, including tutorials, tools, and resources."
+          content="Learn more about NEXCORE ALLIANCE LLP’s services for developers, including tutorials, tools, and resources."
         />
-        <meta property="og:url" content="https://www.code4bharat.com/services" />
+        <meta property="og:url" content="https://www.NEXCORE ALLIANCE LLP.com/services" />
         <meta property="og:image" content="/og-image.png" />
         <meta property="og:type" content="website" />
 
@@ -35,11 +35,11 @@ const Service = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Our Services – Code4Bharat Web Development & Resources"
+          content="Our Services – NEXCORE ALLIANCE LLP Web Development & Resources"
         />
         <meta
           name="twitter:description"
-          content="Explore tutorials, coding tools, and web development resources offered by Code4Bharat."
+          content="Explore tutorials, coding tools, and web development resources offered by NEXCORE ALLIANCE LLP."
         />
         <meta name="twitter:image" content="/og-image.png" />
 
@@ -50,17 +50,17 @@ const Service = () => {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Service",
-              name: "Code4Bharat Services",
-              url: "https://www.code4bharat.com/services",
+              name: "NEXCORE ALLIANCE LLP Services",
+              url: "https://www.NEXCORE ALLIANCE LLP.com/services",
               description:
-                "Code4Bharat offers web development tutorials, coding tools, and developer resources for developers in India.",
+                "NEXCORE ALLIANCE LLP offers web development tutorials, coding tools, and developer resources for developers in India.",
               provider: {
                 "@type": "Organization",
-                name: "Code4Bharat",
-                url: "https://www.code4bharat.com",
+                name: "NEXCORE ALLIANCE LLP",
+                url: "https://www.NEXCORE ALLIANCE LLP.com",
                 logo: {
                   "@type": "ImageObject",
-                  url: "https://www.code4bharat.com/og-image.png",
+                  url: "https://www.NEXCORE ALLIANCE LLP.com/og-image.png",
                 },
               },
               areaServed: {

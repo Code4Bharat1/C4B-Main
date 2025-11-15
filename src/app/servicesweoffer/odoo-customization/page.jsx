@@ -17,31 +17,31 @@ function Page() {
   return (
     <>
       <Head>
-        <title>Odoo Customization Services – Code4Bharat</title>
+        <title>Odoo Customization Services – NEXCORE ALLIANCE LLP</title>
         <meta
           name="description"
-          content="Tailored Odoo customization services from Code4Bharat. Enhance your ERP with bespoke modules and features that fit your business needs."
+          content="Tailored Odoo customization services from NEXCORE ALLIANCE LLP. Enhance your ERP with bespoke modules and features that fit your business needs."
         />
         <meta
           name="keywords"
-          content="Odoo customization, custom Odoo modules, Odoo ERP customization, Code4Bharat Odoo services"
+          content="Odoo customization, custom Odoo modules, Odoo ERP customization, NEXCORE ALLIANCE LLP Odoo services"
         />
-        <meta property="og:title" content="Odoo Customization Services – Code4Bharat" />
+        <meta property="og:title" content="Odoo Customization Services – NEXCORE ALLIANCE LLP" />
         <meta
           property="og:description"
-          content="Tailored Odoo customization services from Code4Bharat. Enhance your ERP with bespoke modules and features that fit your business needs."
+          content="Tailored Odoo customization services from NEXCORE ALLIANCE LLP. Enhance your ERP with bespoke modules and features that fit your business needs."
         />
-        <meta property="og:url" content="https://www.code4bharat.com/services/odoo-customization" />
+        <meta property="og:url" content="https://www.NEXCORE ALLIANCE LLP.com/services/odoo-customization" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://www.code4bharat.com/og-image.png" />
+        <meta property="og:image" content="https://www.NEXCORE ALLIANCE LLP.com/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Odoo Customization Services – Code4Bharat" />
+        <meta name="twitter:title" content="Odoo Customization Services – NEXCORE ALLIANCE LLP" />
         <meta
           name="twitter:description"
-          content="Tailored Odoo customization services from Code4Bharat. Enhance your ERP with bespoke modules and features that fit your business needs."
+          content="Tailored Odoo customization services from NEXCORE ALLIANCE LLP. Enhance your ERP with bespoke modules and features that fit your business needs."
         />
-        <meta name="twitter:image" content="https://www.code4bharat.com/og-image.png" />
-        <link rel="canonical" href="https://www.code4bharat.com/services/odoo-customization" />
+        <meta name="twitter:image" content="https://www.NEXCORE ALLIANCE LLP.com/og-image.png" />
+        <link rel="canonical" href="https://www.NEXCORE ALLIANCE LLP.com/services/odoo-customization" />
       </Head>
 
       <Navbar />

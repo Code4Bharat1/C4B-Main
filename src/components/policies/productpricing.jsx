@@ -38,18 +38,18 @@ export default function ProductPricing() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Product Pricing - Code4Bharat",
-    url: "https://www.code4bharat.com/product-pricing",
+    name: "Product Pricing - NEXCORE ALLIANCE LLP",
+    url: "https://www.NEXCORE ALLIANCE LLP.com/product-pricing",
     description:
-      "Explore Code4Bharat’s transparent product pricing policy including tax inclusions, discounts, and promotions.",
+      "Explore NEXCORE ALLIANCE LLP’s transparent product pricing policy including tax inclusions, discounts, and promotions.",
     inLanguage: "en-IN",
     publisher: {
       "@type": "Organization",
-      name: "Code4Bharat",
-      url: "https://www.code4bharat.com",
+      name: "NEXCORE ALLIANCE LLP",
+      url: "https://www.NEXCORE ALLIANCE LLP.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://www.code4bharat.com/og-image.png",
+        url: "https://www.NEXCORE ALLIANCE LLP.com/og-image.png",
       },
     },
   };
@@ -58,10 +58,10 @@ export default function ProductPricing() {
     <>
       {/* ✅ SEO */}
       <SEOHead
-        title="Product Pricing – Code4Bharat"
-        description="Learn about Code4Bharat’s transparent product pricing, tax inclusions, discounts, and promotions."
-        keywords="product pricing, course prices, Code4Bharat pricing, online course cost India"
-        url="https://www.code4bharat.com/product-pricing"
+        title="Product Pricing – NEXCORE ALLIANCE LLP"
+        description="Learn about NEXCORE ALLIANCE LLP’s transparent product pricing, tax inclusions, discounts, and promotions."
+        keywords="product pricing, course prices, NEXCORE ALLIANCE LLP pricing, online course cost India"
+        url="https://www.NEXCORE ALLIANCE LLP.com/product-pricing"
         schema={schema}
       />
 
@@ -79,7 +79,7 @@ export default function ProductPricing() {
               Product Pricing
             </h1>
             <p className="text-center text-blue-100 text-sm md:text-base lg:text-lg max-w-2xl mx-auto">
-              At <strong>Code4Bharat</strong>, our courses are designed to deliver
+              At <strong>NEXCORE ALLIANCE LLP</strong>, our courses are designed to deliver
               maximum value at competitive prices.
             </p>
           </div>

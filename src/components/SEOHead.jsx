@@ -7,7 +7,7 @@ const SEOHead = ({
   title,
   description,
   keywords = "",
-  url = "https://www.code4bharat.com",
+  url = "https://www.NEXCORE ALLIANCE LLP.com",
   image = "/og-image.png",
   schema = null,
 }) => {
@@ -24,7 +24,7 @@ const SEOHead = ({
         <link rel="canonical" href={url} />
 
         {/* Generator (informational) */}
-        <meta name="generator" content="Custom Next.js website by Code4Bharat" />
+        <meta name="generator" content="Custom Next.js website by NEXCORE ALLIANCE LLP" />
 
         {/* Open Graph */}
         <meta property="og:title" content={title} />

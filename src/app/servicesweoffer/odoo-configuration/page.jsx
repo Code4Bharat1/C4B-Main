@@ -11,7 +11,7 @@ import FooterLinks from '@/components/odoo/servicesweoffer/usefullinks/links';
 import React from 'react';
 
 export const metadata = {
-  title: "Odoo Services – Code4Bharat",
+  title: "Odoo Services – NEXCORE ALLIANCE LLP",
   description: "Explore the range of Odoo services we offer, from ERP modules to general configurations and contact support.",
   keywords: [
     "Odoo ERP services",
@@ -22,28 +22,28 @@ export const metadata = {
     "Odoo India",
   ],
   openGraph: {
-    title: "Odoo Services – Code4Bharat",
+    title: "Odoo Services – NEXCORE ALLIANCE LLP",
     description: "Discover our specialized Odoo services and solutions, designed to optimize your business processes.",
-    url: "https://www.code4bharat.com/services/odoo",
-    siteName: "Code4Bharat",
+    url: "https://www.NEXCORE ALLIANCE LLP.com/services/odoo",
+    siteName: "NEXCORE ALLIANCE LLP",
     images: [
       {
-        url: "https://www.code4bharat.com/og-image.png",  // Make sure to use the appropriate image for the page
+        url: "https://www.NEXCORE ALLIANCE LLP.com/og-image.png",  // Make sure to use the appropriate image for the page
         width: 1200,
         height: 630,
-        alt: "Odoo Services Code4Bharat",
+        alt: "Odoo Services NEXCORE ALLIANCE LLP",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Odoo Services – Code4Bharat",
+    title: "Odoo Services – NEXCORE ALLIANCE LLP",
     description: "Optimize your business with our professional Odoo services, from configuration to support.",
-    images: ["https://www.code4bharat.com/og-image.png"],
+    images: ["https://www.NEXCORE ALLIANCE LLP.com/og-image.png"],
   },
   alternates: {
-    canonical: "https://www.code4bharat.com/services/odoo",  // Make sure the URL is correct
+    canonical: "https://www.NEXCORE ALLIANCE LLP.com/services/odoo",  // Make sure the URL is correct
   },
   robots: {
     index: true,

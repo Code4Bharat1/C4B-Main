@@ -2,15 +2,15 @@ import Home from "@/components/home/Home";
 import Script from "next/script";
 
 export const metadata = {
-  title: "Code4Bharat | Web & App Development Company in Mumbai & Kurla",
+  title: "NEXCORE ALLIANCE LLP | Web & App Development Company in Mumbai & Kurla",
   description:
-    "Code4Bharat boosts businesses with custom web & mobile app development, IT consulting, and tailored e-commerce solutions in Kurla & Mumbai.",
+    "NEXCORE ALLIANCE LLP boosts businesses with custom web & mobile app development, IT consulting, and tailored e-commerce solutions in Kurla & Mumbai.",
   keywords: [
-    "Code4Bharat",
-    "Code4Bharat web development",
-    "Code4Bharat app development",
-    "Code4Bharat software company Kurla",
-    "Code4Bharat Mumbai",
+    "NEXCORE ALLIANCE LLP",
+    "NEXCORE ALLIANCE LLP web development",
+    "NEXCORE ALLIANCE LLP app development",
+    "NEXCORE ALLIANCE LLP software company Kurla",
+    "NEXCORE ALLIANCE LLP Mumbai",
     "web development Kurla",
     "web development company Mumbai",
     "mobile app development Kurla",
@@ -76,32 +76,32 @@ export const metadata = {
     "digital marketing and SEO company Kurla"
   ],
   openGraph: {
-    title: "Code4Bharat | Web & App Development Company in Mumbai & Kurla",
+    title: "NEXCORE ALLIANCE LLP | Web & App Development Company in Mumbai & Kurla",
     description:
-      "Code4Bharat boosts businesses with custom web & mobile app development, IT consulting, and tailored e-commerce solutions in Kurla & Mumbai.",
-    url: "https://www.code4bharat.com",
+      "NEXCORE ALLIANCE LLP boosts businesses with custom web & mobile app development, IT consulting, and tailored e-commerce solutions in Kurla & Mumbai.",
+    url: "https://www.NEXCORE ALLIANCE LLP.com",
     type: "website",
     images: [
       {
-        url: "https://www.code4bharat.com/assets/code4bharat-og-image.png",
+        url: "https://www.NEXCORE ALLIANCE LLP.com/assets/NEXCORE ALLIANCE LLP-og-image.png",
         width: 1200,
         height: 630,
-        alt: "Code4Bharat - Web & App Development in Mumbai",
+        alt: "NEXCORE ALLIANCE LLP - Web & App Development in Mumbai",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Code4Bharat | Web & App Development Company in Mumbai & Kurla",
+    title: "NEXCORE ALLIANCE LLP | Web & App Development Company in Mumbai & Kurla",
     description:
-      "Code4Bharat boosts businesses with custom web & mobile app development, IT consulting, and tailored e-commerce solutions in Kurla & Mumbai.",
+      "NEXCORE ALLIANCE LLP boosts businesses with custom web & mobile app development, IT consulting, and tailored e-commerce solutions in Kurla & Mumbai.",
     images: [
-      "https://www.code4bharat.com/assets/code4bharat-og-image.png",
+      "https://www.NEXCORE ALLIANCE LLP.com/assets/NEXCORE ALLIANCE LLP-og-image.png",
     ],
   },
   robots: { index: true, follow: true },
   alternates: {
-    canonical: "https://www.code4bharat.com/",
+    canonical: "https://www.NEXCORE ALLIANCE LLP.com/",
   },
 };
 
@@ -119,10 +119,10 @@ export default function Page() {
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          name: "Code4Bharat",
-          url: "https://www.code4bharat.com",
-          logo: "https://www.code4bharat.com/assets/code4bharat-logo.png",
-          image: "https://www.code4bharat.com/assets/code4bharat-og-image.png",
+          name: "NEXCORE ALLIANCE LLP",
+          url: "https://www.NEXCORE ALLIANCE LLP.com",
+          logo: "https://www.NEXCORE ALLIANCE LLP.com/assets/NEXCORE ALLIANCE LLP-logo.png",
+          image: "https://www.NEXCORE ALLIANCE LLP.com/assets/NEXCORE ALLIANCE LLP-og-image.png",
           telephone: "+91-9594402915",
           address: {
             "@type": "PostalAddress",
@@ -139,9 +139,9 @@ export default function Page() {
             longitude: "72.88261",
           },
           sameAs: [
-            "https://twitter.com/Code4Bharat",
-            "https://linkedin.com/company/code4bharat",
-            "https://github.com/Code4Bharat",
+            "https://twitter.com/NEXCORE ALLIANCE LLP",
+            "https://linkedin.com/company/NEXCORE ALLIANCE LLP",
+            "https://github.com/NEXCORE ALLIANCE LLP",
           ],
           openingHours: "Mo-Fr 10:00-19:00",
           priceRange: "$$",
