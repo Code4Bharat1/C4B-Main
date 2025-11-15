@@ -1,13 +1,13 @@
 import "@/app/globals.css";
 
 export const metadata = {
-  title: "NEXCORE ALLIANCE LLP | Web & App Development Company in Mumbai & Kurla",
+  title: "Nexcore Alliance LLP | Web & App Development Company in Mumbai & Kurla",
   description:
-    "NEXCORE ALLIANCE LLP boosts businesses with custom web & mobile app development, IT consulting, and tailored e-commerce solutions in Kurla & Mumbai.",
+    "Nexcore Alliance LLP boosts businesses with custom web & mobile app development, IT consulting, and tailored e-commerce solutions in Kurla & Mumbai.",
   keywords: [
-    "NEXCORE ALLIANCE LLP",
-    "NEXCORE ALLIANCE LLP web development",
-    "NEXCORE ALLIANCE LLP app development",
+    "Nexcore Alliance LLP",
+    "Nexcore Alliance LLP web development",
+    "Nexcore Alliance LLP app development",
     "web development company Mumbai",
     "mobile app development Kurla",
     "IT consulting Mumbai",
@@ -23,7 +23,7 @@ export const metadata = {
   ],
   robots: { index: true, follow: true },
   alternates: {
-    canonical: "https://www.NEXCORE ALLIANCE LLP.com/",
+    canonical: "https://www.nexcorealliance.com/",
   },
   icons: {
     icon: [
@@ -57,10 +57,10 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              name: "NEXCORE ALLIANCE LLP",
-              url: "https://www.NEXCORE ALLIANCE LLP.com",
-              logo: "https://www.NEXCORE ALLIANCE LLP.com/assets/NEXCORE ALLIANCE LLP-logo.png",
-              image: "https://www.NEXCORE ALLIANCE LLP.com/assets/NEXCORE ALLIANCE LLP-og-image.png",
+              name: "Nexcore Alliance LLP",
+              url: "https://www.nexcorealliance.com",
+              logo: "https://www.nexcorealliance.com/assets/nexcorealliance-logo.png",
+              image: "https://www.nexcorealliance.com/assets/nexcorealliance-og-image.png",
               telephone: "+91-9594402915",
               address: {
                 "@type": "PostalAddress",
@@ -77,9 +77,9 @@ export default function RootLayout({ children }) {
                 longitude: "72.88261",
               },
               sameAs: [
-                "https://twitter.com/NEXCORE ALLIANCE LLP",
-                "https://linkedin.com/company/NEXCORE ALLIANCE LLP",
-                "https://github.com/NEXCORE ALLIANCE LLP",
+                "https://twitter.com/nexcore",
+                "https://www.linkedin.com/company/105730702/admin/dashboard/",
+                "https://github.com/dev-nexcore",
               ],
               openingHours: "Mo-Fr 10:00-19:00",
               priceRange: "$$",

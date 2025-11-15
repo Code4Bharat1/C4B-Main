@@ -1,10 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  FaComments, 
-  FaCode, 
-  FaChartLine, 
+import {
+  FaComments,
+  FaCode,
+  FaChartLine,
   FaRocket,
   FaTimes,
   FaArrowRight
@@ -62,7 +62,7 @@ const ApproachSection = () => {
       {/* Background decorative elements */}
       <div className="absolute top-20 right-10 w-72 h-72 bg-blue-200/30 rounded-full blur-3xl" />
       <div className="absolute bottom-20 left-10 w-96 h-96 bg-purple-200/20 rounded-full blur-3xl" />
-      
+
       {/* Subtle grid pattern */}
       <div className="absolute inset-0 opacity-[0.03]" style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
@@ -113,7 +113,7 @@ const ApproachSection = () => {
             >
               {/* Gradient glow on hover */}
               <div className={`absolute -inset-0.5 bg-gradient-to-r ${step.gradient} opacity-0 group-hover:opacity-20 blur-xl rounded-2xl transition-opacity`} />
-              
+
               <div className="relative z-10 space-y-6">
                 {/* Number Badge */}
                 <div className="flex items-center justify-between">
@@ -177,6 +177,7 @@ const ApproachSection = () => {
       </div>
 
       {/* Modal */}
+      {/* Modal */}
       <AnimatePresence>
         {selectedStep && (
           <motion.div
@@ -191,7 +192,7 @@ const ApproachSection = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ type: "spring", damping: 25 }}
-              className="bg-white rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-hidden shadow-2xl"
+              className="bg-white rounded-3xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal Header */}
@@ -220,38 +221,45 @@ const ApproachSection = () => {
                 </div>
               </div>
 
-              {/* Modal Content */}
-              <div className="p-8 space-y-6">
-                <div>
-                  <h4 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
-                    <span className="w-1 h-6 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full" />
-                    Overview
-                  </h4>
-                  <p className="text-slate-700 leading-relaxed">
-                    {selectedStep.description}
-                  </p>
-                </div>
+              {/* Modal Content (Scrollable) */}
+              <div className="p-8 overflow-y-auto flex-grow">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
 
-                <div>
-                  <h4 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
-                    <span className="w-1 h-6 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full" />
-                    Details
-                  </h4>
-                  <p className="text-slate-700 leading-relaxed">
-                    {selectedStep.details}
-                  </p>
-                </div>
+                  {/* Left Column - Text */}
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
+                        <span className="w-1 h-6 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full" />
+                        Overview
+                      </h4>
+                      <p className="text-slate-700 leading-relaxed">
+                        {selectedStep.description}
+                      </p>
+                    </div>
 
-                {/* Image */}
-                {selectedStep.imgSrc && (
-                  <div className="bg-slate-50 rounded-xl p-6 flex items-center justify-center">
-                    <img
-                      src={selectedStep.imgSrc}
-                      alt={selectedStep.title}
-                      className="w-24 h-24 object-contain"
-                    />
+                    <div>
+                      <h4 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
+                        <span className="w-1 h-6 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full" />
+                        Details
+                      </h4>
+                      <p className="text-slate-700 leading-relaxed">
+                        {selectedStep.details}
+                      </p>
+                    </div>
                   </div>
-                )}
+
+                  {/* Right Column - Image */}
+                  {selectedStep.imgSrc && (
+                    <div className="flex justify-center items-center bg-slate-50 rounded-xl p-6">
+                      <img
+                        src={selectedStep.imgSrc}
+                        alt={selectedStep.title}
+                        className="w-full max-w-xs object-contain drop-shadow-lg"
+                      />
+                    </div>
+                  )}
+
+                </div>
               </div>
 
               {/* Modal Footer */}
@@ -269,6 +277,7 @@ const ApproachSection = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
     </section>
   );
 };
