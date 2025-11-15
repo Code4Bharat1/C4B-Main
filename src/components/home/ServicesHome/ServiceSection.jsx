@@ -1,45 +1,22 @@
 "use client";
-import React, { useEffect, useState, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState } from "react";
 import { 
   FaArrowRight, 
-  FaLightbulb, 
-  FaShoppingCart, 
-  FaGlobe, 
-  FaChartLine,
   FaChevronRight,
   FaRocket,
   FaCloud,
-  FaMicrochip,
   FaPalette,
-  FaLaptopCode,
-  FaCogs,
   FaNetworkWired,
   FaMobile,
   FaBrain,
   FaRobot,
-  FaUsers,
   FaCode,
   FaServer,
   FaTimes
 } from "react-icons/fa";
 
 const ServiceSection = () => {
-  const [isInView, setIsInView] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedService, setSelectedService] = useState(null);
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => setIsInView(entry.isIntersecting),
-      { threshold: 0.2 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
-    };
-  }, []);
 
   const serviceCategories = [
     {
@@ -309,33 +286,11 @@ const ServiceSection = () => {
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-    },
-  };
-
   return (
-    <section
-      ref={sectionRef}
-      className="w-full bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 py-20 md:py-32 relative overflow-hidden"
-    >
+    <section className="w-full bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 py-12 sm:py-16 md:py-20 lg:py-32 relative overflow-hidden">
       {/* Background decorative elements */}
-      <div className="absolute top-20 right-10 w-72 h-72 bg-blue-200/30 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-10 w-96 h-96 bg-purple-200/20 rounded-full blur-3xl" />
+      <div className="absolute top-10 sm:top-20 right-5 sm:right-10 w-48 sm:w-72 h-48 sm:h-72 bg-blue-200/30 rounded-full blur-3xl" />
+      <div className="absolute bottom-10 sm:bottom-20 left-5 sm:left-10 w-56 sm:w-96 h-56 sm:h-96 bg-purple-200/20 rounded-full blur-3xl" />
       
       {/* Subtle grid pattern */}
       <div className="absolute inset-0 opacity-[0.03]" style={{
@@ -344,77 +299,55 @@ const ServiceSection = () => {
         backgroundSize: '40px 40px',
       }} />
 
-      <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         {/* Header Section */}
-        <motion.div
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          variants={containerVariants}
-          className="text-center mb-16"
-        >
-          <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 border border-blue-200 mb-6">
+        <div className="text-center mb-10 sm:mb-12 md:mb-16">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-blue-100 border border-blue-200 mb-4 sm:mb-6">
             <div className="w-2 h-2 bg-blue-500 rounded-full" />
-            <span className="text-sm text-blue-700 font-semibold">
+            <span className="text-xs sm:text-sm text-blue-700 font-semibold">
               Our Services
             </span>
-          </motion.div>
+          </div>
 
-          <motion.h2
-            variants={itemVariants}
-            className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 leading-tight mb-6"
-          >
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 leading-tight mb-4 sm:mb-6 px-4">
             Amazing{" "}
             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
               Services
             </span>
-          </motion.h2>
+          </h2>
 
-          <motion.p
-            variants={itemVariants}
-            className="text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto"
-          >
-            At <span className="font-semibold text-slate-900">Code4Bharat</span>, 
+          <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto px-4">
+            At <span className="font-semibold text-slate-900">Nexcore Alliance LLP</span>, 
             we drive your business forward with custom web and mobile app development, 
             strategic IT consulting, and robust e-commerce solutions tailored to your needs.
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
 
         {/* Service Categories */}
         {serviceCategories.map((category, catIndex) => (
-          <motion.div
-            key={catIndex}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            variants={containerVariants}
-            className="mb-16"
-          >
-            <motion.h3
-              variants={itemVariants}
-              className="text-2xl md:text-3xl font-bold text-slate-900 mb-8 flex items-center gap-3"
-            >
-              <span className="w-1 h-8 bg-gradient-to-b from-blue-600 to-purple-600 rounded-full" />
+          <div key={catIndex} className="mb-12 sm:mb-16">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-6 sm:mb-8 flex items-center gap-3 px-4 sm:px-0">
+              <span className="w-1 h-6 sm:h-8 bg-gradient-to-b from-blue-600 to-purple-600 rounded-full" />
               {category.category}
-            </motion.h3>
+            </h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 px-4 sm:px-0">
               {category.services.map((service) => (
-                <motion.div
+                <div
                   key={service.id}
-                  variants={itemVariants}
-                  whileHover={{ y: -8, scale: 1.02 }}
                   onClick={() => setSelectedService(service)}
-                  className="group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 cursor-pointer"
+                  className="group relative bg-white rounded-2xl p-5 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 cursor-pointer hover:-translate-y-2"
                 >
                   {/* Gradient glow effect */}
                   <div className={`absolute -inset-0.5 bg-gradient-to-r ${service.gradient} opacity-0 group-hover:opacity-20 blur-xl rounded-2xl transition-opacity`} />
                   
                   <div className="relative z-10">
                     {/* Icon badge */}
-                    <div className={`w-12 h-12 bg-gradient-to-br ${service.gradient} rounded-xl flex items-center justify-center mb-4 shadow-md`}>
-                      <service.Icon className="w-6 h-6 text-white" />
+                    <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br ${service.gradient} rounded-xl flex items-center justify-center mb-3 sm:mb-4 shadow-md`}>
+                      <service.Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                     </div>
                     
-                    <h4 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text transition-all">
+                    <h4 className="text-base sm:text-lg font-bold text-slate-900 mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text transition-all">
                       {service.title}
                     </h4>
                     
@@ -423,119 +356,98 @@ const ServiceSection = () => {
                     </p>
 
                     {/* Learn More Button */}
-                    <div className="mt-4 flex items-center gap-2 text-sm font-semibold text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="mt-3 sm:mt-4 flex items-center gap-2 text-xs sm:text-sm font-semibold text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity">
                       Learn More
                       <FaChevronRight className="w-3 h-3" />
                     </div>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         ))}
 
         {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ delay: 0.8, duration: 0.6 }}
-          className="mt-20 text-center"
-        >
-          <div className="inline-flex flex-col items-center gap-4 bg-gradient-to-br from-slate-900 to-blue-900 rounded-3xl p-8 md:p-12 shadow-2xl">
-            <h3 className="text-2xl md:text-3xl font-bold text-white">
+        <div className="mt-12 sm:mt-16 md:mt-20 text-center px-4 sm:px-0">
+          <div className="inline-flex flex-col items-center gap-3 sm:gap-4 bg-gradient-to-br from-slate-900 to-blue-900 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 shadow-2xl w-full sm:w-auto">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white text-center">
               Ready to Transform Your Business?
             </h3>
-            <p className="text-slate-300 max-w-xl">
+            <p className="text-sm sm:text-base text-slate-300 max-w-xl text-center">
               Let's discuss how our services can help you achieve your goals
             </p>
-            <a href="https://wa.me/919594430295">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-10 py-4 bg-white text-slate-900 font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all"
-              >
+            <a href="https://wa.me/919594430295" className="w-full sm:w-auto">
+              <button className="w-full sm:w-auto px-6 sm:px-10 py-3 sm:py-4 bg-white text-slate-900 font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-105">
                 Schedule a Free Consultation
-              </motion.button>
+              </button>
             </a>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Service Detail Modal */}
-      <AnimatePresence>
-        {selectedService && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-            onClick={() => setSelectedService(null)}
+      {selectedService && (
+        <div
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          onClick={() => setSelectedService(null)}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
           >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              onClick={(e) => e.stopPropagation()}
-              className="bg-white rounded-3xl p-8 max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
+            {/* Close button */}
+            <button
+              onClick={() => setSelectedService(null)}
+              className="float-right p-2 hover:bg-slate-100 rounded-full transition-colors"
             >
-              {/* Close button */}
-              <button
-                onClick={() => setSelectedService(null)}
-                className="float-right p-2 hover:bg-slate-100 rounded-full transition-colors"
-              >
-                <FaTimes className="w-5 h-5 text-slate-600" />
-              </button>
+              <FaTimes className="w-4 h-4 sm:w-5 sm:h-5 text-slate-600" />
+            </button>
 
-              {/* Icon and Title */}
-              <div className="flex items-start gap-4 mb-6">
-                <div className={`w-16 h-16 bg-gradient-to-br ${selectedService.gradient} rounded-2xl flex items-center justify-center shadow-lg flex-shrink-0`}>
-                  <selectedService.Icon className="w-8 h-8 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-3xl font-bold text-slate-900 mb-2">
-                    {selectedService.title}
-                  </h3>
-                  <p className="text-slate-600">{selectedService.description}</p>
-                </div>
+            {/* Icon and Title */}
+            <div className="flex items-start gap-3 sm:gap-4 mb-4 sm:mb-6">
+              <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br ${selectedService.gradient} rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg flex-shrink-0`}>
+                <selectedService.Icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
-
-              {/* Details */}
-              <div className="mb-6">
-                <p className="text-slate-700 leading-relaxed">
-                  {selectedService.details}
-                </p>
-              </div>
-
-              {/* Features */}
               <div>
-                <h4 className="text-xl font-bold text-slate-900 mb-4">Key Features</h4>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  {selectedService.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-start gap-3 p-3 bg-slate-50 rounded-lg">
-                      <div className={`w-2 h-2 bg-gradient-to-r ${selectedService.gradient} rounded-full mt-2 flex-shrink-0`} />
-                      <span className="text-sm text-slate-700">{feature}</span>
-                    </div>
-                  ))}
-                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
+                  {selectedService.title}
+                </h3>
+                <p className="text-sm sm:text-base text-slate-600">{selectedService.description}</p>
               </div>
+            </div>
 
-              {/* CTA */}
-              <div className="mt-8 pt-6 border-t border-slate-200">
-                <a href="https://wa.me/919594430295">
-                  <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className={`w-full py-4 bg-gradient-to-r ${selectedService.gradient} text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2`}
-                  >
-                    Get Started with {selectedService.title}
-                    <FaArrowRight className="w-4 h-4" />
-                  </motion.button>
-                </a>
+            {/* Details */}
+            <div className="mb-4 sm:mb-6">
+              <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+                {selectedService.details}
+              </p>
+            </div>
+
+            {/* Features */}
+            <div>
+              <h4 className="text-lg sm:text-xl font-bold text-slate-900 mb-3 sm:mb-4">Key Features</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3">
+                {selectedService.features.map((feature, idx) => (
+                  <div key={idx} className="flex items-start gap-2 sm:gap-3 p-2 sm:p-3 bg-slate-50 rounded-lg">
+                    <div className={`w-2 h-2 bg-gradient-to-r ${selectedService.gradient} rounded-full mt-1 sm:mt-2 flex-shrink-0`} />
+                    <span className="text-xs sm:text-sm text-slate-700">{feature}</span>
+                  </div>
+                ))}
               </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            </div>
+
+            {/* CTA */}
+            <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-slate-200">
+              <a href="https://wa.me/919594430295">
+                <button className={`w-full py-3 sm:py-4 bg-gradient-to-r ${selectedService.gradient} text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 text-sm sm:text-base hover:scale-105`}>
+                  Get Started with {selectedService.title}
+                  <FaArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

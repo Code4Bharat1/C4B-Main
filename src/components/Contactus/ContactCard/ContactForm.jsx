@@ -1,306 +1,512 @@
 "use client";
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { 
-  FaUser, 
-  FaEnvelope, 
-  FaPhone, 
-  FaBriefcase, 
-  FaInfoCircle,
-  FaFileUpload,
-  FaPaperPlane
-} from "react-icons/fa";
+import React, { useEffect, useRef, useState } from "react";
+import { Linkedin, Facebook, Instagram, Youtube, CheckCircle2, Phone, Mail, Building2, Users, Briefcase, MessageSquare, Sparkles, ArrowRight } from "lucide-react";
 
-const ContactForm = () => {
+const ContactPage = () => {
+  const [isVisible, setIsVisible] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
-    email: "",
     phone: "",
-    service: "",
-    referral: "",
-    projectDetails: "",
-    fileUpload: null,
+    email: "",
+    country: "India",
+    company: "",
+    companySize: "",
+    businessNeeds: "",
+    requirements: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [focusedField, setFocusedField] = useState(null);
+  const sectionRef = useRef(null);
 
-  const handleChange = (e) => {
-    const { id, value, files } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [id]: files ? files[0] : value,
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      {
+        root: null,
+        rootMargin: "-100px",
+        threshold: 0.1,
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = () => {
+    if (
+      !formData.firstName ||
+      !formData.lastName ||
+      !formData.phone ||
+      !formData.email ||
+      !formData.company ||
+      !formData.requirements
+    ) {
+      alert("कृपया सभी आवश्यक फील्ड भरें (Please fill all required fields)");
+      return;
+    }
 
-    const whatsappNumber = "919594430295";
-    const message = `
-*New Contact Form Submission*
+    setIsSubmitting(true);
 
-*Name:* ${formData.firstName} ${formData.lastName}
-*Email:* ${formData.email}
-*Phone:* ${formData.phone}
-*Service:* ${formData.service}
-*Referred By:* ${formData.referral}
-*Project Details:* ${formData.projectDetails}
-    `;
+    try {
+      const whatsappNumber = "919594430295";
 
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+      const message = `🔔 *New Consultation Request*
 
-    window.open(whatsappURL, "_blank");
+👤 *Name:* ${formData.firstName} ${formData.lastName}
+📱 *Phone:* ${formData.phone}
+📧 *Email:* ${formData.email}
+🌍 *Country:* ${formData.country}
+🏢 *Company:* ${formData.company}
+📊 *Company Size:* ${formData.companySize || "Not specified"}
+💼 *Business Needs:* ${formData.businessNeeds || "Not specified"}
 
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      service: "",
-      referral: "",
-      projectDetails: "",
-      fileUpload: null,
-    });
+📝 *Requirements:*
+${formData.requirements}
+
+---
+Sent from Nexcore Alliance Website`;
+
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+      const newWindow = window.open(whatsappURL, "_blank");
+      if (newWindow) {
+        setTimeout(() => {
+          setFormData({
+            firstName: "",
+            lastName: "",
+            phone: "",
+            email: "",
+            country: "India",
+            company: "",
+            companySize: "",
+            businessNeeds: "",
+            requirements: "",
+          });
+          alert("Message sent successfully! WhatsApp should open now.");
+        }, 1000);
+      } else {
+        alert("Please allow pop-ups for this site to send WhatsApp messages.");
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+      alert("Something went wrong. Please try again.");
+    }
+
+    setIsSubmitting(false);
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
+  const socialLinks = [
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/company/105730702/admin/dashboard",
+      color: "hover:bg-blue-600",
+      label: "LinkedIn"
     },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 },
+    {
+      icon: Facebook,
+      href: "https://www.facebook.com/profile.php?id=61570113656994",
+      color: "hover:bg-sky-500",
+      label: "Facebook"
     },
-  };
+    {
+      icon: Instagram,
+      href: "https://www.instagram.com/Nexcorealliancellp/",
+      color: "hover:bg-pink-500",
+      label: "Instagram"
+    },
+    {
+      icon: Youtube,
+      href: "https://www.youtube.com/channel/UCYqpIltw48XxkMRLC-HCgag",
+      color: "hover:bg-red-600",
+      label: "YouTube"
+    },
+  ];
+
+  const steps = [
+    {
+      number: 1,
+      title: "Requirements Analysis",
+      description: "Our experts will analyze and understand your technical needs.",
+      icon: MessageSquare,
+      color: "from-teal-500 to-teal-700"
+    },
+    {
+      number: 2,
+      title: "Quick Follow-up",
+      description: "You will receive a quick follow-up call at your convenient time.",
+      icon: Phone,
+      color: "from-orange-500 to-orange-700"
+    },
+    {
+      number: 3,
+      title: "NDA & Security",
+      description: "We sign an NDA to ensure your idea and project remain private & secure.",
+      icon: CheckCircle2,
+      color: "from-green-500 to-green-700"
+    }
+  ];
 
   return (
-    <section className="w-full bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 py-20 md:py-32 relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute top-20 right-10 w-72 h-72 bg-blue-200/30 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-10 w-96 h-96 bg-purple-200/20 rounded-full blur-3xl" />
-      
-      {/* Subtle grid pattern */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-                         linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px)`,
-        backgroundSize: '40px 40px',
-      }} />
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 select-none overflow-hidden">
+      {/* Animated Background */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 -left-4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div className="absolute top-0 -right-4 w-96 h-96 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-8 left-20 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+      </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12 space-y-4"
-        >
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-blue-100 to-purple-100 border border-blue-200">
-            <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
-            <span className="text-sm text-blue-700 font-semibold">
-              Get Started
-            </span>
+      <section ref={sectionRef} className="relative py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          {/* Hero Header */}
+          <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8"}`}>
+            <div className="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/20 rounded-full px-6 py-2 mb-6">
+              <Sparkles className="w-4 h-4 text-orange-400" />
+              <span className="text-orange-300 text-sm font-semibold">Free Consultation Available</span>
+            </div>
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 bg-gradient-to-r from-white via-purple-200 to-orange-200 bg-clip-text text-transparent">
+              Let's Build Something Amazing
+            </h1>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Transform your ideas into reality with our expert team
+            </p>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight">
-            Let's Build{" "}
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
-              Something Great
-            </span>
-          </h2>
-
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Fill out the form below and we'll get back to you within 24 hours
-          </p>
-        </motion.div>
-
-        {/* Form Card */}
-        <motion.form
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.2 }}
-          variants={containerVariants}
-          onSubmit={handleSubmit}
-          className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border border-slate-200"
-        >
-          {/* Name Fields */}
-          <motion.div variants={itemVariants} className="grid md:grid-cols-2 gap-6 mb-6">
-            <div>
-              <label htmlFor="firstName" className="flex items-center gap-2 text-sm font-semibold text-slate-700 mb-2">
-                <FaUser className="w-4 h-4 text-blue-500" />
-                First Name <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                id="firstName"
-                value={formData.firstName}
-                onChange={handleChange}
-                required
-                className="w-full border-2 border-slate-200 focus:border-blue-500 rounded-xl p-4 focus:outline-none transition-all"
-                placeholder="John"
-              />
-            </div>
-            <div>
-              <label htmlFor="lastName" className="flex items-center gap-2 text-sm font-semibold text-slate-700 mb-2">
-                <FaUser className="w-4 h-4 text-blue-500" />
-                Last Name <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                id="lastName"
-                value={formData.lastName}
-                onChange={handleChange}
-                required
-                className="w-full border-2 border-slate-200 focus:border-blue-500 rounded-xl p-4 focus:outline-none transition-all"
-                placeholder="Doe"
-              />
-            </div>
-          </motion.div>
-
-          {/* Contact Fields */}
-          <motion.div variants={itemVariants} className="grid md:grid-cols-2 gap-6 mb-6">
-            <div>
-              <label htmlFor="email" className="flex items-center gap-2 text-sm font-semibold text-slate-700 mb-2">
-                <FaEnvelope className="w-4 h-4 text-purple-500" />
-                Email <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="email"
-                id="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full border-2 border-slate-200 focus:border-purple-500 rounded-xl p-4 focus:outline-none transition-all"
-                placeholder="john@example.com"
-              />
-            </div>
-            <div>
-              <label htmlFor="phone" className="flex items-center gap-2 text-sm font-semibold text-slate-700 mb-2">
-                <FaPhone className="w-4 h-4 text-emerald-500" />
-                Phone Number <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                required
-                className="w-full border-2 border-slate-200 focus:border-emerald-500 rounded-xl p-4 focus:outline-none transition-all"
-                placeholder="+91 98765 43210"
-              />
-            </div>
-          </motion.div>
-
-          {/* Service & Referral */}
-          <motion.div variants={itemVariants} className="grid md:grid-cols-2 gap-6 mb-6">
-            <div>
-              <label htmlFor="service" className="flex items-center gap-2 text-sm font-semibold text-slate-700 mb-2">
-                <FaBriefcase className="w-4 h-4 text-orange-500" />
-                Service Needed <span className="text-red-500">*</span>
-              </label>
-              <select
-                id="service"
-                value={formData.service}
-                onChange={handleChange}
-                required
-                className="w-full border-2 border-slate-200 focus:border-orange-500 rounded-xl p-4 focus:outline-none transition-all bg-white"
-              >
-                <option value="">Select a service</option>
-                <option value="web-development">Web Development</option>
-                <option value="mobile-app">Mobile App Development</option>
-                <option value="it-consulting">IT Consulting</option>
-                <option value="ecommerce">E-Commerce Solutions</option>
-                <option value="digital-marketing">Digital Marketing</option>
-                <option value="ai-solutions">AI Solutions</option>
-              </select>
-            </div>
-            <div>
-              <label htmlFor="referral" className="flex items-center gap-2 text-sm font-semibold text-slate-700 mb-2">
-                <FaInfoCircle className="w-4 h-4 text-cyan-500" />
-                How did you find us? <span className="text-red-500">*</span>
-              </label>
-              <select
-                id="referral"
-                value={formData.referral}
-                onChange={handleChange}
-                required
-                className="w-full border-2 border-slate-200 focus:border-cyan-500 rounded-xl p-4 focus:outline-none transition-all bg-white"
-              >
-                <option value="">Select an option</option>
-                <option value="google">Google Search</option>
-                <option value="social-media">Social Media</option>
-                <option value="referral">Friend/Colleague Referral</option>
-                <option value="linkedin">LinkedIn</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-          </motion.div>
-
-          {/* Project Details */}
-          <motion.div variants={itemVariants} className="mb-6">
-            <label htmlFor="projectDetails" className="flex items-center gap-2 text-sm font-semibold text-slate-700 mb-2">
-              <FaInfoCircle className="w-4 h-4 text-indigo-500" />
-              Tell us about your project
-            </label>
-            <textarea
-              id="projectDetails"
-              value={formData.projectDetails}
-              onChange={handleChange}
-              className="w-full border-2 border-slate-200 focus:border-indigo-500 rounded-xl p-4 focus:outline-none transition-all resize-none"
-              rows="5"
-              placeholder="Describe your project requirements, timeline, and any specific needs..."
-            ></textarea>
-          </motion.div>
-
-          {/* File Upload */}
-          <motion.div variants={itemVariants} className="mb-8">
-            <label htmlFor="fileUpload" className="flex items-center gap-2 text-sm font-semibold text-slate-700 mb-2">
-              <FaFileUpload className="w-4 h-4 text-pink-500" />
-              Upload a file (optional)
-            </label>
-            <div className="relative">
-              <input
-                type="file"
-                id="fileUpload"
-                onChange={handleChange}
-                className="w-full border-2 border-dashed border-slate-300 focus:border-pink-500 rounded-xl p-4 focus:outline-none transition-all file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-gradient-to-r file:from-pink-500 file:to-rose-500 file:text-white file:font-semibold hover:file:from-pink-600 hover:file:to-rose-600 file:cursor-pointer"
-              />
-            </div>
-            <p className="text-xs text-slate-500 mt-2 flex items-center gap-1">
-              <span>💡</span>
-              Note: Files cannot be sent via WhatsApp. We'll contact you for file sharing.
-            </p>
-          </motion.div>
-
-          {/* Submit Button */}
-          <motion.div variants={itemVariants}>
-            <motion.button
-              type="submit"
-              whileHover={{ scale: 1.02, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-3 text-lg"
+          {/* Main Content Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            {/* Left Side - Enhanced Form */}
+            <div
+              className={`transition-all duration-1000 ${
+                isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+              }`}
             >
-              <FaPaperPlane className="w-5 h-5" />
-              Send Message
-            </motion.button>
+              <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/20 relative overflow-hidden">
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-orange-500/5 pointer-events-none"></div>
+                
+                <div className="relative z-10">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center">
+                      <Mail className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h2 className="text-3xl font-bold text-white">Get in Touch</h2>
+                      <p className="text-gray-300 text-sm">Let's discuss your project</p>
+                    </div>
+                  </div>
 
-            <p className="text-center text-sm text-slate-500 mt-4">
-              We'll respond within 24 hours • Your data is secure
-            </p>
-          </motion.div>
-        </motion.form>
-      </div>
-    </section>
+                  <div className="space-y-5">
+                    {/* Name Fields */}
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="relative">
+                        <input
+                          type="text"
+                          name="firstName"
+                          value={formData.firstName}
+                          onChange={handleInputChange}
+                          onFocus={() => setFocusedField("firstName")}
+                          onBlur={() => setFocusedField(null)}
+                          placeholder="First Name*"
+                          className="w-full px-4 py-4 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all text-white placeholder-gray-400 backdrop-blur-sm"
+                        />
+                        {focusedField === "firstName" && (
+                          <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-orange-500/20 to-purple-500/20 -z-10 blur-xl"></div>
+                        )}
+                      </div>
+                      <div className="relative">
+                        <input
+                          type="text"
+                          name="lastName"
+                          value={formData.lastName}
+                          onChange={handleInputChange}
+                          onFocus={() => setFocusedField("lastName")}
+                          onBlur={() => setFocusedField(null)}
+                          placeholder="Last Name*"
+                          className="w-full px-4 py-4 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all text-white placeholder-gray-400 backdrop-blur-sm"
+                        />
+                        {focusedField === "lastName" && (
+                          <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-orange-500/20 to-purple-500/20 -z-10 blur-xl"></div>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Phone and Email */}
+                    <div className="space-y-4">
+                      <div className="flex gap-2 relative">
+                        <select
+                          name="country"
+                          value={formData.country}
+                          onChange={handleInputChange}
+                          className="w-28 px-2 py-4 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent text-white backdrop-blur-sm"
+                        >
+                          <option value="India" className="bg-slate-800">🇮🇳 +91</option>
+                          <option value="USA" className="bg-slate-800">🇺🇸 +1</option>
+                        </select>
+                        <input
+                          type="tel"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleInputChange}
+                          onFocus={() => setFocusedField("phone")}
+                          onBlur={() => setFocusedField(null)}
+                          placeholder="Phone Number*"
+                          className="flex-1 px-4 py-4 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all text-white placeholder-gray-400 backdrop-blur-sm"
+                        />
+                        {focusedField === "phone" && (
+                          <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-orange-500/20 to-purple-500/20 -z-10 blur-xl"></div>
+                        )}
+                      </div>
+                      <div className="relative">
+                        <input
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          onFocus={() => setFocusedField("email")}
+                          onBlur={() => setFocusedField(null)}
+                          placeholder="Work Email*"
+                          className="w-full px-4 py-4 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all text-white placeholder-gray-400 backdrop-blur-sm"
+                        />
+                        {focusedField === "email" && (
+                          <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-orange-500/20 to-purple-500/20 -z-10 blur-xl"></div>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Company and Size */}
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="relative">
+                        <input
+                          type="text"
+                          name="company"
+                          value={formData.company}
+                          onChange={handleInputChange}
+                          onFocus={() => setFocusedField("company")}
+                          onBlur={() => setFocusedField(null)}
+                          placeholder="Company Name*"
+                          className="w-full px-4 py-4 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all text-white placeholder-gray-400 backdrop-blur-sm"
+                        />
+                        {focusedField === "company" && (
+                          <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-orange-500/20 to-purple-500/20 -z-10 blur-xl"></div>
+                        )}
+                      </div>
+                      <select
+                        name="companySize"
+                        value={formData.companySize}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-4 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent text-white backdrop-blur-sm"
+                      >
+                        <option value="" className="bg-slate-800">Company Size*</option>
+                        <option value="1-10" className="bg-slate-800">1-10 employees</option>
+                        <option value="11-50" className="bg-slate-800">11-50 employees</option>
+                        <option value="51-200" className="bg-slate-800">51-200 employees</option>
+                        <option value="201-500" className="bg-slate-800">201-500 employees</option>
+                        <option value="500+" className="bg-slate-800">500+ employees</option>
+                      </select>
+                    </div>
+
+                    {/* Business Needs */}
+                    <select
+                      name="businessNeeds"
+                      value={formData.businessNeeds}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-4 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent text-white backdrop-blur-sm"
+                    >
+                      <option value="" className="bg-slate-800">Select your Business Needs*</option>
+                      <option value="Web Development" className="bg-slate-800">Web Development</option>
+                      <option value="Mobile App" className="bg-slate-800">Mobile App Development</option>
+                      <option value="AI Solutions" className="bg-slate-800">AI Solutions</option>
+                      <option value="Cloud Services" className="bg-slate-800">Cloud Services</option>
+                      <option value="DevOps" className="bg-slate-800">DevOps</option>
+                      <option value="Consulting" className="bg-slate-800">Consulting</option>
+                      <option value="Other" className="bg-slate-800">Other</option>
+                    </select>
+
+                    {/* Requirements */}
+                    <div className="relative">
+                      <textarea
+                        name="requirements"
+                        value={formData.requirements}
+                        onChange={handleInputChange}
+                        onFocus={() => setFocusedField("requirements")}
+                        onBlur={() => setFocusedField(null)}
+                        rows="4"
+                        placeholder="Tell us about your project requirements (minimum 15 characters)*"
+                        className="w-full px-4 py-4 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all resize-none text-white placeholder-gray-400 backdrop-blur-sm"
+                      ></textarea>
+                      {focusedField === "requirements" && (
+                        <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-orange-500/20 to-purple-500/20 -z-10 blur-xl"></div>
+                      )}
+                      <div className="absolute bottom-3 right-3 text-xs text-gray-400">
+                        {formData.requirements.length}/15
+                      </div>
+                    </div>
+
+                    {/* Submit Button */}
+                    <button
+                      onClick={handleSubmit}
+                      disabled={
+                        isSubmitting ||
+                        !formData.firstName ||
+                        !formData.lastName ||
+                        !formData.phone ||
+                        !formData.email ||
+                        !formData.company ||
+                        !formData.requirements ||
+                        formData.requirements.length < 15
+                      }
+                      className="w-full bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 text-white font-bold py-5 px-8 rounded-xl hover:shadow-2xl hover:shadow-orange-500/50 transform hover:scale-[1.02] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none relative overflow-hidden group"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                      <div className="relative flex items-center justify-center gap-2">
+                        {isSubmitting ? (
+                          <>
+                            <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                            <span>Sending...</span>
+                          </>
+                        ) : (
+                          <>
+                            <span>Schedule a Consultation</span>
+                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                          </>
+                        )}
+                      </div>
+                    </button>
+
+                    <p className="text-xs text-gray-400 text-center">
+                      🔒 Your information is secure. By submitting, you agree to let NEXCORE ALLIANCE contact you.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Side - What Happens Next */}
+            <div
+              className={`transition-all duration-1000 delay-300 ${
+                isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
+              }`}
+            >
+              <div className="space-y-8">
+                <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20">
+                  <h2 className="text-4xl font-bold text-white mb-8 flex items-center gap-3">
+                    <Sparkles className="w-8 h-8 text-orange-400" />
+                    What Happens Next?
+                  </h2>
+
+                  <div className="space-y-6">
+                    {steps.map((step, index) => (
+                      <div key={index} className="flex gap-6 group">
+                        <div className="flex-shrink-0">
+                          <div className={`w-16 h-16 bg-gradient-to-br ${step.color} rounded-2xl flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300`}>
+                            <step.icon className="w-8 h-8 text-white" />
+                          </div>
+                          {index < steps.length - 1 && (
+                            <div className="w-0.5 h-12 bg-gradient-to-b from-white/30 to-transparent mx-auto mt-4"></div>
+                          )}
+                        </div>
+                        <div className="flex-1 pt-3">
+                          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 border border-white/10 group-hover:border-white/30 transition-all">
+                            <div className="flex items-center gap-2 mb-2">
+                              <span className="text-orange-400 font-bold text-sm">Step {step.number}</span>
+                            </div>
+                            <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
+                            <p className="text-gray-300">{step.description}</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Stats Section */}
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 text-center hover:scale-105 transition-transform">
+                    <div className="text-3xl font-bold text-orange-400 mb-1">500+</div>
+                    <div className="text-gray-300 text-sm">Projects</div>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 text-center hover:scale-105 transition-transform">
+                    <div className="text-3xl font-bold text-purple-400 mb-1">98%</div>
+                    <div className="text-gray-300 text-sm">Satisfied</div>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 text-center hover:scale-105 transition-transform">
+                    <div className="text-3xl font-bold text-green-400 mb-1">24/7</div>
+                    <div className="text-gray-300 text-sm">Support</div>
+                  </div>
+                </div>
+
+                {/* Social Links */}
+                <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
+                  <h3 className="font-semibold text-white mb-4 text-center flex items-center justify-center gap-2">
+                    <Sparkles className="w-5 h-5 text-orange-400" />
+                    Connect With Us
+                  </h3>
+                  <div className="flex justify-center gap-3">
+                    {socialLinks.map(({ icon: Icon, href, color, label }, index) => (
+                      <a
+                        key={index}
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`group relative w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center transition-all duration-300 ${color} hover:scale-110`}
+                        title={label}
+                      >
+                        <Icon className="w-6 h-6 text-white relative z-10" />
+                        <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <style jsx>{`
+        @keyframes blob {
+          0%, 100% {
+            transform: translate(0, 0) scale(1);
+          }
+          33% {
+            transform: translate(30px, -50px) scale(1.1);
+          }
+          66% {
+            transform: translate(-20px, 20px) scale(0.9);
+          }
+        }
+        .animate-blob {
+          animation: blob 7s infinite;
+        }
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+          animation-delay: 4s;
+        }
+      `}</style>
+    </div>
   );
 };
 
-export default ContactForm;
+export default ContactPage;
