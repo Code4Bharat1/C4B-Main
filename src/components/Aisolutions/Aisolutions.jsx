@@ -1,7 +1,7 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowRight, Award, Users, Layers, Rocket, Brain, Sparkles, TrendingUp, Shield, CheckCircle, FileText, UserCheck, Zap, BarChart, MessageSquare, Database, Cpu, Box, Code, GitBranch, Activity, Settings, Cloud, Eye, Target } from "lucide-react";
+import { ArrowRight, Award, Users, Layers, Rocket, Brain, Sparkles, TrendingUp, Shield, CheckCircle, FileText, UserCheck, Zap, BarChart, MessageSquare, Database, Cpu, Box, Code, Activity, Settings, Cloud, Eye, Target, Globe, Star, MapPin } from "lucide-react";
 
 const HeroBadge = ({ icon: Icon, text }) => (
   <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-50 border-2 border-blue-200 shadow-sm">
@@ -69,9 +69,90 @@ const TechStackCard = ({ name, icon: Icon }) => (
   </div>
 );
 
+const ClientLogo = ({ name, country, flag }) => (
+  <div className="group bg-white border border-gray-200 rounded-xl p-6 flex flex-col items-center justify-center gap-3 hover:border-blue-400 hover:shadow-lg transition-all duration-300 h-32">
+    <div className="text-3xl">{flag}</div>
+    <div className="text-center">
+      <div className="font-bold text-gray-900 text-sm group-hover:text-blue-600 transition-colors">{name}</div>
+      <div className="text-xs text-gray-500 mt-1">{country}</div>
+    </div>
+  </div>
+);
+
+const TestimonialCard = ({ quote, author, role, company, country, rating }) => (
+  <div className="bg-white border-2 border-blue-100 rounded-2xl p-8 hover:shadow-2xl hover:border-blue-300 transition-all duration-300">
+    <div className="flex gap-1 mb-4">
+      {[...Array(rating)].map((_, i) => (
+        <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+      ))}
+    </div>
+    <p className="text-gray-700 text-lg leading-relaxed mb-6 italic">"{quote}"</p>
+    <div className="flex items-center gap-4 pt-4 border-t-2 border-blue-50">
+      <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+        <Users className="w-6 h-6 text-blue-600" />
+      </div>
+      <div>
+        <div className="font-bold text-gray-900">{author}</div>
+        <div className="text-sm text-gray-600">{role}, {company}</div>
+        <div className="text-xs text-blue-600 font-medium mt-1">{country}</div>
+      </div>
+    </div>
+  </div>
+);
+
 export default function NexCoreLanding() {
   const [hoveredCard, setHoveredCard] = useState(null);
   const [activeTab, setActiveTab] = useState(0);
+  const [currentClientSet, setCurrentClientSet] = useState(0);
+
+  const globalClients = [
+    { name: "FinTech Global", country: "United States", flag: "🇺🇸" },
+    { name: "TechVentures Ltd", country: "United Kingdom", flag: "🇬🇧" },
+    { name: "Deutsche Systems", country: "Germany", flag: "🇩🇪" },
+    { name: "Innovation Corp", country: "Singapore", flag: "🇸🇬" },
+    { name: "MediHealth Plus", country: "Canada", flag: "🇨🇦" },
+    { name: "RetailTech Pro", country: "Australia", flag: "🇦🇺" },
+    { name: "BankSolutions AG", country: "Switzerland", flag: "🇨🇭" },
+    { name: "DataStream Inc", country: "Japan", flag: "🇯🇵" },
+    { name: "CloudFirst Dubai", country: "UAE", flag: "🇦🇪" },
+    { name: "Nordic AI Labs", country: "Sweden", flag: "🇸🇪" },
+    { name: "Smart Logistics", country: "Netherlands", flag: "🇳🇱" },
+    { name: "Pharma Innovate", country: "France", flag: "🇫🇷" },
+  ];
+
+  const testimonials = [
+    {
+      quote: "Nexcore Alliance transformed our operations with AI agents that reduced processing time by 75%. Their expertise is unmatched.",
+      author: "Sarah Mitchell",
+      role: "CTO",
+      company: "FinTech Global",
+      country: "New York, USA",
+      rating: 5
+    },
+    {
+      quote: "The team delivered a production-ready ML model in just 3 weeks. Exceptional quality and professionalism throughout.",
+      author: "Dr. James Wong",
+      role: "Head of AI",
+      company: "MediHealth Plus",
+      country: "Toronto, Canada",
+      rating: 5
+    },
+    {
+      quote: "Working with Nexcore Alliance has been a game-changer. Their AI solutions scaled our business globally with 99.9% uptime.",
+      author: "Emma Richardson",
+      role: "VP of Operations",
+      company: "RetailTech Pro",
+      country: "Sydney, Australia",
+      rating: 5
+    }
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentClientSet((prev) => (prev + 1) % Math.ceil(globalClients.length / 6));
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
 
   const aiSolutions = [
     { icon: Brain, title: "Intelligent Automation", description: "AI-powered automation to modernize and scale operations.", features: ["Smart Workflows", "Predictive Insights", "Efficiency Boost"] },
@@ -136,12 +217,13 @@ export default function NexCoreLanding() {
   const stats = [
     { icon: Award, value: "98.5%", label: "AI Accuracy" },
     { icon: Users, value: "500+", label: "Enterprise Clients" },
-    { icon: Layers, value: "99.9%", label: "System Uptime" },
+    { icon: Globe, value: "45+", label: "Countries Served" },
     { icon: Rocket, value: "48hr", label: "Deployment Time" },
   ];
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Hero Section */}
       <section className="bg-gradient-to-b from-blue-50 to-white py-32">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <HeroBadge icon={Zap} text="AI-POWERED ENTERPRISE SOLUTIONS" />
@@ -168,6 +250,81 @@ export default function NexCoreLanding() {
         </div>
       </section>
 
+      {/* Global Clients Section */}
+      <section className="bg-white py-20 border-y border-gray-200">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 mb-4">
+              <Globe className="w-4 h-4 text-blue-600" />
+              <span className="text-sm font-bold text-blue-700">TRUSTED WORLDWIDE</span>
+            </div>
+            <h2 className="text-4xl font-black text-gray-900 mb-3">Powering Innovation Across <span className="text-blue-600">6 Continents</span></h2>
+            <p className="text-gray-600 text-lg">Join 500+ enterprises worldwide that trust Nexcore Alliance</p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-4 mb-12">
+            {globalClients.slice(currentClientSet * 6, currentClientSet * 6 + 6).map((client, idx) => (
+              <ClientLogo key={idx} {...client} />
+            ))}
+          </div>
+
+          <div className="flex justify-center gap-2">
+            {[...Array(Math.ceil(globalClients.length / 6))].map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentClientSet(idx)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  currentClientSet === idx ? "bg-blue-600 w-8" : "bg-gray-300"
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="bg-gradient-to-b from-gray-50 to-white py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-yellow-50 border border-yellow-200 mb-4">
+              <Star className="w-4 h-4 text-yellow-600 fill-yellow-600" />
+              <span className="text-sm font-bold text-yellow-700">CLIENT SUCCESS STORIES</span>
+            </div>
+            <h2 className="text-4xl font-black text-gray-900 mb-3">What Our Global Partners Say</h2>
+            <p className="text-gray-600 text-lg">Real results from real businesses across the world</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, idx) => (
+              <TestimonialCard key={idx} {...testimonial} />
+            ))}
+          </div>
+
+          <div className="mt-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-12 text-center text-white shadow-2xl">
+            <div className="flex justify-center gap-8 mb-6 flex-wrap">
+              <div>
+                <div className="text-4xl font-black">4.9/5</div>
+                <div className="text-sm opacity-90">Average Rating</div>
+              </div>
+              <div className="border-l border-white opacity-30"></div>
+              <div>
+                <div className="text-4xl font-black">500+</div>
+                <div className="text-sm opacity-90">Happy Clients</div>
+              </div>
+              <div className="border-l border-white opacity-30"></div>
+              <div>
+                <div className="text-4xl font-black">98%</div>
+                <div className="text-sm opacity-90">Satisfaction Rate</div>
+              </div>
+            </div>
+            <p className="text-lg opacity-95 max-w-2xl mx-auto">
+              Join the world's leading enterprises who've transformed their operations with our AI solutions
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* AI Solutions Section */}
       <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="text-center mb-16">
           <HeroBadge icon={Brain} text="COMPREHENSIVE CAPABILITIES" />
@@ -187,6 +344,7 @@ export default function NexCoreLanding() {
         </div>
       </section>
 
+      {/* AI Agents Section */}
       <section className="bg-gradient-to-b from-blue-50 to-white py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-10">
@@ -210,6 +368,7 @@ export default function NexCoreLanding() {
         </div>
       </section>
 
+      {/* Tech Stack Section */}
       <section className="bg-white text-gray-900 py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-4">
@@ -248,6 +407,7 @@ export default function NexCoreLanding() {
         </div>
       </section>
 
+      {/* CTA Section */}
       <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="bg-blue-600 p-16 rounded-3xl text-center text-white shadow-2xl shadow-blue-300 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-64 h-64 bg-blue-500 rounded-full blur-3xl opacity-30"></div>

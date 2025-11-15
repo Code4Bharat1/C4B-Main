@@ -563,7 +563,7 @@ const ServiceCard = ({ service }) => {
           onClick={() => setShowModal(false)}
         >
           <div
-            className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl"
+            className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl mt-10"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header - Teal Green Background */}
@@ -746,11 +746,11 @@ const ServicesSection = () => {
                     Schedule Consultation
                   </button>
                 </Link>
-                <Link href="/contactus">
+                {/* <Link href="/contactus">
                   <button className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-bold rounded-xl border border-white/20 hover:bg-white/20 transition-all">
                     View Case Studies
                   </button>
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
