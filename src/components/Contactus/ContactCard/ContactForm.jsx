@@ -68,7 +68,7 @@ const ContactPage = () => {
     setIsSubmitting(true);
 
     try {
-      const whatsappNumber = "919594430295";
+      const whatsappNumber = "918976104646";
 
       const message = `🔔 *New Consultation Request*
 

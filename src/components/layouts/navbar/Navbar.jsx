@@ -80,16 +80,17 @@ const Navbar = () => {
         { label: "Approach", scroll: "approach" },
         { label: "About Us", scroll: "about" },
         { label: "Supporters", scroll: "supporters" },
-        { label: "Clients", scroll: "clients" },
-        {label:"Approach-Detail", scroll:"approach-detail"},
-        { label: "All Services", scroll: "all-services" },
-
         { label: "Values", scroll: "values" },
-        {}
+        { label: "Clients", scroll: "clients" },
+        { label:"Approach-Detail", scroll:"approach-detail" },
+        { label: "All Services", scroll: "all-services" },
+        { label: "Awards", scroll: "awards" },
+        // {}
       ]
     },
     { name: "Odoo", path: convertToPath("servicesweoffer") },
     { name: "AI Solutions", path: convertToPath("AISolutions") },
+    { name: "Case Studies", path: convertToPath("casestudy") },
     { name: "Reach out", path: convertToPath("Contact Us") },
   ];
 

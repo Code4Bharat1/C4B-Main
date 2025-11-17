@@ -85,7 +85,7 @@ const ContactSection = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           {/* WhatsApp Button */}
           <a
-            href="https://wa.me/9594430295"
+            href="https://wa.me/8976104646"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-4 px-8 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 overflow-hidden"

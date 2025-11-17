@@ -621,106 +621,106 @@ const ServiceCard = ({ service }) => {
         </div>
       </div>
 
- {showModal && (
-  <div
-    className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 mt-16"
-    onClick={() => setShowModal(false)}
-  >
-    <div
-      className="bg-white rounded-2xl w-full max-w-3xl md:max-w-4xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden"
-      onClick={(e) => e.stopPropagation()}
-    >
-      {/* HEADER */}
-      <div className="relative bg-gradient-to-br from-teal-500 to-teal-600 p-6 md:p-8">
-        <button
-          className="absolute top-4 right-4 w-10 h-10 bg-white/90 rounded-lg flex items-center justify-center text-teal-700 hover:bg-white transition-all shadow-md"
-          onClick={() => setShowModal(false)}
+      {showModal && (
+        <div
+          className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          // onClick={() => setShowModal(false)}
         >
-          <FaTimes className="w-5 h-5" />
-        </button>
-
-        <div className="flex flex-col md:flex-row items-start gap-4 md:gap-6">
-          <div className="w-16 h-16 md:w-20 md:h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-lg">
-            <service.Icon className="w-8 h-8 md:w-10 md:h-10 text-white" />
-          </div>
-
-          <div className="flex-1">
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
-              {service.title}
-            </h3>
-            <p className="text-white/95 text-sm md:text-base leading-relaxed">
-              {service.details}
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* CONTENT - Scrollable Area */}
-      <div className="p-5 md:p-8 overflow-y-auto flex-1">
-        <div className="mb-8">
-          <div className="flex items-center gap-3 mb-5">
-            <div className="w-1 h-7 bg-teal-500 rounded-full" />
-            <h4 className="text-xl font-bold text-slate-900">
-              Key Features & Capabilities
-            </h4>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {service.features.map((feature, idx) => (
-              <div
-                key={idx}
-                className="flex items-center gap-3 p-4 bg-white rounded-xl border border-slate-200 hover:border-teal-300 hover:shadow transition-all"
+          <div
+            className="bg-white rounded-2xl w-full max-w-3xl md:max-w-4xl max-h-[85vh] flex flex-col shadow-2xl overflow-hidden mt-20"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* HEADER */}
+            <div className="relative bg-gradient-to-br from-teal-500 to-teal-600 p-2 md:p-8">
+              <button
+                className="absolute top-4 right-4 w-10 h-10 bg-white/90 rounded-lg flex items-center justify-center text-teal-700 hover:bg-white transition-all shadow-md"
+                onClick={() => setShowModal(false)}
               >
-                <div className="w-7 h-7 bg-teal-500 rounded-lg flex items-center justify-center shadow-sm">
-                  <FaCheck className="w-4 h-4 text-white" />
+                <FaTimes className="w-5 h-5" />
+              </button>
+
+              <div className="flex flex-col md:flex-row items-start gap-4 md:gap-6">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-lg">
+                  <service.Icon className="w-8 h-8 md:w-10 md:h-10 text-white" />
                 </div>
-                <span className="text-sm font-medium text-slate-700">
-                  {feature}
-                </span>
+
+                <div className="flex-1">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-white/95 text-sm md:text-base leading-relaxed">
+                    {service.details}
+                  </p>
+                </div>
               </div>
-            ))}
+            </div>
+
+            {/* CONTENT - Scrollable Area */}
+            <div className="p-5 md:p-8 overflow-y-auto flex-1">
+              <div className="mb-8">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-1 h-7 bg-teal-500 rounded-full" />
+                  <h4 className="text-xl font-bold text-slate-900">
+                    Key Features & Capabilities
+                  </h4>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {service.features.map((feature, idx) => (
+                    <div
+                      key={idx}
+                      className="flex items-center gap-3 p-4 bg-white rounded-xl border border-slate-200 hover:border-teal-300 hover:shadow transition-all"
+                    >
+                      <div className="w-7 h-7 bg-teal-500 rounded-lg flex items-center justify-center shadow-sm">
+                        <FaCheck className="w-4 h-4 text-white" />
+                      </div>
+                      <span className="text-sm font-medium text-slate-700">
+                        {feature}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* CTA */}
+              <div className="bg-gradient-to-br from-teal-500 to-teal-600 rounded-2xl p-6 text-center">
+                <p className="text-white font-semibold text-base mb-4">
+                  Ready to transform your business with {service.title}?
+                </p>
+
+                <div className="flex flex-col md:flex-row justify-center gap-3">
+                  <Link href="/contactus">
+                    <button className="px-6 py-2.5 bg-white text-teal-700 rounded-xl font-semibold hover:shadow-lg transition-all text-sm">
+                      Get Started
+                    </button>
+                  </Link>
+
+                  {/* <Link href="/contactus">
+                    <button className="px-6 py-2.5 bg-white/20 backdrop-blur-sm text-white rounded-xl font-semibold hover:bg-white/30 transition-all text-sm border border-white/30">
+                      Learn More
+                    </button>
+                  </Link> */}
+                </div>
+              </div>
+            </div>
+
+            {/* FOOTER */}
+            <div className="px-6 py-4 bg-slate-50 border-t border-slate-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+              <p className="text-xs md:text-sm text-slate-600">
+                Need a custom solution?{" "}
+                <span className="font-semibold text-slate-900">Contact our experts</span>
+              </p>
+
+              <button
+                className="px-6 py-2.5 bg-teal-500 text-white font-semibold rounded-xl hover:bg-teal-600 transition-all text-sm shadow-md"
+                onClick={() => setShowModal(false)}
+              >
+                Close
+              </button>
+            </div>
           </div>
         </div>
-
-        {/* CTA */}
-        <div className="bg-gradient-to-br from-teal-500 to-teal-600 rounded-2xl p-6 text-center">
-          <p className="text-white font-semibold text-base mb-4">
-            Ready to transform your business with {service.title}?
-          </p>
-
-          <div className="flex flex-col md:flex-row justify-center gap-3">
-            <Link href="/contactus">
-              <button className="px-6 py-2.5 bg-white text-teal-700 rounded-xl font-semibold hover:shadow-lg transition-all text-sm">
-                Get Started
-              </button>
-            </Link>
-
-            <Link href="/contactus">
-              <button className="px-6 py-2.5 bg-white/20 backdrop-blur-sm text-white rounded-xl font-semibold hover:bg-white/30 transition-all text-sm border border-white/30">
-                Learn More
-              </button>
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      {/* FOOTER */}
-      <div className="px-6 py-4 bg-slate-50 border-t border-slate-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
-        <p className="text-xs md:text-sm text-slate-600">
-          Need a custom solution?{" "}
-          <span className="font-semibold text-slate-900">Contact our experts</span>
-        </p>
-
-        <button
-          className="px-6 py-2.5 bg-teal-500 text-white font-semibold rounded-xl hover:bg-teal-600 transition-all text-sm shadow-md"
-          onClick={() => setShowModal(false)}
-        >
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-)}
+      )}
 
 
     </>
@@ -774,11 +774,10 @@ const ServicesSection = () => {
               <button
                 key={index}
                 onClick={() => setActiveCategory(index)}
-                className={`flex-shrink-0 px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold text-xs sm:text-sm transition-all duration-200 ${
-                  activeCategory === index
+                className={`flex-shrink-0 px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold text-xs sm:text-sm transition-all duration-200 ${activeCategory === index
                     ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/30"
                     : "bg-white text-slate-700 hover:bg-slate-50 border border-slate-200 hover:border-slate-300"
-                }`}
+                  }`}
               >
                 {category.category}
               </button>

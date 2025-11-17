@@ -93,8 +93,8 @@ export default function ShippingPolicy() {
 
             <motion.p variants={itemVariants}>
               For any shipping or delivery-related concerns, please contact us at&nbsp;
-              <a href="mailto:nexcorealliance@gmail.com" className="text-blue-500 hover:underline">
-                nexcorealliance@gmail.com
+              <a href="mailto:director@nexcorealliance.com" className="text-blue-500 hover:underline">
+                director@nexcorealliance.com
               </a>. We’re here to assist you.
             </motion.p>
           </motion.div>

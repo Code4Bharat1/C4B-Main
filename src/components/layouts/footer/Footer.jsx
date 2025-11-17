@@ -84,11 +84,11 @@ const Footer = () => {
                   icon: <FaInstagram />,
                   gradient: "from-pink-600 via-purple-600 to-orange-500",
                 },
-                {
-                  href: "https://twitter.com/nexcore",
-                  icon: <RiTwitterXLine />,
-                  gradient: "from-slate-800 to-slate-900",
-                },
+                // {
+                //   href: "https://twitter.com/nexcore",
+                //   icon: <RiTwitterXLine />,
+                //   gradient: "from-slate-800 to-slate-900",
+                // },
                 {
                   href: "https://www.youtube.com/channel/UCYqpIltw48XxkMRLC-HCgag",
                   icon: <FaYoutube />,
@@ -127,6 +127,8 @@ const Footer = () => {
                 { name: "What we offer", path: "/services" },
                 { name: "Trusted By", path: "/clients" },
                 { name: "Strategy", path: "/approach" },
+                { name: "AI Solutions", path: "/aisloutions" },
+                { name: "Case Studies", path: "/casestudy" },
               ].map((link, i) => (
                 <motion.li
                   key={i}
@@ -183,14 +185,14 @@ const Footer = () => {
               {[
                 {
                   icon: <FiPhone className="w-5 h-5" />,
-                  text: "+91 959 443 0295",
-                  href: "https://wa.me/919594430295",
+                  text: "+91 98976104646",
+                  href: "https://wa.me/918976104646",
                   gradient: "from-green-500 to-emerald-500",
                 },
                 {
                   icon: <FiMail className="w-5 h-5" />,
-                  text: "nexcorealliance@gmail.com",
-                  href: "mailto:nexcorealliance@gmail.com",
+                  text: "director@nexcorealliance.com",
+                  href: "mailto:director@nexcorealliance.com",
                   gradient: "from-blue-500 to-cyan-500",
                 },
                 {
@@ -239,7 +241,7 @@ const Footer = () => {
                   Let's discuss how we can help you achieve your goals
                 </p>
               </div>
-              <Link href="https://wa.me/919594430295">
+              <Link href="https://wa.me/918976104646">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -285,7 +287,7 @@ const Footer = () => {
 
       {/* WhatsApp Floating Button */}
       <motion.a
-        href="https://wa.me/919594430295"
+        href="https://wa.me/918976104646"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center shadow-2xl z-50 group"

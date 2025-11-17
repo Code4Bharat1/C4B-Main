@@ -60,7 +60,7 @@ const ContactSection = () => {
 
         {/* Buttons Container */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-          <Link href="https://wa.me/9594430295">
+          <Link href="https://wa.me/8976104646">
             <button className="group relative bg-gradient-to-r from-blue-600 via-cyan-600 to-blue-600 hover:from-blue-700 hover:via-cyan-700 hover:to-blue-700 text-white font-bold py-4 px-10 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-blue-500/50 flex items-center gap-3 overflow-hidden">
               {/* Animated Background */}
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>

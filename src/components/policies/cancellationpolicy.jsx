@@ -58,8 +58,8 @@ export default function CancellationPolicy() {
       title: "Submission of Cancellation Requests",
       icon: <Mail className="w-6 h-6" />,
       color: "from-blue-500 to-cyan-500",
-      content: "All cancellation requests must be submitted in writing via email to nexcorealliance@gmail.com.",
-      email: "nexcorealliance@gmail.com"
+      content: "All cancellation requests must be submitted in writing via email to director@nexcorealliance.com.",
+      email: "director@nexcorealliance.com"
     },
     {
       number: 2,
@@ -229,14 +229,14 @@ export default function CancellationPolicy() {
                   Submit your cancellation request to:
                 </p>
                 <a
-                  href="mailto:nexcorealliance@gmail.com"
+                  href="mailto:director@nexcorealliance.com"
                   className="group inline-flex items-center gap-3 bg-white p-4 rounded-lg hover:shadow-md transition-all duration-300 border border-green-100"
                 >
                   <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <Mail className="w-5 h-5 text-white" />
                   </div>
                   <span className="text-green-600 hover:text-green-800 font-medium break-all">
-                    nexcorealliance@gmail.com
+                    director@nexcorealliance.com
                   </span>
                 </a>
               </div>

@@ -118,7 +118,7 @@ const ContactSection = () => {
             
             {/* Gradient CTA Button */}
             <div className="pt-6">
-              <Link href="https://wa.me/9594430295">
+              <Link href="https://wa.me/8976104646">
                 <button className="group bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 hover:from-green-700 hover:via-emerald-700 hover:to-teal-700 text-white font-bold py-4 px-8 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center gap-3">
                   <span>Partner With Us</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />

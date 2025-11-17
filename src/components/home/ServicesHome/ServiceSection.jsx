@@ -376,7 +376,7 @@ const ServiceSection = () => {
             <p className="text-sm sm:text-base text-slate-300 max-w-xl text-center">
               Let's discuss how our services can help you achieve your goals
             </p>
-            <a href="https://wa.me/919594430295" className="w-full sm:w-auto">
+            <a href="https://wa.me/918976104646" className="w-full sm:w-auto">
               <button className="w-full sm:w-auto px-6 sm:px-10 py-3 sm:py-4 bg-white text-slate-900 font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-105">
                 Schedule a Free Consultation
               </button>
@@ -438,7 +438,7 @@ const ServiceSection = () => {
 
             {/* CTA */}
             <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-slate-200">
-              <a href="https://wa.me/919594430295">
+              <a href="https://wa.me/918976104646">
                 <button className={`w-full py-3 sm:py-4 bg-gradient-to-r ${selectedService.gradient} text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 text-sm sm:text-base hover:scale-105`}>
                   Get Started with {selectedService.title}
                   <FaArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />

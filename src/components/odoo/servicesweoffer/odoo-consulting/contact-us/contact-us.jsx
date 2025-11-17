@@ -98,7 +98,7 @@ const ContactSection = () => {
             transition={{ delay: 0.6 }}
             className="flex flex-wrap items-center justify-center gap-4 pt-4"
           >
-            <Link href="https://wa.me/919594430295">
+            <Link href="https://wa.me/918976104646">
               <motion.button
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
@@ -117,7 +117,7 @@ const ContactSection = () => {
               </motion.button>
             </Link>
 
-            <Link href="tel:+919594430295">
+            <Link href="tel:+918976104646">
               <motion.button
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}

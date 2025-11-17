@@ -80,7 +80,7 @@ const SecondContactSection = () => {
         {/* CTA Button */}
         <div className="animate-fade-in-up animation-delay-800">
           <a 
-            href="https://wa.me/9594430295"
+            href="https://wa.me/8976104646"
             target="_blank"
             rel="noopener noreferrer"
             onMouseEnter={() => setIsHovered(true)}

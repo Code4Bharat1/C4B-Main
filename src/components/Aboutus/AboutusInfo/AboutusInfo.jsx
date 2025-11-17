@@ -44,10 +44,11 @@ const AboutusInfo = () => {
   ];
 
   const stats = [
-    { Icon: FaRocket, number: "500+", label: "Projects Delivered" },
-    { Icon: FaUsers, number: "50+", label: "Happy Clients" },
-    { Icon: FaLightbulb, number: "98%", label: "Success Rate" },
-  ];
+  { Icon: FaRocket, number: "120+", label: "Projects Completed" },
+  { Icon: FaUsers, number: "35+", label: "Clients Served" },
+  { Icon: FaLightbulb, number: "94%", label: "On-time Delivery Rate" },
+];
+
 
   return (
     <section className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 py-20 md:py-32 relative overflow-hidden">
@@ -124,22 +125,37 @@ const AboutusInfo = () => {
             </motion.div>
 
             {/* Stats Row */}
-            <motion.div
-              variants={itemVariants}
-              className="grid grid-cols-3 gap-4 pt-6"
-            >
-              {stats.map((stat, idx) => (
-                <motion.div
-                  key={idx}
-                  whileHover={{ y: -4 }}
-                  className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 text-white shadow-lg"
-                >
-                  <stat.Icon className="w-6 h-6 mb-2" />
-                  <div className="text-2xl font-bold">{stat.number}</div>
-                  <div className="text-xs text-blue-100 text-center">{stat.label}</div>
-                </motion.div>
-              ))}
-            </motion.div>
+<motion.div
+  variants={itemVariants}
+  className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 pt-8"
+>
+  {stats.map((stat, idx) => (
+    <motion.div
+      key={idx}
+      whileHover={{ y: -4, scale: 1.03 }}
+      className="flex flex-col items-center justify-center rounded-2xl 
+                 bg-white text-blue-700 border border-blue-100 shadow-md 
+                 hover:shadow-xl transition-all px-6 py-5"
+    >
+      {/* Icon Wrapper */}
+      <div className="mb-3 flex h-12 w-12 items-center justify-center 
+                      rounded-full bg-blue-100">
+        <stat.Icon className="w-6 h-6 text-blue-600" />
+      </div>
+
+      {/* Number */}
+      <div className="text-3xl font-bold tracking-tight text-blue-700">
+        {stat.number}
+      </div>
+
+      {/* Label */}
+      <div className="mt-1 text-sm text-blue-500 text-center font-medium">
+        {stat.label}
+      </div>
+    </motion.div>
+  ))}
+</motion.div>
+
           </motion.div>
 
           {/* Right Section: Video */}

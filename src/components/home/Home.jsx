@@ -11,6 +11,7 @@ import ValuesSection from "../Aboutus/Values/ValuesSection";
 import Clientsec from "../Clients/ClientsSec/ClientsSec";
 import ApproachSec from "../Approach/ApproachSec/ApproachSec";
 import ServicesSection from "../Services/ServiceSection/ServiceSec";
+import Awards from "../Awards/Awards";
 
 const Home = () => {
   return (
@@ -80,6 +81,10 @@ const Home = () => {
 
         <section id="all-services">
           <ServicesSection />
+        </section>
+
+        <section id="awards">
+          <Awards />
         </section>
 
         <Footer />

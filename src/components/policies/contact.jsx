@@ -6,16 +6,16 @@ export default function ContactSection() {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      value: "nexcorealliance@gmail.com",
-      link: "mailto:nexcorealliance@gmail.com",
+      value: "director@nexcorealliance.com",
+      link: "mailto:director@nexcorealliance.com",
       color: "from-blue-500 to-cyan-500",
       responseTime: "24-48 hours"
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone",
-      value: "+91-9594430295",
-      link: "tel:+919594430295",
+      value: "+91-8976104646",
+      link: "tel:+918976104646",
       color: "from-green-500 to-emerald-500",
       responseTime: "Immediate"
     },

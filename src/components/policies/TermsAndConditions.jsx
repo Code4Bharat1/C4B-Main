@@ -163,25 +163,25 @@ const TermsAndConditions = () => {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <a
-                  href="mailto:nexcorealliance@gmail.com"
+                  href="mailto:director@nexcorealliance.com"
                   className="group flex items-center gap-3 bg-white p-4 rounded-lg hover:shadow-md transition-all duration-300 border border-blue-100"
                 >
                   <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <Mail className="w-5 h-5 text-white" />
                   </div>
                   <span className="text-blue-600 hover:text-blue-800 font-medium text-sm break-all">
-                    nexcorealliance@gmail.com
+                    director@nexcorealliance.com
                   </span>
                 </a>
                 <a
-                  href="tel:+919594430295"
+                  href="tel:+918976104646"
                   className="group flex items-center gap-3 bg-white p-4 rounded-lg hover:shadow-md transition-all duration-300 border border-blue-100"
                 >
                   <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <Phone className="w-5 h-5 text-white" />
                   </div>
                   <span className="text-blue-600 hover:text-blue-800 font-medium">
-                    +91-9594430295
+                    +91-8976104646
                   </span>
                 </a>
               </div>

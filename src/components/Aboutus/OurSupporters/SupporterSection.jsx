@@ -79,8 +79,8 @@ const SupportersSection = () => {
                 <FaStar className="w-5 h-5 text-white" />
               </div>
               <div className="text-left">
-                <div className="text-2xl font-bold text-white">50+</div>
-                <div className="text-xs text-slate-400">Happy Clients</div>
+                <div className="text-2xl font-bold text-white">35+</div>
+                <div className="text-xs text-slate-400">Clients Served</div>
               </div>
             </div>
             <div className="w-px h-12 bg-slate-600" />
@@ -89,8 +89,8 @@ const SupportersSection = () => {
                 <FaHandshake className="w-5 h-5 text-white" />
               </div>
               <div className="text-left">
-                <div className="text-2xl font-bold text-white">500+</div>
-                <div className="text-xs text-slate-400">Projects Done</div>
+                <div className="text-2xl font-bold text-white">120+</div>
+                <div className="text-xs text-slate-400">Projects Completed</div>
               </div>
             </div>
           </div>

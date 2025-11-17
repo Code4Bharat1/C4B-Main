@@ -72,7 +72,7 @@ const ContactSection = () => {
               {/* Buttons Group */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 {/* Primary CTA Button */}
-                <Link href="https://wa.me/9594430295">
+                <Link href="https://wa.me/8976104646">
                   <button className="group bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 hover:from-green-700 hover:via-emerald-700 hover:to-teal-700 text-white font-bold py-4 px-8 rounded-xl shadow-2xl hover:shadow-green-500/50 transform hover:scale-105 transition-all duration-300 flex items-center gap-3">
                     <Phone className="w-5 h-5" />
                     <span>Contact Us</span>

@@ -42,14 +42,14 @@ const ContactUsHeroSection = () => {
       Icon: FaPhone,
       label: "Call Us",
       value: "+91 959 443 0295",
-      href: "tel:+919594430295",
+      href: "tel:+918976104646",
       gradient: "from-blue-500 to-cyan-500",
     },
     {
       Icon: FaEnvelope,
       label: "Email Us",
-      value: "nexcorealliance@gmail.com",
-      href: "mailto:nexcorealliance@gmail.com",
+      value: "director@nexcorealliance.com",
+      href: "mailto:director@nexcorealliance.com",
       gradient: "from-purple-500 to-pink-500",
     },
     {
@@ -167,7 +167,7 @@ const ContactUsHeroSection = () => {
               variants={itemVariants}
               className="flex flex-wrap gap-4"
             >
-              <Link href="https://wa.me/919594430295">
+              <Link href="https://wa.me/918976104646">
                 <motion.button
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
@@ -186,7 +186,7 @@ const ContactUsHeroSection = () => {
                 </motion.button>
               </Link>
 
-              <Link href="mailto:nexcorealliance@gmail.com">
+              <Link href="mailto:director@nexcorealliance.com">
                 <motion.button
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
