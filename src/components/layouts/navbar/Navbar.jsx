@@ -7,8 +7,7 @@ import { usePathname } from "next/navigation";
 import Head from "next/head";
 import { motion } from "framer-motion";
 
-
-// Import our new smaller components
+// Import Components
 import MobileMenu from "./MobileMenu/MobileMenu";
 import DesktopMenu from "./DesktopMenu/DesktopMenu";
 
@@ -16,25 +15,25 @@ const Navbar = () => {
   // Mobile Menu open/close
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
-  // Detect if screen is mobile (changed to lg breakpoint for better responsive design)
+  // Detect if screen is mobile
   const [isMobile, setIsMobile] = useState(false);
-  
-  // Scroll detection for enhanced navbar
+
+  // Scroll detection
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 1024); // Changed to lg breakpoint (1024px)
+      setIsMobile(window.innerWidth <= 1024);
     };
-    
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-    
+
     handleResize();
     window.addEventListener("resize", handleResize);
     window.addEventListener("scroll", handleScroll);
-    
+
     return () => {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("scroll", handleScroll);
@@ -44,15 +43,15 @@ const Navbar = () => {
   // Current route
   const pathname = usePathname();
 
-  // Close mobile menu on direct link click
+  // Close mobile menu
   const handleLinkClick = () => {
     setIsMenuOpen(false);
   };
 
-  // Helper: Convert a name to a URL-friendly path
+  // Convert title to link path
   const convertToPath = (name) => `/${name.toLowerCase().replace(/\s+/g, "")}`;
 
-  // Framer Motion animations
+  // Animation
   const navVariants = {
     hidden: { opacity: 0, y: -20 },
     visible: {
@@ -62,31 +61,52 @@ const Navbar = () => {
     },
   };
 
+  // Smooth Scroll
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      setIsMenuOpen(false);
+    }
+  };
+
   // Main Menu Items
   const menuItems = [
-    { name: "Hub", path: "/" },
-    //{ name: "Behind the code", path: convertToPath("About Us") },
-    { name: "Odoo", path: convertToPath("servicesweoffer") },
-    //{ name: "Trusted By", path: convertToPath("Clients") },
-    //{ name: "Strategy", path: convertToPath("Approach") },
-    //{ name: "What we offer", path: convertToPath("Services") },
-    {name: "AI Solutions", path: convertToPath("AISolutions")},
-    { name: "Reach out", path: convertToPath("Contact Us") },
+    { 
+      name: "Hub", 
+      dropdown: [
+        { label: "Home", scroll: "home" },
+        { label: "Services", scroll: "services" },
+        { label: "Approach", scroll: "approach" },
+        { label: "About Us", scroll: "about" },
+        { label: "Supporters", scroll: "supporters" },
+        { label: "Clients", scroll: "clients" },
+        {label:"Approach-Detail", scroll:"approach-detail"},
+        { label: "All Services", scroll: "all-services" },
 
-   
+        { label: "Values", scroll: "values" },
+        {}
+      ]
+    },
+    { name: "Odoo", path: convertToPath("servicesweoffer") },
+    { name: "AI Solutions", path: convertToPath("AISolutions") },
+    { name: "Reach out", path: convertToPath("Contact Us") },
   ];
 
   return (
     <>
       <Head>
         <title>NEXCORE ALLIANCE LLP - Leading IT Solutions Provider</title>
-        <meta name="description" content="NEXCORE ALLIANCE LLP specializes in cutting-edge web development and comprehensive IT solutions for businesses worldwide" />
+        <meta
+          name="description"
+          content="NEXCORE ALLIANCE LLP specializes in cutting-edge web development and comprehensive IT solutions for businesses worldwide"
+        />
       </Head>
 
-      <motion.nav 
+      <motion.nav
         className={`w-full fixed top-0 z-50 transition-all duration-300 ${
-          isScrolled 
-            ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100" 
+          isScrolled
+            ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100"
             : "bg-white shadow-md"
         }`}
         initial="hidden"
@@ -95,8 +115,8 @@ const Navbar = () => {
       >
         <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 sm:h-18 lg:h-20 xl:h-22">
-            
-            {/* LOGO Section */}
+
+            {/* LOGO */}
             <motion.div
               className="flex-shrink-0"
               initial="hidden"
@@ -108,7 +128,6 @@ const Navbar = () => {
               <Link href="/" onClick={handleLinkClick}>
                 <Image
                   src="/nex.png"
-                  // src="/images/c4b.png"
                   alt="NEXCORE ALLIANCE LLP Logo"
                   width={150}
                   height={150}
@@ -118,7 +137,17 @@ const Navbar = () => {
               </Link>
             </motion.div>
 
-            {/* Mobile Hamburger Icon */}
+            {/* Desktop Scroll Menu
+            <ul className="hidden md:flex space-x-8">
+              <li><button onClick={() => scrollToSection("home")} className="hover:text-blue-600 transition cursor-pointer">Home</button></li>
+              <li><button onClick={() => scrollToSection("services")} className="hover:text-blue-600 transition cursor-pointer">Services</button></li>
+              <li><button onClick={() => scrollToSection("approach")} className="hover:text-blue-600 transition cursor-pointer">Approach</button></li>
+              <li><button onClick={() => scrollToSection("about")} className="hover:text-blue-600 transition cursor-pointer">About Us</button></li>
+              <li><button onClick={() => scrollToSection("clients")} className="hover:text-blue-600 transition cursor-pointer">Clients</button></li>
+              <li><button onClick={() => scrollToSection("values")} className="hover:text-blue-600 transition cursor-pointer">Values</button></li>
+            </ul> */}
+
+            {/* Mobile Hamburger */}
             <button
               className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -127,16 +156,15 @@ const Navbar = () => {
               <BiMenuAltRight className="w-6 h-6 sm:w-7 sm:h-7 text-[#112D4E]" />
             </button>
 
-            {/* Desktop Menu */}
+            {/* Desktop Main Menu */}
             {!isMobile && (
               <div className="flex items-center space-x-4 lg:space-x-6">
                 <DesktopMenu
                   menuItems={menuItems}
                   pathname={pathname}
                   handleLinkClick={handleLinkClick}
+                  scrollToSection={scrollToSection}
                 />
-                
-                
               </div>
             )}
           </div>
@@ -150,11 +178,12 @@ const Navbar = () => {
             pathname={pathname}
             menuItems={menuItems}
             handleLinkClick={handleLinkClick}
+            scrollToSection={scrollToSection}
           />
         )}
       </motion.nav>
-      
-      {/* Spacer to prevent content from being hidden under fixed navbar */}
+
+      {/* Prevent Content Overlap */}
       <div className="h-16 sm:h-18 lg:h-20 xl:h-22"></div>
     </>
   );

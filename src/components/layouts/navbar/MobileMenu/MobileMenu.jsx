@@ -1,4 +1,3 @@
-"use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -12,6 +11,7 @@ const MobileMenu = ({
   pathname,
   menuItems,
   handleLinkClick,
+  scrollToSection,
 }) => {
   // Submenu states
   const [isOdooDropdownOpen, setIsOdooDropdownOpen] = useState(false);
@@ -19,6 +19,7 @@ const MobileMenu = ({
   const [isAppsDropdownOpen, setIsAppsDropdownOpen] = useState(false);
   const [isManufacturingDropdownOpen, setIsManufacturingDropdownOpen] = useState(false);
   const [isHRDropdownOpen, setIsHRDropdownOpen] = useState(false);
+  const [isHubDropdownOpen, setIsHubDropdownOpen] = useState(false);
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -84,6 +85,7 @@ const MobileMenu = ({
     setIsAppsDropdownOpen(false);
     setIsManufacturingDropdownOpen(false);
     setIsHRDropdownOpen(false);
+    setIsHubDropdownOpen(false);
   };
 
   // Enhanced toggle function with haptic feedback simulation
@@ -99,6 +101,7 @@ const MobileMenu = ({
         setIsAppsDropdownOpen(false);
         setIsManufacturingDropdownOpen(false);
         setIsHRDropdownOpen(false);
+        setIsHubDropdownOpen(false);
         setIsOdooDropdownOpen((prev) => !prev);
         break;
       case "Services":
@@ -116,6 +119,12 @@ const MobileMenu = ({
       case "HR":
         setIsHRDropdownOpen((prev) => !prev);
         setIsManufacturingDropdownOpen(false);
+        break;
+      case "Hub":
+        setIsOdooDropdownOpen(false);
+        setIsServicesDropdownOpen(false);
+        setIsAppsDropdownOpen(false);
+        setIsHubDropdownOpen((prev) => !prev);
         break;
       default:
         break;
@@ -167,8 +176,73 @@ const MobileMenu = ({
             {/* Scrollable Content */}
             <div className="flex-1 overflow-y-auto pb-6" style={{ maxHeight: 'calc(100vh - 80px)' }}>
               <div className="px-4 pt-2">
-                {menuItems.map(({ name, path }, index) => {
-                  if (name === "Odoo") {
+                {menuItems.map(({ name, path, dropdown }, index) => {
+                  if (name === "Hub") {
+                    return (
+                      <motion.div
+                        key={name}
+                        variants={itemVariants}
+                        initial="hidden"
+                        animate="visible"
+                        custom={index}
+                        className="mb-2"
+                      >
+                        {/* Main Hub Button */}
+                        <motion.button
+                          onClick={() => toggleDropdown("Hub")}
+                          className={`w-full flex items-center justify-between p-4 rounded-lg text-left transition-all duration-200 ${
+                            isHubDropdownOpen 
+                              ? "bg-purple-50 text-[#873070]" 
+                              : "hover:bg-gray-50 text-gray-700"
+                          }`}
+                          whileTap={{ scale: 0.98 }}
+                        >
+                          <span className="font-medium">Hub</span>
+                          <motion.span
+                            animate={{ rotate: isHubDropdownOpen ? 90 : 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="text-lg"
+                          >
+                            <AiOutlineRight />
+                          </motion.span>
+                        </motion.button>
+
+                        {/* Hub Submenu */}
+                        <AnimatePresence>
+                          {isHubDropdownOpen && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.3, ease: "easeInOut" }}
+                              className="overflow-hidden bg-gray-50 rounded-lg mt-1 ml-2"
+                            >
+                              <div className="p-3 space-y-1">
+                                {dropdown?.map((sub, idx) => (
+                                  <button
+                                    key={idx}
+                                    onClick={() => {
+                                      if (sub.scroll && typeof window !== 'undefined') {
+                                        const element = document.getElementById(sub.scroll);
+                                        if (element) {
+                                          element.scrollIntoView({ behavior: 'smooth' });
+                                        }
+                                      }
+                                      setIsMenuOpen(false);
+                                      closeAllSubmenus();
+                                    }}
+                                    className="block w-full text-left p-3 rounded-md text-sm text-gray-600 hover:bg-white hover:text-[#873070] transition-colors"
+                                  >
+                                    {sub.label}
+                                  </button>
+                                ))}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </motion.div>
+                    );
+                  } else if (name === "Odoo") {
                     return (
                       <motion.div
                         key={name}
@@ -403,7 +477,7 @@ const MobileMenu = ({
                         custom={index}
                         className="mb-2"
                       >
-                        <Link href={path} onClick={handleMenuLinkClick}>
+                        <Link href={path || "/"} onClick={handleMenuLinkClick}>
                           <motion.div
                             className={`flex items-center justify-between p-4 rounded-lg transition-colors ${
                               pathname === path

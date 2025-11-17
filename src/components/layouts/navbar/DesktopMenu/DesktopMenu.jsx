@@ -1,4 +1,3 @@
-"use client";
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -12,6 +11,7 @@ const DesktopMenu = ({ menuItems, pathname, handleLinkClick }) => {
   const [isManufacturingDropdownOpen, setIsManufacturingDropdownOpen] =
     useState(false);
   const [isHRDropdownOpen, setIsHRDropdownOpen] = useState(false);
+  const [isHubDropdownOpen, setIsHubDropdownOpen] = useState(false);
 
   const menuRef = useRef(null);
 
@@ -23,6 +23,7 @@ const DesktopMenu = ({ menuItems, pathname, handleLinkClick }) => {
         setIsAppsDropdownOpen(false);
         setIsManufacturingDropdownOpen(false);
         setIsHRDropdownOpen(false);
+        setIsHubDropdownOpen(false);
       }
     };
 
@@ -60,6 +61,9 @@ const DesktopMenu = ({ menuItems, pathname, handleLinkClick }) => {
       case "HR":
         setIsHRDropdownOpen(true);
         break;
+      case "Hub":
+        setIsHubDropdownOpen(true);
+        break;
       default:
         break;
     }
@@ -82,6 +86,9 @@ const DesktopMenu = ({ menuItems, pathname, handleLinkClick }) => {
       case "HR":
         setIsHRDropdownOpen(false);
         break;
+      case "Hub":
+        setIsHubDropdownOpen(false);
+        break;
       default:
         break;
     }
@@ -97,6 +104,8 @@ const DesktopMenu = ({ menuItems, pathname, handleLinkClick }) => {
         return isManufacturingDropdownOpen;
       case "HR":
         return isHRDropdownOpen;
+      case "Hub":
+        return isHubDropdownOpen;
       default:
         return false;
     }
@@ -110,44 +119,91 @@ const DesktopMenu = ({ menuItems, pathname, handleLinkClick }) => {
       animate="visible"
       variants={navVariants}
     >
-      {menuItems.map(({ name, path }, idx) => (
+      {menuItems.map(({ name, path, dropdown }, idx) => (
         <motion.div key={idx} variants={navVariants} className="relative group">
-          <Link href={path} onClick={handleLinkClick}>
+          {(name === "Odoo" || name === "Hub") ? (
             <h3
               onClick={(e) => {
+                e.preventDefault();
                 if (name === "Odoo") {
-                  e.preventDefault(); // prevent page navigation
                   setIsOdooDropdownOpen((prev) => !prev);
-                } else {
-                  handleLinkClick?.();
+                } else if (name === "Hub") {
+                  setIsHubDropdownOpen((prev) => !prev);
                 }
               }}
-              className={`text-sm lg:text-base xl:text-lg font-medium capitalize whitespace-nowrap flex items-center gap-1 ${
+              className={`text-sm lg:text-base xl:text-lg font-medium capitalize whitespace-nowrap flex items-center gap-1 cursor-pointer ${
                 pathname === path
                   ? "text-[#3b84d6] font-bold border-b-2 border-[#3b84d6]"
                   : "hover:text-[#3b84d6] transition-colors duration-200"
               }`}
             >
               {name}
-              {name === "Odoo" && (
-                <motion.svg
-                  className="w-4 h-4"
-                  animate={{ rotate: isOdooDropdownOpen ? 180 : 0 }}
-                  transition={{ duration: 0.3 }}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </motion.svg>
-              )}
+              <motion.svg
+                className="w-4 h-4"
+                animate={{ rotate: (name === "Odoo" ? isOdooDropdownOpen : isHubDropdownOpen) ? 180 : 0 }}
+                transition={{ duration: 0.3 }}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </motion.svg>
             </h3>
-          </Link>
+          ) : (
+            <Link href={path || "/"} onClick={handleLinkClick}>
+              <h3
+                className={`text-sm lg:text-base xl:text-lg font-medium capitalize whitespace-nowrap flex items-center gap-1 ${
+                  pathname === path
+                    ? "text-[#3b84d6] font-bold border-b-2 border-[#3b84d6]"
+                    : "hover:text-[#3b84d6] transition-colors duration-200"
+                }`}
+              >
+                {name}
+              </h3>
+            </Link>
+          )}
+
+          {/* Hub Dropdown */}
+          {name === "Hub" && isHubDropdownOpen && (
+            <AnimatePresence>
+              <motion.div
+                className="absolute top-10 left-full md:left-auto md:right-0 mr-2 bg-white shadow-xl rounded-lg w-48 md:w-56"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3 }}
+              >
+                <ul className="text-gray-700 py-2">
+                  {dropdown?.map((sub, index) => (
+                    <li
+                      key={index}
+                      className="py-2 px-4 hover:bg-gray-100 hover:text-[#873070] transition-colors duration-200"
+                    >
+                      <button
+                        onClick={() => {
+                          if (sub.scroll && typeof window !== 'undefined') {
+                            const element = document.getElementById(sub.scroll);
+                            if (element) {
+                              element.scrollIntoView({ behavior: 'smooth' });
+                            }
+                          }
+                          setIsHubDropdownOpen(false);
+                        }}
+                        className="w-full text-left text-sm md:text-base"
+                      >
+                        {sub.label}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            </AnimatePresence>
+          )}
 
           {/* Odoo Dropdown */}
           {name === "Odoo" && isOdooDropdownOpen && (
@@ -326,110 +382,6 @@ const DesktopMenu = ({ menuItems, pathname, handleLinkClick }) => {
                               Odoo Email Marketing
                             </Link>
                           </li>
-
-                          {/* Odoo Manufacturing (sub-sub-menu) */}
-                          {/* <li
-                            className="relative hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base cursor-pointer"
-                            onMouseEnter={() =>
-                              handleDropdownEnter("Manufacturing")
-                            }
-                            onMouseLeave={() =>
-                              handleDropdownLeave("Manufacturing")
-                            } */}
-                          {/* > */}
-                            {/* <div className="flex items-center justify-between">
-                              <Link href="/apps/odoo-manufacturing">
-                                Odoo Manufacturing
-                              </Link>
-                              <motion.span
-                                animate={{ x: isOpen("Manufacturing") ? 5 : 0 }}
-                                className="ml-2"
-                                transition={{ duration: 0.2 }}
-                              >
-                                <AiOutlineRight className="-rotate-180" />
-                              </motion.span>
-                            </div>
-
-                            {isManufacturingDropdownOpen && (
-                              <AnimatePresence>
-                                <motion.div
-                                  className="absolute top-0 right-full mr-2 bg-white shadow-xl rounded-lg w-48 md:w-56"
-                                  initial={{ opacity: 0, x: 10 }}
-                                  animate={{ opacity: 1, x: 0 }}
-                                  exit={{ opacity: 0, x: 10 }}
-                                  transition={{ duration: 0.3 }}
-                                >
-                                  <ul className="text-gray-700 py-2">
-                                    <li className="py-2 px-4 hover:bg-gray-100 hover:text-[#873070] transition-colors duration-200 text-sm">
-                                      <Link href="/apps/odoo-maintenance">
-                                        Odoo Maintenance
-                                      </Link>
-                                    </li>
-                                    <li className="py-2 px-4 hover:bg-gray-100 hover:text-[#873070] transition-colors duration-200 text-sm">
-                                      <Link href="/apps/odoo-plm">
-                                        Odoo PLM
-                                      </Link>
-                                    </li>
-                                    <li className="py-2 px-4 hover:bg-gray-100 hover:text-[#873070] transition-colors duration-200 text-sm">
-                                      <Link href="/apps/odoo-quality">
-                                        Odoo Quality
-                                      </Link>
-                                    </li>
-                                  </ul>
-                                </motion.div>
-                              </AnimatePresence>
-                            )}
-                          </li> */}
-
-                          {/* Odoo HR Management (sub-sub-menu) */}
-                          {/* <li
-                            className="relative hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base cursor-pointer"
-                            onMouseEnter={() => handleDropdownEnter("HR")}
-                            onMouseLeave={() => handleDropdownLeave("HR")}
-                          >
-                            <div className="flex items-center justify-between">
-                              <Link href="/apps/odoo-hr-management">
-                                Odoo HR Management
-                              </Link>
-                              <motion.span
-                                animate={{ x: isOpen("HR") ? 5 : 0 }}
-                                transition={{ duration: 0.2 }}
-                                className="ml-2"
-                              >
-                                <AiOutlineRight />
-                              </motion.span>
-                            </div>
-
-                            {isHRDropdownOpen && (
-                              <AnimatePresence>
-                                <motion.div
-                                  className="absolute top-0 right-full mr-2 bg-white shadow-xl rounded-lg w-48 md:w-56"
-                                  initial={{ opacity: 0, x: 10 }}
-                                  animate={{ opacity: 1, x: 0 }}
-                                  exit={{ opacity: 0, x: 10 }}
-                                  transition={{ duration: 0.3 }}
-                                >
-                                  <ul className="text-gray-700 py-2">
-                                    <li className="py-2 px-4 hover:bg-gray-100 hover:text-[#873070] transition-colors duration-200 text-sm">
-                                      <Link href="/apps/odoo-timeoff">
-                                        Odoo Timeoff
-                                      </Link>
-                                    </li>
-                                    <li className="py-2 px-4 hover:bg-gray-100 hover:text-[#873070] transition-colors duration-200 text-sm">
-                                      <Link href="/apps/odoo-recruitment">
-                                        Odoo Recruitment
-                                      </Link>
-                                    </li>
-                                    <li className="py-2 px-4 hover:bg-gray-100 hover:text-[#873070] transition-colors duration-200 text-sm">
-                                      <Link href="/apps/odoo-appraisal">
-                                        Odoo Appraisal
-                                      </Link>
-                                    </li>
-                                  </ul>
-                                </motion.div>
-                              </AnimatePresence>
-                            )}
-                          </li> */}
 
                           <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
                             <Link href="/apps/odoo-project">Odoo Project</Link>
