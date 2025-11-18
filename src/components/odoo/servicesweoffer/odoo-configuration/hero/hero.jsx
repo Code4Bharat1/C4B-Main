@@ -10,10 +10,7 @@ const Hero = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.3,
-      },
+      transition: { staggerChildren: 0.15, delayChildren: 0.3 },
     },
   };
 
@@ -28,7 +25,8 @@ const Hero = () => {
 
   return (
     <div className="relative pt-20 h-screen min-h-[600px]">
-      {/* Background Image with Overlay */}
+      
+      {/* Background */}
       <div className="absolute inset-0 w-full h-full">
         <Image
           src="/images/bg-image/ODOO-CONFIGURATION.jpg"
@@ -37,18 +35,22 @@ const Hero = () => {
           className="object-cover"
           priority
         />
-        {/* Gradient Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/50 to-slate-900/80" />
-        <div className="absolute inset-0 bg-gradient-to-r from-pink-900/30 to-purple-900/30" />
+        
+        {/* Corporate Blue Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a]/70 via-[#1e3a8a]/55 to-[#1e40af]/85" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1e3a8a]/30 to-[#3b82f6]/30" />
       </div>
 
-      {/* Animated grid pattern */}
+      {/* Grid Layer */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-                           linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)`,
-          backgroundSize: '50px 50px',
-        }} />
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+                             linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+            backgroundSize: "50px 50px",
+          }}
+        />
       </div>
 
       {/* Content */}
@@ -59,6 +61,7 @@ const Hero = () => {
         className="relative z-10 flex flex-col h-full w-full justify-center items-center px-4 sm:px-8 lg:px-16"
       >
         <div className="max-w-7xl w-full space-y-8">
+
           {/* Breadcrumb */}
           <motion.div
             variants={itemVariants}
@@ -67,56 +70,54 @@ const Hero = () => {
             <Link href="/">
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 hover:bg-white/20 transition-all group"
+                className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur rounded-lg border border-white/20 hover:bg-white/20 transition-all group"
               >
-                <FaHome className="w-4 h-4 text-pink-400 group-hover:text-pink-300" />
+                <FaHome className="w-4 h-4 text-[#3b82f6]" />
                 <span className="text-white font-medium text-sm">Home</span>
               </motion.div>
             </Link>
 
-            <FaChevronRight className="w-3 h-3 text-pink-400" />
+            <FaChevronRight className="w-3 h-3 text-[#3b82f6]" />
 
             <Link href="/servicesweoffer">
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 hover:bg-white/20 transition-all"
+                className="px-4 py-2 bg-white/10 backdrop-blur rounded-lg border border-white/20 hover:bg-white/20 transition-all"
               >
                 <span className="text-white font-medium text-sm">Services We Offer</span>
               </motion.div>
             </Link>
 
-            <FaChevronRight className="w-3 h-3 text-pink-400" />
+            <FaChevronRight className="w-3 h-3 text-[#3b82f6]" />
 
-            <div className="px-4 py-2 bg-gradient-to-r from-pink-500/20 to-purple-500/20 backdrop-blur-sm rounded-lg border border-pink-400/50">
-              <span className="text-pink-300 font-semibold text-sm">Odoo Configuration</span>
+            <div className="px-4 py-2 bg-blue-100/10 backdrop-blur rounded-lg border border-[#3b82f6]/40">
+              <span className="text-[#3b82f6] font-semibold text-sm">Odoo Configuration</span>
             </div>
           </motion.div>
 
-          {/* Main Title */}
-          <motion.div
-            variants={itemVariants}
-            className="text-center lg:text-left space-y-6"
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-pink-500/20 to-purple-500/20 backdrop-blur-sm border border-pink-400/30">
-              <FaCogs className="w-4 h-4 text-pink-400 animate-spin" style={{ animationDuration: '3s' }} />
-              <span className="text-sm text-pink-300 font-semibold">
-                Professional Configuration
-              </span>
+          {/* Title */}
+          <motion.div variants={itemVariants} className="text-center lg:text-left space-y-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100/10 border border-blue-200/20 backdrop-blur">
+              <FaCogs
+                className="w-4 h-4 text-[#3b82f6] animate-spin"
+                style={{ animationDuration: "3s" }}
+              />
+              <span className="text-sm font-semibold text-[#3b82f6]">Professional Configuration</span>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-tight">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-tight">
               <span className="block">Odoo</span>
-              <span className="block bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-[#1e3a8a] via-[#3b82f6] to-[#f97316] bg-clip-text text-transparent">
                 Configuration
               </span>
             </h1>
 
-            <p className="text-lg sm:text-xl text-slate-300 max-w-2xl">
+            <p className="text-lg sm:text-xl text-gray-200 max-w-2xl">
               Expert Odoo configuration services to optimize your ERP system for maximum efficiency
             </p>
           </motion.div>
 
-          {/* CTA Buttons */}
+          {/* Buttons */}
           <motion.div
             variants={itemVariants}
             className="flex flex-wrap gap-4 justify-center lg:justify-start"
@@ -125,7 +126,7 @@ const Hero = () => {
               <motion.button
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-xl shadow-lg shadow-pink-500/30 hover:shadow-xl hover:shadow-pink-500/50 transition-all"
+                className="px-8 py-4 bg-[#1e3a8a] hover:bg-[#1e40af] text-white font-semibold rounded-xl shadow-md transition-all"
               >
                 Get Started
               </motion.button>
@@ -135,7 +136,7 @@ const Hero = () => {
               <motion.button
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/20 transition-all"
+                className="px-8 py-4 bg-white/10 backdrop-blur border border-white/30 text-white font-semibold rounded-xl hover:bg-white/20 transition-all"
               >
                 Learn More
               </motion.button>
@@ -143,30 +144,24 @@ const Hero = () => {
           </motion.div>
 
           {/* Feature Pills */}
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-wrap gap-3 justify-center lg:justify-start"
-          >
-            {[
-              "System Setup",
-              "Module Configuration",
-              "Workflow Optimization",
-              "Data Migration"
-            ].map((feature, idx) => (
-              <motion.div
-                key={idx}
-                whileHover={{ scale: 1.05 }}
-                className="px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 text-sm text-slate-300 font-medium"
-              >
-                {feature}
-              </motion.div>
-            ))}
+          <motion.div variants={itemVariants} className="flex flex-wrap gap-3 justify-center lg:justify-start">
+            {["System Setup", "Module Configuration", "Workflow Optimization", "Data Migration"].map(
+              (feature, idx) => (
+                <motion.div
+                  key={idx}
+                  whileHover={{ scale: 1.05 }}
+                  className="px-4 py-2 bg-white/5 backdrop-blur rounded-full border border-white/10 text-sm text-gray-200 font-medium"
+                >
+                  {feature}
+                </motion.div>
+              )
+            )}
           </motion.div>
         </div>
       </motion.div>
 
-      {/* Bottom Gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-950 to-transparent pointer-events-none" />
+      {/* Bottom Fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0f172a] to-transparent pointer-events-none" />
 
       {/* Scroll Indicator */}
       <motion.div
@@ -180,7 +175,7 @@ const Hero = () => {
           transition={{ duration: 2, repeat: Infinity }}
           className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2"
         >
-          <div className="w-1.5 h-3 bg-gradient-to-b from-pink-400 to-purple-500 rounded-full" />
+          <div className="w-1.5 h-3 bg-gradient-to-b from-[#3b82f6] to-[#1e3a8a] rounded-full" />
         </motion.div>
       </motion.div>
     </div>

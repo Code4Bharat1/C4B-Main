@@ -3,11 +3,11 @@ import React, { useState } from "react";
 import Link from "next/link";
 import {
   FaShoppingCart,
-  FaHospital,
   FaGraduationCap,
   FaChartLine,
   FaTruck,
-  FaUsers,
+  FaBrain,
+  FaMobile,
   FaTimes,
   FaArrowRight,
   FaCheckCircle,
@@ -18,279 +18,277 @@ import {
 const clients = [
   {
     id: 1,
-    title: "E-commerce Platform",
+    title: "E-commerce Web Platform",
     Icon: FaShoppingCart,
-    gradient: "from-blue-600 to-cyan-600",
+    color: "#1e40af",
     industry: "Retail & E-commerce",
-    clientName: "ShopEase Solutions",
-    location: "United States",
+    clientName: "RetailPro Solutions Qatar",
+    location: "Doha, Qatar",
     date: "January 2023 - April 2023",
-    tagline: "Transforming Online Shopping Experience",
+    tagline: "Complete E-commerce Solution with Payment Integration",
     description:
-      "Built a comprehensive e-commerce platform with AI-powered recommendations and seamless checkout experience.",
+      "Built a comprehensive e-commerce platform with inventory management, multi-currency support, and seamless checkout experience for retail business.",
     challenge:
-      "The client needed a scalable e-commerce solution that could handle high traffic during peak seasons while providing personalized shopping experiences.",
+      "The client needed a scalable e-commerce website that could handle multiple product categories, integrate with local payment gateways, and provide real-time inventory management across multiple warehouses in Qatar.",
     solution:
-      "We developed a robust platform using modern technologies with microservices architecture, integrated AI for product recommendations, and implemented a secure payment gateway supporting multiple currencies.",
+      "We developed a robust full-stack web application using React and Node.js with MongoDB, integrated Razorpay payment gateway, implemented real-time inventory tracking, and created an intuitive admin dashboard for order management.",
     impact: [
-      { metric: "300%", label: "Increase in Sales" },
-      { metric: "45%", label: "Higher Conversion Rate" },
-      { metric: "99.9%", label: "Platform Uptime" }
+      { metric: "250%", label: "Increase in Online Sales" },
+      { metric: "40%", label: "Higher Conversion Rate" },
+      { metric: "99.8%", label: "Platform Uptime" }
     ],
     testimonial:
-      "NEXCORE ALLIANCE LLP delivered beyond our expectations. The platform handles our traffic seamlessly and our sales have tripled.",
-    testimonialAuthor: "John Smith, CEO",
+      "NEXCORE ALLIANCE LLP delivered exactly what we needed. The platform is fast, secure, and our customers love the smooth checkout process.",
+    testimonialAuthor: "Ahmed Al-Mansoori, Managing Director",
     details: {
       projectDuration: "4 Months",
-      teamSize: "8 Developers",
+      teamSize: "6 Developers",
       deliverables: [
-        "Custom E-commerce Platform",
-        "AI-Powered Product Recommendations",
-        "Multi-Currency Payment Integration",
-        "Advanced Analytics Dashboard",
+        "Custom E-commerce Website",
+        "Admin Dashboard",
+        "Inventory Management System",
+        "Payment Gateway Integration",
         "Mobile-Responsive Design",
-        "Real-time Inventory Management"
+        "Order Tracking System"
       ],
-      technologiesUsed: "React, Node.js, MongoDB, AWS, TensorFlow, Stripe API",
+      technologiesUsed: "React, Next.js, Node.js, Express, MongoDB, Razorpay API, AWS",
       keyFeatures: [
-        "Intelligent Search & Filters",
-        "Personalized User Experience",
-        "One-Click Checkout",
-        "Order Tracking System",
-        "Customer Review System",
-        "Automated Email Notifications"
+        "Multi-Currency Support",
+        "Real-time Inventory Updates",
+        "Advanced Search & Filters",
+        "Customer Reviews System",
+        "Automated Email Notifications",
+        "Analytics Dashboard"
       ]
     }
   },
   {
     id: 2,
-    title: "Healthcare Management System",
-    Icon: FaHospital,
-    gradient: "from-emerald-600 to-teal-600",
-    industry: "Healthcare & Medical",
-    clientName: "MediCare Plus Network",
-    location: "Canada",
+    title: "Educational LMS Platform",
+    Icon: FaGraduationCap,
+    color: "#3b82f6",
+    industry: "Education & E-Learning",
+    clientName: "Global Learning Institute",
+    location: "Dubai, UAE",
     date: "March 2023 - July 2023",
-    tagline: "Revolutionizing Patient Care Management",
+    tagline: "Complete Learning Management System with Live Classes",
     description:
-      "Developed a HIPAA-compliant patient management system with telemedicine capabilities and electronic health records.",
+      "Developed a comprehensive Learning Management System with course management, student enrollment, certificate generation, and video conferencing integration.",
     challenge:
-      "Healthcare provider needed a secure, compliant system to manage patient records, appointments, and enable remote consultations while maintaining strict privacy standards.",
+      "Educational institution required a platform to manage online courses, track student progress, generate certificates, and conduct live classes across multiple countries with different time zones.",
     solution:
-      "Created an end-to-end healthcare management platform with encrypted data storage, integrated video consultation, automated appointment scheduling, and comprehensive reporting.",
+      "Created an end-to-end LMS using React and Node.js with WhatsApp OTP verification, automated certificate generation with QR codes, integrated Zoom for live classes, and built comprehensive analytics for tracking student performance.",
     impact: [
-      { metric: "60%", label: "Reduced Wait Times" },
-      { metric: "85%", label: "Patient Satisfaction" },
-      { metric: "50%", label: "Administrative Cost Savings" }
+      { metric: "1000+", label: "Students Enrolled" },
+      { metric: "150+", label: "Courses Available" },
+      { metric: "95%", label: "Course Completion Rate" }
     ],
     testimonial:
-      "This system has transformed how we deliver care. Our staff efficiency improved dramatically and patients love the convenience.",
-    testimonialAuthor: "Dr. Sarah Johnson, Medical Director",
+      "The LMS platform has transformed how we deliver education. Certificate generation is automated and students can verify their credentials instantly.",
+    testimonialAuthor: "Dr. Fatima Hassan, Academic Director",
     details: {
       projectDuration: "5 Months",
-      teamSize: "10 Developers",
+      teamSize: "8 Developers",
       deliverables: [
-        "Patient Management Portal",
-        "Telemedicine Integration",
-        "Electronic Health Records (EHR)",
-        "Appointment Scheduling System",
-        "Prescription Management",
-        "HIPAA-Compliant Security"
+        "Learning Management System",
+        "Student Portal",
+        "Admin Dashboard",
+        "Certificate Generation with QR Codes",
+        "WhatsApp Integration",
+        "Live Class Integration"
       ],
-      technologiesUsed: "Angular, Firebase, AWS, WebRTC, PostgreSQL",
+      technologiesUsed: "React, Node.js, MongoDB, WhatsApp API, Zoom API, AWS S3",
       keyFeatures: [
-        "Secure Video Consultations",
-        "Digital Prescription System",
-        "Patient Health Dashboard",
-        "Automated Reminders",
-        "Lab Results Integration",
-        "Multi-location Support"
+        "Course Management",
+        "Student Enrollment System",
+        "Automated Certificate Generation",
+        "WhatsApp OTP Verification",
+        "Progress Tracking",
+        "Payment Integration"
       ]
     }
   },
   {
     id: 3,
-    title: "E-Learning Platform",
-    Icon: FaGraduationCap,
-    gradient: "from-purple-600 to-pink-600",
-    industry: "Education & E-Learning",
-    clientName: "EduMentor Global",
-    location: "United Kingdom",
-    date: "May 2023 - September 2023",
-    tagline: "Empowering Education Through Technology",
+    title: "Odoo ERP Implementation",
+    Icon: FaChartLine,
+    color: "#f97316",
+    industry: "Retail & Trading",
+    clientName: "Gulf Trade Solutions",
+    location: "Dubai, UAE",
+    date: "June 2023 - October 2023",
+    tagline: "End-to-End Odoo ERP for Multi-Branch Operations",
     description:
-      "Created an interactive learning management system with live classes, course management, and progress tracking.",
+      "Implemented comprehensive Odoo ERP system for multi-location retail business with point-of-sale, inventory, accounting, and e-commerce integration.",
     challenge:
-      "Educational institution required a comprehensive platform to deliver online courses, conduct live classes, and track student performance across multiple locations.",
+      "Retail chain with 15 branches struggled with inventory synchronization, sales tracking across locations, and fragmented accounting. Needed real-time visibility across all operations.",
     solution:
-      "Built a scalable LMS with real-time video streaming, interactive whiteboards, automated grading, student analytics, and mobile applications for learning on-the-go.",
+      "Deployed Odoo ERP with POS module for all branches, centralized inventory management, integrated online store, automated accounting, and real-time reporting dashboard for management.",
     impact: [
-      { metric: "500+", label: "Active Courses" },
-      { metric: "10,000+", label: "Students Enrolled" },
-      { metric: "95%", label: "Course Completion Rate" }
+      { metric: "75%", label: "Inventory Accuracy" },
+      { metric: "50%", label: "Reduced Stock-outs" },
+      { metric: "65%", label: "Faster Invoicing" }
     ],
     testimonial:
-      "The platform exceeded all our requirements. Student engagement has never been higher, and our reach has expanded globally.",
-    testimonialAuthor: "Prof. Michael Chen, Academic Director",
+      "NEXCORE's Odoo implementation unified our entire business. We now have complete control over all branches and can make data-driven decisions instantly.",
+    testimonialAuthor: "Abdullah Al-Maktoum, CEO",
     details: {
       projectDuration: "4 Months",
-      teamSize: "12 Developers",
+      teamSize: "6 Consultants",
       deliverables: [
-        "Learning Management System",
-        "Live Video Streaming Platform",
-        "Interactive Course Builder",
-        "Student Progress Analytics",
-        "Mobile Applications (iOS & Android)",
-        "Assessment & Grading System"
+        "Multi-Branch Odoo Setup",
+        "POS System Implementation",
+        "E-commerce Integration",
+        "Data Migration from Legacy Systems",
+        "Staff Training (All Branches)",
+        "Custom Modules & Reports"
       ],
-      technologiesUsed: "Vue.js, Laravel, MySQL, Zoom API, Redis",
+      technologiesUsed: "Odoo 17, Python, PostgreSQL, JavaScript, XML, REST API",
       keyFeatures: [
-        "Live Interactive Classes",
-        "Course Content Management",
-        "Automated Assessments",
-        "Student Performance Analytics",
-        "Discussion Forums",
-        "Certificate Generation"
+        "Multi-Location Inventory",
+        "Point of Sale (POS)",
+        "E-commerce Integration",
+        "Automated Accounting",
+        "Sales Analytics",
+        "Real-time Dashboards"
       ]
     }
-  },
+},
   {
     id: 4,
-    title: "Financial Analytics Platform",
-    Icon: FaChartLine,
-    gradient: "from-orange-600 to-red-600",
-    industry: "Finance & Investment",
-    clientName: "FinTech Innovations Ltd",
-    location: "Singapore",
+    title: "AI-Powered Business Intelligence",
+    Icon: FaBrain,
+    color: "#1e3a8a",
+    industry: "Finance & Analytics",
+    clientName: "DataInsight Financial Services",
+    location: "Riyadh, Saudi Arabia",
     date: "July 2023 - November 2023",
-    tagline: "Data-Driven Financial Intelligence",
+    tagline: "AI-Driven Analytics Platform for Financial Intelligence",
     description:
-      "Built an advanced financial dashboard with real-time market analytics, portfolio tracking, and AI-powered insights.",
+      "Built an advanced AI-powered analytics platform with machine learning models for predictive analysis, automated reporting, and business intelligence.",
     challenge:
-      "Investment firm needed a sophisticated platform to provide clients with real-time market data, portfolio analysis, and personalized investment recommendations.",
+      "Financial services firm needed an intelligent platform to analyze large datasets, generate predictive insights, automate report generation, and provide real-time dashboards for decision-making.",
     solution:
-      "Developed a comprehensive financial analytics platform with real-time data feeds, advanced charting, risk assessment tools, and machine learning-based predictions.",
+      "Developed an AI-powered analytics platform using Python and TensorFlow with custom ML models for trend prediction, automated data processing pipelines, interactive dashboards, and AI-generated insights for business decisions.",
     impact: [
-      { metric: "40%", label: "Better Investment Decisions" },
-      { metric: "70%", label: "User Engagement Increase" },
-      { metric: "25%", label: "Portfolio Performance Improvement" }
+      { metric: "70%", label: "Faster Decision Making" },
+      { metric: "85%", label: "Prediction Accuracy" },
+      { metric: "50%", label: "Time Saved in Reporting" }
     ],
     testimonial:
-      "The analytics platform has become indispensable for our clients. The insights are accurate and the interface is incredibly intuitive.",
-    testimonialAuthor: "David Lee, Chief Investment Officer",
+      "The AI solution has given us unprecedented insights into our business. The predictive models are incredibly accurate and have improved our strategic planning.",
+    testimonialAuthor: "Khalid Al-Rashid, Chief Analytics Officer",
     details: {
       projectDuration: "5 Months",
-      teamSize: "9 Developers",
+      teamSize: "7 Developers",
       deliverables: [
-        "Real-time Analytics Dashboard",
-        "Portfolio Management System",
-        "Market Data Integration",
-        "Risk Assessment Tools",
-        "AI-Powered Predictions",
-        "Automated Reporting"
+        "AI Analytics Platform",
+        "ML Models for Prediction",
+        "Automated Reporting System",
+        "Interactive Dashboards",
+        "Data Processing Pipeline",
+        "API Integration"
       ],
-      technologiesUsed: "Python, Flask, PostgreSQL, TensorFlow, D3.js",
+      technologiesUsed: "Python, TensorFlow, React, Node.js, PostgreSQL, AWS, Docker",
       keyFeatures: [
-        "Real-time Market Data",
-        "Advanced Charting Tools",
-        "Portfolio Optimization",
-        "Risk Analysis",
-        "Personalized Alerts",
-        "Comprehensive Reports"
+        "Predictive Analytics",
+        "Machine Learning Models",
+        "Real-time Dashboards",
+        "Automated Report Generation",
+        "Data Visualization",
+        "Custom AI Algorithms"
       ]
     }
   },
   {
     id: 5,
-    title: "Logistics Management System",
-    Icon: FaTruck,
-    gradient: "from-indigo-600 to-purple-600",
-    industry: "Logistics & Supply Chain",
-    clientName: "ShipRight Logistics",
-    location: "Germany",
+    title: "Mobile App Development",
+    Icon: FaMobile,
+    color: "#3b82f6",
+    industry: "Logistics & Delivery",
+    clientName: "SwiftDeliver Logistics",
+    location: "Toronto, Canada",
     date: "September 2023 - January 2024",
-    tagline: "Optimizing Global Supply Chain Operations",
+    tagline: "Cross-Platform Mobile App for Delivery Management",
     description:
-      "Developed a comprehensive logistics platform with real-time tracking, route optimization, and automated dispatch.",
+      "Developed a comprehensive mobile application for delivery management with real-time tracking, driver app, customer app, and admin dashboard.",
     challenge:
-      "Logistics company struggled with manual tracking processes, inefficient route planning, and lack of real-time visibility across their supply chain.",
+      "Logistics company needed mobile apps for drivers and customers with real-time GPS tracking, route optimization, proof of delivery, and seamless communication between all stakeholders.",
     solution:
-      "Created an intelligent logistics management system with GPS tracking, AI-based route optimization, automated dispatch, and customer-facing tracking portal.",
+      "Built cross-platform mobile apps using React Native for iOS and Android with real-time GPS tracking, Google Maps integration, push notifications, in-app chat, and comprehensive admin web dashboard for fleet management.",
     impact: [
-      { metric: "35%", label: "Delivery Time Reduction" },
-      { metric: "28%", label: "Fuel Cost Savings" },
-      { metric: "92%", label: "On-Time Delivery Rate" }
+      { metric: "45%", label: "Delivery Time Reduction" },
+      { metric: "92%", label: "On-Time Delivery Rate" },
+      { metric: "4.8★", label: "App Store Rating" }
     ],
     testimonial:
-      "Our operational efficiency has improved dramatically. We can now handle 3x more shipments with the same resources.",
-    testimonialAuthor: "Hans Mueller, Operations Manager",
+      "The mobile apps have transformed our delivery operations. Drivers love the intuitive interface and customers appreciate the real-time tracking.",
+    testimonialAuthor: "Robert Chen, CEO",
     details: {
       projectDuration: "5 Months",
-      teamSize: "11 Developers",
+      teamSize: "9 Developers",
       deliverables: [
-        "Fleet Management System",
+        "Driver Mobile App (iOS & Android)",
+        "Customer Mobile App",
+        "Admin Web Dashboard",
         "Real-time GPS Tracking",
-        "Route Optimization Engine",
-        "Automated Dispatch System",
-        "Customer Tracking Portal",
-        "Analytics & Reporting Dashboard"
+        "Push Notification System",
+        "In-app Chat Feature"
       ],
-      technologiesUsed:
-        "React, Node.js, PostgreSQL, Mapbox API, Google Maps API",
+      technologiesUsed: "React Native, Node.js, MongoDB, Socket.io, Google Maps API, Firebase",
       keyFeatures: [
-        "Live Shipment Tracking",
-        "Intelligent Route Planning",
-        "Automated Notifications",
-        "Fleet Performance Analytics",
-        "Multi-warehouse Management",
-        "Integration with ERP Systems"
+        "Real-time Location Tracking",
+        "Route Optimization",
+        "Digital Proof of Delivery",
+        "In-app Communication",
+        "Payment Integration",
+        "Rating & Review System"
       ]
     }
   },
   {
     id: 6,
-    title: "Professional Networking Platform",
-    Icon: FaUsers,
-    gradient: "from-pink-600 to-rose-600",
-    industry: "Social & Networking",
-    clientName: "Connectify Professional Network",
-    location: "Australia",
+    title: "Custom Web Application",
+    Icon: FaTruck,
+    color: "#f97316",
+    industry: "Healthcare Management",
+    clientName: "MediConnect Health Systems",
+    location: "Kuwait City, Kuwait",
     date: "February 2024 - June 2024",
-    tagline: "Building Professional Communities",
+    tagline: "Comprehensive Healthcare Management Platform",
     description:
-      "Created a niche professional networking platform with industry-specific features, job matching, and event management.",
+      "Created a custom web application for healthcare management with patient records, appointment scheduling, telemedicine integration, and billing system.",
     challenge:
-      "Client wanted to create a specialized networking platform for professionals with features tailored to industry-specific needs and meaningful connections.",
+      "Healthcare provider needed a unified platform to manage patient records, schedule appointments, handle billing, generate prescriptions, and enable telemedicine consultations while maintaining data security and compliance.",
     solution:
-      "Built a sophisticated networking platform with AI-powered job matching, virtual events, industry forums, and advanced search capabilities for targeted networking.",
+      "Built a secure healthcare management platform using React and Node.js with role-based access control, encrypted data storage, appointment scheduling, prescription management, video consultation integration, and automated billing.",
     impact: [
-      { metric: "50,000+", label: "Active Professionals" },
-      { metric: "75%", label: "Monthly Active Users" },
-      { metric: "15,000+", label: "Successful Connections" }
+      { metric: "65%", label: "Administrative Efficiency" },
+      { metric: "90%", label: "Patient Satisfaction" },
+      { metric: "50%", label: "Operational Cost Savings" }
     ],
     testimonial:
-      "This platform has become the go-to place for professionals in our industry. The quality of connections is exceptional.",
-    testimonialAuthor: "Emma Wilson, Platform Director",
+      "This platform has streamlined our entire healthcare operation. Patient management is now seamless and our staff efficiency has improved dramatically.",
+    testimonialAuthor: "Dr. Sara Al-Abdullah, Medical Director",
     details: {
       projectDuration: "4 Months",
-      teamSize: "10 Developers",
+      teamSize: "8 Developers",
       deliverables: [
-        "Professional Networking Platform",
-        "AI-Powered Job Matching",
-        "Virtual Event Management",
-        "Industry-Specific Forums",
-        "Advanced Search & Filters",
-        "Mobile Applications"
+        "Patient Management System",
+        "Appointment Scheduling",
+        "Prescription Management",
+        "Telemedicine Integration",
+        "Billing System",
+        "Admin Dashboard"
       ],
-      technologiesUsed:
-        "React, Node.js, MongoDB, Socket.io, AWS, Redis",
+      technologiesUsed: "React, Next.js, Node.js, MongoDB, WebRTC, Stripe API, AWS",
       keyFeatures: [
-        "Smart Profile Matching",
-        "Real-time Messaging",
-        "Virtual Event Hosting",
-        "Job Board Integration",
-        "Group & Community Features",
-        "Content Sharing & Engagement"
+        "Electronic Health Records",
+        "Online Appointment Booking",
+        "Video Consultation",
+        "Digital Prescription",
+        "Automated Billing",
+        "Report Generation"
       ]
     }
   }
@@ -302,17 +300,14 @@ const ClientCard = ({ client }) => {
   return (
     <>
       <div
-        className="group relative bg-white rounded-2xl p-6 sm:p-8 shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer border border-slate-200 overflow-hidden"
+        className="group relative bg-white rounded-2xl p-6 sm:p-8 shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer border border-gray-200 overflow-hidden"
         onClick={() => setShowModal(true)}
       >
-        <div
-          className={`absolute -inset-0.5 bg-gradient-to-r ${client.gradient} opacity-0 group-hover:opacity-10 blur-xl rounded-2xl transition-opacity`}
-        />
-
         <div className="relative z-10 space-y-5">
           <div className="flex items-start justify-between gap-4">
             <div
-              className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br ${client.gradient} rounded-xl flex items-center justify-center shadow-lg`}
+              className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl flex items-center justify-center shadow-lg"
+              style={{ backgroundColor: client.color }}
             >
               <client.Icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
             </div>
@@ -344,7 +339,8 @@ const ClientCard = ({ client }) => {
             {client.impact.slice(0, 3).map((item, idx) => (
               <div key={idx} className="text-center">
                 <div
-                  className={`text-base sm:text-xl font-bold bg-gradient-to-r ${client.gradient} bg-clip-text text-transparent`}
+                  className="text-base sm:text-xl font-bold"
+                  style={{ color: client.color }}
                 >
                   {item.metric}
                 </div>
@@ -359,7 +355,10 @@ const ClientCard = ({ client }) => {
             <div className="text-[10px] sm:text-xs text-slate-400">
               {client.date.split(" - ")[0]}
             </div>
-            <div className="flex items-center gap-1 sm:gap-2 text-blue-600 font-semibold text-xs sm:text-sm group-hover:gap-3 transition-all">
+            <div 
+              className="flex items-center gap-1 sm:gap-2 font-semibold text-xs sm:text-sm group-hover:gap-3 transition-all"
+              style={{ color: client.color }}
+            >
               <span>View Case Study</span>
               <FaArrowRight className="w-3 h-3" />
             </div>
@@ -369,16 +368,17 @@ const ClientCard = ({ client }) => {
 
       {showModal && (
         <div
-          className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-3 sm:p-4 mt-20"
+          className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-3 sm:p-4 mt-10"
           onClick={() => setShowModal(false)}
         >
           <div
-            className="bg-white rounded-2xl sm:rounded-3xl w-full max-w-lg sm:max-w-2xl lg:max-w-3xl max-h-[85vh] overflow-hidden shadow-2xl flex flex-col"
+            className="bg-white rounded-2xl sm:rounded-3xl w-full max-w-lg sm:max-w-2xl lg:max-w-3xl max-h-[85vh] overflow-hidden shadow-2xl flex flex-col "
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
             <div
-              className={`relative bg-gradient-to-br ${client.gradient} p-4 sm:p-6 shrink-0`}
+              className="relative p-4 sm:p-6 shrink-0 "
+              style={{ backgroundColor: client.color }}
             >
               <button
                 className="absolute top-3 right-3 w-8 h-8 sm:w-9 sm:h-9 bg-white/90 rounded-lg flex items-center justify-center text-slate-700 hover:bg-white transition-all shadow-md"
@@ -427,7 +427,8 @@ const ClientCard = ({ client }) => {
                       className="p-3 sm:p-4 bg-slate-50 border border-slate-200 rounded-xl text-center"
                     >
                       <div
-                        className={`text-2xl sm:text-3xl font-black bg-gradient-to-r ${client.gradient} bg-clip-text text-transparent`}
+                        className="text-2xl sm:text-3xl font-black"
+                        style={{ color: client.color }}
                       >
                         {item.metric}
                       </div>
@@ -479,7 +480,7 @@ const ClientCard = ({ client }) => {
                 </div>
                 <div>
                   <p className="text-[10px] sm:text-xs text-slate-500">
-                    INDustry
+                    INDUSTRY
                   </p>
                   <p className="font-bold text-xs sm:text-sm">
                     {client.industry}
@@ -499,7 +500,8 @@ const ClientCard = ({ client }) => {
                       className="flex items-start gap-2 sm:gap-3 p-2 sm:p-3 bg-white rounded-xl border"
                     >
                       <div
-                        className={`w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-br ${client.gradient} rounded-lg flex items-center justify-center`}
+                        className="w-5 h-5 sm:w-6 sm:h-6 rounded-lg flex items-center justify-center"
+                        style={{ backgroundColor: client.color }}
                       >
                         <FaCheckCircle className="w-3 h-3 text-white" />
                       </div>
@@ -520,7 +522,8 @@ const ClientCard = ({ client }) => {
                     .map((tech, idx) => (
                       <span
                         key={idx}
-                        className={`px-2.5 sm:px-3 py-1 bg-gradient-to-r ${client.gradient} text-white rounded-lg text-[10px] sm:text-xs`}
+                        className="px-2.5 sm:px-3 py-1 text-white rounded-lg text-[10px] sm:text-xs"
+                        style={{ backgroundColor: client.color }}
                       >
                         {tech}
                       </span>
@@ -530,10 +533,11 @@ const ClientCard = ({ client }) => {
 
               {/* Testimonial */}
               <div
-                className={`p-4 sm:p-6 rounded-2xl bg-gradient-to-br ${client.gradient} text-white`}
+                className="p-4 sm:p-6 rounded-2xl text-white"
+                style={{ backgroundColor: client.color }}
               >
                 <p className="italic mb-2 text-xs sm:text-sm">
-                  {client.testimonial}
+                  "{client.testimonial}"
                 </p>
                 <p className="font-semibold text-xs sm:text-sm">
                   — {client.testimonialAuthor}
@@ -552,7 +556,8 @@ const ClientCard = ({ client }) => {
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full sm:w-auto">
                 <Link href="/contactus" className="w-full sm:w-auto">
                   <button
-                    className={`w-full px-4 sm:px-5 py-2.5 sm:py-3 bg-gradient-to-r ${client.gradient} text-white font-semibold rounded-xl`}
+                    className="w-full px-4 sm:px-5 py-2.5 sm:py-3 text-white font-semibold rounded-xl"
+                    style={{ backgroundColor: client.color }}
                   >
                     Start Your Project
                   </button>
@@ -574,16 +579,16 @@ const ClientCard = ({ client }) => {
 
 const ClientsSection = () => {
   return (
-    <section className="w-full bg-gradient-to-br from-slate-50 via-white to-slate-100 py-16 sm:py-20 lg:py-32 relative overflow-hidden">
-      {/* Background blobs responsive */}
-      <div className="absolute top-0 right-0 w-56 h-56 sm:w-80 sm:h-80 lg:w-[600px] lg:h-[600px] bg-gradient-to-br from-blue-100/40 via-purple-100/30 to-transparent rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-48 h-48 sm:w-72 sm:h-72 lg:w-[500px] lg:h-[500px] bg-gradient-to-tr from-cyan-100/40 via-teal-100/30 to-transparent rounded-full blur-3xl" />
+    <section className="w-full bg-white py-16 sm:py-20 lg:py-32 relative overflow-hidden">
+      {/* Background blobs */}
+      <div className="absolute top-0 right-0 w-56 h-56 sm:w-80 sm:h-80 lg:w-[600px] lg:h-[600px] bg-blue-100 rounded-full blur-3xl opacity-30" />
+      <div className="absolute bottom-0 left-0 w-48 h-48 sm:w-72 sm:h-72 lg:w-[500px] lg:h-[500px] bg-orange-50 rounded-full blur-3xl opacity-40" />
 
       <div
         className="absolute inset-0 opacity-[0.02]"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-                         linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(rgba(30, 64, 175, 0.1) 1px, transparent 1px),
+                         linear-gradient(90deg, rgba(30, 64, 175, 0.1) 1px, transparent 1px)`,
           backgroundSize: "50px 50px"
         }}
       />
@@ -591,23 +596,23 @@ const ClientsSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-14 lg:mb-16 space-y-4 sm:space-y-6">
-          <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-blue-50 via-purple-50 to-blue-50 border border-blue-100 shadow-sm">
-            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full animate-pulse" />
-            <span className="text-xs sm:text-sm text-slate-700 font-semibold tracking-wide">
+          <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full bg-blue-50 border border-blue-200 shadow-sm">
+            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#f97316] rounded-full animate-pulse" />
+            <span className="text-xs sm:text-sm text-[#1e3a8a] font-semibold tracking-wide">
               CLIENT SUCCESS STORIES
             </span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-slate-900 leading-tight">
-            Real Results,{" "}
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-[#1f2937] leading-tight">
+            Real Projects,{" "}
+            <span className="text-[#1e40af]">
               Real Impact
             </span>
           </h2>
 
           <p className="text-sm sm:text-base lg:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-2">
-            Discover how we've helped businesses across industries achieve
-            measurable success through innovative technology solutions
+            Discover how we've helped businesses across 6 countries achieve
+            measurable success through our web development, mobile apps, Odoo ERP, and AI solutions
           </p>
         </div>
 
@@ -619,31 +624,24 @@ const ClientsSection = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 relative overflow-hidden shadow-2xl">
-          <div className="absolute top-0 right-0 w-40 h-40 sm:w-60 sm:h-60 lg:w-96 lg:h-96 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-36 h-36 sm:w-56 sm:h-56 lg:w-80 lg:h-80 bg-gradient-to-tr from-cyan-500/20 to-teal-500/20 rounded-full blur-3xl" />
+        <div className="bg-[#1e3a8a] rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 relative overflow-hidden shadow-2xl">
+          <div className="absolute top-0 right-0 w-40 h-40 sm:w-60 sm:h-60 lg:w-96 lg:h-96 bg-blue-400/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-36 h-36 sm:w-56 sm:h-56 lg:w-80 lg:h-80 bg-orange-300/10 rounded-full blur-3xl" />
 
           <div className="relative z-10 text-center space-y-3 sm:space-y-4 lg:space-y-6">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
               Ready to Write Your Success Story?
             </h3>
-            <p className="text-sm sm:text-base lg:text-lg text-slate-300 max-w-2xl mx-auto">
-              Join these industry leaders who trusted us to transform their
-              business. Let's discuss how we can help you achieve similar
-              results.
+            <p className="text-sm sm:text-base lg:text-lg text-blue-100 max-w-2xl mx-auto">
+              Join these industry leaders who trusted NEXCORE ALLIANCE LLP to transform their
+              business with cutting-edge web, mobile, Odoo, and AI solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-4 sm:mt-6 lg:mt-8">
               <Link href="/contactus">
-                <button className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all">
-                  Start Your Project
+                <button className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-[#f97316] text-white font-bold rounded-xl shadow-lg hover:bg-[#ea580c] hover:shadow-xl transition-all">
+                  Start Your Project Today
                 </button>
               </Link>
-              {/* If you want the secondary button back, keep it responsive too */}
-              {/* <Link href="/case-studies">
-                <button className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white/10 backdrop-blur-sm text-white font-bold rounded-xl border border-white/20 hover:bg-white/20 transition-all">
-                  View All Case Studies
-                </button>
-              </Link> */}
             </div>
           </div>
         </div>

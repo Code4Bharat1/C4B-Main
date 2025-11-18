@@ -15,7 +15,7 @@ const Smartodoo = () => {
   ];
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-[#1a1833] via-[#211f3b] to-[#2d2650] text-white overflow-hidden">
+    <div className="relative min-h-screen  text-black overflow-hidden">
       {/* Animated Gradient Orbs */}
       <div className="absolute top-20 left-20 w-96 h-96 bg-emerald-600 rounded-full opacity-20 blur-3xl animate-pulse"></div>
       <div className="absolute bottom-20 right-20 w-96 h-96 bg-teal-600 rounded-full opacity-20 blur-3xl animate-pulse delay-700"></div>
@@ -88,7 +88,7 @@ const Smartodoo = () => {
             <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full"></div>
 
             {/* Description */}
-            <p className="text-[17px] leading-relaxed text-gray-300">
+            <p className="text-[17px] leading-relaxed text-black">
               Sync your bank statements automatically with your bank and import files with Odoo Accounting. Managing recurring billings and payment tracking made simple. Robust integration with other Odoo Accounting apps provides feasibility to create professional invoices. Manage bills and expenses with a clear forecast of bills to be paid. Better control over supplier invoices. The reconciliation tool automates 95% of reconciliation and saves time. Odoo Accounting is a smart solution for all your needs.
             </p>
 
@@ -115,7 +115,7 @@ const Smartodoo = () => {
               </h2>
             </div>
 
-            <p className="text-[17px] leading-relaxed text-gray-300 pl-5">
+            <p className="text-[17px] leading-relaxed text-black pl-5">
               Odoo Accounting makes business easy for you. Odoo's popular features will change your business without much effort. Fully integrated with other Odoo Accounting Apps, business flow is automated. Integrated with Odoo Accounting Invoices to auto-generate and share invoices online. Synchronize every transaction with Odoo Inventory and keep your valuation up to date. Creating project tasks from sales is made easy by integrating with Odoo Sales.
             </p>
 

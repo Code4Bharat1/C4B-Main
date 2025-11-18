@@ -10,7 +10,7 @@ const Readymade = () => {
   ];
 
   return (
-    <div className="relative min-h-[39rem] bg-gradient-to-br from-[#1a1833] via-[#211f3b] to-[#2d2650] text-white overflow-hidden">
+    <div className="relative min-h-[39rem]  text-black overflow-hidden">
       {/* Animated Gradient Orbs */}
       <div className="absolute top-20 left-20 w-96 h-96 bg-orange-600 rounded-full opacity-20 blur-3xl animate-pulse"></div>
       <div className="absolute bottom-20 right-20 w-96 h-96 bg-pink-600 rounded-full opacity-20 blur-3xl animate-pulse delay-700"></div>
@@ -87,7 +87,7 @@ const Readymade = () => {
           </h3>
 
           {/* Description */}
-          <p className="text-[15px] sm:text-[17px] leading-relaxed text-gray-300">
+          <p className="text-[15px] sm:text-[17px] leading-relaxed text-black">
             A ready-to-use e-commerce platform with automated stock adjustments and reporting. An integrated e-commerce platform to simplify business management. A user-friendly customer portal to cater to the needs of your customers in no time. Furnish customers with intuitive features to download invoices and track their orders and delivery status. Run your business from anywhere with ease.
           </p>
 

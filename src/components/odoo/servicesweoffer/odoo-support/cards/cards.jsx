@@ -38,9 +38,9 @@ const EcommerceBenefits = () => {
       }}
     >
       {/* Animated Background Elements */}
-      <div className="absolute top-20 left-10 w-64 h-64 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-      <div className="absolute bottom-20 right-10 w-64 h-64 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-      <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+      {/* <div className="absolute top-20 left-10 w-64 h-64 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div> */}
+      {/* <div className="absolute bottom-20 right-10 w-64 h-64 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div> */}
+      {/* <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div> */}
 
       <div className="container mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
         {/* Section Header */}
@@ -68,10 +68,10 @@ const EcommerceBenefits = () => {
             onMouseLeave={() => setHoveredCard(null)}
           >
             {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-500"></div>
+            {/* <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-500"></div> */}
             
             {/* Decorative Corner */}
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-purple-200 to-pink-200 rounded-full opacity-20 group-hover:scale-150 transition-transform duration-700"></div>
+            {/* <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-purple-200 to-pink-200 rounded-full opacity-20 group-hover:scale-150 transition-transform duration-700"></div> */}
 
             <div className="relative z-10">
               {/* Header */}
@@ -109,7 +109,7 @@ const EcommerceBenefits = () => {
 
             {/* Hover Glow */}
             {hoveredCard === 1 && (
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl opacity-20 blur animate-pulse"></div>
+              <div className="absolute -inset-0.5  rounded-3xl opacity-20 blur animate-pulse"></div>
             )}
           </div>
 
@@ -120,10 +120,10 @@ const EcommerceBenefits = () => {
             onMouseLeave={() => setHoveredCard(null)}
           >
             {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-500"></div>
+            {/* <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-500"></div> */}
             
             {/* Decorative Corner */}
-            <div className="absolute -top-10 -left-10 w-40 h-40 bg-gradient-to-br from-blue-200 to-purple-200 rounded-full opacity-20 group-hover:scale-150 transition-transform duration-700"></div>
+            {/* <div className="absolute -top-10 -left-10 w-40 h-40 bg-gradient-to-br from-blue-200 to-purple-200 rounded-full opacity-20 group-hover:scale-150 transition-transform duration-700"></div> */}
 
             <div className="relative z-10">
               {/* Header */}
@@ -168,7 +168,7 @@ const EcommerceBenefits = () => {
 
             {/* Hover Glow */}
             {hoveredCard === 2 && (
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl opacity-20 blur animate-pulse"></div>
+              <div className="absolute -inset-0.5 rounded-3xl opacity-20 blur animate-pulse"></div>
             )}
           </div>
         </div>

@@ -5,7 +5,8 @@ import Image from "next/image";
 import { BiMenuAltRight } from "react-icons/bi";
 import { usePathname } from "next/navigation";
 import Head from "next/head";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 
 // Import Components
 import MobileMenu from "./MobileMenu/MobileMenu";
@@ -73,24 +74,23 @@ const Navbar = () => {
   // Main Menu Items
   const menuItems = [
     { 
-      name: "Hub", 
+      name: "Hub",path: "/", 
       dropdown: [
-        { label: "Home", scroll: "home" },
-        { label: "Services", scroll: "services" },
-        { label: "Approach", scroll: "approach" },
+        // { label: "Home", scroll: "home" },
         { label: "About Us", scroll: "about" },
-        { label: "Supporters", scroll: "supporters" },
-        { label: "Values", scroll: "values" },
+        { label: "Services", scroll: "services" },
+        // { label: "Approach", scroll: "approach" },
+        // { label: "Supporters", scroll: "supporters" },
+        // { label: "Values", scroll: "values" },
         { label: "Clients", scroll: "clients" },
-        { label:"Approach-Detail", scroll:"approach-detail" },
-        { label: "All Services", scroll: "all-services" },
+        // { label:"Approach-Detail", scroll:"approach-detail" },
+        // { label: "All Services", scroll: "all-services" },
         { label: "Awards", scroll: "awards" },
-        // {}
       ]
     },
-    { name: "Odoo", path: convertToPath("servicesweoffer") },
     { name: "AI Solutions", path: convertToPath("AISolutions") },
     { name: "Case Studies", path: convertToPath("casestudy") },
+    { name: "Odoo", path: convertToPath("servicesweoffer") },
     { name: "Reach out", path: convertToPath("Contact Us") },
   ];
 
@@ -107,7 +107,7 @@ const Navbar = () => {
       <motion.nav
         className={`w-full fixed top-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100"
+            ? "bg-white/98 backdrop-blur-lg shadow-xl border-b border-blue-100"
             : "bg-white shadow-md"
         }`}
         initial="hidden"
@@ -118,7 +118,7 @@ const Navbar = () => {
           <div className="flex justify-between items-center h-16 sm:h-18 lg:h-20 xl:h-22">
 
             {/* LOGO */}
-            <motion.div
+             <motion.div
               className="flex-shrink-0"
               initial="hidden"
               animate="visible"
@@ -126,36 +126,29 @@ const Navbar = () => {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
             >
-              <Link href="/" onClick={handleLinkClick}>
-                <Image
-                  src="/nex.png"
-                  alt="NEXCORE ALLIANCE LLP Logo"
-                  width={150}
-                  height={150}
-                  className="h-40 sm:h-25 lg:h-50 xl:h-65 w-auto object-contain"
-                  priority
-                />
-              </Link>
+              <Link href="/" onClick={handleLinkClick} className="flex items-center">
+  <Image
+    src="/nex.png"
+    alt="NEXCORE ALLIANCE LLP Logo"
+    width={260}
+    height={100}
+    className="w-auto h-16 sm:h-20 lg:h-24 xl:h-24 object-contain"
+    priority
+  />
+</Link>
+
             </motion.div>
 
-            {/* Desktop Scroll Menu
-            <ul className="hidden md:flex space-x-8">
-              <li><button onClick={() => scrollToSection("home")} className="hover:text-blue-600 transition cursor-pointer">Home</button></li>
-              <li><button onClick={() => scrollToSection("services")} className="hover:text-blue-600 transition cursor-pointer">Services</button></li>
-              <li><button onClick={() => scrollToSection("approach")} className="hover:text-blue-600 transition cursor-pointer">Approach</button></li>
-              <li><button onClick={() => scrollToSection("about")} className="hover:text-blue-600 transition cursor-pointer">About Us</button></li>
-              <li><button onClick={() => scrollToSection("clients")} className="hover:text-blue-600 transition cursor-pointer">Clients</button></li>
-              <li><button onClick={() => scrollToSection("values")} className="hover:text-blue-600 transition cursor-pointer">Values</button></li>
-            </ul> */}
-
             {/* Mobile Hamburger */}
-            <button
-              className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+            <motion.button
+              className="lg:hidden p-2 rounded-lg hover:bg-blue-50 transition-colors duration-200"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle mobile menu"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <BiMenuAltRight className="w-6 h-6 sm:w-7 sm:h-7 text-[#112D4E]" />
-            </button>
+              <BiMenuAltRight className="w-6 h-6 sm:w-7 sm:h-7 text-blue-900" />
+            </motion.button>
 
             {/* Desktop Main Menu */}
             {!isMobile && (

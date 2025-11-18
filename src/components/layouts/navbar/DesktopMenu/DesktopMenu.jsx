@@ -122,15 +122,16 @@ const DesktopMenu = ({ menuItems, pathname, handleLinkClick }) => {
       {menuItems.map(({ name, path, dropdown }, idx) => (
         <motion.div key={idx} variants={navVariants} className="relative group">
           {(name === "Odoo" || name === "Hub") ? (
-            <h3
-              onClick={(e) => {
-                e.preventDefault();
-                if (name === "Odoo") {
-                  setIsOdooDropdownOpen((prev) => !prev);
-                } else if (name === "Hub") {
-                  setIsHubDropdownOpen((prev) => !prev);
-                }
-              }}
+            <Link
+            href={`${name === "Odoo" ? "/servicesweoffer" : "/"}`}
+              onClick={() => {
+  if (name === "Odoo") {
+    setIsOdooDropdownOpen(prev => !prev);
+  } else if (name === "Hub") {
+    setIsHubDropdownOpen(prev => !prev);
+  }
+}}
+
               className={`text-sm lg:text-base xl:text-lg font-medium capitalize whitespace-nowrap flex items-center gap-1 cursor-pointer ${
                 pathname === path
                   ? "text-[#3b84d6] font-bold border-b-2 border-[#3b84d6]"
@@ -153,7 +154,7 @@ const DesktopMenu = ({ menuItems, pathname, handleLinkClick }) => {
                   d="M19 9l-7 7-7-7"
                 />
               </motion.svg>
-            </h3>
+            </Link>
           ) : (
             <Link href={path || "/"} onClick={handleLinkClick}>
               <h3
@@ -261,7 +262,7 @@ const DesktopMenu = ({ menuItems, pathname, handleLinkClick }) => {
                 {isServicesDropdownOpen && (
                   <AnimatePresence>
                     <motion.div
-                      className="absolute top-0 right-full mr-2 bg-white shadow-xl rounded-lg w-[90vw] md:w-[500px] lg:w-[600px] p-4 md:p-6 max-h-[80vh] overflow-y-auto"
+                      className="absolute top-0 right-full mr-5 bg-white shadow-xl rounded-lg w-[90vw] md:w-[500px] lg:w-[600px] p-4 md:p-6 max-h-[80vh] overflow-y-auto"
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: -10 }}
@@ -410,9 +411,9 @@ const DesktopMenu = ({ menuItems, pathname, handleLinkClick }) => {
                               Odoo Invoicing
                             </Link>
                           </li>
-                          <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
+                          {/* <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
                             <Link href="/apps/odoo-sales">Odoo Sales</Link>
-                          </li>
+                          </li> */}
                           <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
                             <Link href="/apps/odoo-purchase">
                               Odoo Purchase
@@ -424,7 +425,7 @@ const DesktopMenu = ({ menuItems, pathname, handleLinkClick }) => {
                             </Link>
                           </li>
                           <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
-                            <Link href="/apps/odoo-sales">
+                            <Link href="/apps/odoo-point-of-sale">
                               Odoo Point of Sale
                             </Link>
                           </li>

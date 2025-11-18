@@ -1,3 +1,5 @@
+
+
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
@@ -28,17 +30,17 @@ const SupportersSection = () => {
   ];
 
   return (
-    <section className="w-full py-20 md:py-32 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 relative overflow-hidden">
+    <section className="w-full py-20 md:py-32 bg-white relative overflow-hidden">
       {/* Background decorative elements */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
+      <div className="absolute top-20 left-10 w-72 h-72 bg-blue-100 rounded-full blur-3xl opacity-30" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-orange-50 rounded-full blur-3xl opacity-40" />
       
       {/* Grid pattern overlay */}
       <div
-        className="absolute inset-0 opacity-5"
+        className="absolute inset-0 opacity-[0.03]"
         style={{
-          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-                         linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(rgba(30, 64, 175, 0.1) 1px, transparent 1px),
+                         linear-gradient(90deg, rgba(30, 64, 175, 0.1) 1px, transparent 1px)`,
           backgroundSize: "60px 60px",
         }}
       />
@@ -50,47 +52,47 @@ const SupportersSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.5 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10 space-y-6"  // reduced from mb-16
+          className="text-center mb-10 space-y-6"
         >
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-cyan-500/20 border border-cyan-400/30">
-            <FaHandshake className="w-4 h-4 text-cyan-400" />
-            <span className="text-sm text-cyan-300 font-semibold">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-blue-50 border border-blue-200">
+            <FaHandshake className="w-4 h-4 text-[#f97316]" />
+            <span className="text-sm text-[#1e3a8a] font-semibold">
               Trusted By Industry Leaders
             </span>
           </div>
 
           {/* Main Heading */}
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-[#1f2937] leading-tight">
             Our Valued{" "}
-            <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="text-[#1e40af]">
               Clients & Partners
             </span>
           </h2>
 
-          <p className="text-slate-300 text-xl max-w-2xl mx-auto">
+          <p className="text-slate-600 text-xl max-w-2xl mx-auto">
             Proud to collaborate with innovative companies worldwide
           </p>
 
           {/* Stats */}
           <div className="flex items-center justify-center gap-8 pt-4">
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-full bg-[#1e40af] flex items-center justify-center">
                 <FaStar className="w-5 h-5 text-white" />
               </div>
               <div className="text-left">
-                <div className="text-2xl font-bold text-white">35+</div>
-                <div className="text-xs text-slate-400">Clients Served</div>
+                <div className="text-2xl font-bold text-[#1f2937]">50+</div>
+                <div className="text-xs text-slate-500">Happy Clients</div>
               </div>
             </div>
-            <div className="w-px h-12 bg-slate-600" />
+            <div className="w-px h-12 bg-gray-300" />
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-full bg-[#f97316] flex items-center justify-center">
                 <FaHandshake className="w-5 h-5 text-white" />
               </div>
               <div className="text-left">
-                <div className="text-2xl font-bold text-white">120+</div>
-                <div className="text-xs text-slate-400">Projects Completed</div>
+                <div className="text-2xl font-bold text-[#1f2937]">500+</div>
+                <div className="text-xs text-slate-500">Projects Done</div>
               </div>
             </div>
           </div>
@@ -125,9 +127,9 @@ const SupportersSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-center mt-10" // reduced from mt-16
+          className="text-center mt-10"
         >
-          <h1 className="text-white text-3xl md:text-4xl font-semibold leading-snug">
+          <h1 className="text-[#1f2937] text-3xl md:text-4xl font-semibold leading-snug">
             Join our growing family of satisfied clients and industry partners
           </h1>
         </motion.div>

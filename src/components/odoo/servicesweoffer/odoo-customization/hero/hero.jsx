@@ -1,72 +1,72 @@
+"use client";
 import React from 'react';
 import { FaHome, FaCogs, FaChevronRight, FaRocket, FaBolt, FaUsers, FaHeadset } from 'react-icons/fa';
 
 const Hero = () => {
   return (
     <div className="relative pt-[94px] h-[calc(81vh-4rem)] sm:h-[60vh] overflow-hidden">
-      {/* Background Image with Overlay */}
+
+      {/* Background */}
       <div className="absolute inset-0 w-full h-full">
         <img
           src="/images/bg-image/odoo-customiation.jpg"
           alt="Odoo Customization Background"
           className="w-full h-full object-cover"
         />
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/85 via-purple-800/75 to-pink-900/85"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/85 via-indigo-800/80 to-sky-900/85"></div>
       </div>
 
-      {/* Content Container */}
+      {/* Content Wrapper */}
       <div className="relative z-10 flex flex-col h-full w-full justify-between px-6 sm:px-12 lg:px-24 py-8">
-        {/* Top Section - Left: Badge, Right: Breadcrumb */}
+
+        {/* Top Section */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-          {/* Left - Premium Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md text-white px-5 py-2.5 rounded-full border border-white/30 shadow-lg">
+
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md text-white px-5 py-2.5 rounded-full border border-white/25 shadow-lg">
             <FaCogs className="text-base" />
             <span className="font-bold text-sm tracking-wide">PREMIUM SERVICE</span>
           </div>
 
-          {/* Right - Breadcrumb Navigation */}
+          {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="w-full sm:w-auto">
             <div className="flex flex-col items-end gap-3">
+
               {/* Breadcrumb Pills */}
               <div className="flex flex-wrap justify-end items-center gap-2">
-                <a 
-                  href="/" 
-                  className="flex items-center gap-2 px-4 py-2 bg-white/15 backdrop-blur-md hover:bg-white/25 rounded-full transition-all duration-300 border border-white/30"
-                >
-                  <FaHome className="text-sm text-white" />
+                <a href="/" className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md hover:bg-white/20 rounded-full border border-white/20 transition-all">
+                  <FaHome className="text-white text-sm" />
                   <span className="font-semibold text-white text-sm">Home</span>
                 </a>
 
                 <FaChevronRight className="text-white/60 text-xs" />
 
-                <a 
-                  href="/servicesweoffer" 
-                  className="flex items-center gap-2 px-4 py-2 bg-white/15 backdrop-blur-md hover:bg-white/25 rounded-full transition-all duration-300 border border-white/30"
-                >
-                  <FaCogs className="text-sm text-white" />
+                <a href="/servicesweoffer" className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md hover:bg-white/20 rounded-full border border-white/20 transition-all">
+                  <FaCogs className="text-white text-sm" />
                   <span className="font-semibold text-white text-sm">Services We Offer</span>
                 </a>
 
                 <FaChevronRight className="text-white/60 text-xs" />
 
-                <div className="px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full shadow-lg border border-white/30">
+                <div className="px-4 py-2 bg-gradient-to-r from-blue-600 to-sky-500 rounded-full border border-white/30 shadow-lg">
                   <span className="font-bold text-white text-sm">Odoo Customization</span>
                 </div>
               </div>
 
               {/* Info Pills */}
               <div className="flex flex-wrap justify-end gap-2">
-                <div className="flex items-center gap-1.5 px-3 py-1.5 bg-white/15 backdrop-blur-md rounded-full border border-white/30">
+                <div className="flex items-center gap-1.5 px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-full border border-white/25">
                   <FaBolt className="text-yellow-300 text-xs" />
                   <span className="text-white text-xs font-semibold">Fast Implementation</span>
                 </div>
-                <div className="flex items-center gap-1.5 px-3 py-1.5 bg-white/15 backdrop-blur-md rounded-full border border-white/30">
-                  <FaUsers className="text-pink-300 text-xs" />
+
+                <div className="flex items-center gap=1.5 px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-full border border-white/25">
+                  <FaUsers className="text-sky-300 text-xs" />
                   <span className="text-white text-xs font-semibold">Expert Team</span>
                 </div>
-                <div className="flex items-center gap-1.5 px-3 py-1.5 bg-white/15 backdrop-blur-md rounded-full border border-white/30">
-                  <FaHeadset className="text-purple-300 text-xs" />
+
+                <div className="flex items-center gap=1.5 px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-full border border-white/25">
+                  <FaHeadset className="text-indigo-300 text-xs" />
                   <span className="text-white text-xs font-semibold">24/7 Support</span>
                 </div>
               </div>
@@ -74,35 +74,26 @@ const Hero = () => {
           </nav>
         </div>
 
-        {/* Bottom Left - Main Content */}
+        {/* Bottom Heading */}
         <div className="mt-auto">
-          {/* Main Heading */}
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight text-white drop-shadow-2xl">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight text-white drop-shadow-xl">
             Odoo<br />Customization
           </h1>
 
-          {/* Subtitle */}
-          <p className="text-white/95 text-xl sm:text-2xl font-medium mb-8 max-w-xl drop-shadow-lg">
+          <p className="text-white/95 text-xl sm:text-2xl font-medium mb-8 max-w-xl drop-shadow">
             Transform your business with tailored ERP solutions
           </p>
 
-          {/* CTA Button */}
           <a href="#contact">
-            <button className="group inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold text-base sm:text-lg px-8 py-4 rounded-full shadow-2xl hover:shadow-pink-500/50 hover:scale-105 transition-all duration-300">
+            <button className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-500 hover:to-sky-400 text-white font-bold text-base sm:text-lg px-8 py-4 rounded-full shadow-xl hover:shadow-sky-500/40 hover:scale-105 transition-all duration-300">
               <FaRocket className="text-xl group-hover:rotate-12 transition-transform duration-300" />
               Get Started
               <FaChevronRight className="text-sm group-hover:translate-x-1 transition-transform duration-300" />
             </button>
           </a>
         </div>
-      </div>
 
-      <style jsx>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px) translateX(0px); }
-          50% { transform: translateY(-20px) translateX(10px); }
-        }
-      `}</style>
+      </div>
     </div>
   );
 };

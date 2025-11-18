@@ -47,13 +47,13 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="w-full min-h-[calc(80vh-10vh)] flex items-center justify-center relative py-8 md:py-12 overflow-hidden">
-      {/* Animated gradient background blobs */}
+    <section className="w-full min-h-[calc(80vh-10vh)] flex items-center justify-center relative py-8 md:py-12 overflow-hidden bg-white">
+      {/* Simple background blobs - Solid colors */}
       <motion.div
-        className="absolute top-10 left-10 w-72 h-72 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full opacity-20 blur-3xl"
+        className="absolute top-10 left-10 w-72 h-72 bg-blue-100 rounded-full opacity-40 blur-3xl"
         animate={{
           scale: [1, 1.2, 1],
-          opacity: [0.2, 0.3, 0.2],
+          opacity: [0.3, 0.4, 0.3],
         }}
         transition={{
           duration: 8,
@@ -62,10 +62,10 @@ const HeroSection = () => {
         }}
       />
       <motion.div
-        className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-violet-500 to-purple-600 rounded-full opacity-15 blur-3xl"
+        className="absolute bottom-20 right-10 w-96 h-96 bg-orange-50 rounded-full opacity-40 blur-3xl"
         animate={{
           scale: [1, 1.3, 1],
-          opacity: [0.15, 0.25, 0.15],
+          opacity: [0.3, 0.4, 0.3],
         }}
         transition={{
           duration: 10,
@@ -76,18 +76,18 @@ const HeroSection = () => {
       />
 
       <div className="w-[95%] lg:w-[90%] relative z-10">
-        {/* Glassmorphic container with gradient border */}
+        {/* Container with solid border */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7 }}
-          className="relative rounded-3xl overflow-hidden"
+          className="relative rounded-3xl overflow-hidden shadow-2xl"
         >
-          {/* Gradient border effect */}
-          <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 opacity-80" />
+          {/* Solid border - Brand Color */}
+          <div className="absolute inset-0 bg-[#1e40af]" />
           
-          {/* Inner container with backdrop blur */}
-          <div className="relative m-[2px] rounded-3xl bg-gradient-to-br from-[#0a4d7d]/95 via-[#106EB5]/95 to-[#1a5f99]/95 backdrop-blur-xl">
+          {/* Inner container - Solid background */}
+          <div className="relative m-[2px] rounded-3xl bg-[#1e3a8a]">
             <div className="flex flex-col md:flex-row overflow-hidden text-white">
               {/* Left Section */}
               <motion.div
@@ -98,7 +98,7 @@ const HeroSection = () => {
               >
                 {/* Decorative elements */}
                 <div className="absolute top-8 right-8 w-20 h-20 border border-white/10 rounded-full" />
-                <div className="absolute bottom-12 left-8 w-16 h-16 border border-white/10 rounded-lg rotate-45" />
+                <div className="absolute bottom-12 left-8 w-16 h-16 border border-[#f97316]/20 rounded-lg rotate-45" />
 
                 {/* Animated badge */}
                 <motion.div variants={itemVariants} className="inline-flex">
@@ -106,18 +106,18 @@ const HeroSection = () => {
                     whileHover={{ scale: 1.05 }}
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20"
                   >
-                    <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                    <span className="w-2 h-2 bg-[#f97316] rounded-full animate-pulse" />
                     <span className="text-xs md:text-sm font-medium">
                       Trusted by 500+ Businesses
                     </span>
                   </motion.div>
                 </motion.div>
 
-                {/* Main heading with gradient text */}
+                {/* Main heading - Solid color highlight */}
                 <motion.div variants={itemVariants}>
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                     Boost Your{" "}
-                    <span className="bg-gradient-to-r from-cyan-300 via-blue-300 to-purple-300 bg-clip-text text-transparent">
+                    <span className="text-[#f97316]">
                       Business
                     </span>
                     <br />
@@ -126,7 +126,7 @@ const HeroSection = () => {
                     <span className="relative inline-block">
                       IT Solutions
                       <motion.div
-                        className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full"
+                        className="absolute -bottom-2 left-0 h-1 bg-[#f97316] rounded-full"
                         initial={{ width: 0 }}
                         animate={{ width: "100%" }}
                         transition={{ duration: 1, delay: 1 }}
@@ -137,7 +137,7 @@ const HeroSection = () => {
 
                 {/* Description */}
                 <motion.div variants={itemVariants} className="hidden md:block">
-                  <p className="text-base lg:text-lg text-blue-100/90 font-medium leading-relaxed max-w-xl">
+                  <p className="text-base lg:text-lg text-blue-50/90 font-medium leading-relaxed max-w-xl">
                     Unlock your full potential with our tailored technology
                     services. From innovative software development to robust
                     cybersecurity, we empower your business to thrive in the
@@ -155,7 +155,7 @@ const HeroSection = () => {
                       <motion.div
                         key={index}
                         whileHover={{ scale: 1.05, y: -2 }}
-                        className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium backdrop-blur-sm"
+                        className="px-4 py-2 rounded-full bg-white/5 border border-white/20 text-sm font-medium backdrop-blur-sm hover:border-[#f97316]/50 transition-colors"
                       >
                         {feature}
                       </motion.div>
@@ -163,21 +163,15 @@ const HeroSection = () => {
                   )}
                 </motion.div>
 
-                {/* CTA Button with enhanced effects */}
+                {/* CTA Button - Solid colors */}
                 <motion.div variants={itemVariants} className="flex gap-4">
                   <Link href="/contactus">
                     <motion.button
                       whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.98 }}
-                      className="group relative px-8 py-4 text-base md:text-lg font-semibold bg-white text-blue-900 rounded-xl overflow-hidden shadow-lg shadow-blue-500/20"
+                      className="px-8 py-4 text-base md:text-lg font-semibold bg-[#f97316] text-white rounded-xl shadow-lg hover:bg-[#ea580c] transition-colors"
                     >
-                      <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500"
-                        initial={{ x: "100%" }}
-                        whileHover={{ x: 0 }}
-                        transition={{ duration: 0.3 }}
-                      />
-                      <span className="relative z-10 flex items-center gap-2">
+                      <span className="flex items-center gap-2">
                         Get Started Today
                         <motion.span
                           animate={{ x: [0, 4, 0] }}
@@ -192,14 +186,6 @@ const HeroSection = () => {
                       </span>
                     </motion.button>
                   </Link>
-
-                  {/* <motion.button
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="px-8 py-4 text-base md:text-lg font-semibold bg-white/10 backdrop-blur-sm border-2 border-white/20 rounded-xl hover:bg-white/15 transition-colors"
-                  >
-                    Learn More
-                  </motion.button> */}
                 </motion.div>
               </motion.div>
 
@@ -209,8 +195,8 @@ const HeroSection = () => {
                 variants={floatingVariants}
                 animate="animate"
               >
-                {/* Decorative glow behind image */}
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-purple-500/20 blur-3xl" />
+                {/* Simple glow behind image */}
+                <div className="absolute inset-0 bg-[#3b82f6]/10 blur-3xl" />
 
                 <motion.div
                   variants={imageVariants}
@@ -218,9 +204,9 @@ const HeroSection = () => {
                   animate="visible"
                   className="relative z-10 w-full max-w-md"
                 >
-                  {/* Rotating border effect */}
+                  {/* Rotating border effect - removed gradient */}
                   <motion.div
-                    className="absolute -inset-4 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 rounded-3xl opacity-30 blur-xl"
+                    className="absolute -inset-4 bg-[#3b82f6]/30 rounded-3xl blur-xl"
                     animate={{ rotate: 360 }}
                     transition={{
                       duration: 20,
@@ -240,7 +226,7 @@ const HeroSection = () => {
                   </div>
                 </motion.div>
 
-                {/* Floating stats cards */}
+                {/* Floating stats cards - Solid colors */}
                 <motion.div
                   className="hidden lg:block absolute top-8 right-8 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 shadow-xl"
                   initial={{ opacity: 0, x: 20 }}
@@ -248,7 +234,7 @@ const HeroSection = () => {
                   transition={{ delay: 1 }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="text-2xl font-bold text-cyan-300">99.9%</div>
+                  <div className="text-2xl font-bold text-[#3b82f6]">99.9%</div>
                   <div className="text-xs text-blue-100">Uptime</div>
                 </motion.div>
 
@@ -259,7 +245,7 @@ const HeroSection = () => {
                   transition={{ delay: 1.2 }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="text-2xl font-bold text-purple-300">500+</div>
+                  <div className="text-2xl font-bold text-[#f97316]">500+</div>
                   <div className="text-xs text-blue-100">Projects</div>
                 </motion.div>
               </motion.div>

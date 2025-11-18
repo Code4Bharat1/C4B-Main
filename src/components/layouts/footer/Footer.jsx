@@ -33,11 +33,20 @@ const Footer = () => {
     },
   };
 
+  const branchOffices = [
+    { country: "Qatar", flag: "🇶🇦", name:"Qatar"  },
+    { country: "UAE", flag: "🇦🇪", name:"UAE"   },
+    { country: "Oman", flag: "🇴🇲", name:"Oman"   },
+    { country: "Saudi Arabia", flag: "🇸🇦", name:"Saudi Arabia" },
+    // { country: "Canada", flag: "🇨🇦", name:"Canada"   },
+    { country: "Kuwait", flag: "🇰🇼", name:"Kuwait"  },
+  ];
+
   return (
-    <footer className="w-full bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 relative overflow-hidden">
+    <footer className="w-full bg-gradient-to-br from-blue-900 via-blue-800 to-blue-950 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl" />
 
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 opacity-5" style={{
@@ -57,15 +66,14 @@ const Footer = () => {
         >
           {/* Logo + About */}
           <motion.div variants={itemVariants} className="lg:col-span-1">
-            <div className="mb-6 w-full h-24 rounded-xl shadow-lg flex items-center justify-center bg-white/80">
+            <div className="mb-6 w-full h-24 rounded-xl shadow-lg flex items-center justify-center bg-white">
               <img
-                src="/nex.png"
-                // src="/images/c4b.png"
+                src="/nex.jpeg"
                 alt="NEXCORE ALLIANCE LLP"
                 className="w-48 h-auto object-cover"
               />
             </div>
-            <p className="text-slate-300 leading-relaxed mb-6">
+            <p className="text-gray-200 leading-relaxed mb-6">
               Nexcore Alliance is at the forefront of providing world-class IT
               solutions, helping businesses globally leverage technology for
               growth and success.
@@ -84,11 +92,6 @@ const Footer = () => {
                   icon: <FaInstagram />,
                   gradient: "from-pink-600 via-purple-600 to-orange-500",
                 },
-                // {
-                //   href: "https://twitter.com/nexcore",
-                //   icon: <RiTwitterXLine />,
-                //   gradient: "from-slate-800 to-slate-900",
-                // },
                 {
                   href: "https://www.youtube.com/channel/UCYqpIltw48XxkMRLC-HCgag",
                   icon: <FaYoutube />,
@@ -123,12 +126,13 @@ const Footer = () => {
             <ul className="space-y-3">
               {[
                 { name: "Hub", path: "/" },
-                { name: "Behind the code", path: "/aboutus" },
-                { name: "What we offer", path: "/services" },
-                { name: "Trusted By", path: "/clients" },
-                { name: "Strategy", path: "/approach" },
+                // { name: "Behind the code", path: "/aboutus" },
+                // { name: "What we offer", path: "/services" },
+                // { name: "Trusted By", path: "/clients" },
+                // { name: "Strategy", path: "/approach" },
                 { name: "AI Solutions", path: "/aisloutions" },
                 { name: "Case Studies", path: "/casestudy" },
+                {name: "Odoo", path: "/servicesweoffer" },
               ].map((link, i) => (
                 <motion.li
                   key={i}
@@ -136,8 +140,8 @@ const Footer = () => {
                   className="group"
                 >
                   <Link href={link.path}>
-                    <span className="text-slate-300 hover:text-cyan-400 transition-colors flex items-center gap-2 cursor-pointer">
-                      <FaArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <span className="text-gray-200 hover:text-orange-400 transition-colors flex items-center gap-2 cursor-pointer">
+                      <FaArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-orange-400" />
                       {link.name}
                     </span>
                   </Link>
@@ -166,8 +170,8 @@ const Footer = () => {
                   className="group"
                 >
                   <Link href={item.path}>
-                    <span className="text-slate-300 hover:text-cyan-400 transition-colors flex items-center gap-2 cursor-pointer text-sm">
-                      <FaArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <span className="text-gray-200 hover:text-orange-400 transition-colors flex items-center gap-2 cursor-pointer text-sm">
+                      <FaArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-orange-400" />
                       {item.name}
                     </span>
                   </Link>
@@ -182,62 +186,124 @@ const Footer = () => {
               Get In Touch
             </h3>
             <div className="space-y-4">
-              {[
-                {
-                  icon: <FiPhone className="w-5 h-5" />,
-                  text: "+91 98976104646",
-                  href: "https://wa.me/918976104646",
-                  gradient: "from-green-500 to-emerald-500",
-                },
-                {
-                  icon: <FiMail className="w-5 h-5" />,
-                  text: "director@nexcorealliance.com",
-                  href: "mailto:director@nexcorealliance.com",
-                  gradient: "from-blue-500 to-cyan-500",
-                },
-                {
-                  icon: <FiMapPin className="w-5 h-5" />,
-                  text: "Off BKC, Mumbai, India 400070",
-                  href: "https://maps.app.goo.gl/DzBt4BdL9BH4MRga9",
-                  gradient: "from-purple-500 to-pink-500",
-                },
-              ].map((item, i) => (
-                <motion.a
-                  key={i}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ x: 4 }}
-                  className="flex items-start gap-3 group"
-                >
-                  <div className={`w-10 h-10 bg-gradient-to-br ${item.gradient} rounded-xl flex items-center justify-center text-white flex-shrink-0 shadow-lg group-hover:shadow-xl transition-shadow`}>
-                    {item.icon}
+              {/* India Phone Number */}
+              <motion.a
+                href="https://wa.me/918976104646"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ x: 4 }}
+                className="flex items-start gap-3 group"
+              >
+                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white flex-shrink-0 shadow-lg group-hover:shadow-xl transition-shadow">
+                  <FiPhone className="w-5 h-5" />
+                </div>
+                <div className="pt-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-xl">🇮🇳</span>
+                    <span className="text-xs font-semibold text-blue-300">India</span>
                   </div>
-                  <span className="text-slate-300 group-hover:text-white transition-colors text-sm leading-relaxed pt-2">
-                    {item.text}
+                  <span className="text-gray-200 group-hover:text-white transition-colors text-sm">
+                    +91 8976104646
                   </span>
-                </motion.a>
-              ))}
+                </div>
+              </motion.a>
+
+              {/* UAE Phone Number */}
+              <motion.a
+                href="https://wa.me/+971562021489"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ x: 4 }}
+                className="flex items-start gap-3 group"
+              >
+                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white flex-shrink-0 shadow-lg group-hover:shadow-xl transition-shadow">
+                  <FiPhone className="w-5 h-5" />
+                </div>
+                <div className="pt-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-xl">🇦🇪</span>
+                    <span className="text-xs font-semibold text-blue-300">UAE</span>
+                  </div>
+                  <span className="text-gray-200 group-hover:text-white transition-colors text-sm">
+                    +971 562021489
+                  </span>
+                </div>
+              </motion.a>
+
+              {/* Email */}
+              <motion.a
+                href="mailto:director@nexcorealliance.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ x: 4 }}
+                className="flex items-start gap-3 group"
+              >
+                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white flex-shrink-0 shadow-lg group-hover:shadow-xl transition-shadow">
+                  <FiMail className="w-5 h-5" />
+                </div>
+                <span className="text-gray-200 group-hover:text-white transition-colors text-sm leading-relaxed pt-2">
+                  director@nexcorealliance.com
+                </span>
+              </motion.a>
+
+              {/* Head Office - Mumbai (Clickable) */}
+              <motion.a
+                href="https://maps.app.goo.gl/DzBt4BdL9BH4MRga9"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ x: 4 }}
+                className="flex items-start gap-3 group"
+              >
+                <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center text-white flex-shrink-0 shadow-lg group-hover:shadow-xl transition-shadow">
+                  <FiMapPin className="w-5 h-5" />
+                </div>
+                <div className="pt-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-xs font-bold text-orange-300 uppercase tracking-wide">Head Office</span>
+                  </div>
+                  <span className="text-gray-200 group-hover:text-white transition-colors text-sm leading-relaxed">
+                    Off BKC, Mumbai, India 400070
+                  </span>
+                </div>
+              </motion.a>
+
+              {/* Branch Offices (Non-clickable Display) */}
+              <div className="pt-2 border-t border-blue-700/50">
+                <div className="mb-2">
+                  <span className="text-xs font-bold text-blue-300 uppercase tracking-wide">Branch Offices</span>
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  {branchOffices.map((office, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center gap-2 text-gray-300 text-xs"
+                    >
+                      <span className="text-base">{office.flag}</span>
+                      <span>{office.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </motion.div>
         </motion.div>
 
-        {/* Newsletter Section */}
-        {/* <motion.div
+        {/* CTA Section */}
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-16 pt-12 border-t border-slate-700/50"
+          className="mt-16 pt-12 border-t border-blue-700/50"
         >
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 md:p-12 relative overflow-hidden">
+          <div className="bg-gradient-to-r from-blue-600 to-orange-500 rounded-2xl p-8 md:p-12 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
                   Ready to Transform Your Business?
                 </h3>
-                <p className="text-blue-100">
+                <p className="text-blue-50">
                   Let's discuss how we can help you achieve your goals
                 </p>
               </div>
@@ -245,7 +311,7 @@ const Footer = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center gap-2 whitespace-nowrap"
+                  className="px-8 py-4 bg-white text-blue-900 font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center gap-2 whitespace-nowrap"
                 >
                   Get Started
                   <FaArrowRight className="w-4 h-4" />
@@ -253,11 +319,11 @@ const Footer = () => {
               </Link>
             </div>
           </div>
-        </motion.div> */}
+        </motion.div>
       </div>
 
       {/* Bottom Section */}
-      <div className="relative z-10 border-t border-slate-700/50">
+      <div className="relative z-10 border-t border-blue-700/50">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-8">
           <motion.div
             initial={{ opacity: 0 }}
@@ -265,20 +331,20 @@ const Footer = () => {
             viewport={{ once: true }}
             className="flex flex-col md:flex-row items-center justify-between gap-4"
           >
-            <p className="text-slate-400 text-sm text-center md:text-left">
+            <p className="text-gray-300 text-sm text-center md:text-left">
               © 2011-2025 <span className="font-semibold text-white">Nexcore Alliance</span>. All Rights Reserved.
             </p>
-            <div className="flex items-center gap-6 text-sm text-slate-400">
+            <div className="flex items-center gap-6 text-sm text-gray-300">
               <Link href="/policies/privacy">
-                <span className="hover:text-cyan-400 transition-colors cursor-pointer">Privacy</span>
+                <span className="hover:text-orange-400 transition-colors cursor-pointer">Privacy</span>
               </Link>
               <span>•</span>
               <Link href="/policies/termsandcondition">
-                <span className="hover:text-cyan-400 transition-colors cursor-pointer">Terms</span>
+                <span className="hover:text-orange-400 transition-colors cursor-pointer">Terms</span>
               </Link>
               <span>•</span>
               <Link href="/policies/contact">
-                <span className="hover:text-cyan-400 transition-colors cursor-pointer">Contact</span>
+                <span className="hover:text-orange-400 transition-colors cursor-pointer">Contact</span>
               </Link>
             </div>
           </motion.div>
@@ -307,8 +373,6 @@ const Footer = () => {
         }}
       >
         <FaWhatsapp className="text-white text-3xl group-hover:scale-110 transition-transform" />
-
-        {/* Ping effect */}
         <span className="absolute inset-0 rounded-full bg-green-400 animate-ping opacity-20" />
       </motion.a>
     </footer>

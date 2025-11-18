@@ -1,9 +1,9 @@
 import "@/app/globals.css";
 
 export const metadata = {
-  title: "Nexcore Alliance LLP | Web & App Development Company in Mumbai & Kurla",
+  title: "NEXCORE ALLIANCE LLP | Crafting Scalable AI Solutions, Web & App MVPs, and Odoo Customizations",
   description:
-    "Nexcore Alliance LLP boosts businesses with custom web & mobile app development, IT consulting, and tailored e-commerce solutions in Kurla & Mumbai.",
+    "Nexcore Alliance LLP delivers scalable AI solutions, custom web and mobile app development, MVP builds, and Odoo customization services—empowering businesses with digital transformation and smart automation.",
   keywords: [
     "Nexcore Alliance LLP",
     "Nexcore Alliance LLP web development",

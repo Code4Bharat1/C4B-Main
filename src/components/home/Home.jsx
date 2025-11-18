@@ -63,9 +63,9 @@ const Home = () => {
           <AboutusInfo />
         </section>
 
-        <section id="supporters">
+        {/* <section id="supporters">
           <SupportersSection />
-        </section>
+        </section> */}
 
         <section id="values">
           <ValuesSection />

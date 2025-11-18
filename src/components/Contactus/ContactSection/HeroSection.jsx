@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
-import { Headphones, Globe2, MessageCircle } from "lucide-react";
+import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
+import { Headphones, Globe2, MessageCircle, Sparkles, ArrowRight } from "lucide-react";
 
 const ContactUsHeroSection = () => {
   const containerVariants = {
@@ -23,7 +24,10 @@ const ContactUsHeroSection = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+      transition: {
+        duration: 0.6,
+        ease: [0.22, 1, 0.36, 1]
+      },
     },
   };
 
@@ -33,268 +37,332 @@ const ContactUsHeroSection = () => {
       opacity: 1,
       scale: 1,
       rotate: 0,
-      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+      transition: {
+        duration: 0.8,
+        ease: [0.22, 1, 0.36, 1]
+      },
     },
   };
 
-  const contactMethods = [
-    {
-      Icon: FaPhone,
-      label: "Call Us",
-      value: "+91 959 443 0295",
-      href: "tel:+918976104646",
-      gradient: "from-blue-500 to-cyan-500",
-    },
-    {
-      Icon: FaEnvelope,
-      label: "Email Us",
-      value: "director@nexcorealliance.com",
-      href: "mailto:director@nexcorealliance.com",
-      gradient: "from-purple-500 to-pink-500",
-    },
-    {
-      Icon: FaMapMarkerAlt,
-      label: "Visit Us",
-      value: "Mumbai, India",
-      href: "https://maps.app.goo.gl/DzBt4BdL9BH4MRga9",
-      gradient: "from-emerald-500 to-teal-500",
-    },
+  const branchOffices = [
+    { country: "Qatar", flag: "🇶🇦", name:"Qatar"  },
+    { country: "UAE", flag: "🇦🇪", name:"UAE"   },
+    { country: "Oman", flag: "🇴🇲", name:"Oman"   },
+    { country: "Saudi Arabia", flag: "🇸🇦", name:"Saudi Arabia" },
+    // { country: "Canada", flag: "🇨🇦", name:"Canada"   },
+    { country: "Kuwait", flag: "🇰🇼", name:"Kuwait"  },
   ];
-
   return (
-    <section className="w-full min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900">
-      {/* Animated grid background */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
-                           linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)`,
-          backgroundSize: '50px 50px',
-        }} />
-      </div>
+    <motion.section
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+    >
+      <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/30 to-orange-50/20 relative overflow-hidden flex items-center">
+        {/* Animated background patterns */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
+        </div>
+        
+        {/* Animated gradient orbs */}
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.5, 0.3],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-20 left-[10%] w-[500px] h-[500px] bg-blue-400/20 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.2, 0.4, 0.2],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1
+          }}
+          className="absolute bottom-20 right-[10%] w-[600px] h-[600px] bg-orange-400/15 rounded-full blur-3xl"
+        />
 
-      {/* Spotlight effects */}
-      <motion.div
-        className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-blue-500/30 rounded-full blur-[150px]"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-      <motion.div
-        className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-cyan-500/20 rounded-full blur-[120px]"
-        animate={{
-          scale: [1.2, 1, 1.2],
-          opacity: [0.2, 0.4, 0.2],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-
-      <div className="w-full max-w-7xl mx-auto px-4 md:px-8 relative z-10 py-20">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left: Text Content */}
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={containerVariants}
-            className="space-y-8"
-          >
-            {/* Badge */}
-            <motion.div variants={itemVariants}>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20">
-                <FaEnvelope className="w-3 h-3 text-blue-400" />
-                <span className="text-sm text-blue-300 font-medium">
-                  Get In Touch
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left: Text Content */}
+            <motion.div variants={containerVariants} className="space-y-8">
+              {/* Badge */}
+              <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-600/10 to-orange-500/10 border border-blue-600/20 rounded-full backdrop-blur-sm shadow-lg">
+                <Sparkles className="w-4 h-4 text-blue-600" />
+                <span className="text-sm font-semibold bg-gradient-to-r from-blue-600 to-orange-500 bg-clip-text text-transparent">
+                  Let's Connect & Collaborate
                 </span>
-              </div>
-            </motion.div>
+              </motion.div>
 
-            {/* Main heading */}
-            <motion.div variants={itemVariants}>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight">
-                <span className="block text-white">We're Here</span>
-                <span className="block text-white">to Help</span>
-                <span className="block bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent">
-                  Developers
+              {/* Main heading */}
+              <motion.h1
+                variants={itemVariants}
+                className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-gray-900"
+              >
+                Empowering Your{" "}
+                <span className="relative inline-block">
+                  <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 bg-clip-text text-transparent">
+                    Digital
+                  </span>
+                  <motion.span
+                    className="absolute -bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-blue-600/30 to-orange-500/30 -z-10 rounded-full"
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ duration: 0.8, delay: 0.5 }}
+                  />
                 </span>
-              </h1>
-            </motion.div>
+                <br />
+                <span className="bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 bg-clip-text text-transparent">
+                  Transformation
+                </span>
+              </motion.h1>
 
-            {/* Description */}
-            <motion.p
-              variants={itemVariants}
-              className="text-lg text-slate-300 leading-relaxed max-w-xl"
-            >
-              At <span className="font-semibold text-white">Nexcore Alliance</span>, we are dedicated to providing you with the best support.
-              Whether you have questions or need assistance, we are just a message away.
-            </motion.p>
+              {/* Description */}
+              <motion.p
+                variants={itemVariants}
+                className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl"
+              >
+                At <span className="font-semibold text-gray-900">Nexcore Alliance</span>, we transform ideas into powerful digital solutions. 
+                Whether you need expert guidance or innovative development, we're here to elevate your business.
+              </motion.p>
 
-            {/* Contact Methods */}
-            <motion.div
-              variants={itemVariants}
-              className="space-y-4"
-            >
-              {contactMethods.map((method, idx) => (
+              {/* Contact Methods - Footer Style */}
+              <motion.div variants={itemVariants} className="space-y-4">
+                {/* India Phone Number */}
                 <motion.a
-                  key={idx}
-                  href={method.href}
+                  href="https://wa.me/918976104646"
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ x: 8 }}
-                  className="flex items-center gap-4 p-4 bg-slate-800/50 backdrop-blur-sm rounded-xl border border-slate-700/50 hover:border-slate-600/50 transition-all group"
+                  whileHover={{ x: 4 }}
+                  className="flex items-start gap-3 group p-5 bg-white border-2 border-gray-100 rounded-2xl hover:border-blue-200 hover:shadow-xl transition-all duration-300"
                 >
-                  <div className={`w-12 h-12 bg-gradient-to-br ${method.gradient} rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform`}>
-                    <method.Icon className="w-6 h-6 text-white" />
+                  <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white flex-shrink-0 shadow-lg group-hover:shadow-xl transition-shadow">
+                    <FiPhone className="w-5 h-5" />
+                  </div>
+                  <div className="pt-1 flex-1">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-xl">🇮🇳</span>
+                      <span className="text-xs font-semibold text-blue-600">India</span>
+                    </div>
+                    <span className="text-gray-700 group-hover:text-blue-600 transition-colors text-sm font-medium">
+                      +91 8976104646
+                    </span>
+                  </div>
+                  <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300" />
+                </motion.a>
+
+                {/* UAE Phone Number */}
+                <motion.a
+                  href="https://wa.me/+971562021489"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ x: 4 }}
+                  className="flex items-start gap-3 group p-5 bg-white border-2 border-gray-100 rounded-2xl hover:border-blue-200 hover:shadow-xl transition-all duration-300"
+                >
+                  <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white flex-shrink-0 shadow-lg group-hover:shadow-xl transition-shadow">
+                    <FiPhone className="w-5 h-5" />
+                  </div>
+                  <div className="pt-1 flex-1">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-xl">🇦🇪</span>
+                      <span className="text-xs font-semibold text-blue-600">UAE</span>
+                    </div>
+                    <span className="text-gray-700 group-hover:text-blue-600 transition-colors text-sm font-medium">
+                      +971 562021489
+                    </span>
+                  </div>
+                  <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300" />
+                </motion.a>
+
+                {/* Email */}
+                <motion.a
+                  href="mailto:director@nexcorealliance.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ x: 4 }}
+                  className="flex items-start gap-3 group p-5 bg-white border-2 border-gray-100 rounded-2xl hover:border-blue-200 hover:shadow-xl transition-all duration-300"
+                >
+                  <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white flex-shrink-0 shadow-lg group-hover:shadow-xl transition-shadow">
+                    <FiMail className="w-5 h-5" />
                   </div>
                   <div className="flex-1">
-                    <div className="text-sm text-slate-400">{method.label}</div>
-                    <div className="text-white font-medium">{method.value}</div>
+                    <span className="text-gray-700 group-hover:text-blue-600 transition-colors text-sm font-medium leading-relaxed pt-2 block">
+                      director@nexcorealliance.com
+                    </span>
                   </div>
+                  <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300" />
                 </motion.a>
-              ))}
-            </motion.div>
 
-            {/* CTA Buttons */}
-            <motion.div
-              variants={itemVariants}
-              className="flex flex-wrap gap-4"
-            >
-              <Link href="https://wa.me/918976104646">
-                <motion.button
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="group relative px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-semibold rounded-xl overflow-hidden shadow-lg shadow-green-500/50"
+                {/* Head Office - Mumbai (Clickable) */}
+                <motion.a
+                  href="https://maps.app.goo.gl/DzBt4BdL9BH4MRga9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ x: 4 }}
+                  className="flex items-start gap-3 group p-5 bg-white border-2 border-gray-100 rounded-2xl hover:border-orange-200 hover:shadow-xl transition-all duration-300"
                 >
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-green-500"
-                    initial={{ x: "-100%" }}
-                    whileHover={{ x: 0 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                  <span className="relative flex items-center gap-2">
-                    <FaWhatsapp className="w-5 h-5" />
-                    WhatsApp Us
-                  </span>
-                </motion.button>
-              </Link>
+                  <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center text-white flex-shrink-0 shadow-lg group-hover:shadow-xl transition-shadow">
+                    <FiMapPin className="w-5 h-5" />
+                  </div>
+                  <div className="pt-1 flex-1">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-xs font-bold text-orange-600 uppercase tracking-wide">Head Office</span>
+                    </div>
+                    <span className="text-gray-700 group-hover:text-orange-600 transition-colors text-sm font-medium leading-relaxed">
+                      Off BKC, Mumbai, India 400070
+                    </span>
+                  </div>
+                  <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-orange-600 group-hover:translate-x-1 transition-all duration-300" />
+                </motion.a>
 
-              <Link href="mailto:director@nexcorealliance.com">
-                <motion.button
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 border-2 border-slate-600 text-white font-semibold rounded-xl hover:border-slate-500 hover:bg-slate-800/50 transition-all flex items-center gap-2"
-                >
-                  <FaEnvelope className="w-4 h-4" />
-                  Send Email
-                </motion.button>
-              </Link>
-            </motion.div>
-
-            {/* Quick Stats */}
-            <motion.div
-              variants={itemVariants}
-              className="flex gap-8 pt-4 border-t border-slate-700/50"
-            >
-              {[
-                { icon: <Headphones className="w-6 h-6 text-orange-400" />, label: "24hr Response" },
-                { icon: <Globe2 className="w-6 h-6 text-blue-400" />, label: "Global Support" },
-                { icon: <MessageCircle className="w-6 h-6 text-green-400" />, label: "Live Chat" },
-              ].map((stat, i) => (
-                <div key={i} className="flex items-center gap-2">
-                  <span>{stat.icon}</span>
-                  <span className="text-sm text-slate-300">{stat.label}</span>
+                {/* Branch Offices Card */}
+                <div className="p-6 bg-gradient-to-br from-blue-50 to-orange-50 border-2 border-blue-100 rounded-2xl">
+                  <div className="mb-4">
+                    <span className="text-sm font-bold text-blue-700 uppercase tracking-wide flex items-center gap-2">
+                      <Globe2 className="w-4 h-4" />
+                      Branch Offices
+                    </span>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3">
+                    {branchOffices.map((office, index) => (
+                      <div
+                        key={index}
+                        className="flex items-center gap-2 text-gray-700 text-sm font-medium p-2 bg-white rounded-lg border border-gray-200"
+                      >
+                        <span className="text-lg">{office.flag}</span>
+                        <span>{office.name}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              ))}
-            </motion.div>
-
-          </motion.div>
-
-          {/* Right: Image with 3D effect */}
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={imageVariants}
-            className="relative"
-          >
-            {/* Floating animation wrapper */}
-            <motion.div
-              animate={{
-                y: [0, -20, 0],
-              }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="relative"
-            >
-              {/* Glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 opacity-20 blur-3xl rounded-3xl scale-105" />
-
-              {/* Main card */}
-              <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl rounded-3xl p-8 border border-slate-700/50 shadow-2xl">
-                <Image
-                  src="/images/services3.jpg"
-                  alt="Contact Us"
-                  width={600}
-                  height={600}
-                  className="w-full h-auto rounded-2xl relative z-10"
-                />
-
-                {/* Decorative elements */}
-                <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl opacity-20 blur-2xl" />
-                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-cyan-500 to-teal-500 rounded-2xl opacity-20 blur-2xl" />
-              </div>
-
-              {/* Floating badges */}
-              <motion.div
-                className="absolute -right-6 top-1/4 bg-gradient-to-br from-blue-500/90 to-blue-600/90 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-blue-400/30"
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1, type: "spring" }}
-                whileHover={{ scale: 1.1, rotate: 5 }}
-              >
-                <FaPhone className="w-8 h-8 text-white mb-2" />
-                <div className="text-xs text-blue-100 font-medium whitespace-nowrap">Quick Call</div>
               </motion.div>
 
-              <motion.div
-                className="absolute -left-6 bottom-1/3 bg-gradient-to-br from-cyan-500/90 to-cyan-600/90 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-cyan-400/30"
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1.2, type: "spring" }}
-                whileHover={{ scale: 1.1, rotate: -5 }}
-              >
-                <FaEnvelope className="w-8 h-8 text-white mb-2" />
-                <div className="text-xs text-cyan-100 font-medium whitespace-nowrap">Email Support</div>
+              {/* CTA Buttons */}
+              <motion.div variants={itemVariants} className="flex flex-wrap gap-4 pt-4">
+                <Link
+                  href="https://wa.me/918976104646"
+                  className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl font-bold shadow-lg hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 hover:-translate-y-1 flex items-center gap-3 overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-800 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                  <FaWhatsapp className="w-6 h-6 relative z-10 group-hover:scale-110 transition-transform" />
+                  <span className="relative z-10">WhatsApp Us</span>
+                </Link>
+                <Link
+                  href="mailto:director@nexcorealliance.com"
+                  className="group relative px-8 py-4 bg-white border-2 border-blue-600 text-blue-700 rounded-xl font-bold hover:bg-blue-600 hover:text-white transition-all duration-300 hover:-translate-y-1 flex items-center gap-3 shadow-lg"
+                >
+                  <FaEnvelope className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                  <span>Send Email</span>
+                </Link>
               </motion.div>
 
-              <motion.div
-                className="absolute -bottom-6 right-1/4 bg-gradient-to-br from-green-500/90 to-emerald-600/90 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-green-400/30"
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1.4, type: "spring" }}
-                whileHover={{ scale: 1.1, rotate: 5 }}
-              >
-                <FaWhatsapp className="w-8 h-8 text-white mb-2" />
-                <div className="text-xs text-green-100 font-medium whitespace-nowrap">WhatsApp</div>
+              {/* Quick Stats */}
+              <motion.div variants={itemVariants} className="grid grid-cols-3 gap-4 pt-6 border-t-2 border-gray-100">
+                {[
+                  { icon: <Headphones className="w-5 h-5" />, label: "24/7 Support", color: "blue" },
+                  { icon: <Globe2 className="w-5 h-5" />, label: "Global Reach", color: "orange" },
+                  { icon: <MessageCircle className="w-5 h-5" />, label: "Live Chat", color: "blue" },
+                ].map((stat, i) => (
+                  <div key={i} className="flex flex-col items-center text-center gap-2">
+                    <div className={`p-3 bg-gradient-to-br ${stat.color === 'blue' ? 'from-blue-100 to-blue-200' : 'from-orange-100 to-orange-200'} ${stat.color === 'blue' ? 'text-blue-600' : 'text-orange-600'} rounded-xl shadow-sm`}>
+                      {stat.icon}
+                    </div>
+                    <span className="text-sm font-bold text-gray-700">{stat.label}</span>
+                  </div>
+                ))}
               </motion.div>
             </motion.div>
-          </motion.div>
+
+            {/* Right: Image with 3D effect */}
+            <motion.div variants={imageVariants} className="relative lg:block hidden">
+              {/* Floating animation wrapper */}
+              <motion.div
+                animate={{ y: [0, -20, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                className="relative group"
+              >
+                {/* Glow effect */}
+                <div className="absolute -inset-6 bg-gradient-to-r from-blue-500 via-blue-600 to-orange-500 rounded-3xl opacity-20 blur-3xl group-hover:opacity-30 transition-opacity duration-500" />
+
+                {/* Main card */}
+                <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-gray-100">
+                  {/* Decorative gradient overlays */}
+                  <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-br from-blue-500/10 via-blue-400/5 to-transparent rounded-full -translate-y-40 translate-x-40" />
+                  <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-orange-500/10 via-orange-400/5 to-transparent rounded-full translate-y-40 -translate-x-40" />
+
+                  {/* Image container */}
+                  <div className="relative p-8">
+                    <Image
+                      src="/images/services3.jpg"
+                      alt="Nexcore Alliance Support Team"
+                      width={600}
+                      height={750}
+                      className="rounded-2xl object-cover w-full h-[600px] shadow-xl"
+                    />
+                  </div>
+
+                  {/* Floating badges */}
+                  <motion.div
+                    animate={{ y: [0, -12, 0] }}
+                    transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute top-12 right-12 px-5 py-3 bg-white/95 border-2 border-blue-100 rounded-2xl shadow-2xl backdrop-blur-md"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse shadow-lg shadow-green-500/50" />
+                      <span className="text-sm font-bold text-gray-800">Available Now</span>
+                    </div>
+                  </motion.div>
+
+                  <motion.div
+                    animate={{ y: [0, 12, 0] }}
+                    transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                    className="absolute top-40 left-12 px-5 py-3 bg-white/95 border-2 border-orange-100 rounded-2xl shadow-2xl backdrop-blur-md"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="p-2 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg">
+                        <FaEnvelope className="w-4 h-4 text-white" />
+                      </div>
+                      <div>
+                        <p className="text-xs text-gray-500 font-medium">Response Time</p>
+                        <p className="text-sm font-bold text-gray-800">Under 2 Hours</p>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  <motion.div
+                    animate={{ y: [0, -15, 0] }}
+                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                    className="absolute bottom-40 right-16 px-5 py-3 bg-white/95 border-2 border-blue-100 rounded-2xl shadow-2xl backdrop-blur-md"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="p-2 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg">
+                        <FaWhatsapp className="w-4 h-4 text-white" />
+                      </div>
+                      <div>
+                        <p className="text-xs text-gray-500 font-medium">Connect on</p>
+                        <p className="text-sm font-bold text-gray-800">WhatsApp</p>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Bottom accent bar */}
+                  <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-blue-600 via-blue-500 via-orange-500 to-orange-600" />
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
         </div>
       </div>
-
-      {/* Bottom wave decoration */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-950/50 to-transparent" />
-    </section>
+    </motion.section>
   );
 };
 

@@ -17,7 +17,7 @@ const steps = [
     description:
       "At NEXCORE ALLIANCE LLP, we begin every project with a consultation to align our solutions with your business objectives and technology needs.",
     icon: FaComments,
-    color: "from-blue-500 to-cyan-500",
+    color: "#1e40af", // Solid blue
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ const steps = [
     description:
       "Our client-centered development process is flexible, allowing us to customize our approach for projects ranging from simple websites to complex enterprise applications.",
     icon: FaCode,
-    color: "from-purple-500 to-pink-500",
+    color: "#f97316", // Solid orange
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const steps = [
     description:
       "We employ an agile development methodology to stay adaptable to changes in project scope, enabling incremental progress and allowing for your feedback throughout the process.",
     icon: FaRocket,
-    color: "from-orange-500 to-red-500",
+    color: "#3b82f6", // Solid bright blue
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ const steps = [
     description:
       "We provide ongoing post-launch support, maintenance, and continuous improvement to keep your web platforms and IT infrastructure up-to-date and efficient as your business evolves.",
     icon: FaChartLine,
-    color: "from-emerald-500 to-teal-500",
+    color: "#1e3a8a", // Solid dark blue
   },
 ];
 
@@ -66,11 +66,11 @@ const ApproachSection = () => {
   };
 
   return (
-    <section className="w-full min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white py-20 md:py-32 relative overflow-hidden">
-      {/* Animated background elements */}
+    <section className="w-full min-h-screen bg-[#1e3a8a] text-white py-20 md:py-32 relative overflow-hidden">
+      {/* Simple background elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
-        <div className="absolute top-20 left-20 w-64 h-64 bg-blue-500 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-cyan-500 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-20 left-20 w-64 h-64 bg-blue-400 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-orange-300 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
       </div>
 
       {/* Grid pattern overlay */}
@@ -92,9 +92,9 @@ const ApproachSection = () => {
           >
             {/* Header */}
             <motion.div variants={itemVariants} className="space-y-4">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/20 border border-cyan-400/30">
-                <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
-                <span className="text-sm text-cyan-300 font-semibold">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f97316]/20 border border-[#f97316]/30">
+                <div className="w-2 h-2 bg-[#f97316] rounded-full animate-pulse" />
+                <span className="text-sm text-orange-200 font-semibold">
                   How it Works?
                 </span>
               </div>
@@ -102,7 +102,7 @@ const ApproachSection = () => {
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight">
                 Our Process
                 <br />
-                <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+                <span className="text-[#f97316]">
                   Workflow
                 </span>
               </h2>
@@ -119,32 +119,36 @@ const ApproachSection = () => {
                 >
                   {/* Connecting line (except for last item) */}
                   {idx < steps.length - 1 && (
-                    <div className="hidden md:block absolute left-8 top-20 w-0.5 h-12 bg-gradient-to-b from-cyan-500/50 to-transparent" />
+                    <div className="hidden md:block absolute left-8 top-20 w-0.5 h-12 bg-white/20" />
                   )}
 
                   <div className="flex gap-6 items-start">
-                    {/* Icon Circle */}
+                    {/* Icon Circle - Solid color */}
                     <motion.div
-                      className={`relative flex-shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow`}
+                      className="relative flex-shrink-0 w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow"
+                      style={{ backgroundColor: step.color }}
                       whileHover={{ scale: 1.1, rotate: 5 }}
                     >
                       {/* Glow effect */}
-                      <div className={`absolute inset-0 bg-gradient-to-br ${step.color} opacity-50 blur-xl rounded-2xl`} />
+                      <div 
+                        className="absolute inset-0 opacity-50 blur-xl rounded-2xl"
+                        style={{ backgroundColor: step.color }}
+                      />
                       
                       <step.icon className="w-7 h-7 text-white relative z-10" />
                       
                       {/* Step number badge */}
-                      <div className="absolute -top-2 -right-2 w-6 h-6 bg-slate-900 border-2 border-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">
+                      <div className="absolute -top-2 -right-2 w-6 h-6 bg-white border-2 border-[#f97316] rounded-full flex items-center justify-center text-xs font-bold text-[#1e3a8a]">
                         {step.id}
                       </div>
                     </motion.div>
 
                     {/* Content */}
                     <div className="flex-1 pt-1">
-                      <h3 className="text-xl md:text-2xl font-bold text-cyan-300 mb-2 group-hover:text-cyan-200 transition-colors">
+                      <h3 className="text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-[#f97316] transition-colors">
                         {step.title}
                       </h3>
-                      <p className="text-slate-300 leading-relaxed text-sm md:text-base">
+                      <p className="text-blue-100 leading-relaxed text-sm md:text-base">
                         {step.description}
                       </p>
                     </div>
@@ -153,17 +157,15 @@ const ApproachSection = () => {
               ))}
             </div>
 
-            {/* CTA Button */}
+            {/* CTA Button - Solid color */}
             <motion.div variants={itemVariants}>
-  <Link href="/contactus"
-    
-      // whileHover={{ scale: 1.05, y: -2 }}
-      // whileTap={{ scale: 0.95 }}
-      className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-xl shadow-lg shadow-cyan-500/30 hover:shadow-xl hover:shadow-cyan-500/50 transition-all inline-flex justify-center items-center"
-      >
-      Start Your Project
-  </Link>
-</motion.div>
+              <Link 
+                href="/contactus"
+                className="px-8 py-4 bg-[#f97316] text-white font-semibold rounded-xl shadow-lg hover:bg-[#ea580c] hover:shadow-xl transition-all inline-flex justify-center items-center"
+              >
+                Start Your Project
+              </Link>
+            </motion.div>
           </motion.div>
 
           {/* Right Section - Image with decorative elements */}
@@ -187,10 +189,10 @@ const ApproachSection = () => {
               className="relative"
             >
               {/* Decorative glow */}
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 opacity-20 blur-3xl rounded-3xl scale-105" />
+              <div className="absolute inset-0 bg-[#3b82f6]/20 blur-3xl rounded-3xl scale-105" />
 
               {/* Main image container */}
-              <div className="relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-3xl p-4 border border-slate-700/50 shadow-2xl">
+              <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-4 border border-white/10 shadow-2xl">
                 <div className="relative rounded-2xl overflow-hidden">
                   <Image
                     src="/images/approach.png"
@@ -201,43 +203,43 @@ const ApproachSection = () => {
                   />
                   
                   {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1e3a8a]/50 to-transparent" />
                 </div>
               </div>
 
-              {/* Floating stat cards */}
+              {/* Floating stat cards - Solid colors */}
               <motion.div
-                className="absolute -top-6 -right-6 bg-gradient-to-br from-cyan-500 to-blue-500 backdrop-blur-sm rounded-2xl p-4 shadow-2xl border border-cyan-400/30"
+                className="absolute -top-6 -right-6 bg-[#3b82f6] backdrop-blur-sm rounded-2xl p-4 shadow-2xl border border-white/20"
                 initial={{ opacity: 0, scale: 0 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.5, type: "spring" }}
                 whileHover={{ scale: 1.1, rotate: 5 }}
               >
-                <div className="text-3xl font-bold text-white">500+</div>
-                <div className="text-xs text-cyan-100">Projects Done</div>
+                <div className="text-3xl font-bold text-white">329+</div>
+                <div className="text-xs text-blue-100">Projects Done</div>
               </motion.div>
 
               <motion.div
-                className="absolute -bottom-6 -left-6 bg-gradient-to-br from-purple-500 to-pink-500 backdrop-blur-sm rounded-2xl p-4 shadow-2xl border border-purple-400/30"
+                className="absolute -bottom-6 -left-6 bg-[#f97316] backdrop-blur-sm rounded-2xl p-4 shadow-2xl border border-white/20"
                 initial={{ opacity: 0, scale: 0 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.7, type: "spring" }}
                 whileHover={{ scale: 1.1, rotate: -5 }}
               >
-                <div className="text-3xl font-bold text-white">98%</div>
-                <div className="text-xs text-purple-100">Client Success</div>
+                <div className="text-3xl font-bold text-white">94%</div>
+                <div className="text-xs text-orange-100">Client Success</div>
               </motion.div>
 
               {/* Decorative rings */}
               <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full">
-                <div className="absolute inset-0 border-2 border-cyan-500/20 rounded-full animate-ping" style={{ animationDuration: '3s' }} />
-                <div className="absolute inset-8 border-2 border-blue-500/20 rounded-full animate-ping" style={{ animationDuration: '4s', animationDelay: '0.5s' }} />
+                <div className="absolute inset-0 border-2 border-[#3b82f6]/20 rounded-full animate-ping" style={{ animationDuration: '3s' }} />
+                <div className="absolute inset-8 border-2 border-[#f97316]/20 rounded-full animate-ping" style={{ animationDuration: '4s', animationDelay: '0.5s' }} />
               </div>
             </motion.div>
           </motion.div>
         </div>
 
-        {/* Bottom process flow indicator */}
+        {/* Bottom process flow indicator - Solid colors */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -249,11 +251,12 @@ const ApproachSection = () => {
             {steps.map((step, idx) => (
               <React.Fragment key={step.id}>
                 <motion.div
-                  className={`w-3 h-3 rounded-full bg-gradient-to-r ${step.color}`}
+                  className="w-3 h-3 rounded-full"
+                  style={{ backgroundColor: step.color }}
                   whileHover={{ scale: 1.5 }}
                 />
                 {idx < steps.length - 1 && (
-                  <div className="w-12 h-0.5 bg-gradient-to-r from-cyan-500/50 to-blue-500/50" />
+                  <div className="w-12 h-0.5 bg-white/30" />
                 )}
               </React.Fragment>
             ))}
