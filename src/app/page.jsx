@@ -4,7 +4,7 @@ import Script from "next/script";
 export const metadata = {
   title: "NEXCORE ALLIANCE LLP | Web & App Development Company in Mumbai & Kurla",
   description:
-    "NEXCORE ALLIANCE LLP boosts businesses with custom web & mobile app development, IT consulting, and tailored e-commerce solutions in Kurla & Mumbai.",
+    "Nexcore Alliance LLP delivers scalable AI solutions, custom web and mobile app development, MVP builds, and Odoo customization services—empowering businesses with digital transformation and smart automation.",
   keywords: [
     "NEXCORE ALLIANCE LLP",
     "NEXCORE ALLIANCE LLP web development",
