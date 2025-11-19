@@ -1,43 +1,30 @@
 import "@/app/globals.css";
-
 export const metadata = {
   title: "NEXCORE ALLIANCE LLP | Crafting Scalable AI Solutions, Web & App MVPs, and Odoo Customizations",
   description:
     "Nexcore Alliance LLP delivers scalable AI solutions, custom web and mobile app development, MVP builds, and Odoo customization services—empowering businesses with digital transformation and smart automation.",
   keywords: [
     "Nexcore Alliance LLP",
-    "Nexcore Alliance LLP web development",
-    "Nexcore Alliance LLP app development",
+    "AI solutions company Mumbai",
+    "AI development services Kurla",
+    "AI automation company Mumbai",
+    "custom AI development Mumbai",
     "web development company Mumbai",
+    "web development company Kurla",
     "mobile app development Kurla",
-    "IT consulting Mumbai",
-    "e-commerce website development Kurla",
-    "software development company Kurla",
-    "digital transformation services Mumbai",
-    "cloud solutions Mumbai",
-    "UI/UX design services Kurla",
-    "MERN stack development Kurla",
-    "best web development company in Mumbai 2025",
-    "ecommerce development agency in Kurla",
-    "digital marketing and SEO company Kurla"
+    "mobile app development Mumbai",
+    "MVP development company Mumbai",
+    "startup MVP development Kurla",
+    "Odoo customization Mumbai",
+    "Odoo ERP customization India",
+    "business automation solutions India",
   ],
   robots: { index: true, follow: true },
   alternates: {
     canonical: "https://www.nexcorealliance.com/",
   },
-  icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-    ],
-    apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
-    shortcut: "/favicon.ico",
-  },
-  themeColor: "#ffffff",
 };
+
 
 export default function RootLayout({ children }) {
   return (
