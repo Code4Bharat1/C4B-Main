@@ -1,8 +1,9 @@
 import "@/app/globals.css";
 export const metadata = {
-  title: "NEXCORE ALLIANCE LLP | Crafting Scalable AI Solutions, Web & App MVPs, and Odoo Customizations",
+  title:
+    "NEXCORE ALLIANCE LLP | Scalable AI Solutions, Web & App Development, MVPs & Odoo Customizations",
   description:
-    "Nexcore Alliance LLP delivers scalable AI solutions, custom web and mobile app development, MVP builds, and Odoo customization services—empowering businesses with digital transformation and smart automation.",
+    "NEXCORE ALLIANCE LLP delivers scalable AI solutions, custom web and mobile app development, MVP builds, and Odoo ERP customization services—helping businesses accelerate digital transformation and smart automation.",
   keywords: [
     "Nexcore Alliance LLP",
     "AI solutions company Mumbai",
@@ -19,7 +20,10 @@ export const metadata = {
     "Odoo ERP customization India",
     "business automation solutions India",
   ],
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+  },
   alternates: {
     canonical: "https://www.nexcorealliance.com/",
   },
