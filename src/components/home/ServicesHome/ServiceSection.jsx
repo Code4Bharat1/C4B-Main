@@ -18,7 +18,13 @@ import {
   FaStar,
   FaDatabase,
   FaShieldAlt,
-  FaChartLine
+  FaChartLine,
+  FaSearch,
+  FaEnvelope,
+  FaCogs,
+  FaBuilding,
+  FaBroom,
+  FaDesktop
 } from "react-icons/fa";
 
 const ServiceSection = () => {
@@ -350,6 +356,125 @@ const ServiceSection = () => {
       ],
     },
     {
+      category: "Data & Infrastructure Services",
+      services: [
+        {
+          id: 30,
+          title: "Custom Lead Research & Targeted Data",
+          Icon: FaSearch,
+          color: "#8b5cf6",
+          description: "Precisely filtered lead information for brands, marketers, and sales teams with B2B/B2C targeting.",
+          details: "A solution built for brands, marketers, sales teams, and campaign managers who require precisely filtered lead information including business or consumer datasets, narrowed by geography, industry, designation, and audience type.",
+          deliveryTime: "1-3 weeks",
+          projectsCompleted: "200+",
+          rating: 4.9,
+          features: [
+            "Segmented lead lists for B2B, B2C, or D2C targeting",
+            "Contact profiles: founders, directors, CXOs",
+            "Structured fields: name, designation, company, region",
+            "Fully cleaned and deduplicated data",
+            "CRM-ready import formats",
+            "Ad platform integration support"
+          ],
+        },
+        {
+          id: 31,
+          title: "Business Listing & Source-Based Research",
+          Icon: FaBuilding,
+          color: "#ec4899",
+          description: "Curated databases of companies, vendors, or service providers across industries and cities.",
+          details: "Designed for businesses seeking curated, use-case-specific databases from various industries and cities. Suitable for local outreach, aggregator platforms, or supply-side exploration.",
+          deliveryTime: "2-4 weeks",
+          projectsCompleted: "150+",
+          rating: 4.8,
+          features: [
+            "City/state-based records across niche sectors",
+            "Keyword-driven research and list creation",
+            "Results mapped and labeled for sorting",
+            "Region tagging and categorization",
+            "Structured delivery formats",
+            "Internal/external operational use ready"
+          ],
+        },
+        {
+          id: 32,
+          title: "Data Structuring, Cleaning & Mapping",
+          Icon: FaBroom,
+          color: "#10b981",
+          description: "Transform raw or disorganized datasets into clean, mapped, and standardized formats.",
+          details: "Ideal for clients holding large or disorganized datasets. The service transforms raw or outdated files into clean, mapped, and standardised formats for immediate use.",
+          deliveryTime: "1-2 weeks",
+          projectsCompleted: "300+",
+          rating: 5.0,
+          features: [
+            "Column remapping and header normalization",
+            "Duplicate elimination and junk data removal",
+            "Schema alignment and standardization",
+            "Region-based or funnel-based segmentation",
+            "CRM and ad panel formatting",
+            "Empty row handling and validation"
+          ],
+        },
+        {
+          id: 33,
+          title: "Email Infrastructure Setup",
+          Icon: FaEnvelope,
+          color: "#f59e0b",
+          description: "Comprehensive email delivery environment setup with SMTP configuration and authentication protocols.",
+          details: "Comprehensive environment setup for email delivery aligned with outreach systems, campaign tools, or business transaction flows. SMTP Limit – 50K, 100K.",
+          deliveryTime: "1-2 weeks",
+          projectsCompleted: "180+",
+          rating: 4.9,
+          features: [
+            "SPF, DKIM, and DMARC authentication setup",
+            "Warm-up planning and IP rotation",
+            "Custom header implementation",
+            "Integration-ready file formatting",
+            "Bounce minimization mechanisms",
+            "50K-100K SMTP limit configuration"
+          ],
+        },
+        {
+          id: 34,
+          title: "Remote Server Access & Configuration",
+          Icon: FaDesktop,
+          color: "#6366f1",
+          description: "Provisioned environments for automation, scraping, task running, or hosted tools with full configuration.",
+          details: "Environments provisioned for automation, scraping, task running, or hosted tools. Performance-tuned and preloaded where required.",
+          deliveryTime: "1 week",
+          projectsCompleted: "120+",
+          rating: 4.8,
+          features: [
+            "RDP or VPS machine access",
+            "Windows or Linux base systems",
+            "Pre-installed browsers and automation kits",
+            "Port forwarding and SSH access",
+            "Firewall configuration",
+            "System resources optimized per project"
+          ],
+        },
+        {
+          id: 35,
+          title: "Custom Automation & Data Extraction",
+          Icon: FaCogs,
+          color: "#14b8a6",
+          description: "Tailored data collection, structured scraping, and platform-specific automation tools.",
+          details: "Solutions designed for clients requiring data collection, structured scraping, or platform-specific automation. Tools are tailored per project to follow unique filters, flows, or dynamic logic.",
+          deliveryTime: "2-4 weeks",
+          projectsCompleted: "160+",
+          rating: 4.9,
+          features: [
+            "Custom extraction tools with filters",
+            "Browser-simulation based scraping",
+            "Rule-driven crawlers and parsers",
+            "CSV, JSON, or Excel deliverables",
+            "One-time script or reusable kits",
+            "Semi-structured website handling"
+          ],
+        },
+      ],
+    },
+    {
       category: "Technologies",
       services: [
         {
@@ -617,7 +742,7 @@ const ServiceSection = () => {
 
             {/* CTA */}
             <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200">
-              <a href="https://wa.me/919594430295">
+              <a href="https://wa.me/918976104646">
                 <button 
                   className="w-full py-3 sm:py-4 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 text-sm sm:text-base hover:scale-105"
                   style={{ backgroundColor: selectedService.color }}
