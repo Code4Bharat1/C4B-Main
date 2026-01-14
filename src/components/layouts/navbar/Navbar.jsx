@@ -79,6 +79,7 @@ const Navbar = () => {
         // { label: "Home", scroll: "home" },
         { label: "About Us", scroll: "about" },
         { label: "Services", scroll: "services" },
+        
         // { label: "Approach", scroll: "approach" },
         // { label: "Supporters", scroll: "supporters" },
         // { label: "Values", scroll: "values" },
@@ -89,6 +90,7 @@ const Navbar = () => {
       ]
     },
     { name: "AI Solutions", path: convertToPath("AISolutions") },
+     { name: "AI Voice Agent", path: convertToPath("voiceagent") },
     { name: "Case Studies", path: convertToPath("casestudy") },
     { name: "Odoo", path: convertToPath("servicesweoffer") },
     { name: "Reach out", path: convertToPath("Contact Us") },
