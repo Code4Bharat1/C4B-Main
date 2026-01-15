@@ -4,7 +4,9 @@ import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import {
   PhoneCall,
-  Headphones,
+  Headphones,  
+  ArrowUpRight, 
+ Phone,
   CalendarCheck,
   BarChart3,
   Globe2,
@@ -31,7 +33,7 @@ export default function AIVoiceAgentPage() {
   const audioRef = useRef(null);
   const [playing, setPlaying] = useState(false);
   const [voice, setVoice] = useState("Professional");
-
+  const [active, setActive] = useState(1);
   const togglePlay = () => {
     if (!audioRef.current) return;
     playing ? audioRef.current.pause() : audioRef.current.play();
@@ -42,7 +44,6 @@ export default function AIVoiceAgentPage() {
     <main className="bg-white text-gray-900 overflow-hidden">
       <Navbar />
       {/* ================= HERO ================= */}
-{/* ================= HERO – PREMIUM ================= */}
 <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-100">
   
   {/* soft background glow */}
@@ -74,26 +75,17 @@ export default function AIVoiceAgentPage() {
         and schedules appointments — 24/7, across languages and channels.
       </p>
 
-      <div className="mt-10 flex flex-wrap gap-4">
-        <Link
-          href="/contact"
-          className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold shadow-lg transition"
-        >
-          Get Demo
-        </Link>
+ <div className="mt-10 flex flex-wrap gap-4">
+  <a
+    href="https://wa.me/919594402822?text=Hi%20I%20would%20like%20to%20get%20a%20demo%20of%20your%20AI%20Voice%20Agent"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold shadow-lg transition"
+  >
+    Get Demo
+  </a>
+</div>
 
-        <button
-          onClick={togglePlay}
-          className="flex items-center gap-3 border border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition"
-        >
-          {playing ? <Pause size={18} /> : <Play size={18} />}
-          {playing ? "Pause Demo" : "Play Voice Demo"}
-        </button>
-
-        <audio ref={audioRef} onEnded={() => setPlaying(false)}>
-          <source src="/voice-demo.mp3" type="audio/mpeg" />
-        </audio>
-      </div>
 
       {/* trust indicators */}
       <div className="mt-10 flex gap-8 text-sm text-gray-500">
@@ -184,21 +176,85 @@ export default function AIVoiceAgentPage() {
 </section>
 
       {/* ================= INDUSTRIES ================= */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold">Industry Solutions</h2>
-          <p className="mt-4 text-gray-600">
-            Purpose-built voice agents for your business workflows
-          </p>
+  <section className="relative bg-[#050b14] text-white py-24 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4">
 
-          <div className="grid md:grid-cols-4 gap-8 mt-14">
-            <Industry icon={<Banknote />} title="BFSI" desc="Loan inquiries, KYC, payment reminders, fraud alerts." />
-            <Industry icon={<HeartPulse />} title="Healthcare" desc="Appointments, prescriptions, patient follow-ups." />
-            <Industry icon={<Building2 />} title="Real Estate" desc="Lead qualification, site visit scheduling." />
-            <Industry icon={<GraduationCap />} title="EdTech" desc="Admissions, counseling, fee reminders." />
-          </div>
+        {/* TOP */}
+        <div className="text-center mb-14">
+          <span className="inline-block mb-4 text-xs px-3 py-1 rounded-full bg-blue-900/40 text-white-400 border border-blue-700">
+            OUR AGENTS
+          </span>
+          <h2 className="text-4xl font-bold mb-4">
+            Agents That Do More Than Talk
+          </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            Create AI voice agents for India that sound natural, understand context,
+            and speak multiple Indian languages including Hindi, Tamil, Telugu, Bengali,
+            Marathi, Hinglish.
+          </p>
         </div>
-      </section>
+
+        {/* TABS */}
+        <div className="flex flex-wrap justify-center gap-2 bg-[#0b1220] p-2 rounded-xl border border-white/10 mb-12">
+          {categories.map((cat, i) => (
+            <button
+              key={i}
+              onClick={() => setActive(i)}
+              className={`px-5 py-2 rounded-lg text-sm transition ${
+                active === i
+                  ? "bg-blue-700 text-white"
+                  : "text-gray-400 hover:text-white"
+              }`}
+            >
+              {cat.name}
+            </button>
+          ))}
+        </div>
+
+        {/* CARDS */}
+        <div className="grid md:grid-cols-2 gap-6">
+          {categories[active].items.map((item, i) => (
+            <div
+              key={i}
+              className="relative bg-gradient-to-br from-[#0b1220] to-[#050b14] border border-white/10 rounded-xl p-6 flex justify-between items-start"
+            >
+              <div>
+                <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+
+                <div className="flex gap-2 mb-3 flex-wrap">
+                  {item.tags.map((t, idx) => (
+                    <span
+                      key={idx}
+                      className="text-xs bg-white/10 px-2 py-1 rounded"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
+                <p className="text-gray-400 text-sm mb-4">{item.desc}</p>
+
+                {/* <div className="flex items-center gap-2 text-blue-400 text-sm">
+                  <Phone size={16} />
+                  {item.phone}
+                </div> */}
+              </div>
+
+              {/* ACTIONS */}
+              <div className="flex flex-col gap-3">
+                {/* <button className="bg-cyan-300 hover:bg-cyan-400 text-black p-2 rounded-lg">
+                  <Play size={18} />
+                </button>
+                <button className="bg-white/10 hover:bg-white/20 p-2 rounded-lg">
+                  <ArrowUpRight size={18} />
+                </button> */}
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
 
       {/* ================= VOICE PERSONALITY ================= */}
       <section className="py-24 bg-gray-50">
@@ -240,57 +296,92 @@ export default function AIVoiceAgentPage() {
         </div>
       </section>
 
-      {/* ================= FREE FLOW INTERACTION ================= */}
-      <section className="bg-[#1149D8] py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.15),transparent_60%)]" />
+{/* ================= FREE FLOW INTERACTION (ENHANCED) ================= */}
+<section className="relative py-32 overflow-hidden bg-gradient-to-br from-[#0A2EA8] via-[#1149D8] to-[#0B1F5A]">
 
-        <div className="relative max-w-7xl mx-auto px-6 text-center text-white">
-          <h2 className="text-3xl md:text-4xl font-serif leading-tight">
-            Have a Free-Flow <br /> Interaction Anytime, <br /> Anywhere.
-          </h2>
+  {/* Glow Background */}
+  <div className="absolute inset-0">
+    <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-white/10 blur-[120px] rounded-full" />
+    <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-cyan-400/10 blur-[120px] rounded-full" />
+  </div>
 
-          <div className="mt-24 grid md:grid-cols-3 gap-12">
-            <FreeFlowCard img="/voiceagent/card3.jpg" title="Keep Customers Engaged" />
-            <FreeFlowCard img="/voiceagent/card3.jpg" title="Scale Inbound Call Support" />
-            <FreeFlowCard img="/voiceagent/card2.jpg" title="One AI Call Solution for All" />
-          </div>
-        </div>
-      </section>
+  {/* Floating Waves */}
+  <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.15),transparent_40%),radial-gradient(circle_at_80%_80%,rgba(255,255,255,0.12),transparent_40%)]" />
 
-      {/* ================= TALK TO US ================= */}
-      <section className="py-28 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold">Talk to Our AI Experts</h2>
-          <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-            Whether you need a demo, pricing, or custom integrations — our team is ready to help.
-          </p>
+  <div className="relative max-w-7xl mx-auto px-6 text-center text-white">
 
-          <div className="mt-16 grid md:grid-cols-3 gap-8">
-            <ContactCard icon={<PhoneCall />} title="Call Us" text="+91 95944 02822" />
-            <ContactCard icon={<Headphones />} title="Support" text="support@nexcorealliance.com" />
-            <ContactCard icon={<CalendarCheck />} title="Schedule Demo" text="Book a 30-min walkthrough" />
-          </div>
-        </div>
-      </section>
+    {/* Heading */}
+    <div className="max-w-3xl mx-auto">
+      <span className="inline-block mb-4 px-4 py-1 rounded-full bg-white/10 backdrop-blur text-sm tracking-wide">
+        AI Voice Conversations
+      </span>
 
-{/* ================= VOICE USE-CASE DEMO SECTION ================= */}
-<section className="py-28 bg-white relative overflow-hidden">
+      <h2 className="text-4xl md:text-5xl font-serif leading-tight">
+        Have a Free-Flow <br />
+        Interaction Anytime, <br />
+        Anywhere
+      </h2>
+
+      <p className="mt-6 text-white/80 text-lg">
+        Human-like conversations that scale with your business and never miss a call.
+      </p>
+    </div>
+
+    {/* Cards */}
+    <div className="mt-24 grid gap-12 md:grid-cols-3">
+
+      <div className="group relative">
+        <div className="absolute inset-0 bg-white/20 blur-xl rounded-3xl opacity-0 group-hover:opacity-100 transition" />
+        <FreeFlowCard
+          img="/voiceagent/card3.jpg"
+          title="Keep Customers Engaged"
+          desc="Respond instantly, resolve queries faster and build trust with every call."
+        />
+      </div>
+
+      <div className="group relative">
+        <div className="absolute inset-0 bg-white/20 blur-xl rounded-3xl opacity-0 group-hover:opacity-100 transition" />
+        <FreeFlowCard
+          img="/voiceagent/ai.gif"
+          title="Scale Inbound Call Support"
+          desc="Handle thousands of simultaneous calls without increasing human agents."
+        />
+      </div>
+
+      <div className="group relative">
+        <div className="absolute inset-0 bg-white/20 blur-xl rounded-3xl opacity-0 group-hover:opacity-100 transition" />
+        <FreeFlowCard
+          img="/voiceagent/card2.jpg"
+          title="One AI Call Solution for All"
+          desc="Sales, support, booking and surveys — all through one voice brain."
+        />
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+      {/* ================= VOICE USE-CASE DEMO SECTION ================= */}
+      <section className="py-28 bg-white relative overflow-hidden">
   <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-indigo-50" />
 
   <div className="relative max-w-7xl mx-auto px-6 text-center">
-
     <h2 className="text-2xl md:text-3xl font-semibold">
       No More Press 1, Press 2…
     </h2>
+
     <p className="mt-2 text-blue-600 font-medium text-lg">
-      Experience Conversational Voice AI by Nexcore Alliance
+      Experience Conversational Voice AI Built by Nexcore Alliance
     </p>
 
     <VoiceDemoHub />
   </div>
-</section>
-{/* ================= FEATURES – DARK GRID SECTION ================= */}
-<section className="relative bg-gradient-to-b from-[#020617] via-[#020617] to-[#020617] py-28 text-white">
+      </section>
+
+      {/* ================= FEATURES – DARK GRID SECTION ================= */}
+      <section className="relative bg-gradient-to-b from-[#020617] via-[#020617] to-[#020617] py-28 text-white">
 
   <div className="max-w-7xl mx-auto px-6">
 
@@ -332,150 +423,132 @@ export default function AIVoiceAgentPage() {
     </div>
 
   </div>
+      </section>
+
+{/* ================= TALK TO US ================= */}
+<section className="py-28 bg-gray-50">
+  <div className="max-w-7xl mx-auto px-6 text-center">
+    <h2 className="text-3xl font-bold">Talk to Our AI Experts</h2>
+    <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+      Whether you need a demo, pricing, or custom integrations — our team is ready to help.
+    </p>
+
+    <div className="mt-16 grid md:grid-cols-3 gap-8">
+
+      {/* CALL */}
+      <a
+        href="tel:+919594430295"
+        className="group block"
+      >
+        <ContactCard
+          icon={<PhoneCall />}
+          title="Call Us"
+          text="+91 9594430295"
+        />
+      </a>
+
+      {/* EMAIL */}
+      <a
+        href="mailto:director@nexcorealliance.com"
+        className="group block"
+      >
+        <ContactCard
+          icon={<Headphones />}
+          title="Support"
+          text="director@nexcorealliance.com"
+        />
+      </a>
+
+      {/* WHATSAPP */}
+      <a
+        href="https://wa.me/919594402822?text=Hi%20I%20would%20like%20to%20schedule%20a%20demo%20for%20your%20AI%20Voice%20Agent"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group block"
+      >
+        <ContactCard
+          icon={<CalendarCheck />}
+          title="Schedule Demo"
+          text="Book a 30-min walkthrough"
+        />
+      </a>
+
+    </div>
+  </div>
 </section>
 
-
-      {/* ================= FINAL CTA ================= */}
-      {/* <section className="bg-blue-600 py-20 text-center text-white">
-        <h2 className="text-3xl font-bold">Deploy AI Voice Agents in Your Business</h2>
-        <p className="mt-4 text-blue-100">
-          Start with a pilot deployment in under 7 days.
-        </p>
-
-        <div className="mt-8 flex justify-center gap-4">
-          <Link href="/contact" className="bg-white text-blue-700 px-8 py-3 rounded-md font-semibold">
-            Book Demo
-          </Link>
-          <Link href="/contact" className="border border-white px-8 py-3 rounded-md font-semibold">
-            Talk to Expert
-          </Link>
-        </div>
-      </section> */}
+  
       <Footer />
     </main>
   );
 }
 
+const demos = [
+  { title: "Lead\nQualification", pos: "top-left" },
+  { title: "Product\nRecommendation", pos: "top-right" },
+  { title: "Bookings and\nAppointments", pos: "bottom-left" },
+  { title: "Customer\nSupport", pos: "bottom-right" },
+];
+
 function VoiceDemoHub() {
-  const audioRef = useRef(null);
-  const [playing, setPlaying] = useState(false);
-  const [active, setActive] = useState(null);
-
-  const playDemo = (src, id) => {
-    if (!audioRef.current) return;
-
-    if (active === id && playing) {
-      audioRef.current.pause();
-      setPlaying(false);
-      return;
-    }
-
-    audioRef.current.src = src;
-    audioRef.current.play();
-    setActive(id);
-    setPlaying(true);
-  };
-
   return (
-    <div className="mt-16 relative bg-gradient-to-br from-[#EEF4FF] to-[#F8FBFF] rounded-3xl p-10 md:p-16 overflow-hidden shadow-xl">
+    <div className="relative mt-16 flex justify-center">
+      {/* MAIN CONTAINER */}
+      <div className="relative w-full max-w-5xl h-[420px] rounded-[32px] bg-gradient-to-br from-blue-100 via-indigo-100 to-blue-50 overflow-hidden flex items-center justify-center">
 
-      {/* CENTER ORB */}
-      <motion.div
-        animate={{ scale: playing ? [1, 1.08, 1] : 1 }}
-        transition={{ repeat: playing ? Infinity : 0, duration: 1.5 }}
-        className="relative mx-auto w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-blue-400 via-indigo-500 to-purple-500 flex items-center justify-center shadow-[0_0_60px_rgba(59,130,246,0.6)]"
-      >
-        <WavePulse active={playing} />
-      </motion.div>
+        {/* WAVE BARS BACKGROUND */}
+        <div className="absolute inset-0 flex items-center justify-between px-12 opacity-30">
+          {Array.from({ length: 20 }).map((_, i) => (
+            <div
+              key={i}
+              className="w-1 rounded-full bg-blue-300"
+              style={{ height: `${30 + (i % 5) * 20}px` }}
+            />
+          ))}
+        </div>
 
-      {/* CARDS */}
-      <div className="mt-16 grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        {/* CENTER VOICE ORB */}
+        <div className="relative z-10 w-40 h-40 rounded-full bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-500 shadow-2xl flex items-center justify-center">
+          <div className="flex gap-2">
+            <span className="w-3 h-10 bg-white rounded-full" />
+            <span className="w-4 h-14 bg-white rounded-full" />
+            <span className="w-4 h-8 bg-white rounded-full" />
+            <span className="w-3 h-12 bg-white rounded-full" />
+          </div>
+        </div>
 
-        <DemoPlayCard
-          id="lead"
-          title="Lead Qualification"
-          active={active === "lead" && playing}
-          onPlay={() => playDemo("/voice-demos/lead.mp3", "lead")}
-        />
-
-        <DemoPlayCard
-          id="product"
-          title="Product Recommendation"
-          active={active === "product" && playing}
-          onPlay={() => playDemo("/voice-demos/product.mp3", "product")}
-        />
-
-        <DemoPlayCard
-          id="booking"
-          title="Bookings & Appointments"
-          active={active === "booking" && playing}
-          onPlay={() => playDemo("/voice-demos/booking.mp3", "booking")}
-        />
-
-        <DemoPlayCard
-          id="support"
-          title="Customer Support"
-          active={active === "support" && playing}
-          onPlay={() => playDemo("/voice-demos/support.mp3", "support")}
-        />
-
+        {/* FLOATING CARDS */}
+        {demos.map((d, i) => (
+          <DemoCard key={i} title={d.title} position={d.pos} />
+        ))}
       </div>
-
-      <audio ref={audioRef} onEnded={() => setPlaying(false)} />
     </div>
   );
 }
 
-function DemoPlayCard({ title, onPlay, active }) {
+function DemoCard({ title, position }) {
+  const posMap = {
+    "top-left": "top-8 left-12",
+    "top-right": "top-8 right-12",
+    "bottom-left": "bottom-8 left-16",
+    "bottom-right": "bottom-8 right-16",
+  };
+
   return (
-    <motion.div
-      whileHover={{ y: -6, scale: 1.02 }}
-      className="bg-white rounded-xl px-6 py-4 shadow-md flex items-center justify-between"
+    <div
+      className={`absolute ${posMap[position]} bg-white shadow-lg rounded-xl px-5 py-4 flex items-center gap-4 w-64`}
     >
-      <div className="flex items-center gap-3">
-        <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold">
-          AI
-        </div>
-        <p className="font-medium text-sm text-gray-800">{title}</p>
+      <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-semibold">
+        🎧
       </div>
 
-      <button
-        onClick={onPlay}
-        className={`flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold transition
-          ${active ? "bg-red-500" : "bg-blue-600"} text-white`}
-      >
-        {active ? "STOP" : "PLAY"}
-        <span className="bg-white text-blue-600 rounded-full w-5 h-5 flex items-center justify-center">
-          ▶
-        </span>
-      </button>
-    </motion.div>
-  );
-}
-
-function WavePulse({ active }) {
-  return (
-    <div className="flex gap-2">
-      {[...Array(4)].map((_, i) => (
-        <span
-          key={i}
-          className={`w-2 rounded-full bg-white ${
-            active ? "animate-wave" : "h-8"
-          }`}
-          style={{ animationDelay: `${i * 0.15}s` }}
-        />
-      ))}
-
-      <style jsx>{`
-        .animate-wave {
-          animation: wave 1s ease-in-out infinite;
-        }
-        @keyframes wave {
-          0% { height: 30%; }
-          50% { height: 100%; }
-          100% { height: 30%; }
-        }
-      `}</style>
+      <div className="text-left text-sm font-medium whitespace-pre-line">
+        {title}
+      </div>
+{/* 
+      <button className="ml-auto bg-blue-600 text-white px-3 py-1 rounded-full text-xs flex items-center gap-1">
+        PLAY <Play size={12} />
+      </button> */}
     </div>
   );
 }
@@ -522,24 +595,6 @@ function NeonConnector() {
   );
 }
 
-function FlowCard({ icon, title }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="bg-white border rounded-xl p-6 shadow-sm text-center"
-    >
-      <div className="text-blue-600 flex justify-center mb-3">{icon}</div>
-      <p className="font-medium text-sm">{title}</p>
-    </motion.div>
-  );
-}
-
-function Connector() {
-  return <div className="hidden md:flex items-center justify-center"><div className="h-0.5 w-full bg-blue-300" /></div>;
-}
-
 function ContactCard({ icon, title, text }) {
   return (
     <motion.div whileHover={{ y: -8 }} className="bg-white border rounded-xl p-8 shadow-sm">
@@ -564,28 +619,6 @@ function FreeFlowCard({ img, title }) {
         </p>
       </div>
     </motion.div>
-  );
-}
-
-function Waveform({ playing }) {
-  return (
-    <div className="flex items-end justify-center gap-2 h-28">
-      {[...Array(18)].map((_, i) => (
-        <span
-          key={i}
-          className={`w-2 rounded-full bg-blue-500 ${playing ? "animate-wave" : "h-4"}`}
-          style={{ animationDelay: `${i * 0.1}s` }}
-        />
-      ))}
-      <style jsx>{`
-        .animate-wave { animation: wave 1s ease-in-out infinite; }
-        @keyframes wave {
-          0% { height: 20%; }
-          50% { height: 100%; }
-          100% { height: 20%; }
-        }
-      `}</style>
-    </div>
   );
 }
 
@@ -639,5 +672,116 @@ const FEATURES = [
     title: "Model Switching",
     desc: "Run each call with models best suited for your use case.",
     icon: <Sparkles size={22} />,
+  },
+];
+
+const categories = [
+  {
+    name: "AI Agents",
+    items: [
+      {
+        title: "Customer Support Agent",
+        tags: ["Customer Support", "English"],
+        desc: "Provides 24/7 inbound call answering for FAQs and customer triage",
+        phone: "+918035317400",
+      },
+      {
+        title: "Recruitment Agent",
+        tags: ["Recruitment", "English"],
+        desc: "AI agents that screen, interview, and onboard candidates at scale",
+        phone: "+918035317441",
+      },
+    ],
+  },
+  {
+    name: "Ecommerce",
+    items: [
+      {
+        title: "Cart Abandonment Agent",
+        tags: ["Cart Abandonment", "English + Hindi"],
+        desc: "Calls customers with abandoned items in carts, recovering sales",
+        phone: "+918035317449",
+      },
+      {
+        title: "COD Confirmation Agent",
+        tags: ["COD Confirmation", "English + Hindi"],
+        desc: "Handles last-mile logistics calls and order verification",
+        phone: "+918035317450",
+      },
+      {
+        title: "Return Management Agent",
+        tags: ["Returns", "English + Hindi"],
+        desc: "Automates return scheduling and pickup confirmations",
+        phone: "+918035317451",
+      },
+    ],
+  },
+  {
+    name: "EdTech",
+    items: [
+      {
+        title: "Lead Qualification Agent",
+        tags: ["Admissions", "English + Hindi"],
+        desc: "Calls students and qualifies admission leads automatically",
+        phone: "+918035317460",
+      },
+      {
+        title: "Fee Reminder Agent",
+        tags: ["Payments", "Multilingual"],
+        desc: "Automated fee follow-ups and payment nudges",
+        phone: "+918035317461",
+      },
+    ],
+  },
+  {
+    name: "Health Tech",
+    items: [
+      {
+        title: "Appointment Booking Agent",
+        tags: ["OPD", "Multilingual"],
+        desc: "Schedules doctor appointments automatically",
+        phone: "+918035317470",
+      },
+      {
+        title: "Lab Report Follow-up Agent",
+        tags: ["Diagnostics", "English + Hindi"],
+        desc: "Notifies patients and answers report queries",
+        phone: "+918035317471",
+      },
+    ],
+  },
+  {
+    name: "BFSI",
+    items: [
+      {
+        title: "Loan Eligibility Agent",
+        tags: ["Loans", "Multilingual"],
+        desc: "Collects basic info and checks loan eligibility",
+        phone: "+918035317480",
+      },
+      {
+        title: "EMI Reminder Agent",
+        tags: ["Payments", "English + Hindi"],
+        desc: "Automated EMI reminder calls and confirmations",
+        phone: "+918035317481",
+      },
+    ],
+  },
+  {
+    name: "Hospitality",
+    items: [
+      {
+        title: "Reservation Agent",
+        tags: ["Bookings", "Multilingual"],
+        desc: "Handles hotel and restaurant reservations",
+        phone: "+918035317490",
+      },
+      {
+        title: "Feedback Collection Agent",
+        tags: ["Reviews", "English + Hindi"],
+        desc: "Collects post-visit feedback from customers",
+        phone: "+918035317491",
+      },
+    ],
   },
 ];
