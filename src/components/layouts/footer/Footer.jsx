@@ -34,12 +34,11 @@ const Footer = () => {
   };
 
   const branchOffices = [
-    { country: "Qatar", flag: "🇶🇦", name:"Qatar"  },
-    { country: "UAE", flag: "🇦🇪", name:"UAE"   },
-    { country: "Oman", flag: "🇴🇲", name:"Oman"   },
-    { country: "Saudi Arabia", flag: "🇸🇦", name:"Saudi Arabia" },
-    // { country: "Canada", flag: "🇨🇦", name:"Canada"   },
-    { country: "Kuwait", flag: "🇰🇼", name:"Kuwait"  },
+    { country: "Qatar", flag: "🇶🇦", name: "Qatar" },
+    { country: "UAE", flag: "🇦🇪", name: "UAE" },
+    { country: "Oman", flag: "🇴🇲", name: "Oman" },
+    { country: "Saudi Arabia", flag: "🇸🇦", name: "Saudi Arabia" },
+    { country: "Kuwait", flag: "🇰🇼", name: "Kuwait" },
   ];
 
   return (
@@ -49,23 +48,26 @@ const Footer = () => {
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl" />
 
       {/* Grid pattern overlay */}
-      <div className="absolute inset-0 opacity-5" style={{
-        backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+      <div
+        className="absolute inset-0 opacity-5"
+        style={{
+          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
                          linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)`,
-        backgroundSize: '60px 60px',
-      }} />
+          backgroundSize: "60px 60px",
+        }}
+      />
 
       {/* Main Section */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-20">
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.2 }}
           variants={containerVariants}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10"
         >
-          {/* Logo + About */}
-          <motion.div variants={itemVariants} className="lg:col-span-1">
+          {/* Logo + About — 3 cols */}
+          <motion.div variants={itemVariants} className="lg:col-span-3">
             <div className="mb-6 w-full h-24 rounded-xl shadow-lg flex items-center justify-center bg-white">
               <img
                 src="/nex.jpeg"
@@ -73,7 +75,7 @@ const Footer = () => {
                 className="w-48 h-auto object-cover"
               />
             </div>
-            <p className="text-gray-200 leading-relaxed mb-6">
+            <p className="text-gray-200 leading-relaxed mb-6 text-sm">
               Nexcore Alliance is at the forefront of providing world-class IT
               solutions, helping businesses globally leverage technology for
               growth and success.
@@ -118,29 +120,19 @@ const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Featured Links */}
-          <motion.div variants={itemVariants}>
-            <h3 className="text-xl font-bold text-white mb-6">
-              Quick Links
-            </h3>
+          {/* Quick Links — 2 cols */}
+          <motion.div variants={itemVariants} className="lg:col-span-2">
+            <h3 className="text-xl font-bold text-white mb-6">Quick Links</h3>
             <ul className="space-y-3">
               {[
                 { name: "Hub", path: "/" },
-                // { name: "Behind the code", path: "/aboutus" },
-                // { name: "What we offer", path: "/services" },
-                // { name: "Trusted By", path: "/clients" },
-                // { name: "Strategy", path: "/approach" },
                 { name: "AI Solutions", path: "/aisloutions" },
                 { name: "Case Studies", path: "/casestudy" },
-                {name: "Odoo", path: "/servicesweoffer" },
+                { name: "Odoo", path: "/servicesweoffer" },
               ].map((link, i) => (
-                <motion.li
-                  key={i}
-                  whileHover={{ x: 4 }}
-                  className="group"
-                >
+                <motion.li key={i} whileHover={{ x: 4 }} className="group">
                   <Link href={link.path}>
-                    <span className="text-gray-200 hover:text-orange-400 transition-colors flex items-center gap-2 cursor-pointer">
+                    <span className="text-gray-200 hover:text-orange-400 transition-colors flex items-center gap-2 cursor-pointer text-sm">
                       <FaArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-orange-400" />
                       {link.name}
                     </span>
@@ -150,11 +142,9 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Policies */}
-          <motion.div variants={itemVariants}>
-            <h3 className="text-xl font-bold text-white mb-6">
-              Policies
-            </h3>
+          {/* Policies — 3 cols */}
+          <motion.div variants={itemVariants} className="lg:col-span-3">
+            <h3 className="text-xl font-bold text-white mb-6">Policies</h3>
             <ul className="space-y-3">
               {[
                 { name: "About Nexcore Alliance", path: "/policies/about" },
@@ -164,11 +154,7 @@ const Footer = () => {
                 { name: "Refund Policy", path: "/policies/refund-policy" },
                 { name: "Cancellation Policy", path: "/policies/cancellation-policy" },
               ].map((item, i) => (
-                <motion.li
-                  key={i}
-                  whileHover={{ x: 4 }}
-                  className="group"
-                >
+                <motion.li key={i} whileHover={{ x: 4 }} className="group">
                   <Link href={item.path}>
                     <span className="text-gray-200 hover:text-orange-400 transition-colors flex items-center gap-2 cursor-pointer text-sm">
                       <FaArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-orange-400" />
@@ -180,13 +166,11 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Contact */}
-          <motion.div variants={itemVariants}>
-            <h3 className="text-xl font-bold text-white mb-6">
-              Get In Touch
-            </h3>
+          {/* Get In Touch — 4 cols */}
+          <motion.div variants={itemVariants} className="lg:col-span-4">
+            <h3 className="text-xl font-bold text-white mb-6">Get In Touch</h3>
             <div className="space-y-4">
-              {/* India Phone Number */}
+              {/* India Phone */}
               <motion.a
                 href="https://wa.me/918976104646"
                 target="_blank"
@@ -199,7 +183,7 @@ const Footer = () => {
                 </div>
                 <div className="pt-1">
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-xl">🇮🇳</span>
+                    <span className="text-base">🇮🇳</span>
                     <span className="text-xs font-semibold text-blue-300">India</span>
                   </div>
                   <span className="text-gray-200 group-hover:text-white transition-colors text-sm">
@@ -208,7 +192,7 @@ const Footer = () => {
                 </div>
               </motion.a>
 
-              {/* UAE Phone Number */}
+              {/* UAE Phone */}
               <motion.a
                 href="https://wa.me/+971562021489"
                 target="_blank"
@@ -221,7 +205,7 @@ const Footer = () => {
                 </div>
                 <div className="pt-1">
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-xl">🇦🇪</span>
+                    <span className="text-base">🇦🇪</span>
                     <span className="text-xs font-semibold text-blue-300">UAE</span>
                   </div>
                   <span className="text-gray-200 group-hover:text-white transition-colors text-sm">
@@ -246,7 +230,7 @@ const Footer = () => {
                 </span>
               </motion.a>
 
-              {/* Head Office - Mumbai (Clickable) */}
+              {/* Head Office */}
               <motion.a
                 href="https://maps.app.goo.gl/DzBt4BdL9BH4MRga9"
                 target="_blank"
@@ -259,7 +243,9 @@ const Footer = () => {
                 </div>
                 <div className="pt-1">
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-xs font-bold text-orange-300 uppercase tracking-wide">Head Office</span>
+                    <span className="text-xs font-bold text-orange-300 uppercase tracking-wide">
+                      Head Office
+                    </span>
                   </div>
                   <span className="text-gray-200 group-hover:text-white transition-colors text-sm leading-relaxed">
                     Off BKC, Mumbai, India 400070
@@ -267,10 +253,12 @@ const Footer = () => {
                 </div>
               </motion.a>
 
-              {/* Branch Offices (Non-clickable Display) */}
+              {/* Branch Offices */}
               <div className="pt-2 border-t border-blue-700/50">
                 <div className="mb-2">
-                  <span className="text-xs font-bold text-blue-300 uppercase tracking-wide">Branch Offices</span>
+                  <span className="text-xs font-bold text-blue-300 uppercase tracking-wide">
+                    Branch Offices
+                  </span>
                 </div>
                 <div className="grid grid-cols-2 gap-2">
                   {branchOffices.map((office, index) => (
@@ -332,19 +320,27 @@ const Footer = () => {
             className="flex flex-col md:flex-row items-center justify-between gap-4"
           >
             <p className="text-gray-300 text-sm text-center md:text-left">
-              © 2011-2025 <span className="font-semibold text-white">Nexcore Alliance</span>. All Rights Reserved.
+              © 2011-2026{" "}
+              <span className="font-semibold text-white">Nexcore Alliance</span>
+              . All Rights Reserved.
             </p>
             <div className="flex items-center gap-6 text-sm text-gray-300">
               <Link href="/policies/privacy">
-                <span className="hover:text-orange-400 transition-colors cursor-pointer">Privacy</span>
+                <span className="hover:text-orange-400 transition-colors cursor-pointer">
+                  Privacy
+                </span>
               </Link>
               <span>•</span>
               <Link href="/policies/termsandcondition">
-                <span className="hover:text-orange-400 transition-colors cursor-pointer">Terms</span>
+                <span className="hover:text-orange-400 transition-colors cursor-pointer">
+                  Terms
+                </span>
               </Link>
               <span>•</span>
               <Link href="/policies/contact">
-                <span className="hover:text-orange-400 transition-colors cursor-pointer">Contact</span>
+                <span className="hover:text-orange-400 transition-colors cursor-pointer">
+                  Contact
+                </span>
               </Link>
             </div>
           </motion.div>
@@ -364,12 +360,12 @@ const Footer = () => {
             "0 20px 25px -5px rgba(34, 197, 94, 0.3)",
             "0 25px 30px -5px rgba(34, 197, 94, 0.4)",
             "0 20px 25px -5px rgba(34, 197, 94, 0.3)",
-          ]
+          ],
         }}
         transition={{
           repeat: Infinity,
           duration: 2,
-          ease: "easeInOut"
+          ease: "easeInOut",
         }}
       >
         <FaWhatsapp className="text-white text-3xl group-hover:scale-110 transition-transform" />
