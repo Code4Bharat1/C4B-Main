@@ -13,14 +13,120 @@ import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+// ─── SVG Flag Components ───────────────────────────────────────────────────────
+
+const IndiaFlag = ({ className = "w-6 h-4" }) => (
+  <svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" className={`${className} rounded-sm shadow-sm`}>
+    <rect width="30" height="20" fill="#138808" />
+    <rect width="30" height="13.33" fill="#FFFFFF" />
+    <rect width="30" height="6.67" fill="#FF9933" />
+    {/* Ashoka Chakra */}
+    <circle cx="15" cy="10" r="3" fill="none" stroke="#000080" strokeWidth="0.5" />
+    {[...Array(24)].map((_, i) => {
+      const angle = (i * 15 * Math.PI) / 180;
+      return (
+        <line
+          key={i}
+          x1="15" y1="10"
+          x2={15 + 2.8 * Math.cos(angle)}
+          y2={10 + 2.8 * Math.sin(angle)}
+          stroke="#000080"
+          strokeWidth="0.3"
+        />
+      );
+    })}
+    <circle cx="15" cy="10" r="0.6" fill="#000080" />
+  </svg>
+);
+
+const UAEFlag = ({ className = "w-6 h-4" }) => (
+  <svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" className={`${className} rounded-sm shadow-sm`}>
+    <rect width="30" height="20" fill="#000000" />
+    <rect width="30" height="13.33" fill="#FFFFFF" />
+    <rect width="30" height="6.67" fill="#009A44" />
+    {/* Red vertical stripe on left */}
+    <rect width="8" height="20" fill="#EF3340" />
+  </svg>
+);
+
+const QatarFlag = ({ className = "w-6 h-4" }) => (
+  <svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" className={`${className} rounded-sm shadow-sm`}>
+    <rect width="30" height="20" fill="#8D1B3D" />
+    {/* White left section */}
+    <rect width="8" height="20" fill="#FFFFFF" />
+    {/* Serrated edge - 9 triangles pointing right */}
+    {[...Array(9)].map((_, i) => {
+      const h = 20 / 9;
+      const y = i * h;
+      return (
+        <polygon
+          key={i}
+          points={`8,${y} 11,${y + h / 2} 8,${y + h}`}
+          fill="#8D1B3D"
+        />
+      );
+    })}
+  </svg>
+);
+
+const OmanFlag = ({ className = "w-6 h-4" }) => (
+  <svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" className={`${className} rounded-sm shadow-sm`}>
+    {/* Three horizontal bands */}
+    <rect width="30" height="20" fill="#DB161B" />
+    <rect x="8" width="22" height="20" fill="#DB161B" />
+    <rect x="8" width="22" height="13.33" fill="#FFFFFF" />
+    <rect x="8" width="22" height="6.67" fill="#008000" />
+    {/* Red vertical stripe on left */}
+    <rect width="8" height="20" fill="#DB161B" />
+  </svg>
+);
+
+const SaudiArabiaFlag = ({ className = "w-6 h-4" }) => (
+  <svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" className={`${className} rounded-sm shadow-sm`}>
+    <rect width="30" height="20" fill="#006C35" />
+    {/* Simplified sword shape */}
+    <rect x="6" y="12" width="18" height="1" fill="#FFFFFF" />
+    <polygon points="22,12 24,12.5 22,13" fill="#FFFFFF" />
+    {/* Simplified Arabic text representation */}
+    <rect x="8" y="7" width="14" height="1.2" rx="0.5" fill="#FFFFFF" />
+    <rect x="9" y="9" width="12" height="0.8" rx="0.4" fill="#FFFFFF" />
+  </svg>
+);
+
+const KuwaitFlag = ({ className = "w-6 h-4" }) => (
+  <svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" className={`${className} rounded-sm shadow-sm`}>
+    <rect width="30" height="20" fill="#CE1126" />
+    <rect width="30" height="13.33" fill="#FFFFFF" />
+    <rect width="30" height="6.67" fill="#007A3D" />
+    {/* Black trapezoid on hoist */}
+    <polygon points="0,0 8,6.67 8,13.33 0,20" fill="#000000" />
+  </svg>
+);
+
+// ─── Flag Map ──────────────────────────────────────────────────────────────────
+
+const flagComponents = {
+  IN: IndiaFlag,
+  AE: UAEFlag,
+  QA: QatarFlag,
+  OM: OmanFlag,
+  SA: SaudiArabiaFlag,
+  KW: KuwaitFlag,
+};
+
+const CountryFlag = ({ code, className }) => {
+  const Flag = flagComponents[code];
+  return Flag ? <Flag className={className} /> : null;
+};
+
+// ─── Footer ───────────────────────────────────────────────────────────────────
+
 const Footer = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
+      transition: { staggerChildren: 0.1 },
     },
   };
 
@@ -34,11 +140,11 @@ const Footer = () => {
   };
 
   const branchOffices = [
-    { country: "Qatar", flag: "🇶🇦", name: "Qatar" },
-    { country: "UAE", flag: "🇦🇪", name: "UAE" },
-    { country: "Oman", flag: "🇴🇲", name: "Oman" },
-    { country: "Saudi Arabia", flag: "🇸🇦", name: "Saudi Arabia" },
-    { country: "Kuwait", flag: "🇰🇼", name: "Kuwait" },
+    { country: "Qatar",        code: "QA" },
+    { country: "UAE",          code: "AE" },
+    { country: "Oman",         code: "OM" },
+    { country: "Saudi Arabia", code: "SA" },
+    { country: "Kuwait",       code: "KW" },
   ];
 
   return (
@@ -51,13 +157,13 @@ const Footer = () => {
       <div
         className="absolute inset-0 opacity-5"
         style={{
-          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-                         linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+                           linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
           backgroundSize: "60px 60px",
         }}
       />
 
-      {/* Main Section */}
+      {/* ── Main Section ── */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-20">
         <motion.div
           initial="hidden"
@@ -66,7 +172,7 @@ const Footer = () => {
           variants={containerVariants}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10"
         >
-          {/* Logo + About — 3 cols */}
+          {/* ── Logo + About — 3 cols ── */}
           <motion.div variants={itemVariants} className="lg:col-span-3">
             <div className="mb-6 w-full h-24 rounded-xl shadow-lg flex items-center justify-center bg-white">
               <img
@@ -84,26 +190,10 @@ const Footer = () => {
             {/* Social Icons */}
             <div className="flex gap-3">
               {[
-                {
-                  href: "https://www.facebook.com/profile.php?id=61570113656994",
-                  icon: <FaFacebookF />,
-                  gradient: "from-blue-600 to-blue-700",
-                },
-                {
-                  href: "https://www.instagram.com/nexcorealliancellp/",
-                  icon: <FaInstagram />,
-                  gradient: "from-pink-600 via-purple-600 to-orange-500",
-                },
-                {
-                  href: "https://www.youtube.com/channel/UCYqpIltw48XxkMRLC-HCgag",
-                  icon: <FaYoutube />,
-                  gradient: "from-red-600 to-red-700",
-                },
-                {
-                  href: "https://www.linkedin.com/company/105730702/admin/dashboard/",
-                  icon: <FaLinkedinIn />,
-                  gradient: "from-blue-600 to-blue-700",
-                },
+                { href: "https://www.facebook.com/profile.php?id=61570113656994", icon: <FaFacebookF />, gradient: "from-blue-600 to-blue-700" },
+                { href: "https://www.instagram.com/nexcorealliancellp/", icon: <FaInstagram />, gradient: "from-pink-600 via-purple-600 to-orange-500" },
+                { href: "https://www.youtube.com/channel/UCYqpIltw48XxkMRLC-HCgag", icon: <FaYoutube />, gradient: "from-red-600 to-red-700" },
+                { href: "https://www.linkedin.com/company/105730702/admin/dashboard/", icon: <FaLinkedinIn />, gradient: "from-blue-600 to-blue-700" },
               ].map((item, i) => (
                 <motion.a
                   key={i}
@@ -120,15 +210,15 @@ const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Quick Links — 2 cols */}
+          {/* ── Quick Links — 2 cols ── */}
           <motion.div variants={itemVariants} className="lg:col-span-2">
             <h3 className="text-xl font-bold text-white mb-6">Quick Links</h3>
             <ul className="space-y-3">
               {[
-                { name: "Hub", path: "/" },
+                { name: "Hub",          path: "/" },
                 { name: "AI Solutions", path: "/aisloutions" },
                 { name: "Case Studies", path: "/casestudy" },
-                { name: "Odoo", path: "/servicesweoffer" },
+                { name: "Odoo",         path: "/servicesweoffer" },
               ].map((link, i) => (
                 <motion.li key={i} whileHover={{ x: 4 }} className="group">
                   <Link href={link.path}>
@@ -142,17 +232,17 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Policies — 3 cols */}
+          {/* ── Policies — 3 cols ── */}
           <motion.div variants={itemVariants} className="lg:col-span-3">
             <h3 className="text-xl font-bold text-white mb-6">Policies</h3>
             <ul className="space-y-3">
               {[
                 { name: "About Nexcore Alliance", path: "/policies/about" },
-                { name: "Contact", path: "/policies/contact" },
-                { name: "Terms & Conditions", path: "/policies/termsandcondition" },
-                { name: "Privacy Policy", path: "/policies/privacy" },
-                { name: "Refund Policy", path: "/policies/refund-policy" },
-                { name: "Cancellation Policy", path: "/policies/cancellation-policy" },
+                { name: "Contact",                path: "/policies/contact" },
+                { name: "Terms & Conditions",     path: "/policies/termsandcondition" },
+                { name: "Privacy Policy",         path: "/policies/privacy" },
+                { name: "Refund Policy",          path: "/policies/refund-policy" },
+                { name: "Cancellation Policy",    path: "/policies/cancellation-policy" },
               ].map((item, i) => (
                 <motion.li key={i} whileHover={{ x: 4 }} className="group">
                   <Link href={item.path}>
@@ -166,10 +256,11 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Get In Touch — 4 cols */}
+          {/* ── Get In Touch — 4 cols ── */}
           <motion.div variants={itemVariants} className="lg:col-span-4">
             <h3 className="text-xl font-bold text-white mb-6">Get In Touch</h3>
             <div className="space-y-4">
+
               {/* India Phone */}
               <motion.a
                 href="https://wa.me/918976104646"
@@ -183,7 +274,7 @@ const Footer = () => {
                 </div>
                 <div className="pt-1">
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-base">🇮🇳</span>
+                    <CountryFlag code="IN" className="w-6 h-4" />
                     <span className="text-xs font-semibold text-blue-300">India</span>
                   </div>
                   <span className="text-gray-200 group-hover:text-white transition-colors text-sm">
@@ -205,7 +296,7 @@ const Footer = () => {
                 </div>
                 <div className="pt-1">
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-base">🇦🇪</span>
+                    <CountryFlag code="AE" className="w-6 h-4" />
                     <span className="text-xs font-semibold text-blue-300">UAE</span>
                   </div>
                   <span className="text-gray-200 group-hover:text-white transition-colors text-sm">
@@ -253,22 +344,24 @@ const Footer = () => {
                 </div>
               </motion.a>
 
-              {/* Branch Offices */}
-              <div className="pt-2 border-t border-blue-700/50">
-                <div className="mb-2">
-                  <span className="text-xs font-bold text-blue-300 uppercase tracking-wide">
-                    Branch Offices
-                  </span>
-                </div>
+              {/* ── Branch Offices — improved card layout ── */}
+              <div className="pt-3 border-t border-blue-700/50">
+                <span className="text-xs font-bold text-blue-300 uppercase tracking-widest block mb-3">
+                  Branch Offices
+                </span>
+
                 <div className="grid grid-cols-2 gap-2">
                   {branchOffices.map((office, index) => (
-                    <div
+                    <motion.div
                       key={index}
-                      className="flex items-center gap-2 text-gray-300 text-xs"
+                      whileHover={{ scale: 1.03, y: -1 }}
+                      className="flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-blue-400/40 rounded-lg px-3 py-2 transition-all duration-200 cursor-default"
                     >
-                      <span className="text-base">{office.flag}</span>
-                      <span>{office.name}</span>
-                    </div>
+                      <CountryFlag code={office.code} className="w-7 h-[18px] flex-shrink-0" />
+                      <span className="text-gray-200 text-xs font-medium leading-tight">
+                        {office.country}
+                      </span>
+                    </motion.div>
                   ))}
                 </div>
               </div>
@@ -276,8 +369,8 @@ const Footer = () => {
           </motion.div>
         </motion.div>
 
-        {/* CTA Section */}
-        <motion.div
+        {/* ── CTA Section ── */}
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -307,10 +400,10 @@ const Footer = () => {
               </Link>
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
 
-      {/* Bottom Section */}
+      {/* ── Bottom Section ── */}
       <div className="relative z-10 border-t border-blue-700/50">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-8">
           <motion.div
@@ -326,28 +419,22 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-6 text-sm text-gray-300">
               <Link href="/policies/privacy">
-                <span className="hover:text-orange-400 transition-colors cursor-pointer">
-                  Privacy
-                </span>
+                <span className="hover:text-orange-400 transition-colors cursor-pointer">Privacy</span>
               </Link>
               <span>•</span>
               <Link href="/policies/termsandcondition">
-                <span className="hover:text-orange-400 transition-colors cursor-pointer">
-                  Terms
-                </span>
+                <span className="hover:text-orange-400 transition-colors cursor-pointer">Terms</span>
               </Link>
               <span>•</span>
               <Link href="/policies/contact">
-                <span className="hover:text-orange-400 transition-colors cursor-pointer">
-                  Contact
-                </span>
+                <span className="hover:text-orange-400 transition-colors cursor-pointer">Contact</span>
               </Link>
             </div>
           </motion.div>
         </div>
       </div>
 
-      {/* WhatsApp Floating Button */}
+      {/* ── WhatsApp Floating Button ── */}
       <motion.a
         href="https://wa.me/918976104646"
         target="_blank"
@@ -362,11 +449,7 @@ const Footer = () => {
             "0 20px 25px -5px rgba(34, 197, 94, 0.3)",
           ],
         }}
-        transition={{
-          repeat: Infinity,
-          duration: 2,
-          ease: "easeInOut",
-        }}
+        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
       >
         <FaWhatsapp className="text-white text-3xl group-hover:scale-110 transition-transform" />
         <span className="absolute inset-0 rounded-full bg-green-400 animate-ping opacity-20" />
