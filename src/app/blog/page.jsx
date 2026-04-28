@@ -1,19 +1,31 @@
+
+
+
+
 "use client";
 
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Link from "next/link";
+import BlogCard from "@/components/BlogCard";
+import { div } from "framer-motion/client";
+import Navbar from "@/components/layouts/navbar/Navbar";
+import Footer from "@/components/layouts/footer/Footer";
 
 export default function BlogPage() {
   const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getBlogs = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/blogs");
+        const res = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_URL}/api/blogs`
+        );
         setBlogs(res.data.blogs || []);
       } catch (error) {
         console.log(error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -21,43 +33,44 @@ export default function BlogPage() {
   }, []);
 
   return (
-    <div className="p-10 max-w-6xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6">Blogs</h1>
 
-      <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-6">
-        {blogs.map((blog) => (
-          <div key={blog._id} className="border rounded-lg shadow overflow-hidden">
+    <div>
+      <Navbar />
+<div className="bg-white min-h-screen">
 
-            {/* 🔥 IMAGE FIX */}
-            <img
-              src={
-                blog.featuredImage
-                  ? `http://localhost:5000${blog.featuredImage}`
-                  : "/default.jpg"
-              }
-              alt={blog.title}
-              className="w-full h-48 object-cover"
-            />
+      {/* HERO */}
+      <div className="bg-gradient-to-br from-blue-50 to-orange-50 py-16 text-center">
+        <h1 className="text-4xl md:text-5xl font-black text-[#1f2937]">
+          Latest Blogs
+        </h1>
+        <p className="text-gray-600 mt-4 max-w-xl mx-auto">
+          Insights, tutorials, and expert knowledge on AI, Web Development, and Technology.
+        </p>
+      </div>
 
-            <div className="p-4">
-              <h2 className="text-xl font-semibold">{blog.title}</h2>
+      {/* CONTENT */}
+      <div className="max-w-6xl mx-auto px-6 py-12">
 
-              <p className="text-gray-600 mt-2">
-                {blog.excerpt || blog.content.substring(0, 100)}...
-              </p>
-
-              {/* ✅ Next Link */}
-              <Link
-                href={`/blog/${blog.slug}`}
-                className="text-blue-500 mt-3 inline-block"
-              >
-                Read More →
-              </Link>
-            </div>
-
+        {loading ? (
+          <div className="text-center text-lg font-semibold">
+            Loading blogs...
           </div>
-        ))}
+        ) : blogs.length === 0 ? (
+          <div className="text-center text-gray-500">
+            No blogs available
+          </div>
+        ) : (
+          <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-8">
+            {blogs.map((blog) => (
+              <BlogCard key={blog._id} blog={blog} />
+            ))}
+          </div>
+        )}
+
       </div>
     </div>
+    <Footer />
+    </div>
+    
   );
 }
