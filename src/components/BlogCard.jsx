@@ -1,65 +1,10 @@
-// import Link from "next/link";
-
-// export default function BlogCard({ blog }) {
-//   return (
-//     <div className="border rounded-xl overflow-hidden shadow hover:shadow-lg transition">
-
-//       {/* 🔥 Image */}
-//       <img
-//         src={
-//           blog.featuredImage
-//             ? `http://localhost:5000${blog.featuredImage}`
-//             : "/default.jpg"
-//         }
-//         alt={blog.title}
-//         className="w-full h-48 object-cover"
-//       />
-
-//       <div className="p-4">
-
-//         {/* Title */}
-//         <h2 className="text-xl font-semibold line-clamp-2">
-//           {blog.title}
-//         </h2>
-
-//         {/* Excerpt */}
-//         <p className="text-gray-600 mt-2 line-clamp-3">
-//           {blog.excerpt || blog.content.substring(0, 120)}...
-//         </p>
-
-//         {/* Tags */}
-//         {blog.tags && (
-//           <div className="mt-2 flex flex-wrap gap-2">
-//             {blog.tags.slice(0, 3).map((tag, i) => (
-//               <span
-//                 key={i}
-//                 className="text-xs bg-gray-200 px-2 py-1 rounded"
-//               >
-//                 #{tag}
-//               </span>
-//             ))}
-//           </div>
-//         )}
-
-//         {/* Read More */}
-//         <Link
-//           href={`/blog/${blog.slug}`}
-//           className="text-blue-500 mt-3 inline-block font-medium"
-//         >
-//           Read More →
-//         </Link>
-
-//       </div>
-//     </div>
-//   );
-// }
-
-
-
+"use client";
 
 import Link from "next/link";
 
 export default function BlogCard({ blog }) {
+  const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+
   return (
     <div className="group bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
 
@@ -68,31 +13,43 @@ export default function BlogCard({ blog }) {
         <img
           src={
             blog.featuredImage
-              ? `http://localhost:5000${blog.featuredImage}`
+              ? `${BASE_URL}${blog.featuredImage}`
               : "/default.jpg"
           }
-          alt={blog.title}
+          alt={blog.title || "Blog Image"}
           className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300"
         />
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent opacity-70" />
+
+        {/* CATEGORY BADGE */}
+        {blog.category && (
+          <span className="absolute top-3 left-3 bg-white/90 text-[#1e40af] text-xs px-3 py-1 rounded-full font-semibold shadow">
+            {blog.category}
+          </span>
+        )}
       </div>
 
       <div className="p-5">
 
+        {/* DATE */}
+        <p className="text-xs text-gray-400">
+          {new Date(blog.createdAt).toDateString()}
+        </p>
+
         {/* TITLE */}
-        <h2 className="text-xl font-bold text-gray-900 line-clamp-2 group-hover:text-[#1e40af] transition">
+        <h2 className="text-lg font-bold text-gray-900 mt-1 line-clamp-2 group-hover:text-[#1e40af] transition">
           {blog.title}
         </h2>
 
         {/* EXCERPT */}
         <p className="text-gray-600 mt-2 text-sm line-clamp-3">
-          {blog.excerpt || blog.content.substring(0, 120)}...
+          {blog.excerpt || blog.content?.substring(0, 120)}...
         </p>
 
         {/* TAGS */}
-        {blog.tags && blog.tags.length > 0 && (
+        {blog.tags?.length > 0 && (
           <div className="mt-3 flex flex-wrap gap-2">
             {blog.tags.slice(0, 3).map((tag, i) => (
               <span
@@ -108,7 +65,7 @@ export default function BlogCard({ blog }) {
         {/* CTA */}
         <Link
           href={`/blog/${blog.slug}`}
-          className="inline-flex items-center gap-2 mt-4 text-[#1e40af] font-semibold group-hover:gap-3 transition-all"
+          className="inline-flex items-center gap-2 mt-5 text-[#1e40af] font-semibold group-hover:gap-3 transition-all"
         >
           Read More
           <span className="group-hover:translate-x-1 transition-transform">
