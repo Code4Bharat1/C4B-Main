@@ -1,95 +1,175 @@
+// "use client";
+// import React from "react";
+// import dynamic from "next/dynamic";
+// import Navbar from "../layouts/navbar/Navbar";
+// import HeroSection from "./HomeCard/HeroSection";
+// import ServiceSection from "../home/ServicesHome/ServiceSection";
+// import Footer from "../layouts/footer/Footer";
+
+// // ✅ Lazy load below-fold sections — reduces initial JS bundle by ~60%
+// const ApproachSection = dynamic(() => import("../home/Approach/ApproachSection"), {
+//   loading: () => <div className="w-full h-96 bg-gray-50 animate-pulse rounded-lg" />,
+// });
+// const AboutusInfo = dynamic(() => import("../Aboutus/AboutusInfo/AboutusInfo"), {
+//   loading: () => <div className="w-full h-96 bg-gray-50 animate-pulse rounded-lg" />,
+// });
+// const ValuesSection = dynamic(() => import("../Aboutus/Values/ValuesSection"), {
+//   loading: () => <div className="w-full h-96 bg-gray-50 animate-pulse rounded-lg" />,
+// });
+// const Clientsec = dynamic(() => import("../Clients/ClientsSec/ClientsSec"), {
+//   loading: () => <div className="w-full h-96 bg-gray-50 animate-pulse rounded-lg" />,
+// });
+// const ApproachSec = dynamic(() => import("../Approach/ApproachSec/ApproachSec"), {
+//   loading: () => <div className="w-full h-96 bg-gray-50 animate-pulse rounded-lg" />,
+// });
+// const ServicesSection = dynamic(() => import("../Services/ServiceSection/ServiceSec"), {
+//   loading: () => <div className="w-full h-96 bg-gray-50 animate-pulse rounded-lg" />,
+// });
+// const Awards = dynamic(() => import("../Awards/Awards"), {
+//   loading: () => <div className="w-full h-96 bg-gray-50 animate-pulse rounded-lg" />,
+// });
+
+// const Home = () => {
+//   return (
+//     <div className="w-full h-full bg-[#F9F7F7] text-[#112D4E]">
+//       <Navbar />
+      
+//       {/* Above-fold — loaded eagerly */}
+//       <section id="home">
+//         <HeroSection />
+//       </section>
+
+//       <section id="services">
+//         <ServiceSection />
+//       </section>
+
+//       {/* Below-fold — lazy loaded on scroll */}
+//       <section id="approach">
+//         <ApproachSection />
+//       </section>
+
+//       <section id="about">
+//         <AboutusInfo />
+//       </section>
+
+//       <section id="values">
+//         <ValuesSection />
+//       </section>
+
+//       <section id="clients">
+//         <Clientsec />
+//       </section>
+
+//       <section id="approach-detail">
+//         <ApproachSec />
+//       </section>
+
+//       <section id="all-services">
+//         <ServicesSection />
+//       </section>
+
+//       <section id="awards">
+//         <Awards />
+//       </section>
+
+//       <Footer />
+//     </div>
+//   );
+// };
+
+// export default Home;
+
+"use client";
 import React from "react";
-import Head from "next/head";
+import dynamic from "next/dynamic";
 import Navbar from "../layouts/navbar/Navbar";
 import HeroSection from "./HomeCard/HeroSection";
+import LazySection from "./LazySection";
+
+// ✅ ssr: false — prevents server rendering these heavy sections.
+// Combined with LazySection, JS chunks only download when scrolled into view.
+const ApproachSection = dynamic(
+  () => import("../home/Approach/ApproachSection"),
+  { ssr: false }
+);
+
+const AboutusInfo = dynamic(
+  () => import("../Aboutus/AboutusInfo/AboutusInfo"),
+  { ssr: false }
+);
+
+const ValuesSection = dynamic(
+  () => import("../Aboutus/Values/ValuesSection"),
+  { ssr: false }
+);
+
+const Clientsec = dynamic(
+  () => import("../Clients/ClientsSec/ClientsSec"),
+  { ssr: false }
+);
+
+const ApproachSec = dynamic(
+  () => import("../Approach/ApproachSec/ApproachSec"),
+  { ssr: false }
+);
+
+const ServicesSection = dynamic(
+  () => import("../Services/ServiceSection/ServiceSec"),
+  { ssr: false }
+);
+
+const Awards = dynamic(
+  () => import("../Awards/Awards"),
+  { ssr: false }
+);
+
+const Footer = dynamic(
+  () => import("../layouts/footer/Footer"),
+  { ssr: false }
+);
+
 import ServiceSection from "../home/ServicesHome/ServiceSection";
-import Footer from "../layouts/footer/Footer";
-import ApproachSection from "../home/Approach/ApproachSection";
-import AboutusInfo from "../Aboutus/AboutusInfo/AboutusInfo";
-import SupportersSection from "../Aboutus/OurSupporters/SupporterSection";
-import ValuesSection from "../Aboutus/Values/ValuesSection";
-import Clientsec from "../Clients/ClientsSec/ClientsSec";
-import ApproachSec from "../Approach/ApproachSec/ApproachSec";
-import ServicesSection from "../Services/ServiceSection/ServiceSec";
-import Awards from "../Awards/Awards";
 
 const Home = () => {
   return (
-    <>
-      <Head>
-        <title>NEXCORE ALLIANCE LLP – Web Development Tutorials & Tools for Developers in India</title>
-        <meta
-          name="description"
-          content="NEXCORE ALLIANCE LLP empowers developers in India with free programming tutorials, coding tools, and resources. Learn Next.js, React, JavaScript, and modern web development with step-by-step guides."
-        />
-        <meta
-          name="keywords"
-          content="NEXCORE ALLIANCE LLP, web development India, Next.js tutorials, React tutorials, programming tutorials, developer tools, coding platform India"
-        />
-        <meta name="author" content="NEXCORE ALLIANCE LLP Team" />
-        <meta name="robots" content="index, follow" />
+    <div className="w-full h-full bg-[#F9F7F7] text-[#112D4E]">
+      <Navbar />
 
-        {/* Open Graph for social sharing */}
-        <meta property="og:title" content="NEXCORE ALLIANCE LLP – Empowering Developers in India" />
-        <meta property="og:description" content="Learn web development with free tutorials, coding tools, and resources on NEXCORE ALLIANCE LLP." />
-        <meta property="og:url" content="https://www.nexcorealliance.com" />
-        <meta property="og:image" content="/og-image.png" />
-        <meta property="og:type" content="website" />
+      {/* Above-fold — loaded eagerly */}
+      <section id="home">
+        <HeroSection />
+      </section>
+      <section id="services">
+        <ServiceSection />
+      </section>
 
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="NEXCORE ALLIANCE LLP – Web Development Tutorials & Resources" />
-        <meta name="twitter:description" content="Step-by-step tutorials and tools for developers in India." />
-        <meta name="twitter:image" content="/og-image.png" />
-      </Head>
+      {/* Below-fold — JS chunks download only when scrolled into view */}
+      <LazySection id="approach" minHeight={600}>
+        <ApproachSection />
+      </LazySection>
+      <LazySection id="about" minHeight={600}>
+        <AboutusInfo />
+      </LazySection>
+      <LazySection id="values" minHeight={600}>
+        <ValuesSection />
+      </LazySection>
+      <LazySection id="clients" minHeight={500}>
+        <Clientsec />
+      </LazySection>
+      <LazySection id="approach-detail" minHeight={500}>
+        <ApproachSec />
+      </LazySection>
+      <LazySection id="all-services" minHeight={500}>
+        <ServicesSection />
+      </LazySection>
+      <LazySection id="awards" minHeight={400}>
+        <Awards />
+      </LazySection>
 
-      <div className="w-full h-full bg-[#F9F7F7] text-[#112D4E]">
-        <Navbar />
-        
-        {/* Har section ko unique ID do */}
-        <section id="home">
-          <HeroSection />
-        </section>
-
-        <section id="services">
-          <ServiceSection />
-        </section>
-
-        <section id="approach">
-          <ApproachSection />
-        </section>
-
-        <section id="about">
-          <AboutusInfo />
-        </section>
-
-        {/* <section id="supporters">
-          <SupportersSection />
-        </section> */}
-
-        <section id="values">
-          <ValuesSection />
-        </section>
-
-        <section id="clients">
-          <Clientsec />
-        </section>
-
-        <section id="approach-detail">
-          <ApproachSec />
-        </section>
-
-        <section id="all-services">
-          <ServicesSection />
-        </section>
-
-        <section id="awards">
-          <Awards />
-        </section>
-
+      <LazySection id="footer" minHeight={300}>
         <Footer />
-      </div>
-    </>
+      </LazySection>
+    </div>
   );
 };
 

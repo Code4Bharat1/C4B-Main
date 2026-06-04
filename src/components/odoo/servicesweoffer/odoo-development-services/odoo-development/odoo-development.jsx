@@ -115,7 +115,7 @@ const OdooDevelopment = () => {
                 alt="Odoo Development Video"
                 className="w-full h-auto rounded-2xl sm:rounded-3xl"
               />
-              
+
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#1e40af]/70 via-transparent to-transparent flex items-center justify-center group-hover:bg-[#1e40af]/50 transition-all duration-300">
                 {/* Play Button */}
@@ -145,7 +145,7 @@ const OdooDevelopment = () => {
             >
               <FaTimes className="text-xl sm:text-2xl" />
             </button>
-            
+
             {/* Video */}
             <div className="relative pt-[56.25%]">
               <iframe

@@ -3,9 +3,9 @@
 
 
 /* Tailwind Directives */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 /* ✅ Google Fonts now loaded via next/font in layout.jsx — no render-blocking @import */
 

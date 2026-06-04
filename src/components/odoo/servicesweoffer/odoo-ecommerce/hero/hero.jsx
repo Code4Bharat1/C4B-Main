@@ -30,8 +30,8 @@ const Hero = () => {
             <div className="flex flex-col items-end gap-3">
               {/* Breadcrumb Pills */}
               <div className="flex flex-wrap justify-end items-center gap-2">
-                <a 
-                  href="/" 
+                <a
+                  href="/"
                   className="flex items-center gap-2 px-4 py-2 bg-white/15 backdrop-blur-md hover:bg-white/25 rounded-full transition-all duration-300 border border-white/30"
                 >
                   <FaHome className="text-sm text-white" />
@@ -40,8 +40,8 @@ const Hero = () => {
 
                 <FaChevronRight className="text-white/60 text-xs" />
 
-                <a 
-                  href="/servicesweoffer" 
+                <a
+                  href="/servicesweoffer"
                   className="flex items-center gap-2 px-4 py-2 bg-white/15 backdrop-blur-md hover:bg-white/25 rounded-full transition-all duration-300 border border-white/30"
                 >
                   <FaCogs className="text-sm text-white" />

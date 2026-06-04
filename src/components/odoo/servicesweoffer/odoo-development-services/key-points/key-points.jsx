@@ -16,7 +16,7 @@ const OdooDevelopmentKeyPoints = () => {
 
   return (
     <section className="relative bg-gradient-to-br from-slate-50 via-purple-50/20 to-pink-50/20 py-20 overflow-hidden">
-      
+
       <div className="container mx-auto px-6 sm:px-12 relative z-10">
 
         {/* Header */}
@@ -25,7 +25,7 @@ const OdooDevelopmentKeyPoints = () => {
             <FaCogs className="text-xl animate-spin-slow" />
             <span className="font-bold uppercase text-sm tracking-wider">Key Points</span>
           </div>
-          
+
           <h2 className="text-4xl sm:text-5xl font-extrabold">
             <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
               Odoo Development
@@ -49,14 +49,13 @@ const OdooDevelopmentKeyPoints = () => {
               `}
             >
               <div className="flex flex-col items-center p-6">
-              
+
                 {/* Icon */}
                 <img
                   src={point.icon}
                   alt={point.title}
-                  className={`w-16 h-20 object-contain mb-4 transition-transform duration-300 ${
-                    hoveredCard === point.id ? 'scale-110' : ''
-                  }`}
+                  className={`w-16 h-20 object-contain mb-4 transition-transform duration-300 ${hoveredCard === point.id ? 'scale-110' : ''
+                    }`}
                 />
 
                 {/* Title */}

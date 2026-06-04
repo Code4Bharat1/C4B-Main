@@ -34,7 +34,7 @@ const OdooModuleConfiguration = () => {
         <div className="order-2 lg:order-1 relative group">
           {/* Glowing border effect */}
           <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
-          
+
           {/* Image container */}
           <div className="relative bg-white p-3 rounded-2xl shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-300">
             <img
@@ -42,7 +42,7 @@ const OdooModuleConfiguration = () => {
               alt="Odoo Maintenance Management"
               className="rounded-xl w-full h-auto shadow-lg"
             />
-            
+
             {/* Floating badge */}
             <div className="absolute -bottom-6 -left-6 bg-white px-6 py-4 rounded-xl shadow-2xl border border-gray-100">
               <div className="flex items-center gap-3">

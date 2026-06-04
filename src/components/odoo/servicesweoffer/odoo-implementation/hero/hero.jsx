@@ -13,7 +13,7 @@ const Hero = () => {
         />
         {/* Enhanced Gradient Overlay - Blue to Orange */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#1e40af]/90 via-[#1e3a8a]/85 to-[#f97316]/90"></div>
-        
+
         {/* Additional Gradient Layer for Depth */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#1e40af]/20 to-[#1e3a8a]/40"></div>
       </div>
@@ -41,8 +41,8 @@ const Hero = () => {
             <div className="flex flex-col items-end gap-3">
               {/* Breadcrumb Pills */}
               <div className="flex flex-wrap justify-end items-center gap-2 sm:gap-3">
-                <a 
-                  href="/" 
+                <a
+                  href="/"
                   className="flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-white/20 backdrop-blur-lg hover:bg-white/30 rounded-full transition-all duration-300 border-2 border-white/40 shadow-lg hover:scale-105"
                 >
                   <FaHome className="text-sm text-white" />
@@ -51,8 +51,8 @@ const Hero = () => {
 
                 <FaChevronRight className="text-white/70 text-xs" />
 
-                <a 
-                  href="/servicesweoffer" 
+                <a
+                  href="/servicesweoffer"
                   className="flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-white/20 backdrop-blur-lg hover:bg-white/30 rounded-full transition-all duration-300 border-2 border-white/40 shadow-lg hover:scale-105"
                 >
                   <FaCogs className="text-sm text-white" />

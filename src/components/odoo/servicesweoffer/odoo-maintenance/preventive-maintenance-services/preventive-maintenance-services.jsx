@@ -58,7 +58,7 @@ const Services = () => {
               <Wrench className="w-4 h-4" />
               Our Services
             </div>
-            
+
             {/* Main heading */}
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
               Best Odoo{" "}
@@ -88,20 +88,20 @@ const Services = () => {
             >
               {/* Decorative gradient background on hover */}
               <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${service.color} rounded-full filter blur-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 -translate-y-1/2 translate-x-1/2`}></div>
-              
+
               {/* Icon container */}
               <div className="relative mb-6 flex justify-center">
                 <div className="relative">
                   {/* Gradient ring */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${service.color} rounded-2xl blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-300 scale-110`}></div>
-                  
+
                   {/* Image */}
                   <img
                     src={service.icon}
                     alt={service.title}
                     className="relative h-28 w-28 object-contain transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3"
                   />
-                  
+
                   {/* Small badge icon */}
                   <div className={`absolute -bottom-2 -right-2 w-10 h-10 bg-gradient-to-br ${service.color} rounded-lg flex items-center justify-center text-white shadow-lg transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-12`}>
                     {service.lucideIcon}

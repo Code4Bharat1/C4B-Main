@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { 
   FaComments, 
   FaCode, 
@@ -46,25 +45,6 @@ const steps = [
 ];
 
 const ApproachSection = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -30 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-    },
-  };
-
   return (
     <section className="w-full min-h-screen bg-[#1e3a8a] text-white py-20 md:py-32 relative overflow-hidden">
       {/* Simple background elements */}
@@ -83,18 +63,12 @@ const ApproachSection = () => {
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Section - Content */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.3 }}
-            variants={containerVariants}
-            className="space-y-12"
-          >
+          <div className="space-y-12 animate-fade-up">
             {/* Header */}
-            <motion.div variants={itemVariants} className="space-y-4">
+            <div className="space-y-4">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f97316]/20 border border-[#f97316]/30">
                 <div className="w-2 h-2 bg-[#f97316] rounded-full animate-pulse" />
-                <span className="text-sm text-orange-200 font-semibold">
+                <span className="text-sm text-orange-200 font-semibold uppercase tracking-wider">
                   How it Works?
                 </span>
               </div>
@@ -106,16 +80,15 @@ const ApproachSection = () => {
                   Workflow
                 </span>
               </h2>
-            </motion.div>
+            </div>
 
             {/* Workflow Steps */}
             <div className="space-y-6">
               {steps.map((step, idx) => (
-                <motion.div
+                <div
                   key={step.id}
-                  variants={itemVariants}
-                  whileHover={{ x: 8 }}
-                  className="group relative"
+                  className="group relative animate-fade-up"
+                  style={{ animationDelay: `${0.1 * (idx + 1)}s` }}
                 >
                   {/* Connecting line (except for last item) */}
                   {idx < steps.length - 1 && (
@@ -124,10 +97,9 @@ const ApproachSection = () => {
 
                   <div className="flex gap-6 items-start">
                     {/* Icon Circle - Solid color */}
-                    <motion.div
-                      className="relative flex-shrink-0 w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow"
+                    <div
+                      className="relative flex-shrink-0 w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"
                       style={{ backgroundColor: step.color }}
-                      whileHover={{ scale: 1.1, rotate: 5 }}
                     >
                       {/* Glow effect */}
                       <div 
@@ -141,7 +113,7 @@ const ApproachSection = () => {
                       <div className="absolute -top-2 -right-2 w-6 h-6 bg-white border-2 border-[#f97316] rounded-full flex items-center justify-center text-xs font-bold text-[#1e3a8a]">
                         {step.id}
                       </div>
-                    </motion.div>
+                    </div>
 
                     {/* Content */}
                     <div className="flex-1 pt-1">
@@ -153,107 +125,69 @@ const ApproachSection = () => {
                       </p>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
 
-            {/* CTA Button - Solid color */}
-            <motion.div variants={itemVariants}>
+            {/* CTA Button */}
+            <div className="animate-fade-up" style={{ animationDelay: '0.6s' }}>
               <Link 
                 href="/contactus"
-                className="px-8 py-4 bg-[#f97316] text-white font-semibold rounded-xl shadow-lg hover:bg-[#ea580c] hover:shadow-xl transition-all inline-flex justify-center items-center"
+                className="px-8 py-4 bg-[#f97316] text-white font-semibold rounded-xl shadow-lg hover:bg-[#ea580c] hover:shadow-xl transition-all duration-300 inline-flex justify-center items-center hover:-translate-y-1 active:scale-95"
               >
                 Start Your Project
               </Link>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
-          {/* Right Section - Image with decorative elements */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="relative"
-          >
-            {/* Floating animation wrapper */}
-            <motion.div
-              animate={{
-                y: [0, -20, 0],
-              }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="relative"
-            >
-              {/* Decorative glow */}
-              <div className="absolute inset-0 bg-[#3b82f6]/20 blur-3xl rounded-3xl scale-105" />
+          {/* Right Section - Image */}
+          <div className="relative animate-fade-up lg:animate-float" style={{ animationDelay: '0.4s' }}>
+            {/* Decorative glow */}
+            <div className="absolute inset-0 bg-[#3b82f6]/20 blur-3xl rounded-3xl scale-105" />
 
-              {/* Main image container */}
-              <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-4 border border-white/10 shadow-2xl">
-                <div className="relative rounded-2xl overflow-hidden">
-                  <Image
-                    src="/images/approach.png"
-                    alt="Approach Workflow"
-                    width={800}
-                    height={600}
-                    className="w-full h-auto"
-                  />
-                  
-                  {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1e3a8a]/50 to-transparent" />
-                </div>
+            {/* Main image container */}
+            <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-4 border border-white/10 shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
+              <div className="relative rounded-2xl overflow-hidden">
+                <Image
+                  src="/images/approach.png"
+                  alt="Approach Workflow"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto"
+                />
+                
+                {/* Overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1e3a8a]/50 to-transparent" />
               </div>
+            </div>
 
-              {/* Floating stat cards - Solid colors */}
-              <motion.div
-                className="absolute -top-6 -right-6 bg-[#3b82f6] backdrop-blur-sm rounded-2xl p-4 shadow-2xl border border-white/20"
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.5, type: "spring" }}
-                whileHover={{ scale: 1.1, rotate: 5 }}
-              >
-                <div className="text-3xl font-bold text-white">329+</div>
-                <div className="text-xs text-blue-100">Projects Done</div>
-              </motion.div>
+            {/* Floating stat cards */}
+            <div className="absolute -top-6 -right-6 bg-[#3b82f6] rounded-2xl p-4 shadow-2xl border border-white/20 transition-all duration-300 hover:scale-110 hover:rotate-3 cursor-default">
+              <div className="text-3xl font-bold text-white">329+</div>
+              <div className="text-xs text-blue-100 uppercase tracking-wider font-semibold">Projects Done</div>
+            </div>
 
-              <motion.div
-                className="absolute -bottom-6 -left-6 bg-[#f97316] backdrop-blur-sm rounded-2xl p-4 shadow-2xl border border-white/20"
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.7, type: "spring" }}
-                whileHover={{ scale: 1.1, rotate: -5 }}
-              >
-                <div className="text-3xl font-bold text-white">94%</div>
-                <div className="text-xs text-orange-100">Client Success</div>
-              </motion.div>
+            <div className="absolute -bottom-6 -left-6 bg-[#f97316] rounded-2xl p-4 shadow-2xl border border-white/20 transition-all duration-300 hover:scale-110 hover:-rotate-3 cursor-default">
+              <div className="text-3xl font-bold text-white">94%</div>
+              <div className="text-xs text-orange-100 uppercase tracking-wider font-semibold">Client Success</div>
+            </div>
 
-              {/* Decorative rings */}
-              <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full">
-                <div className="absolute inset-0 border-2 border-[#3b82f6]/20 rounded-full animate-ping" style={{ animationDuration: '3s' }} />
-                <div className="absolute inset-8 border-2 border-[#f97316]/20 rounded-full animate-ping" style={{ animationDuration: '4s', animationDelay: '0.5s' }} />
-              </div>
-            </motion.div>
-          </motion.div>
+            {/* Decorative rings */}
+            <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none">
+              <div className="absolute inset-0 border-2 border-[#3b82f6]/20 rounded-full animate-ping" style={{ animationDuration: '3s' }} />
+              <div className="absolute inset-8 border-2 border-[#f97316]/20 rounded-full animate-ping" style={{ animationDuration: '4s', animationDelay: '0.5s' }} />
+            </div>
+          </div>
         </div>
 
-        {/* Bottom process flow indicator - Solid colors */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
-          transition={{ delay: 0.8 }}
-          className="mt-20 flex justify-center items-center gap-4"
-        >
+        {/* Bottom process flow indicator */}
+        <div className="mt-20 flex justify-center items-center gap-4 animate-fade-in" style={{ animationDelay: '1s' }}>
           <div className="flex items-center gap-3">
             {steps.map((step, idx) => (
               <React.Fragment key={step.id}>
-                <motion.div
-                  className="w-3 h-3 rounded-full"
+                <div
+                  className="w-3 h-3 rounded-full transition-transform duration-300 hover:scale-150"
                   style={{ backgroundColor: step.color }}
-                  whileHover={{ scale: 1.5 }}
                 />
                 {idx < steps.length - 1 && (
                   <div className="w-12 h-0.5 bg-white/30" />
@@ -261,8 +195,9 @@ const ApproachSection = () => {
               </React.Fragment>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
+
     </section>
   );
 };

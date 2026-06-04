@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 const DesktopMenu = ({ menuItems, pathname, handleLinkClick }) => {
@@ -32,16 +31,6 @@ const DesktopMenu = ({ menuItems, pathname, handleLinkClick }) => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-
-  // Framer Motion animations
-  const navVariants = {
-    hidden: { opacity: 0, y: -10 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.3 },
-    },
-  };
 
   // Hover logic
   const handleDropdownEnter = (dropdownName) => {
@@ -112,15 +101,12 @@ const DesktopMenu = ({ menuItems, pathname, handleLinkClick }) => {
   };
 
   return (
-    <motion.div
+    <div
       ref={menuRef}
-      className="hidden md:flex gap-4 lg:gap-8 xl:gap-12 mr-4 lg:mr-8 xl:mr-16"
-      initial="hidden"
-      animate="visible"
-      variants={navVariants}
+      className="hidden md:flex gap-4 lg:gap-8 xl:gap-12 mr-4 lg:mr-8 xl:mr-16 dropdown-transition nav-entrance"
     >
       {menuItems.map(({ name, path, dropdown }, idx) => (
-        <motion.div key={idx} variants={navVariants} className="relative group">
+        <div key={idx} className="relative group">
           {(name === "Odoo" || name === "Hub") ? (
             <Link
             href={`${name === "Odoo" ? "/servicesweoffer" : "/"}`}
@@ -139,10 +125,10 @@ const DesktopMenu = ({ menuItems, pathname, handleLinkClick }) => {
               }`}
             >
               {name}
-              <motion.svg
-                className="w-4 h-4"
-                animate={{ rotate: (name === "Odoo" ? isOdooDropdownOpen : isHubDropdownOpen) ? 180 : 0 }}
-                transition={{ duration: 0.3 }}
+              <svg
+                className={`w-4 h-4 transition-transform duration-300 ${
+                  (name === "Odoo" ? isOdooDropdownOpen : isHubDropdownOpen) ? "rotate-180" : ""
+                }`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -153,7 +139,7 @@ const DesktopMenu = ({ menuItems, pathname, handleLinkClick }) => {
                   strokeWidth={2}
                   d="M19 9l-7 7-7-7"
                 />
-              </motion.svg>
+              </svg>
             </Link>
           ) : (
             <Link href={path || "/"} onClick={handleLinkClick}>
@@ -170,15 +156,14 @@ const DesktopMenu = ({ menuItems, pathname, handleLinkClick }) => {
           )}
 
           {/* Hub Dropdown */}
-          {name === "Hub" && isHubDropdownOpen && (
-            <AnimatePresence>
-              <motion.div
-                className="absolute top-10 left-full md:left-auto md:right-0 mr-2 bg-white shadow-xl rounded-lg w-48 md:w-56"
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.3 }}
-              >
+          {name === "Hub" && (
+            <div
+              className={`absolute top-10 left-full md:left-auto md:right-0 mr-2 bg-white shadow-xl rounded-lg w-48 md:w-56 transition-all duration-300 z-[100] ${
+                isHubDropdownOpen 
+                  ? "opacity-100 translate-y-0 pointer-events-auto" 
+                  : "opacity-0 -translate-y-2 pointer-events-none"
+              }`}
+            >
                 <ul className="text-gray-700 py-2">
                   {dropdown?.map((sub, index) => (
                     <li
@@ -202,20 +187,18 @@ const DesktopMenu = ({ menuItems, pathname, handleLinkClick }) => {
                     </li>
                   ))}
                 </ul>
-              </motion.div>
-            </AnimatePresence>
+            </div>
           )}
 
           {/* Odoo Dropdown */}
-          {name === "Odoo" && isOdooDropdownOpen && (
-            <AnimatePresence>
-              <motion.div
-                className="absolute top-10 left-full md:left-auto md:right-0 mr-2 bg-white shadow-xl rounded-lg w-48 md:w-56"
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.3 }}
-              >
+          {name === "Odoo" && (
+            <div
+              className={`absolute top-10 left-full md:left-auto md:right-0 mr-2 bg-white shadow-xl rounded-lg w-48 md:w-56 transition-all duration-300 z-[100] ${
+                isOdooDropdownOpen 
+                  ? "opacity-100 translate-y-0 pointer-events-auto" 
+                  : "opacity-0 -translate-y-2 pointer-events-none"
+              }`}
+            >
                 <ul className="text-gray-700 py-2">
                   {/* Services We Offer */}
                   <li
@@ -229,13 +212,13 @@ const DesktopMenu = ({ menuItems, pathname, handleLinkClick }) => {
                     >
                       Services We Offer
                     </Link>
-                    <motion.span
-                      animate={{ x: isOpen("Services") ? -5 : 0 }}
-                      transition={{ duration: 0.2 }}
-                      className="mr-2 -rotate-180 hover:text-[#873070]"
+                    <span
+                      className={`mr-2 -rotate-180 transition-transform duration-200 hover:text-[#873070] ${
+                        isOpen("Services") ? "-translate-x-1" : ""
+                      }`}
                     >
                       <AiOutlineRight  className="-rotate-180"/>
-                    </motion.span>
+                    </span>
                   </li>
 
                   {/* Apps */}
@@ -247,29 +230,26 @@ const DesktopMenu = ({ menuItems, pathname, handleLinkClick }) => {
                     <Link href="/apps" className="flex-1 text-sm md:text-base">
                       Apps
                     </Link>
-                    <motion.span
-                      animate={{ x: isOpen("Apps") ? -5 : 0 }}
-                      className="ml-2"
-                      transition={{ duration: 0.2 }}
-                      // className="ml-2 hover:text-[#873070]"
+                    <span
+                      className={`ml-2 transition-transform duration-200 ${
+                        isOpen("Apps") ? "-translate-x-1" : ""
+                      }`}
                     >
                       <AiOutlineRight className="-rotate-180" />
-                    </motion.span>
+                    </span>
                   </li>
                 </ul>
 
                 {/* Services Submenu */}
-                {isServicesDropdownOpen && (
-                  <AnimatePresence>
-                    <motion.div
-                      className="absolute top-0 right-full mr-5 bg-white shadow-xl rounded-lg w-[90vw] md:w-[500px] lg:w-[600px] p-4 md:p-6 max-h-[80vh] overflow-y-auto"
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: -10 }}
-                      transition={{ duration: 0.3 }}
-                      onMouseEnter={() => handleDropdownEnter("Services")}
-                      onMouseLeave={() => handleDropdownLeave("Services")}
-                    >
+                <div
+                  className={`absolute top-0 right-full mr-5 bg-white shadow-xl rounded-lg w-[90vw] md:w-[500px] lg:w-[600px] p-4 md:p-6 max-h-[80vh] overflow-y-auto transition-all duration-300 ${
+                    isServicesDropdownOpen
+                      ? "opacity-100 translate-x-0 pointer-events-auto"
+                      : "opacity-0 -translate-x-2 pointer-events-none"
+                  }`}
+                  onMouseEnter={() => handleDropdownEnter("Services")}
+                  onMouseLeave={() => handleDropdownLeave("Services")}
+                >
                       <div className="flex flex-col md:flex-row justify-between gap-4 md:gap-8">
                         {/* FIRST COLUMN */}
                         <div className="w-full md:w-1/2 flex flex-col space-y-2 text-gray-700">
@@ -348,118 +328,78 @@ const DesktopMenu = ({ menuItems, pathname, handleLinkClick }) => {
                           </li>
                         </div>
                       </div>
-                    </motion.div>
-                  </AnimatePresence>
-                )}
+                </div>
 
                 {/* Apps Submenu */}
-                {isAppsDropdownOpen && (
-                  <AnimatePresence>
-                    <motion.div
-                      className="absolute top-0 right-full mr-2 bg-white shadow-xl rounded-lg w-[90vw] md:w-[500px] lg:w-[600px] p-4 md:p-6 max-h-[80vh] overflow-y-auto"
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: -10 }}
-                      transition={{ duration: 0.3 }}
-                      onMouseEnter={() => handleDropdownEnter("Apps")}
-                      onMouseLeave={() => handleDropdownLeave("Apps")}
-                    >
-                      <div className="flex flex-col md:flex-row justify-between gap-4 md:gap-8">
-                        {/* FIRST COLUMN */}
-                        <div className="w-full md:w-1/2 flex flex-col space-y-2 text-gray-700">
-                          <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
-                            <Link href="/apps/odoo-crm">Odoo CRM</Link>
-                          </li>
-                          <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
-                            <Link href="/apps/odoo-sales">Odoo Sales</Link>
-                          </li>
-                          <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
-                            <Link href="/apps/odoo-e-commerce">
-                              Odoo E-Commerce
-                            </Link>
-                          </li>
-                          <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
-                            <Link href="/apps/odoo-e-mail-marketing">
-                              Odoo Email Marketing
-                            </Link>
-                          </li>
-
-                          <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
-                            <Link href="/apps/odoo-project">Odoo Project</Link>
-                          </li>
-                          <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
-                            <Link href="/apps/odoo-accounting">
-                              Odoo Accounting
-                            </Link>
-                          </li>
-                          <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
-                            <Link href="/apps/odoo-inventory">
-                              Odoo Inventory
-                            </Link>
-                          </li>
-                          <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
-                            <Link href="/apps/odoo-helpdesk">
-                              Odoo Helpdesk
-                            </Link>
-                          </li>
-                        </div>
-
-                        {/* SECOND COLUMN */}
-                        <div className="w-full md:w-1/2 flex flex-col space-y-2 text-gray-700">
-                          <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
-                            <Link href="/apps/odoo-invoicing">
-                              Odoo Invoicing
-                            </Link>
-                          </li>
-                          {/* <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
-                            <Link href="/apps/odoo-sales">Odoo Sales</Link>
-                          </li> */}
-                          <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
-                            <Link href="/apps/odoo-purchase">
-                              Odoo Purchase
-                            </Link>
-                          </li>
-                          <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
-                            <Link href="/apps/odoo-timesheet">
-                              Odoo Timesheet
-                            </Link>
-                          </li>
-                          <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
-                            <Link href="/apps/odoo-point-of-sale">
-                              Odoo Point of Sale
-                            </Link>
-                          </li>
-                          <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
-                            <Link href="/apps/odoo-expenses">
-                              Odoo Expenses
-                            </Link>
-                          </li>
-                          <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
-                            <Link href="/apps/odoo-event-management">
-                              Odoo Events
-                            </Link>
-                          </li>
-                          <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
-                            <Link href="/apps/odoo-marketing-automation">
-                              Marketing Automation
-                            </Link>
-                          </li>
-                          <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
-                            <Link href="/apps/odoo-documents">
-                              Odoo Documents
-                            </Link>
-                          </li>
-                        </div>
-                      </div>
-                    </motion.div>
-                  </AnimatePresence>
-                )}
-              </motion.div>
-            </AnimatePresence>
+                <div
+                  className={`absolute top-0 right-full mr-2 bg-white shadow-xl rounded-lg w-[90vw] md:w-[500px] lg:w-[600px] p-4 md:p-6 max-h-[80vh] overflow-y-auto transition-all duration-300 ${
+                    isAppsDropdownOpen
+                      ? "opacity-100 translate-x-0 pointer-events-auto"
+                      : "opacity-0 -translate-x-2 pointer-events-none"
+                  }`}
+                  onMouseEnter={() => handleDropdownEnter("Apps")}
+                  onMouseLeave={() => handleDropdownLeave("Apps")}
+                >
+                  <div className="flex flex-col md:flex-row justify-between gap-4 md:gap-8">
+                    <div className="w-full md:w-1/2 flex flex-col space-y-2 text-gray-700">
+                      <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
+                        <Link href="/apps/odoo-crm">Odoo CRM</Link>
+                      </li>
+                      <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
+                        <Link href="/apps/odoo-sales">Odoo Sales</Link>
+                      </li>
+                      <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
+                        <Link href="/apps/odoo-e-commerce">Odoo E-Commerce</Link>
+                      </li>
+                      <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
+                        <Link href="/apps/odoo-e-mail-marketing">Odoo Email Marketing</Link>
+                      </li>
+                      <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
+                        <Link href="/apps/odoo-project">Odoo Project</Link>
+                      </li>
+                      <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
+                        <Link href="/apps/odoo-accounting">Odoo Accounting</Link>
+                      </li>
+                      <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
+                        <Link href="/apps/odoo-inventory">Odoo Inventory</Link>
+                      </li>
+                      <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
+                        <Link href="/apps/odoo-helpdesk">Odoo Helpdesk</Link>
+                      </li>
+                    </div>
+                    <div className="w-full md:w-1/2 flex flex-col space-y-2 text-gray-700">
+                      <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
+                        <Link href="/apps/odoo-invoicing">Odoo Invoicing</Link>
+                      </li>
+                      <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
+                        <Link href="/apps/odoo-purchase">Odoo Purchase</Link>
+                      </li>
+                      <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
+                        <Link href="/apps/odoo-timesheet">Odoo Timesheet</Link>
+                      </li>
+                      <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
+                        <Link href="/apps/odoo-point-of-sale">Odoo Point of Sale</Link>
+                      </li>
+                      <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
+                        <Link href="/apps/odoo-expenses">Odoo Expenses</Link>
+                      </li>
+                      <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
+                        <Link href="/apps/odoo-event-management">Odoo Events</Link>
+                      </li>
+                      <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
+                        <Link href="/apps/odoo-marketing-automation">Marketing Automation</Link>
+                      </li>
+                      <li className="hover:text-[#873070] transition-colors duration-200 list-none text-sm md:text-base">
+                        <Link href="/apps/odoo-documents">Odoo Documents</Link>
+                      </li>
+                    </div>
+                  </div>
+                </div>
+            </div>
           )}
-        </motion.div>
+        </div>
       ))}
-    </motion.div>
+    </div>
   );
 };
 

@@ -30,7 +30,7 @@ const Strategic = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          
+
           {/* Left Side Image */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -131,8 +131,8 @@ const Strategic = () => {
               transition={{ delay: 0.4 }}
               className="text-lg text-slate-600 leading-relaxed"
             >
-              Odoo (<strong className="text-[#1f2937]">On-Demand Open Object</strong>) is a dynamic ERP platform designed to enhance 
-              operational efficiency. Our expert consultants ensure you stay aligned with the latest Odoo releases and maximize 
+              Odoo (<strong className="text-[#1f2937]">On-Demand Open Object</strong>) is a dynamic ERP platform designed to enhance
+              operational efficiency. Our expert consultants ensure you stay aligned with the latest Odoo releases and maximize
               business performance through tailored implementation strategies.
             </motion.p>
 

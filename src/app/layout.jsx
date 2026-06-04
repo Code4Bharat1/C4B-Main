@@ -1,4 +1,21 @@
 import "@/app/globals.css";
+import { Archivo, Montserrat } from "next/font/google";
+
+// ✅ next/font: Zero layout shift, no render-blocking external requests
+const archivo = Archivo({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-archivo",
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-montserrat",
+});
+
 export const metadata = {
   title:
     "NEXCORE ALLIANCE LLP | Scalable AI Solutions, Web & App Development, MVPs & Odoo Customizations",
@@ -27,21 +44,20 @@ export const metadata = {
   alternates: {
     canonical: "https://www.nexcorealliance.com/",
   },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
 };
 
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${archivo.variable} ${montserrat.variable}`}>
       <head>
         <meta name="google-site-verification" content="pkGQBhGPaUQiJvoHFAVdRxtrBE6rmHhtPN5ZT9hHBlU" />
-        {/* Google Fonts */}
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Archivo:wght@400;500;600;700&display=swap"
-        />
 
-        {/* ✅ LocalBusiness JSON-LD */}
+        {/* ✅ LocalBusiness JSON-LD — Fixed URLs */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -50,9 +66,9 @@ export default function RootLayout({ children }) {
               "@type": "LocalBusiness",
               name: "Nexcore Alliance LLP",
               url: "https://www.nexcorealliance.com",
-              logo: "https://www.nexcorealliance.com/assets/nexcorealliance-logo.png",
-              image: "https://www.nexcorealliance.com/assets/nexcorealliance-og-image.png",
-              telephone: "+91-9594402915",
+              logo: "https://www.nexcorealliance.com/nex.png",
+              image: "https://www.nexcorealliance.com/nex.png",
+              telephone: "+91-8976104646",
               address: {
                 "@type": "PostalAddress",
                 streetAddress:
@@ -69,7 +85,7 @@ export default function RootLayout({ children }) {
               },
               sameAs: [
                 "https://twitter.com/nexcore",
-                "https://www.linkedin.com/company/105730702/admin/dashboard/",
+                "https://www.linkedin.com/company/105730702/",
                 "https://github.com/dev-nexcore",
               ],
               openingHours: "Mo-Fr 10:00-19:00",
@@ -79,8 +95,8 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body
+        className={montserrat.className}
         style={{
-          fontFamily: "'Archivo', 'Montserrat', sans-serif",
           fontSize: "20px",
           lineHeight: "1.6",
         }}

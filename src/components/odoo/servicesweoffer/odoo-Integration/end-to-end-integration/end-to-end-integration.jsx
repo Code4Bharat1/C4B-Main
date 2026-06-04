@@ -22,16 +22,16 @@ const EcommerceSection = () => {
             <div className="relative group">
               {/* Glowing effect */}
               <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur-lg opacity-25 group-hover:opacity-40 transition duration-500"></div>
-              
+
               {/* Image container with custom shadow */}
-              <div className="relative bg-white p-3 rounded-2xl shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-300" 
-                   style={{ boxShadow: "0 7px 27px 0 rgba(136,92,124,0.4)" }}>
+              <div className="relative bg-white p-3 rounded-2xl shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-300"
+                style={{ boxShadow: "0 7px 27px 0 rgba(136,92,124,0.4)" }}>
                 <img
                   src="/images/odoo-images/odoo-integration-services-oodu-implementers.jpg"
                   alt="Odoo Integration Services"
                   className="rounded-xl w-full h-auto"
                 />
-                
+
                 {/* Floating badge - Top */}
                 <div className="absolute -top-4 -right-4 bg-white px-5 py-3 rounded-xl shadow-2xl border border-gray-100">
                   <div className="flex items-center gap-2">

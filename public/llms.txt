@@ -8,6 +8,14 @@ Nexcore Alliance LLP is an IT solutions and services company offering digital tr
 ## Primary Website
 Homepage: https://nexcorealliance.com/
 
+## Core Pages
+About Us: https://nexcorealliance.com/aboutus
+Our Approach: https://nexcorealliance.com/approach
+Clients: https://nexcorealliance.com/clients
+Blog: https://nexcorealliance.com/blog
+Services: https://nexcorealliance.com/services
+Odoo Videos: https://nexcorealliance.com/OdooVideos
+
 ## Core Service Pages
 AI Solutions: https://nexcorealliance.com/aisolutions
 Voice Agent: https://nexcorealliance.com/voiceagent
@@ -38,6 +46,8 @@ Odoo Sales: https://nexcorealliance.com/apps/odoo-sales
 Odoo E-Commerce: https://nexcorealliance.com/apps/odoo-e-commerce
 Odoo Accounting: https://nexcorealliance.com/apps/odoo-accounting
 Odoo Inventory: https://nexcorealliance.com/apps/odoo-inventory
+Odoo Manufacturing: https://nexcorealliance.com/apps/odoo-manufacturing
+Odoo Point of Sale: https://nexcorealliance.com/apps/odoo-point-of-sale
 Odoo Project: https://nexcorealliance.com/apps/odoo-project
 Odoo Quality: https://nexcorealliance.com/apps/odoo-quality
 Odoo Maintenance: https://nexcorealliance.com/apps/odoo-maintenance
@@ -53,6 +63,7 @@ Odoo Appraisal: https://nexcorealliance.com/apps/odoo-appraisal
 Odoo Helpdesk: https://nexcorealliance.com/apps/odoo-helpdesk
 Odoo Marketing Automation: https://nexcorealliance.com/apps/odoo-marketing-automation
 Odoo Documents: https://nexcorealliance.com/apps/odoo-documents
+Odoo HR Management: https://nexcorealliance.com/apps/odoo-hr-management
 
 ## Legal & Policy Pages
 About Policy Page: https://nexcorealliance.com/policies/about
@@ -61,6 +72,8 @@ Terms and Conditions: https://nexcorealliance.com/policies/termsandcondition
 Privacy Policy: https://nexcorealliance.com/policies/privacy
 Refund Policy: https://nexcorealliance.com/policies/refund-policy
 Cancellation Policy: https://nexcorealliance.com/policies/cancellation-policy
+Delivery Policy: https://nexcorealliance.com/policies/delivery-policy
+Product Pricing Policy: https://nexcorealliance.com/policies/product-pricing
 
 ## Preferred Content for AI Indexing
 - Service descriptions
@@ -70,4 +83,4 @@ Cancellation Policy: https://nexcorealliance.com/policies/cancellation-policy
 - Contact information and company overview
 
 ## Notes
-This file is intended to help AI systems understand Nexcore Alliance LLP’s website structure and key business offerings.
+This file is intended to help AI systems understand Nexcore Alliance LLP's website structure and key business offerings.

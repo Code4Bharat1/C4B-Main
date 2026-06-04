@@ -1,26 +1,20 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import Image from "next/image";
 
 const ServiceCard = ({ image, imageHover, title, description, noLineHeight }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <motion.div
-      className={`w-[80vw] md:w-[30vw] lg:w-[22vw] min-h-[45vh] cursor-pointer rounded-2xl flex flex-col items-start justify-start p-5 shadow-lg transition-all duration-300
-        ${isHovered ? "shadow-2xl bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-500" : "bg-white"}`}
-      initial={{ scale: 1 }}
-      whileHover={{ scale: 1.05 }}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
+    <div
+      className={`w-[80vw] md:w-[30vw] lg:w-[22vw] min-h-[45vh] cursor-pointer rounded-2xl flex flex-col items-start justify-start p-5 shadow-lg transition-all duration-300 ease-in-out
+        ${isHovered ? "shadow-2xl bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-500 scale-105" : "bg-white scale-100"}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Logo/Image */}
       <div className="w-full flex justify-center md:justify-start mb-4">
-        <motion.div
-          className="w-[60px] md:w-[80px] h-[60px] md:h-[80px] relative"
-          animate={{ scale: isHovered ? 1.1 : 1 }}
-          transition={{ duration: 0.3 }}
+        <div
+          className={`w-[60px] md:w-[80px] h-[60px] md:h-[80px] relative transition-transform duration-300 ${isHovered ? "scale-110" : "scale-100"}`}
         >
           <Image
             src={isHovered ? imageHover : image}
@@ -28,7 +22,7 @@ const ServiceCard = ({ image, imageHover, title, description, noLineHeight }) =>
             fill
             className="object-contain"
           />
-        </motion.div>
+        </div>
       </div>
 
       {/* Title */}
@@ -48,7 +42,7 @@ const ServiceCard = ({ image, imageHover, title, description, noLineHeight }) =>
       >
         {description}
       </p>
-    </motion.div>
+    </div>
   );
 };
 

@@ -17,10 +17,10 @@ const WhyChooseUs = () => {
       <div className="absolute bottom-20 right-0 w-64 h-64 bg-sky-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
 
       <div className="container mx-auto px-6 sm:px-12 lg:px-24 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10 mt-4 sm:mt-4 lg:-mt-16">
-        
+
         {/* LEFT CONTENT */}
         <div className="animate-fade-in-left">
-          
+
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-sky-600 text-white px-5 py-2 rounded-full mb-6 shadow-md">
             <FaStar className="text-sm" />
@@ -73,7 +73,7 @@ const WhyChooseUs = () => {
 
           {/* Image Box */}
           <div className="relative bg-white rounded-3xl shadow-2xl p-4 transform hover:scale-105 hover:rotate-1 transition-all duration-500">
-            
+
             {/* Floating Badge */}
             <div className="absolute -top-4 -right-4 bg-gradient-to-r from-blue-600 to-sky-600 text-white px-5 py-3 rounded-full shadow-lg animate-bounce-subtle z-20">
               <div className="flex items-center gap-2">

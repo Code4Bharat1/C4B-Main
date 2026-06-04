@@ -14,7 +14,7 @@ const EcommerceSections = () => {
       {/* Background decorations */}
       <div className="absolute top-20 right-0 w-72 h-72 bg-purple-100 rounded-full filter blur-3xl opacity-20"></div>
       <div className="absolute bottom-20 left-0 w-72 h-72 bg-pink-100 rounded-full filter blur-3xl opacity-20"></div>
-      
+
       <div className="container mx-auto px-6 sm:px-8 lg:px-48 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-20">
           {/* Image Section */}
@@ -22,7 +22,7 @@ const EcommerceSections = () => {
             <div className="relative group">
               {/* Glowing effect */}
               <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur-lg opacity-25 group-hover:opacity-40 transition duration-500"></div>
-              
+
               {/* Image container */}
               <div className="relative bg-white p-3 rounded-2xl shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-300">
                 <img
@@ -30,7 +30,7 @@ const EcommerceSections = () => {
                   alt="Odoo Migration Services"
                   className="rounded-xl w-full h-auto"
                 />
-                
+
                 {/* Floating stats badge */}
                 <div className="absolute -bottom-6 -right-6 bg-white px-6 py-4 rounded-xl shadow-2xl border border-gray-100">
                   <div className="flex items-center gap-3">

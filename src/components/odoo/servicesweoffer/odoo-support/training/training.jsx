@@ -131,7 +131,7 @@ const EcommerceSections = () => {
 
           {/* CTA Button */}
           <div className="flex justify-center lg:justify-start">
-            <a 
+            <a
               href="/servicesweoffer"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
@@ -139,7 +139,7 @@ const EcommerceSections = () => {
               <button className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold text-base px-8 py-4 rounded-full shadow-2xl hover:shadow-pink-500/50 hover:scale-110 transition-all duration-300 overflow-hidden">
                 {/* Animated Background */}
                 <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
+
                 {/* Button Content */}
                 <span className="relative z-10 flex items-center gap-3">
                   <FaHeadset className={`text-xl transition-transform duration-300 ${isHovered ? 'scale-110' : ''}`} />

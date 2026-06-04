@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const Footer = () => {
   return (
@@ -7,16 +8,20 @@ const Footer = () => {
         {/* Top Section */}
         <div className="flex flex-col items-center lg:flex-row lg:justify-between">
           {/* Logo Section */}
-          <div className="flex flex-col items-center lg:items-start">
-            <img
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
+            <Image
               src="https://www.odooimplementers.com/images/odoo-implementers-logo-best-erp-software.webp"
               alt="odoo Implementers"
-              className="w-122px mb-4"
+              width={122}
+              height={50}
+              className="mb-4 w-auto h-auto"
             />
-            <img
+            <Image
               src="https://www.odooimplementers.com/images/odoo-gold-partner.svg"
               alt="Gold Partner Badge"
-              className="w-24"
+              width={96}
+              height={40}
+              className="w-24 h-auto"
             />
           </div>
 
@@ -73,7 +78,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        
+
 
         {/* Bottom Section */}
         <div className="w-full bottom-0 mt-10 border-t pt-full text-center lg:text-center">
@@ -82,10 +87,10 @@ const Footer = () => {
           </p>
           {/* Social Media Icons */}
           <div className="flex justify-center lg:justify-start mt-4 space-x-4">
-          <div className='ft-list-icon mb-lg-5'>
-            <a href="https://facebook.com" target="_blank" rel="noreferrer">
-              <i className="fab fa-facebook text-xl text-[#7141b1]"></i>
-            </a>
+            <div className='ft-list-icon mb-lg-5'>
+              <a href="https://facebook.com" target="_blank" rel="noreferrer">
+                <i className="fab fa-facebook text-xl text-[#7141b1]"></i>
+              </a>
             </div>
             <a href="https://instagram.com" target="_blank" rel="noreferrer">
               <i className="fab fa-instagram text-xl text-[#7141b1]"></i>

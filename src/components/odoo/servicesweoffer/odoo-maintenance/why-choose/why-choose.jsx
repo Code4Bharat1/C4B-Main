@@ -43,7 +43,7 @@ const WhyChooseUs = () => {
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-purple-100 rounded-full filter blur-3xl opacity-30 -translate-y-1/2 translate-x-1/2"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-pink-100 rounded-full filter blur-3xl opacity-30 translate-y-1/2 -translate-x-1/2"></div>
-      
+
       <div className="container mx-auto px-6 lg:px-48 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:-mt-20">
           {/* Left Section - Text Content */}
@@ -123,7 +123,7 @@ const WhyChooseUs = () => {
             <div className="relative group">
               {/* Glowing border effect */}
               <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
-              
+
               {/* Image container */}
               <div className="relative bg-white p-3 rounded-2xl shadow-2xl">
                 <img
@@ -131,7 +131,7 @@ const WhyChooseUs = () => {
                   alt="Odoo Maintenance Services"
                   className="rounded-xl w-full h-auto object-cover"
                 />
-                
+
                 {/* Floating badge - Top */}
                 <div className="absolute -top-4 -right-4 bg-white px-5 py-3 rounded-xl shadow-xl border border-gray-100">
                   <div className="flex items-center gap-2">

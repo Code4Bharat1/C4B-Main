@@ -96,7 +96,7 @@ const EcommerceBenefits = () => {
           >
             {/* Minimal gradient overlay on hover */}
             <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-orange-50/50 opacity-0 group-hover:opacity-100 rounded-3xl sm:rounded-[2rem] transition-opacity duration-500"></div>
-            
+
             {/* Decorative corner */}
             <div className="absolute -top-12 -right-12 w-48 h-48 bg-gradient-to-br from-blue-100 to-orange-100 rounded-full opacity-30 group-hover:scale-125 transition-transform duration-700 blur-2xl"></div>
 
@@ -138,7 +138,7 @@ const EcommerceBenefits = () => {
                 })}
               </div>
             </div>
-            
+
             {/* Minimal hover glow */}
             {hoveredCard === 1 && (
               <div className="absolute -inset-0.5 bg-gradient-to-r from-[#1e40af] to-[#f97316] rounded-3xl sm:rounded-[2rem] opacity-15 blur animate-pulse-slow"></div>
@@ -153,7 +153,7 @@ const EcommerceBenefits = () => {
           >
             {/* Minimal gradient overlay on hover */}
             <div className="absolute inset-0 bg-gradient-to-br from-orange-50/50 to-blue-50/50 opacity-0 group-hover:opacity-100 rounded-3xl sm:rounded-[2rem] transition-opacity duration-500"></div>
-            
+
             {/* Decorative corner */}
             <div className="absolute -top-12 -left-12 w-48 h-48 bg-gradient-to-br from-orange-100 to-blue-100 rounded-full opacity-30 group-hover:scale-125 transition-transform duration-700 blur-2xl"></div>
 
@@ -192,7 +192,7 @@ const EcommerceBenefits = () => {
                 })}
               </div>
             </div>
-            
+
             {/* Minimal hover glow */}
             {hoveredCard === 2 && (
               <div className="absolute -inset-0.5 bg-gradient-to-r from-[#f97316] to-[#1e40af] rounded-3xl sm:rounded-[2rem] opacity-15 blur animate-pulse-slow"></div>

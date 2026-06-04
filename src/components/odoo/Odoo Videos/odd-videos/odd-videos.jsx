@@ -276,11 +276,10 @@ const VideoGrid = () => {
         {videos.map((video, index) => (
           <div
             key={index}
-            className={`video-container bg-white pb-4 flex flex-col relative transition-all duration-700 shadow-[rgba(0,0,15,0.1)_0px_2px_3px_0px] ${
-              visibleVideos.includes(index)
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-10"
-            }`}
+            className={`video-container bg-white pb-4 flex flex-col relative transition-all duration-700 shadow-[rgba(0,0,15,0.1)_0px_2px_3px_0px] ${visibleVideos.includes(index)
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-10"
+              }`}
           >
             {video.isYouTube ? (
               <div

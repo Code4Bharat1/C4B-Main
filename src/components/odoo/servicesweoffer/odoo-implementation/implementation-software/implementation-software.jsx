@@ -146,7 +146,7 @@ const EcommerceSection = () => {
 
           {/* Enhanced CTA Button */}
           <div className="flex justify-center lg:justify-start">
-            <a 
+            <a
               href="/servicesweoffer"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
@@ -154,7 +154,7 @@ const EcommerceSection = () => {
               <button className="group relative inline-flex items-center gap-4 bg-gradient-to-r from-[#1e40af] to-[#f97316] hover:from-[#1e3a8a] hover:to-[#ea580c] text-white font-black text-base sm:text-lg px-10 py-5 rounded-full shadow-2xl hover:shadow-3xl hover:scale-110 transition-all duration-300 overflow-hidden border-2 border-white/30">
                 {/* Animated Background */}
                 <div className="absolute inset-0 bg-gradient-to-r from-[#f97316] to-[#1e40af] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
+
                 {/* Button Content */}
                 <span className="relative z-10 flex items-center gap-4">
                   <FaCogs className={`text-xl sm:text-2xl transition-transform duration-500 ${isHovered ? 'rotate-180' : ''}`} />

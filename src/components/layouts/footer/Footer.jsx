@@ -11,7 +11,7 @@ import {
 import { RiTwitterXLine } from "react-icons/ri";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import Image from "next/image";
 
 // ─── SVG Flag Components ───────────────────────────────────────────────────────
 
@@ -122,23 +122,6 @@ const CountryFlag = ({ code, className }) => {
 // ─── Footer ───────────────────────────────────────────────────────────────────
 
 const Footer = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 },
-    },
-  };
-
   const branchOffices = [
     { country: "Qatar",        code: "QA" },
     { country: "UAE",          code: "AE" },
@@ -165,20 +148,19 @@ const Footer = () => {
 
       {/* ── Main Section ── */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-20">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={containerVariants}
+        <div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10"
         >
           {/* ── Logo + About — 3 cols ── */}
-          <motion.div variants={itemVariants} className="lg:col-span-3">
-            <div className="mb-6 w-full h-24 rounded-xl shadow-lg flex items-center justify-center bg-white">
-              <img
+          <div className="lg:col-span-3 transition-all duration-500 opacity-0 translate-y-4 animate-fade-up" style={{ animationDelay: '0.1s' }}>
+            <div className="mb-6 w-full h-24 rounded-xl shadow-lg flex items-center justify-center bg-white overflow-hidden">
+              <Image
                 src="/nex.jpeg"
-                alt="NEXCORE ALLIANCE LLP"
-                className="w-48 h-auto object-cover"
+                alt="NEXCORE ALLIANCE LLP Logo"
+                width={192}
+                height={60}
+                className="w-48 h-auto object-contain"
+                style={{ height: 'auto' }}
               />
             </div>
             <p className="text-gray-200 leading-relaxed mb-6 text-sm">
@@ -195,23 +177,21 @@ const Footer = () => {
                 { href: "https://www.youtube.com/channel/UCYqpIltw48XxkMRLC-HCgag", icon: <FaYoutube />, gradient: "from-red-600 to-red-700" },
                 { href: "https://www.linkedin.com/company/105730702/admin/dashboard/", icon: <FaLinkedinIn />, gradient: "from-blue-600 to-blue-700" },
               ].map((item, i) => (
-                <motion.a
+                <a
                   key={i}
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ scale: 1.15, y: -3 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`w-10 h-10 bg-gradient-to-br ${item.gradient} rounded-xl flex items-center justify-center text-white shadow-lg hover:shadow-xl transition-shadow`}
+                  className={`w-10 h-10 bg-gradient-to-br ${item.gradient} rounded-xl flex items-center justify-center text-white shadow-lg hover:shadow-xl hover:scale-110 active:scale-95 transition-all duration-200`}
                 >
                   {item.icon}
-                </motion.a>
+                </a>
               ))}
             </div>
-          </motion.div>
+          </div>
 
           {/* ── Quick Links — 2 cols ── */}
-          <motion.div variants={itemVariants} className="lg:col-span-2">
+          <div className="lg:col-span-2 animate-fade-up" style={{ animationDelay: '0.2s' }}>
             <h3 className="text-xl font-bold text-white mb-6">Quick Links</h3>
             <ul className="space-y-3">
               {[
@@ -220,20 +200,20 @@ const Footer = () => {
                 { name: "Case Studies", path: "/casestudy" },
                 { name: "Odoo",         path: "/servicesweoffer" },
               ].map((link, i) => (
-                <motion.li key={i} whileHover={{ x: 4 }} className="group">
+                <li key={i} className="group">
                   <Link href={link.path}>
-                    <span className="text-gray-200 hover:text-orange-400 transition-colors flex items-center gap-2 cursor-pointer text-sm">
+                    <span className="text-gray-200 hover:text-orange-400 hover:translate-x-1 transition-all flex items-center gap-2 cursor-pointer text-sm">
                       <FaArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-orange-400" />
                       {link.name}
                     </span>
                   </Link>
-                </motion.li>
+                </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
 
           {/* ── Policies — 3 cols ── */}
-          <motion.div variants={itemVariants} className="lg:col-span-3">
+          <div className="lg:col-span-3 animate-fade-up" style={{ animationDelay: '0.3s' }}>
             <h3 className="text-xl font-bold text-white mb-6">Policies</h3>
             <ul className="space-y-3">
               {[
@@ -244,30 +224,29 @@ const Footer = () => {
                 { name: "Refund Policy",          path: "/policies/refund-policy" },
                 { name: "Cancellation Policy",    path: "/policies/cancellation-policy" },
               ].map((item, i) => (
-                <motion.li key={i} whileHover={{ x: 4 }} className="group">
+                <li key={i} className="group">
                   <Link href={item.path}>
-                    <span className="text-gray-200 hover:text-orange-400 transition-colors flex items-center gap-2 cursor-pointer text-sm">
+                    <span className="text-gray-200 hover:text-orange-400 hover:translate-x-1 transition-all flex items-center gap-2 cursor-pointer text-sm">
                       <FaArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-orange-400" />
                       {item.name}
                     </span>
                   </Link>
-                </motion.li>
+                </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
 
           {/* ── Get In Touch — 4 cols ── */}
-          <motion.div variants={itemVariants} className="lg:col-span-4">
+          <div className="lg:col-span-4 animate-fade-up" style={{ animationDelay: '0.4s' }}>
             <h3 className="text-xl font-bold text-white mb-6">Get In Touch</h3>
             <div className="space-y-4">
 
               {/* India Phone */}
-              <motion.a
+              <a
                 href="https://wa.me/918976104646"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ x: 4 }}
-                className="flex items-start gap-3 group"
+                className="flex items-start gap-3 group hover:translate-x-1 transition-transform"
               >
                 <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white flex-shrink-0 shadow-lg group-hover:shadow-xl transition-shadow">
                   <FiPhone className="w-5 h-5" />
@@ -281,15 +260,14 @@ const Footer = () => {
                     +91 8976104646
                   </span>
                 </div>
-              </motion.a>
+              </a>
 
               {/* UAE Phone */}
-              <motion.a
+              <a
                 href="https://wa.me/+971562021489"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ x: 4 }}
-                className="flex items-start gap-3 group"
+                className="flex items-start gap-3 group hover:translate-x-1 transition-transform"
               >
                 <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white flex-shrink-0 shadow-lg group-hover:shadow-xl transition-shadow">
                   <FiPhone className="w-5 h-5" />
@@ -303,15 +281,14 @@ const Footer = () => {
                     +971 562021489
                   </span>
                 </div>
-              </motion.a>
+              </a>
 
               {/* Email */}
-              <motion.a
+              <a
                 href="mailto:director@nexcorealliance.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ x: 4 }}
-                className="flex items-start gap-3 group"
+                className="flex items-start gap-3 group hover:translate-x-1 transition-transform"
               >
                 <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white flex-shrink-0 shadow-lg group-hover:shadow-xl transition-shadow">
                   <FiMail className="w-5 h-5" />
@@ -319,15 +296,14 @@ const Footer = () => {
                 <span className="text-gray-200 group-hover:text-white transition-colors text-sm leading-relaxed pt-2">
                   director@nexcorealliance.com
                 </span>
-              </motion.a>
+              </a>
 
               {/* Head Office */}
-              <motion.a
+              <a
                 href="https://maps.app.goo.gl/DzBt4BdL9BH4MRga9"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ x: 4 }}
-                className="flex items-start gap-3 group"
+                className="flex items-start gap-3 group hover:translate-x-1 transition-transform"
               >
                 <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center text-white flex-shrink-0 shadow-lg group-hover:shadow-xl transition-shadow">
                   <FiMapPin className="w-5 h-5" />
@@ -342,7 +318,7 @@ const Footer = () => {
                     Off BKC, Mumbai, India 400070
                   </span>
                 </div>
-              </motion.a>
+              </a>
 
               {/* ── Branch Offices — improved card layout ── */}
               <div className="pt-3 border-t border-blue-700/50">
@@ -352,22 +328,21 @@ const Footer = () => {
 
                 <div className="grid grid-cols-2 gap-2">
                   {branchOffices.map((office, index) => (
-                    <motion.div
+                    <div
                       key={index}
-                      whileHover={{ scale: 1.03, y: -1 }}
-                      className="flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-blue-400/40 rounded-lg px-3 py-2 transition-all duration-200 cursor-default"
+                      className="flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-blue-400/40 rounded-lg px-3 py-2 transition-all duration-200 cursor-default hover:-translate-y-1"
                     >
                       <CountryFlag code={office.code} className="w-7 h-[18px] flex-shrink-0" />
                       <span className="text-gray-200 text-xs font-medium leading-tight">
                         {office.country}
                       </span>
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
               </div>
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
         {/* ── CTA Section ── */}
         {/* <motion.div
@@ -406,10 +381,7 @@ const Footer = () => {
       {/* ── Bottom Section ── */}
       <div className="relative z-10 border-t border-blue-700/50">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-8">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+          <div
             className="flex flex-col md:flex-row items-center justify-between gap-4"
           >
             <p className="text-gray-300 text-sm text-center md:text-left">
@@ -430,30 +402,20 @@ const Footer = () => {
                 <span className="hover:text-orange-400 transition-colors cursor-pointer">Contact</span>
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
 
       {/* ── WhatsApp Floating Button ── */}
-      <motion.a
+      <a
         href="https://wa.me/918976104646"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center shadow-2xl z-50 group"
-        whileHover={{ scale: 1.1 }}
-        animate={{
-          y: [0, -8, 0],
-          boxShadow: [
-            "0 20px 25px -5px rgba(34, 197, 94, 0.3)",
-            "0 25px 30px -5px rgba(34, 197, 94, 0.4)",
-            "0 20px 25px -5px rgba(34, 197, 94, 0.3)",
-          ],
-        }}
-        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+        className="fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center shadow-2xl z-50 group hover:scale-110 active:scale-95 transition-all duration-300"
       >
         <FaWhatsapp className="text-white text-3xl group-hover:scale-110 transition-transform" />
         <span className="absolute inset-0 rounded-full bg-green-400 animate-ping opacity-20" />
-      </motion.a>
+      </a>
     </footer>
   );
 };

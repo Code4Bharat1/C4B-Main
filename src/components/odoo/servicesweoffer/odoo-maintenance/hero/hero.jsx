@@ -41,9 +41,9 @@ const Hero = () => {
               <Home className="w-4 h-4" />
               <span>Home</span>
             </a>
-            
+
             <ChevronRight className="w-4 h-4 text-pink-300" />
-            
+
             <a
               href="/servicesweoffer"
               className="group flex items-center gap-1.5 bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white hover:text-purple-700 text-white px-4 py-2 rounded-full transition-all duration-300 shadow-lg"
@@ -51,9 +51,9 @@ const Hero = () => {
               <Settings className="w-4 h-4" />
               <span>Services We Offer</span>
             </a>
-            
+
             <ChevronRight className="w-4 h-4 text-pink-300" />
-            
+
             <div className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-4 py-2 rounded-full font-bold shadow-lg">
               Odoo Maintenance
             </div>

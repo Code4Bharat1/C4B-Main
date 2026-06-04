@@ -49,7 +49,7 @@ const EcommerceBenefits = () => {
             <FaHeadset className="text-xl" />
             <span className="font-bold uppercase text-sm tracking-wider">Support Services</span>
           </div>
-          
+
           <h2 className="text-4xl sm:text-5xl font-extrabold mb-4">
             <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
               Comprehensive
@@ -69,7 +69,7 @@ const EcommerceBenefits = () => {
           >
             {/* Gradient Overlay */}
             {/* <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-500"></div> */}
-            
+
             {/* Decorative Corner */}
             {/* <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-purple-200 to-pink-200 rounded-full opacity-20 group-hover:scale-150 transition-transform duration-700"></div> */}
 
@@ -121,7 +121,7 @@ const EcommerceBenefits = () => {
           >
             {/* Gradient Overlay */}
             {/* <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-500"></div> */}
-            
+
             {/* Decorative Corner */}
             {/* <div className="absolute -top-10 -left-10 w-40 h-40 bg-gradient-to-br from-blue-200 to-purple-200 rounded-full opacity-20 group-hover:scale-150 transition-transform duration-700"></div> */}
 

@@ -27,7 +27,7 @@ const OffshoreDevelopment = () => {
         <div className="relative group order-2 lg:order-1">
           {/* Glowing effect */}
           <div className="absolute -inset-1 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl blur-lg opacity-25 group-hover:opacity-40 transition duration-500"></div>
-          
+
           {/* Image container */}
           <div className="relative bg-white p-3 rounded-2xl shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-300">
             <img
@@ -35,7 +35,7 @@ const OffshoreDevelopment = () => {
               alt="Offshore Development Services"
               className="rounded-xl w-full h-auto shadow-lg"
             />
-            
+
             {/* Floating badge */}
             <div className="absolute -bottom-6 -right-6 bg-white px-6 py-4 rounded-xl shadow-2xl border border-gray-100">
               <div className="flex items-center gap-3">

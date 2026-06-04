@@ -18,35 +18,35 @@ const GeneralConfiguration = () => {
   const [hoveredMode, setHoveredMode] = useState(null);
 
   const configModes = [
-  {
-    id: 1,
-    icon: FaToggleOn,
-    title: "ON / OFF / OPTIONAL",
-    description: "A function can be enabled, disabled, or kept optional as needed.",
-    color: "from-blue-600 to-sky-500",
-  },
-  {
-    id: 2,
-    icon: FaCodeBranch,
-    title: "XOR Mode",
-    description: "Only one workflow path can be chosen based on set conditions.",
-    color: "from-indigo-600 to-blue-400",
-  },
-  {
-    id: 3,
-    icon: FaStream,
-    title: "OR Mode",
-    description: "Allows zero, one, or multiple optional activities.",
-    color: "from-green-600 to-emerald-500",
-  },
-  {
-    id: 4,
-    icon: FaTasks, // <-- Valid icon used instead
-    title: "AND Mode",
-    description: "Indicates mandatory parallel flows and dependencies.",
-    color: "from-orange-500 to-yellow-500",
-  },
-];
+    {
+      id: 1,
+      icon: FaToggleOn,
+      title: "ON / OFF / OPTIONAL",
+      description: "A function can be enabled, disabled, or kept optional as needed.",
+      color: "from-blue-600 to-sky-500",
+    },
+    {
+      id: 2,
+      icon: FaCodeBranch,
+      title: "XOR Mode",
+      description: "Only one workflow path can be chosen based on set conditions.",
+      color: "from-indigo-600 to-blue-400",
+    },
+    {
+      id: 3,
+      icon: FaStream,
+      title: "OR Mode",
+      description: "Allows zero, one, or multiple optional activities.",
+      color: "from-green-600 to-emerald-500",
+    },
+    {
+      id: 4,
+      icon: FaTasks, // <-- Valid icon used instead
+      title: "AND Mode",
+      description: "Indicates mandatory parallel flows and dependencies.",
+      color: "from-orange-500 to-yellow-500",
+    },
+  ];
 
   const benefits = [
     { icon: FaCheckCircle, text: "Expert Implementation" },
@@ -86,30 +86,28 @@ const GeneralConfiguration = () => {
             {configModes.map((mode, index) => {
               const Icon = mode.icon;
               return (
-               <div
-  key={mode.id}
-  onMouseEnter={() => setHoveredMode(mode.id)}
-  onMouseLeave={() => setHoveredMode(null)}
-  className={`relative bg-white rounded-2xl p-5 border shadow transition-all duration-300
+                <div
+                  key={mode.id}
+                  onMouseEnter={() => setHoveredMode(mode.id)}
+                  onMouseLeave={() => setHoveredMode(null)}
+                  className={`relative bg-white rounded-2xl p-5 border shadow transition-all duration-300
     ${hoveredMode === mode.id ? "shadow-lg border-blue-500/40 scale-[1.03] -translate-y-1" : "shadow-sm border-slate-200"}
   `}
->
-  <div className="relative z-10">
-    <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br ${mode.color} mb-3 transition-transform duration-300 ${
-      hoveredMode === mode.id ? "scale-110" : ""
-    }`}>
-      <Icon className="text-xl text-white" />
-    </div>
+                >
+                  <div className="relative z-10">
+                    <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br ${mode.color} mb-3 transition-transform duration-300 ${hoveredMode === mode.id ? "scale-110" : ""
+                      }`}>
+                      <Icon className="text-xl text-white" />
+                    </div>
 
-    <h4 className={`font-bold text-sm mb-2 transition-colors duration-300 ${
-      hoveredMode === mode.id ? "text-blue-700" : "text-slate-800"
-    }`}>
-      {mode.title}
-    </h4>
+                    <h4 className={`font-bold text-sm mb-2 transition-colors duration-300 ${hoveredMode === mode.id ? "text-blue-700" : "text-slate-800"
+                      }`}>
+                      {mode.title}
+                    </h4>
 
-    <p className="text-slate-600 text-xs leading-relaxed">{mode.description}</p>
-  </div>
-</div>
+                    <p className="text-slate-600 text-xs leading-relaxed">{mode.description}</p>
+                  </div>
+                </div>
 
               );
             })}
@@ -149,9 +147,9 @@ const GeneralConfiguration = () => {
         <div className="relative flex items-center justify-center animate-fade-in-right">
 
           <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-sky-100 rounded-3xl transform rotate-3 scale-105 opacity-30" />
-          
+
           <div className="relative bg-white rounded-3xl shadow-xl p-4 border border-slate-100 hover:scale-105 transition-transform duration-500">
-            
+
             <div className="absolute -top-4 -right-4 bg-gradient-to-r from-blue-700 to-blue-500 text-white px-6 py-3 rounded-full shadow-lg animate-bounce-subtle z-20">
               <div className="flex items-center gap-2">
                 <FaCogs className="text-xl" />
