@@ -56,7 +56,12 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${archivo.variable} ${montserrat.variable}`}>
       <head>
         <meta name="google-site-verification" content="pkGQBhGPaUQiJvoHFAVdRxtrBE6rmHhtPN5ZT9hHBlU" />
-
+<script
+  src="https://surfyn.ai/widget.js"
+  data-bot-id="1ca3a142-48d5-44f0-a73e-f574e9048382"
+  data-client-key="pk_QN__GYRMXXwgpSJ3MOqVZ4vx"
+  async
+></script>
         {/* ✅ LocalBusiness JSON-LD — Fixed URLs */}
         <script
           type="application/ld+json"
